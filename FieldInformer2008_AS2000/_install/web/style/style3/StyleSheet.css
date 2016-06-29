@@ -1,0 +1,459 @@
+body
+{
+}
+
+.t_act
+{
+	border-style:none;
+	background-color:red;
+	text-decoration:none;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:#FFFFC0;
+}
+
+
+.t_nact
+{
+	border-style:none;
+	background-color: #999999;
+	text-decoration:none;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:white;
+	cursor:hand;
+}
+
+.t_white
+{
+	background-color:White;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:black;
+}
+
+.bckgr1
+{
+	background-color:white;
+	text-decoration:none;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:Black;
+}
+
+.tbl1_hdr
+{
+	background-color:#999999;
+	text-align:center;
+	text-decoration:none;
+	border-color:#666666;
+	border-style:inset;
+	border-width:1px;
+	margin-top:0px;
+	margin-left:5px;
+	margin-right:5px;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:White;
+}
+
+
+.tbl1_item
+{
+	background-color:white;
+	text-decoration:none;
+	border-color:#888888;
+	border-style:solid;
+	border-width:1px;
+	text-indent:3px;
+	margin-left:5px;
+	margin-right:5px;
+	font-family:Tahoma;
+	font-size:8pt;
+	color:Black;
+}
+
+.tbl1_href_item
+{
+	background-color:white;
+	text-indent:3px;
+	margin-left:5px;
+	margin-right:5px;
+	font-family:Tahoma;
+	font-size:8pt;
+	color:Black;
+}
+
+.tbl1_chk
+{
+	background-color:lightgrey;
+	text-decoration:none;
+	border-color:#888888;
+	border-style:solid;
+	border-width:1px;
+}
+
+
+.tbl1_err
+{
+	text-decoration:none;
+	margin-left:5px;
+	margin-right:5px;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color: red;
+}
+
+
+
+
+.tbl1_pgr_act
+{
+	background-color:lightgrey;
+	border-style:groove;
+	text-decoration:none;
+	margin-left:1px;
+	margin-right:1px;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:4682b4;
+	width:20px;
+	height:22px;
+}
+
+.tbl1_pgr_arrow
+{
+	background-color:lightgrey;
+	border-style:groove;
+	text-decoration:none;
+	margin-left:1px;
+	margin-right:1px;
+	font-weight:bold;
+	font-size:8pt;
+	color:grey;
+	width:20px;
+	height:22px;
+}
+
+
+.tbl1_pgr
+{
+	background-color:lightgrey;
+	text-align:center;
+	text-decoration:none;
+	border-style:inset;
+	border-color:999999;
+	border-collapse:collapse;
+	border-width:1px;
+	margin-top:0px;
+	margin-left:5px;
+	margin-right:5px;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:grey;
+	height:22px;
+}
+
+
+
+.tbl1_edit
+{
+	background-color:white;
+	text-decoration:none;
+	font-family:Tahoma;
+	font-size:8pt;
+	color:black;
+}
+
+.tbl1_edit_lbl
+{
+	background-color:#999999;
+	border-style:inset;
+	border-collapse:collapse;
+	border-color:999999;
+	border-width:1px;
+	text-decoration:none;
+	text-indent:3px;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:White;
+}
+
+
+.tbl1_edit_box
+{
+	background-color:White;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:Black;
+}
+
+
+.tbl1_capt
+{
+	background-color:lightgrey;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:10pt;
+	color:grey;
+}
+
+
+.tbl1_ctrl
+{
+	background-color:#999999;
+	border-style:outset;
+	border-width:thin;
+	border-color:999999;
+	text-decoration:none;
+	text-align:center;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:White;
+	cursor:hand;
+	padding-right:4px;
+	padding-left:4px;
+	height:20px;
+}
+
+
+.tbl1_hdr_ctrl
+{
+	background-color:#999999;
+	border-style:none;
+	border-collapse:collapse;
+	border-color:grey;
+	border-width:1px;
+	text-decoration:none;
+	text-align:center;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:White;
+	cursor:hand;
+	padding-right:4px;
+	padding-left:4px;
+	height:20px;
+}
+
+.tbl1_hdr_ctrl_act
+{
+	background-color:#999999;
+	border-style:none;
+	text-decoration:none;
+	text-align:center;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:red;
+	cursor:hand;
+	padding-right:4px;
+	padding-left:4px;
+	height:20px;
+}
+
+
+
+
+.tbl1_hdr_input
+{
+	background-color:White;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:Black;
+	height:20px;
+}
+
+
+
+
+
+
+
+
+
+.tbl1_valid
+{
+	background-color:e5e5e5;
+	text-decoration:none;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	color:Red;
+}
+
+.input
+{
+	background-color:4682b4;
+	border-style:none;
+	color:white;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:8pt;
+	text-decoration:underline;
+	cursor:hand;
+}
+
+
+
+.tbl1_H {
+	text-align:left; PADDING-RIGHT: 2pt; border: solid 1px #eeeeee; PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: white;   font-face: tahoma ; ; padding-top: 1px ; padding-bottom: 1px; BACKGROUND-COLOR: #999999; 
+}
+.tbl1_H1 {
+	text-align:left; PADDING-RIGHT: 2pt; border: solid 1px #eeeeee; PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: #FFFFC0; FONT-WEIGHT: bold;   font-face: tahoma ; ; padding-top: 1px ; padding-bottom: 1px; BACKGROUND-COLOR: #999999; 
+}
+
+.tbl1_H2 {
+	text-align:center; PADDING-RIGHT: 2pt; border: solid 1px #eeeeee; PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: white;   font-face: tahoma ; padding-top: 1px ; padding-bottom: 1px; BACKGROUND-COLOR: #999999; 
+}
+.tbl1_H3 {
+	text-align:center; PADDING-RIGHT: 2pt; border: solid 1px #eeeeee; PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: #FFFFC0; FONT-WEIGHT: bold;   font-face: tahoma ; ; padding-top: 1px ; padding-bottom: 1px; BACKGROUND-COLOR: #999999; 
+}
+
+.tbl1_HC {
+background-color:white; FONT-SIZE: 8pt; font-face: tahoma;PADDING-LEFT: 2pt;PADDING-RIGHT: 2pt;
+}
+
+.tbl1_T 
+{
+	border-collapse:collapse;
+}
+.tbl1_C {
+	text-align:right; PADDING-RIGHT: 2pt; PADDING-LEFT: 2pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: white; font-face: tahoma; padding-top: 1px ; padding-bottom: 1px; border: solid 1px #888888;
+}
+.tbl1_C1 {
+	text-align:left; PADDING-RIGHT: 2pt; PADDING-LEFT: 2pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: white; font-face: tahoma; padding-top: 1px ; padding-bottom: 1px; border: solid 1px #888888;
+}
+.tbl1_C2 {
+	text-align:right; PADDING-RIGHT: 2pt; PADDING-LEFT: 6pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: white; font-face: tahoma; padding-top: 1px ; padding-bottom: 1px; border: solid 1px #888888;
+}
+
+
+
+
+.sel_H {
+	text-align:center; PADDING-RIGHT: 2pt; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: white; background-color:#999999;  font-face: tahoma ; padding-top: 1px ; padding-bottom: 1px;
+}
+
+.sel_C {
+	text-align:left;  PADDING-RIGHT: 2pt;  PADDING-LEFT: 2pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: white; font-face: tahoma; padding-top: 0px ; padding-bottom: 0px; border-collapse:collapse;
+}
+
+.sel_C1 {
+	text-align:left;  PADDING-RIGHT: 2pt;  PADDING-LEFT: 2pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: #white; font-face: tahoma; padding-top: 0px ; padding-bottom: 0px; border-collapse:collapse;
+}
+.sel_C2 {
+	text-align:right;  PADDING-RIGHT: 2pt;  PADDING-LEFT: 2pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: white; font-face: tahoma; padding-top: 0px ; padding-bottom: 0px; border-collapse:collapse;
+}
+
+
+.sel_del {
+	background:url(../../images/h_del.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+
+.sel_up {
+	background:url(../../images/h_up.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+.sel_down {
+	background:url(../../images/h_down.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+
+.sel_tocol {
+	background:url(../../images/h_tocol.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+.sel_torow {
+	background:url(../../images/h_torow.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+
+.sel_open {
+	background:url(../../images/n_open.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+.sel_close {
+	background:url(../../images/n_close.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+.sel_selauto {
+	background:url(../../images/n_selauto.gif) ; border-style:none; border-collapse:collapse; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+.sel_selall {
+	background:url(../../images/n_selall.gif) ; border-style:none; border-collapse:collapse; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+.sel_deselall {
+	background:url(../../images/n_deselall.gif) ; border-style:none; border-collapse:collapse; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+
+.sel_chk {
+	height:13px; width:13px; 
+}
+
+.sel_aggr_on {
+	background:url(../../images/aggr_on.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+
+.sel_aggr_off {
+	background:url(../../images/aggr_off.gif) ; border-style:none; vertical-align:middle; height:13px; width:13px; cursor:hand;
+}
+
+
+.tbl_avg_on {
+	background:url(../../images/avg_on.gif) ; border-style:none; vertical-align:middle; height:15px; width:21px; cursor:hand;
+}
+
+.tbl_avg_off {
+	background:url(../../images/avg_off.gif) ; border-style:none; vertical-align:middle; height:15px; width:21px; cursor:hand;
+}
+
+.tbl_sum_on {
+	background:url(../../images/sum_on.gif) ; border-style:none; vertical-align:middle; height:15px; width:21px; cursor:hand;
+}
+
+.tbl_sum_off {
+	background:url(../../images/sum_off.gif) ; border-style:none; vertical-align:middle; height:15px; width:21px; cursor:hand;
+}
+
+.tbl_min_on {
+	background:url(../../images/min_on.gif) ; border-style:none; vertical-align:middle; height:15px; width:21px; cursor:hand;
+}
+
+.tbl_min_off {
+	background:url(../../images/min_off.gif) ; border-style:none; vertical-align:middle; height:15px; width:21px; cursor:hand;
+}
+
+.tbl_max_on {
+	background:url(../../images/max_on.gif) ; border-style:none; vertical-align:middle; height:15px; width:21px; cursor:hand;
+}
+
+.tbl_max_off {
+	background:url(../../images/max_off.gif) ; border-style:none; vertical-align:middle; height:15px; width:21px; cursor:hand;
+}
+
+.tbl1_hdr_l
+{
+	background-color:lightgrey;
+	border-style:none;
+	border-collapse:collapse;
+	border-color:999999;
+	border-width:0px;
+	text-decoration:none;
+	text-align:left;
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:9pt;
+	color:grey;
+	padding-right:4px;
+	padding-left:4px;
+	height:24px;
+}
+
+

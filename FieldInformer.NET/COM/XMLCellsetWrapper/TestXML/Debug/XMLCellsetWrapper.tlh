@@ -1,0 +1,73 @@
+// Created by Microsoft (R) C/C++ Compiler Version 13.10.3077 (18821d06).
+//
+// c:\inetpub\wwwroot\fieldinformer.net\com\xmlcellsetwrapper\testxml\debug\xmlcellsetwrapper.tlh
+//
+// C++ source equivalent of Win32 type library C:\Inetpub\wwwroot\FieldInformer.NET\COM\XMLCellsetWrapper\Debug\XMLCellsetWrapper.dll
+// compiler-generated file created 06/20/03 at 10:49:24 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace XMLCELLSETWRAPPERLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("74d91e29-9464-4e05-96a8-88629252b446"))
+/* LIBID */ __XMLCELLSETWRAPPERLib;
+struct /* coclass */ XMLCellset;
+struct __declspec(uuid("4ebc672a-352f-4d0e-96b0-4025e513ac6d"))
+/* dual interface */ IXMLCellset;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IXMLCellset, __uuidof(IXMLCellset));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("d2456d0d-43cf-4cc1-bbf5-f8347f758990"))
+XMLCellset;
+    // [ default ] interface IXMLCellset
+
+struct __declspec(uuid("4ebc672a-352f-4d0e-96b0-4025e513ac6d"))
+IXMLCellset : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Increment (
+        int * outval );
+    HRESULT BuildCellset (
+        _bstr_t Mdx,
+        _bstr_t ConnString,
+        _bstr_t OutFilePath );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Increment (
+        /*[out]*/ int * outval ) = 0;
+      virtual HRESULT __stdcall raw_BuildCellset (
+        /*[in]*/ BSTR Mdx,
+        /*[in]*/ BSTR ConnString,
+        /*[in]*/ BSTR OutFilePath ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\inetpub\wwwroot\fieldinformer.net\com\xmlcellsetwrapper\testxml\debug\xmlcellsetwrapper.tli"
+
+} // namespace XMLCELLSETWRAPPERLib
+
+#pragma pack(pop)

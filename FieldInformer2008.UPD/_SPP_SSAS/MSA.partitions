@@ -1,0 +1,85 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f60d2b2c-f169-403e-b573-e9cf40ed6121" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>MSA</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>V OLAP MSA</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="6a8c4589-fcd7-4350-b828-92a354f547ee">
+          <ID>V OLAP MSA</ID>
+          <Name>V OLAP MSA</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6c701d99-f3a7-43d5-a87d-45c60b8d32f8">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_MSA</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP MSA DATE</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="bc19abe5-81d1-4d75-9e68-b203a0f2ccb4">
+          <ID>V OLAP MSA DATE</ID>
+          <Name>V OLAP MSA DATE</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c4e83f56-cefc-46ae-b780-1b677db954ea">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_MSA_DATE</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP MSA DISTRIBUTED</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="0104007c-4f63-420c-b9f8-38b8d017df36">
+          <ID>V OLAP MSA DISTRIBUTED</ID>
+          <Name>V OLAP MSA DISTRIBUTED</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="35569f7d-a84d-4f5a-a0bb-6a54ec6793ae">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_MSA_DISTRIBUTED</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP MSA ATTR VALUES HIERARCHY</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="32294c23-7dd6-42dd-87c8-70b950d6a6fd">
+          <ID>V OLAP MSA ATTR VALUES HIERARCHY</ID>
+          <Name>V OLAP MSA ATTR VALUES HIERARCHY</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c4317011-bd8d-4e43-a05e-28976045dc72">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_MSA_ATTR_VALUES_HIERARCHY</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

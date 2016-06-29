@@ -1,0 +1,21 @@
+USE DBSALESPP
+GO
+
+
+
+--------------------- new --------------------
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STORE_SALESFORCE_HIERARCHY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STORE_SALESFORCE_HIERARCHY]
+GO
+
+CREATE TABLE [spp].[OLAP_STORE_SALESFORCE_HIERARCHY] (
+	[SALMSERN] [varchar] (15) NOT NULL ,
+	[SALMNAME] [varchar] (30) NOT NULL ,
+	[SALMGRP] [varchar] (30) NOT NULL ,
+	[COMSERNO] [varchar] (15) NOT NULL ,
+	[COMNAME] [varchar] (50) NULL ,
+	[DUMMY_LINK_HIERARCHY] [int] IDENTITY (1, 1) NOT NULL 
+) ON [PRIMARY]
+GO
+
+----------------------------------------------

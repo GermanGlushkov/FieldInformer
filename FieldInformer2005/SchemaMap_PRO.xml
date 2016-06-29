@@ -1,0 +1,1370 @@
+<?xml version="1.0" standalone="yes"?>
+<SourceSchemaMap xmlns="http://tempuri.org/SourceSchemaMap.xsd">
+  <Map>
+    <SourceUniqueName>Dimension:[Central Chain]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Central Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Central Chain]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Central Chain].[Central Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Central Chain].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Central Chain].[Central Chain].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Central Chain].[Trading Group]</SourceUniqueName>
+    <DestUniqueName>Level:[Central Chain].[Central Chain].[Trading Group]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Central Chain].[Central Chain]</SourceUniqueName>
+    <DestUniqueName>Level:[Central Chain].[Central Chain].[Central Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Central Chain].[All Central Chain]</SourceUniqueName>
+    <DestUniqueName>Member:[Central Chain].[Central Chain].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Chain]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Chain]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Chain].[Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Chain].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Chain].[Chain].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Chain].[Chain]</SourceUniqueName>
+    <DestUniqueName>Level:[Chain].[Chain].[Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Chain].[All Chain]</SourceUniqueName>
+    <DestUniqueName>Member:[Chain].[Chain].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Delivery]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Delivery]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Delivery].[Chain Original]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Delivery].[Chain Original]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Delivery].[Chain Original].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Delivery].[Chain Original].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Delivery].[Chain Original].[Chain]</SourceUniqueName>
+    <DestUniqueName>Level:[Delivery].[Chain Original].[Chain Original]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Delivery].[Chain Original].[All Chain Original]</SourceUniqueName>
+    <DestUniqueName>Member:[Delivery].[Chain Original].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Expand Compound Products]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Expand Compound Products]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Expand Compound Products]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Expand Compound Products].[Expand Compound Products]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Expand Compound Products].[(All)]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Expand Compound Products].[Expand]</SourceUniqueName>
+    <DestUniqueName>Level:[Expand Compound Products].[Expand Compound Products].[Expand]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Expand Compound Products].[All Expand Compound Products]</SourceUniqueName>
+    <DestUniqueName>Member:[Expand Compound Products].[Expand Compound Products].[Expand].&amp;[No]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Measures]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Measures]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Measures]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Measures]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Measures].[MeasuresLevel]</SourceUniqueName>
+    <DestUniqueName>Level:[Measures].[MeasuresLevel]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Average Stock Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Average Stock Time Diff]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Base Selection Semiadd]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Base Selection Semiadd]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Base Selection Time Diff]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Base Selection Delta]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Cover With Base Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Coverage Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Coverage Time Diff]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Coverage With Base Sel Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Coverage With Base Sel Time Diff]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Coverage With Sel Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Coverage With Sel Time Diff]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Case Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Case Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Case Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Case Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Case Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Case]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Cons Pkg Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Cons Pkg Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Cons Pkg Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Cons Pkg Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Cons Pkg Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Cons Pkg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Count]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Count]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary (Pricelist) Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Money Pricelist Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary (Pricelist) Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary (Pricelist) Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary (Pricelist) Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Money Pricelist]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary (Prodprice) Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Money Prod Price Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary (Prodprice) Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary (Prodprice) Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary (Prodprice) Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Money Prod Price]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Money Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Monetary Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Money]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Pallet Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Pallet Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Pallet Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Pallet Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Pallet Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Pallet]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Purchase Price Gross Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Purchase Price Gross Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Purchase Price Gross Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Purchase Price Gross Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Purchase Price Gross Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Purchase Price Net Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Purchase Price Net Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Purchase Price Net Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Purchase Price Net Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Purchase Price Net Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Store Distinct Count]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Store Distinct Count]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Unit Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Unit Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Unit Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Unit Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Unit Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Unit]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Weight Case Gross Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Case Gross]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Weight Cpg Gross Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Cons Pkg Gross]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Delivery Weight Net Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Delivery Weight Net]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Distribution Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Channel Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Channel Time Diff]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Consumer Price Gross Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Consumer Price Gross Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Consumer Price Gross Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Consumer Price Net Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Consumer Price Net Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Consumer Price Net Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Facing Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Facing Time Diff]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Movement Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[DPM Movement Time Diff]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Est Delivery Cover With Base Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Est Delivery Cover With Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Est Delivery Distribution Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Est Order Coverage With Base Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Est Order Coverage With Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Est Order Distribution Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Field Days Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Full Cover With Base Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Full Cover With Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Full Distribution Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Inv Cover With Base Sel Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Inv Cover With Base Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Listing Base Selection Semiadd %]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Listing Base Selection Semiadd %]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Listing Selection Semiadd %]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Listing Selection Semiadd %]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Margin]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Money Gross Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Money Gross Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Money Gross Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Money Gross Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Money Net Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Money Net Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Money Net Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA Money Net Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA VAT Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA VAT Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA VAT Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[MSA VAT Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Case Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Case Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Case Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Case Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Cons Pkg Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Cons Pkg Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Cons Pkg Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Cons Pkg Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Monetary Gross Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Monetary Gross Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Monetary Gross Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Monetary Gross Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Monetary Net Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Monetary Net Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Monetary Net Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Monetary Net Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Pallet Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Pallet Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Pallet Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Pallet Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Unit Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Unit Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Unit Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Order Unit Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Channel Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Channel Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Channel Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Channel Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Cons Pkg Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Cons Pkg Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Cons Pkg Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Cons Pkg Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Facing Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Facing Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Facing Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Planogram Facing Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Case Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Movement Case]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Count]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Count]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Cons Pkg Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Cons Pkg Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Cons Pkg Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Cons Pkg Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Movement Cons Pkg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Money Gross Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Money Gross Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Money Gross Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Money Gross Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Movement Money Gross]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Money Net Avg]</SourceUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Money Net Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Money Net Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Movement Money Net Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Movement Money Net]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Price Gross Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Price Gross Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Price Gross Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Price Gross Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Price Gross Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Price Net Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Price Net Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Price Net Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Price Net Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Price Net Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Unit Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Movement Unit]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Weight Case Gross Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Weight Case Gross]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Weight Cpg Gross Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Weight Cons Pkg Gross]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[POS Weight Net Sum]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[POS Weight Net]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Consumer Price Gross Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Pricelist Consumer Price Gross Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Consumer Price Gross Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Consumer Price Gross Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Consumer Price Net Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Pricelist Consumer Price Net Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Consumer Price Net Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Consumer Price Net Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Purchase Price Gross Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Pricelist Purchase Price Gross Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Purchase Price Gross Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Purchase Price Gross Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Purchase Price Net Avg]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Pricelist Purchase Price Net Avg]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Purchase Price Net Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Pricelist Purchase Price Net Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[ROI]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Frequency]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Length Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Length Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Length Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Length Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Store Distinct Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Travel Time Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Sales Call Travel Time Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Selection Semiadd]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Selection Semiadd]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Selection Time Diff]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Selection Delta]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Stock Cover Days Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Stock Turn Days Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Store Distinct Count]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Store Distinct Count]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Store Turnover]</SourceUniqueName>
+    <DestUniqueName>Measure:[Measures].[Store Turnover]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Suppl Cover With Base Sel Semiadd]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Suppl Cover With Base Sel Semiadd %]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Survey Answer Avg]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Survey Answer Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Survey Answer Max]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Survey Answer Min]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Survey Answer Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Monetary1 Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Monetary2 Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Monetary3 Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Monetary4 Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Money Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Numeric1 Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Numeric2 Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Numeric3 Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Numeric4 Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Target Volume Sum]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Measure:[Measures].[Working Days Count]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Product]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Product]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Product].[Brand]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Product].[Brand]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Brand].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Brand].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Brand].[Brand]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Brand].[Brand]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Brand].[Product]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Brand].[Product]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Product].[Brand].[All Product Brand]</SourceUniqueName>
+    <DestUniqueName>Member:[Product].[Brand].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Product].[Category]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Product].[Category]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Category].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Category].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Category].[Category]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Category].[Category]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Category].[Product]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Category].[Product]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Product].[Category].[All Product Category]</SourceUniqueName>
+    <DestUniqueName>Member:[Product].[Category].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Product].[Salesforce]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Product].[Salesforce]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Salesforce].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Salesforce].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Salesforce].[Salesforce]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Salesforce].[Salesforce]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Salesforce].[Product]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Salesforce].[Product]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Product].[Salesforce].[All Product Salesforce]</SourceUniqueName>
+    <DestUniqueName>Member:[Product].[Salesforce].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Product].[SELECTION CLASS]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Product].[SELECTION CLASS]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[SELECTION CLASS].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[SELECTION CLASS].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[SELECTION CLASS].[SELECTION CLASS]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[SELECTION CLASS].[SELECTION CLASS]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[SELECTION CLASS].[Product]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[SELECTION CLASS].[Product]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Product].[SELECTION CLASS].[All Product SELECTION CLASS]</SourceUniqueName>
+    <DestUniqueName>Member:[Product].[SELECTION CLASS].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Product].[Supplier]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Product].[Supplier]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Supplier].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Supplier].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Supplier].[Supplier]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Supplier].[Supplier]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[Supplier].[Product]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[Supplier].[Product]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Product].[Supplier].[All Product Supplier]</SourceUniqueName>
+    <DestUniqueName>Member:[Product].[Supplier].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Product].[TukoClass]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Product].[TukoClass]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[TukoClass].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[TukoClass].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[TukoClass].[TukoClass]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[TukoClass].[TukoClass]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Product].[TukoClass].[Product]</SourceUniqueName>
+    <DestUniqueName>Level:[Product].[TukoClass].[Product]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Product].[TukoClass].[All Product TukoClass]</SourceUniqueName>
+    <DestUniqueName>Member:[Product].[TukoClass].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Salesforce]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Salesforce]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Salesforce]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Salesforce].[Salesforce]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Salesforce].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Salesforce].[Salesforce].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Salesforce].[Group]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Salesforce].[Salesforce]</SourceUniqueName>
+    <DestUniqueName>Level:[Salesforce].[Salesforce].[Salesforce]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Salesforce].[All Salesforce]</SourceUniqueName>
+    <DestUniqueName>Member:[Salesforce].[Salesforce].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Store]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[Call Address]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[Call Address]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Call Address].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Call Address].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Call Address].[Call Address]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Call Address].[Call Address]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Call Address].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Call Address].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[Call Address].[All Call Address]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[Call Address].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[Central Chain]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[Central Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Central Chain].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Central Chain].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Central Chain].[Trade Group]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Central Chain].[Trade Group]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Central Chain].[Central Chain]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Central Chain].[Central Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Central Chain].[Chain]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Central Chain].[Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Central Chain].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Central Chain].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[Central Chain].[All Central Chain]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[Central Chain].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[Chain]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Chain].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Chain].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Chain].[Chain]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Chain].[Chain]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Chain].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Chain].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[Chain].[All Chain]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[Chain].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[Class]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[Class]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Class].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Class].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Class].[Class]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Class].[Class]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Class].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Class].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[Class].[All Store Class]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[Class].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[COMTEXT1]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[COMTEXT1]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[COMTEXT1].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[COMTEXT1].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[COMTEXT1].[COMTEXT1]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[COMTEXT1].[COMTEXT1]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[COMTEXT1].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[COMTEXT1].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[COMTEXT1].[All Store COMTEXT1]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[COMTEXT1].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[COMTEXT5]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[COMTEXT5]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[COMTEXT5].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[COMTEXT5].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[COMTEXT5].[COMTEXT5]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[COMTEXT5].[COMTEXT5]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[COMTEXT5].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[COMTEXT5].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[COMTEXT5].[All Store COMTEXT5]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[COMTEXT5].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[Postal Code]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[Postal Code]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Postal Code].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Postal Code].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Postal Code].[Postal Code]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Postal Code].[Postal Code]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Postal Code].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Postal Code].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[Postal Code].[All Store Postal Code]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[Postal Code].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[Salesforce]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Salesforce Stores].[Salesforce Stores]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Salesforce].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Salesforce Stores].[Salesforce Stores].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Salesforce].[Group]</SourceUniqueName>
+    <DestUniqueName />
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Salesforce].[Salesforce]</SourceUniqueName>
+    <DestUniqueName>Level:[Salesforce Stores].[Salesforce Stores].[Salesforce]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Salesforce].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Salesforce Stores].[Salesforce Stores].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[Salesforce].[All Salesforce]</SourceUniqueName>
+    <DestUniqueName>Member:[Salesforce Stores].[Salesforce Stores].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[Turnover Class]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[Turnover Class]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Turnover Class].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Turnover Class].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Turnover Class].[Turnover Class]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Turnover Class].[Turnover Class]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Turnover Class].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Turnover Class].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[Turnover Class].[All Turnover Class]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[Turnover Class].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Store].[Type]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Store].[Type]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Type].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Type].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Type].[Store Type]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Type].[Type]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Store].[Type].[Store]</SourceUniqueName>
+    <DestUniqueName>Level:[Store].[Type].[Store]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Store].[Type].[All Store Type]</SourceUniqueName>
+    <DestUniqueName>Member:[Store].[Type].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Time]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Time]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Time].[Monthly]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Time].[Monthly]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Monthly].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Monthly].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Monthly].[Year]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Monthly].[Year]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Monthly].[Month]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Monthly].[Month]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Monthly].[Date]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Monthly].[Date]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Time].[Monthly].[All Time Monthly]</SourceUniqueName>
+    <DestUniqueName>Member:[Time].[Monthly].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Time].[Salesperiod]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Time].[Salesperiod]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Salesperiod].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Salesperiod].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Salesperiod].[Salesperiod]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Salesperiod].[Salesperiod]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Salesperiod].[Date]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Salesperiod].[Date]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Time].[Salesperiod].[All Salesperiod]</SourceUniqueName>
+    <DestUniqueName>Member:[Time].[Salesperiod].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Time].[Weekly]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Time].[Weekly]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Weekly].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Weekly].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Weekly].[Year]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Weekly].[Year]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Weekly].[Week]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Weekly].[Week]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Time].[Weekly].[Date]</SourceUniqueName>
+    <DestUniqueName>Level:[Time].[Weekly].[Date]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Time].[Weekly].[All Time Weekly]</SourceUniqueName>
+    <DestUniqueName>Member:[Time].[Weekly].[All]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Dimension:[Wholesaler]</SourceUniqueName>
+    <DestUniqueName>Dimension:[Wholesaler]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Hierarchy:[Wholesaler]</SourceUniqueName>
+    <DestUniqueName>Hierarchy:[Wholesaler].[Wholesaler]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Wholesaler].[(All)]</SourceUniqueName>
+    <DestUniqueName>Level:[Wholesaler].[Wholesaler].[(All)]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Level:[Wholesaler].[Wholesaler]</SourceUniqueName>
+    <DestUniqueName>Level:[Wholesaler].[Wholesaler].[Wholesaler]</DestUniqueName>
+  </Map>
+  <Map>
+    <SourceUniqueName>Member:[Wholesaler].[All Wholesaler]</SourceUniqueName>
+    <DestUniqueName>Member:[Wholesaler].[Wholesaler].[All]</DestUniqueName>
+  </Map>
+</SourceSchemaMap>

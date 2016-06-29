@@ -1,0 +1,6 @@
+1. User "ASPNET" must have write access to the specified logs directory if text logging is enabled.
+
+2. The unit tests need a SMTP server with alias for fakedomain.net.
+
+3. To run All of the Nunit tests the Host smtp server needs to accept this user/password: testuser/testuser.
+

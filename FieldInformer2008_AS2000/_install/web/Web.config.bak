@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<configuration>
+	<configSections>
+		<section name="FIConfig" type="FI.Common.AppConfig,FI.Common"/>
+		<section name="IPAccess" type="FI.Common.AppConfig,FI.Common"/>
+	</configSections>
+	<!--
+ <IPAccess>
+		<add key="foodmart" value=" 10.3.0.175; 10.3.0.172-10.3.0.173;10.3.0.170-10.3.0.172"/>
+ </IPAccess>
+ -->
+	<FIConfig>
+
+    <add key="AppName" value="FieldInformer"/>
+    <add key="EventLogName" value="FieldInformer.NET"/>
+    <add key="EventLogSource" value="Web"/>
+
+    <add key="TempDir" value="C:\Inetpub\wwwroot\FieldInformer2008_AS2000\UI.Web\Temp"/>
+    <add key="TempVirtualDir" value="Temp"/>
+
+    <add key="SmtpSender" value="eForce@fieldforce.com"/>
+		<add key="SmtpServer" value="10.2.0.1"/>
+    <add key="SmtpPort" value="25"/>
+		<add key="SmtpUserName" value="eForce"/>
+		<add key="SmtpPassword" value="eForceTvojuMat"/>
+    
+		<add key="DataAccessUrl" value="tcp://localhost:8070"/>
+    
+		<add key="HideCustomReports" value="false"/>
+		<add key="AuditPageHits" value="true"/>
+		<add key="IsDebugMode" value="true"/>
+		<add key="ReportRunOnClick" value="false"/>
+    
+		<add key="NumberFormatReplaceComma" value=""/>
+		<add key="NumberFormatReplaceDot" value=""/>
+		<add key="NumberFormatReplaceSpace" value=""/>
+    
+	</FIConfig>
+	<system.web>
+		<!--  DYNAMIC DEBUG COMPILATION
+          Set compilation debug="true" to enable ASPX debugging.  Otherwise, setting this value to
+          false will improve runtime performance of this application. 
+          Set compilation debug="true" to insert debugging symbols (.pdb information)
+          into the compiled page. Because this creates a larger file that executes
+          more slowly, you should set this value to true only when debugging and to
+          false at all other times. For more information, refer to the documentation about
+          debugging ASP .NET files.
+    -->
+		<identity impersonate="true"/>
+		<compilation defaultLanguage="c#" debug="true">
+			<assemblies>
+				<add assembly="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+				<add assembly="System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+				<add assembly="System.Messaging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+				<add assembly="System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+				<add assembly="DevExpress.Charts.v8.1.Core, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1"/>
+				<add assembly="DevExpress.Data.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1"/>
+				<add assembly="DevExpress.Utils.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1"/>
+				<add assembly="DevExpress.Web.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1"/>
+				<add assembly="DevExpress.XtraCharts.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1"/>
+				<add assembly="DevExpress.XtraCharts.v8.1.UI, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1"/>
+				<add assembly="DevExpress.XtraCharts.v8.1.Web, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1"/>
+				<add assembly="DevExpress.XtraEditors.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1"/></assemblies>
+			<!--
+			<compilers>
+				<compiler language="c#" type="Microsoft.CSharp.CSharpCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" extension=".cs" compilerOptions="/d:DEBUG;TRACE"/>
+      </compilers>
+      -->
+		</compilation>
+		<!--  CUSTOM ERROR MESSAGES
+          Set customError mode values to control the display of user-friendly 
+          error messages to users instead of error details (including a stack trace):
+
+          "On" Always display custom (friendly) messages  
+          "Off" Always display detailed ASP.NET error information.
+          "RemoteOnly" Display custom (friendly) messages only to users not running 
+          on the local Web server. This setting is recommended for security purposes, so 
+          that you do not display application detail information to remote clients.
+    -->
+		<httpRuntime executionTimeout="600" maxRequestLength="4096"
+			useFullyQualifiedRedirectUrl="false"
+			minFreeThreads="8"
+			minLocalRequestFreeThreads="4"
+			appRequestQueueLimit="100" />
+	
+		<customErrors mode="Off"/>
+		<!--  AUTHENTICATION 
+          This section sets the authentication policies of the application. Possible modes are "Windows", "Forms", 
+          "Passport" and "None"
+    -->
+		<authentication mode="Windows"/>
+		<!--  APPLICATION-LEVEL TRACE LOGGING
+          Application-level tracing enables trace log output for every page within an application. 
+          Set trace enabled="true" to enable application trace logging.  If pageOutput="true", the
+          trace information will be displayed at the bottom of each page.  Otherwise, you can view the 
+          application trace log by browsing the "trace.axd" page from your web application
+          root. 
+    -->
+		<trace enabled="false" requestLimit="10" pageOutput="false" traceMode="SortByTime" localOnly="true"/>
+		<!--  SESSION STATE SETTINGS
+          By default ASP .NET uses cookies to identify which requests belong to a particular session. 
+          If cookies are not available, a session can be tracked by adding a session identifier to the URL. 
+          To disable cookies, set sessionState cookieless="true".
+    -->
+		<sessionState mode="InProc" stateConnectionString="tcpip=127.0.0.1:42424" sqlConnectionString="data source=127.0.0.1;user id=sa;password=" cookieless="false" timeout="20"/>
+		<!--  GLOBALIZATION
+          This section sets the globalization settings of the application. 
+    -->
+		<globalization requestEncoding="utf-8" responseEncoding="utf-8"/>
+		<xhtmlConformance mode="Legacy"/></system.web>
+</configuration>
+<!--
+
+VERSION INFO
+
+== 1.0.1 =============================
+	= fixed HIDE_NONEMPTY option setting
+	= format of measures using MeasureWrapper
+
+== 1.0.2 =============================
+	= storecheck reports with selection and base selection
+	= fixed undo bug in storecheck report
+	= installation bugs fixed (sql scripts)
+	= All level recognition fixed
+	
+== 1.0.3 ============================
+	= when user being deleted,  delete shared reports is correct
+	= new sharing logic (internal)
+	= report state problems (undo invalid states and other problems) fixed
+
+== 1.0.4 ============================
+	= member selections in olap design fixed
+	= grid wildcards fixed
+	= session audit added
+
+== 1.0.5 ============================
+	= delete shared report witch child states fixed
+
+== 1.0.6 ============================
+	= distribution of storecheck report fixed
+	= export in storecheck report fixed
+	= version caption changed
+	= logs in Windows EventLog
+	= dataset serialzation fixed
+	= drill-down fixed
+	= some slow order+msa reports fixed (cubes changed)
+
+== 1.0.7 ============================
+	= olap desgin tab - update button - fixed removal of last calc measure
+	= all exceptions logged in EventLog
+	= export to excel numeric field problem fixed
+	= service processors are loaded on startup, "thread aborted exception" fixed.
+	= installation - (no data in [MSA].MSEALWTYPE and [Sales Call].SALCTYPE dimensins fixed)
+
+== 1.0.8 ============================
+	= format measure - multiple rename bug fixed
+	= 2nd attemempt to reconnect on olap error
+	= 1 hour processing timeout (for 1 object) changed to 4 hours
+	= incorrect calc of expanded case vol fixed
+
+== 1.0.9 ============================
+	= POS weight measures added
+	= truncated data in OLAP_STORE and OLAP_WHOLESLER sprocs (no release)
+	
+== 1.1.0 ============================
+	= "Cover with Selection Semiadd %" measure added
+	= finnish first week style  calulation
+	= product supplier field length fixed
+		
+== 1.2.0 ============================
+	= dispatch file format option (CSV, HTML)
+	= color schemes
+	= auto-select member children		
+	= set default filter button in filter control (remove button)
+	= open-close advanced properties
+	= new calc measure - inherited NULL
+	= backup-restore cubes
+	= dimension product name with code
+		
+== 1.2.5 ============================
+	= members by default sorted in hierarchy order (HIERARCHIZE) (web)
+	= open nodes bug fixed (were closed after re-opening report) (web)
+	= aggregated and formatted members display bug fixed ( wasn't displayed in exported olap reports) (web)
+	= report always opens in "Edit" mode, not "Table" mode (web)
+	= more user-friendly UI to add calculated members (web)
+	= measure to measure arithmetic operations ( -, + , /, * , inherite NULL) (web)
+	= "SharingSubscriber" reports can now be changed, but not not saved (copy can be saved) (web)
+	= "Dispatch" button renamed back to "Distribute" (web)
+	= product price in delivery views is changed  from "per case" to "per cons. pkg" (sql)
+	= selection and base selection calculation problems fixed ( checking dates when detecting chain-company-pricelist dependency) (sql)
+	= store chains and central chains resolved considering today date (sql)	
+
+== 1.2.6 ============================
+	= new measures - POS Unit Sum, POS Case Sum
+						
+== 1.2.7 ============================
+	= Every olap databse has it's own configurable set of query processors ( 3 processors for each database at the moment). One processor might be busy handling scheduled reports, at the same time others can handle online requests.
+	= Report distribution queue management (add, remove pending, cancel executing).
+	= Report execution time is measured and logged. 
+	= Report caching improved (in case it should be sent to several email addresses).
+	= Queue handling logic - reports with least logged execution time handled first.
+	
+== 1.2.8 (20.03.2007)============================
+	= Storecheck reports "DataSource" configuration -.Deliveries, Sales, or both
+	= HideCustomReports config option hides Custom MDX, Custom SQL and Storecheck report tabs (Deon)
+	= ReportRunOnClick config options shows whether click on report name in list will open report in "Table" or "Edit" mode
+	= Cube name with spaces  problem fixed
+
+== 1.2.9 (16.05.2007)============================
+	= Some firefox compatibility problems fixed
+	= All olap members can be formatted (name + umber format). Previously it was possible only for measures.
+	= Time calculated members can handle semiadditive members (VIRTUAL cube)
+	
+== 1.2.10 (01.10.2007)============================	
+	= SMTP authentication supported
+	= OlapProcessor info UI
+	= Improved Distribution Management UI
+  
+== 1.3.0 (01.08.2008)============================	
+  = Web components running on asp.net 2.0
+  = DevExpress chart library
+
+
+-->

@@ -1,0 +1,80 @@
+USE DBFINF
+GO
+
+
+IF NOT EXISTS (select * from INFORMATION_SCHEMA.COLUMNS WHERE 
+		TABLE_SCHEMA = 'dbo' AND 
+		TABLE_NAME = 'tusers' and 
+		COLUMN_NAME = 'css_style') 
+BEGIN 
+		ALTER TABLE dbo.tusers 
+			ADD css_style tinyint NULL
+END
+GO
+
+
+IF NOT EXISTS (select * from INFORMATION_SCHEMA.COLUMNS WHERE 
+		TABLE_SCHEMA = 'dbo' AND 
+		TABLE_NAME = 'tdistribution' and 
+		COLUMN_NAME = 'format') 
+BEGIN 
+		ALTER TABLE dbo.tdistribution 
+			ADD [format] tinyint NULL
+
+		UPDATE dbo.tdistribution SET [format]=0
+
+		ALTER TABLE dbo.tdistribution
+			ALTER COLUMN [format]tinyint NOT NULL
+END		
+GO
+
+
+IF NOT EXISTS (select * from INFORMATION_SCHEMA.COLUMNS WHERE 
+		TABLE_SCHEMA = 'dbo' AND 
+		TABLE_NAME = 'tdistribution_log' and 
+		COLUMN_NAME = 'duration') 
+BEGIN 
+		ALTER TABLE dbo.tdistribution_log 
+			ADD duration int NULL
+END
+GO	
+
+
+
+IF NOT EXISTS (select * from INFORMATION_SCHEMA.COLUMNS WHERE 
+		TABLE_SCHEMA = 'dbo' AND 
+		TABLE_NAME = 'tdistribution_log' and 
+		COLUMN_NAME = 'taskguid') 
+BEGIN 
+		ALTER TABLE dbo.tdistribution_log 
+			ADD taskguid uniqueidentifier NULL
+END
+GO	
+
+
+
+IF NOT EXISTS (select * from INFORMATION_SCHEMA.COLUMNS WHERE 
+		TABLE_SCHEMA = 'dbo' AND 
+		TABLE_NAME = 't_storecheck_reports' and 
+		COLUMN_NAME = 'datasource') 
+BEGIN 
+		ALTER TABLE dbo.t_storecheck_reports 
+			ADD datasource tinyint NULL
+END
+GO	
+
+
+IF NOT EXISTS (select * from INFORMATION_SCHEMA.COLUMNS WHERE 
+		TABLE_SCHEMA = 'dbo' AND 
+		TABLE_NAME = 't_storecheck_reports_state' and 
+		COLUMN_NAME = 'datasource') 
+BEGIN 
+		ALTER TABLE dbo.t_storecheck_reports_state 
+			ADD datasource tinyint NULL
+END
+GO	
+
+
+
+
+

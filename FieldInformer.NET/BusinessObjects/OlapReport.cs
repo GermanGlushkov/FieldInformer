@@ -1,0 +1,1047 @@
+using System;
+using System.Collections;
+using System.Data;
+using FI.Common.Data;
+using System.Runtime.Remoting;
+using System.Runtime.Remoting.Messaging;
+using System.Xml;
+using FI.BusinessObjects.Olap;
+
+namespace FI.BusinessObjects
+{
+	/// <summary>
+	/// Summary description for OlapReport.
+	/// </summary>
+	public class OlapReport:Report
+	{
+
+		public enum AggregateType
+		{
+			SUM,
+			MIN,
+			MAX,
+			AVG,
+			COUNT
+		}
+
+		public enum RatioType
+		{
+			SUM,
+			MIN,
+			MAX,
+			AVG,
+			COUNT,
+			PARENT_MEMBER,
+			ALL_MEMBER,
+			TO_MEASURE
+		}
+
+
+		public enum GraphTypeEnum
+		{
+			BarVertical=0,
+			BarHorizontal=1,
+			BarStacked=2,
+			LineHorizontal=3,
+			Pie=4
+		}
+
+		[Flags]
+		public enum GraphOptionsEnum
+		{
+			None=0,
+			ShowSeries=1,
+			ShowCategories=2,
+			ShowValues=4,
+			SetScaling=8
+		}
+
+		//private Olap.Hierarchies _hierarchies=new Olap.Hierarchies();
+		protected Schema _schema=null;
+		protected internal Olap.Axes _axes=null;
+
+		//protected internal Olap.
+		private bool _pivotInProgress=false;
+		protected internal Cellset _cellset=new Cellset();
+		protected internal string _mdx="";
+		protected internal GraphTypeEnum _graphType=GraphTypeEnum.BarVertical;
+		protected internal GraphOptionsEnum _graphOptions=GraphOptionsEnum.None;
+		
+
+
+		internal OlapReport(decimal ID , User Owner):base(ID,Owner)
+		{
+			_schema=new Schema();
+			_axes=new Olap.Axes(this.Schema);
+
+			this.Axes.BeforeChangeItem+=new EventHandler(OnBeforeChangeAxesItem);
+
+			if(ID==0) //if new
+			{
+				FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+				string ReportXml="<R></R>";
+				string OpenNodesXml="<NODES></NODES>";
+				_id=dacObj.InsertReport(_owner.ID , 0 , 0 , "New Report" , "" , this.IsSelected , (byte)this.GraphType , (int)this.GraphOptions , ReportXml , OpenNodesXml);
+
+				_isProxy=false;
+				_isDirty=false;
+			}
+		}
+
+
+		// Destructor
+		/*
+		~OlapReport()
+		{
+			try
+			{
+				this.EndExecute();
+			}
+			catch
+			{
+				// do nothing
+			}
+		}
+		*/
+
+
+		private void OnBeforeChangeAxesItem(object sender, EventArgs e)
+		{			
+			OnChangeReport( !_pivotInProgress );
+		}
+
+
+		public Schema Schema
+		{
+			get {return _schema;}
+		}
+
+		public Cellset Cellset
+		{
+			get {return _cellset;}
+		}
+
+		override protected internal void _SaveHeader()
+		{
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+			dacObj.UpdateReportHeader(this.Owner.ID , this.ID , this._parentReportId , (byte)this.SharingStatus , this.Name , this.Description , this.IsSelected, this.SaveOpenNodesToXml() , (byte)this.GraphType , (int)this.GraphOptions);
+		}
+
+
+		override public void LoadHeader()
+		{
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+			FI.Common.Data.FIDataTable dataTable=dacObj.ReadReportHeader(this.Owner.ID, this.ID);
+
+			this._parentReportId=(decimal)dataTable.Rows[0]["parent_report_id"];
+			this._name=(string)dataTable.Rows[0]["name"];
+			this._description=(string)dataTable.Rows[0]["description"];
+			this._isSelected=(bool)dataTable.Rows[0]["is_selected"];
+			this._sharing=(Report.SharingEnum)((byte)dataTable.Rows[0]["sharing_status"]);
+			this._maxSubscriberSharing=(Report.SharingEnum)((byte)dataTable.Rows[0]["max_subscriber_sharing_status"]);
+
+			string openNodesXml=(string)dataTable.Rows[0]["open_nodes"];
+		}
+
+
+		override protected internal Report _Clone(string Name , string Description)
+		{
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+			string ReportXml=this.SaveToXml();
+			string OpenNodesXml=this.SaveOpenNodesToXml();
+
+			decimal newId=dacObj.InsertReport(_owner.ID , 0 , 0 , Name , Description , false , (byte)this.GraphType , (int)this.GraphOptions , ReportXml , OpenNodesXml);
+			return _owner.ReportSystem.GetReport(newId , typeof(OlapReport) , false);
+		}
+
+		override protected internal void _Open()
+		{
+			short sharing=0;
+			short maxSubscriberSharing=0;
+			string reportXml="";
+			string openNodesXml="";
+			string schemaXml="";
+			byte graphType=0;
+			int graphOptions=0;
+
+			//bool fakeIsSelected=false;
+
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+			dacObj.ReadReport(_owner.ID , this.ID, 
+				ref this._parentReportId,
+				ref this._name , 
+				ref this._description , 
+				ref sharing,
+				ref maxSubscriberSharing,
+				ref this._isSelected, //ref fakeIsSelected,
+				ref graphType,
+				ref graphOptions,
+				ref Schema.Server,
+				ref Schema.Database,
+				ref Schema.Cube,
+				ref reportXml , 
+				ref schemaXml ,
+				ref openNodesXml,
+				ref _undoStateCount,
+				ref _redoStateCount);
+
+			this._sharing=(Report.SharingEnum)sharing;
+			this._maxSubscriberSharing=(Report.SharingEnum)maxSubscriberSharing;
+			this._graphType=(GraphTypeEnum)graphType;
+			this._graphOptions=(GraphOptionsEnum)graphOptions;
+
+			//dacObj.UpdateReportHeader(_owner.ID , this.ID, this._parentReportId , (byte)this.SharingStatus , this.Name , this.Description , this.IsSelected , 0, "");
+
+			LoadOpenNodesFromXml(openNodesXml); // before other loads, cause then other loads will fetch members depending on open nodes
+			LoadFromXmlSchema(schemaXml);
+			LoadFromXml(reportXml);
+		}
+
+		
+		override protected internal void _Close(bool SaveFromState)
+		{
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+
+			//dacObj.UpdateReportHeader(_owner.ID , this._id , _parentReportId, (byte)this._sharing , _name , _description , _isSelected , (byte)_graphType , _graphOptions.ToString() );
+
+			if(SaveFromState)
+				dacObj.SaveReport(_owner.ID , this._id  , SaveToXml(), this.SaveOpenNodesToXml() );
+
+//			// always save on close, cause open nodes could've been changed
+//			dacObj.SaveReport(_owner.ID , this._id  , SaveToXml(), this.SaveOpenNodesToXml() );
+		}
+
+
+
+		override protected internal void _LoadState(short StateCode)
+		{
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+			string reportXml=dacObj.LoadState(this.ID , StateCode , ref this._undoStateCount , ref this._redoStateCount);
+			LoadFromXml(reportXml);
+		}
+
+
+
+		override protected internal void _SaveState()
+		{
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+			dacObj.SaveState(this.ID , this.MaxStateCount , SaveToXml(), ref this._undoStateCount);
+		}
+
+
+		
+		override protected internal void _DeleteStates()
+		{
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+			dacObj.DeleteReportStates(this.ID);
+		}
+
+
+		override protected internal void _ClearResult()
+		{
+			_asyncResult=null;
+			//_cellsetData=null;
+			_cellset.Clear();
+			_mdx="";
+		}
+
+
+		override protected internal void _Execute()
+		{
+			BeginExecute(); 
+			ExecuteWaitHandle.WaitOne();
+			EndExecute(); 
+		}
+
+
+		
+		override protected internal void _Delete(bool DenyShared)
+		{
+			FI.DataAccess.OlapReports dacObj=DataAccessFactory.Instance.GetOlapReportsDA();
+			dacObj.DeleteReport(_owner.ID , this.ID, DenyShared);
+		}
+
+
+
+
+
+		public override string Export(ExportFormat Format)
+		{
+			if(this.State!=StateEnum.Executed)
+				throw new Exception("Report is not executed");
+
+			/*
+			if(this.CellsetData==null)
+				return "Cellset is null";
+			*/
+
+			if(Format==ExportFormat.HTML)
+				return this.ExportToHTML();
+			else if(Format==ExportFormat.CSV)
+				return this.ExportToCSV();
+			else
+				throw new NotSupportedException();
+		}
+
+
+		public string BuildMdx()
+		{
+
+			//check order tuple
+			System.Text.StringBuilder sb=new System.Text.StringBuilder();
+
+			string axis0defs=Axes[0].MDXDefinitions;
+			string axis1defs=Axes[1].MDXDefinitions;
+			string axis2defs=Axes[2].MDXDefinitions;
+			if(axis0defs!="" || axis1defs!="" || axis2defs!="")
+			{
+				sb.Append("WITH");
+				sb.Append(axis0defs);
+				sb.Append(axis1defs);
+				sb.Append(axis2defs);
+			}
+
+			string cube=Schema.Cube;
+			if(cube.StartsWith("[")==false)
+				cube="[" + Schema.Cube + "]";
+
+			sb.Append("\r\n SELECT \r\n");
+			sb.Append(Axes[0].MDXClause);
+			sb.Append(",\r\n");
+			sb.Append(Axes[1].MDXClause);
+			sb.Append("\r\n FROM ");
+			sb.Append(cube);
+			sb.Append("\r\n WHERE ");
+			sb.Append(Axes[2].MDXClause);
+
+			_mdx=sb.ToString();
+
+			return _mdx;
+		}
+
+
+		public string Mdx
+		{
+			get {return _mdx; }
+		}
+
+
+		// ------------- async execute ------------- 
+		private delegate string ExecuteDelegate(string Sertver, string Database, string Mdx, string TaskGuid, string TaskTag);
+		private ExecuteDelegate _asyncDelegate=null;
+		private IAsyncResult _asyncResult=null;
+		private Guid _olapTaskGuid;
+
+		public Guid OlapTaskGuid
+		{
+			get { return _olapTaskGuid; }
+		}
+
+		public void Execute(Guid OlapTaskGuid)
+		{
+			if(this.State==StateEnum.Executing)
+				return;
+			if(OlapTaskGuid==Guid.Empty)
+				throw new Exception("OlapTaskGuid cannot be empty");
+
+			_olapTaskGuid=OlapTaskGuid;
+			this.Execute();
+		}
+
+		protected internal override void _BeginExecute()
+		{
+			if (_mdx=="")
+				BuildMdx();
+
+			if(_olapTaskGuid==Guid.Empty)
+				_olapTaskGuid=System.Guid.NewGuid();
+			string taskTag=string.Format("User: {0} ({1}), OlapReport: {2} ({3})",
+				this._owner.Name, this._owner.ID, this.Name, this.ID);
+
+			FI.DataAccess.OlapSystem dacOlapSystem=DataAccessFactory.Instance.GetOlapSystemDA();
+			_asyncDelegate=new ExecuteDelegate(dacOlapSystem.BuildCellset);
+			_asyncResult=_asyncDelegate.BeginInvoke(Schema.Server , Schema.Database ,  _mdx,  _olapTaskGuid.ToString() , taskTag, null , null);
+		}
+
+		protected internal override void _CancelExecute()
+		{
+			if(_asyncResult==null || _asyncResult.IsCompleted==true)		
+				return; // nothing to cancel			
+
+			if(_olapTaskGuid==Guid.Empty)
+				return;
+
+			FI.DataAccess.OlapSystem dacOlapSystem=DataAccessFactory.Instance.GetOlapSystemDA();
+			dacOlapSystem.CancelOlapCommand(_olapTaskGuid.ToString());
+
+			_asyncResult=null;
+			_olapTaskGuid=Guid.Empty;
+		}
+
+		protected internal override void _EndExecute()
+		{
+			if(_asyncResult==null)
+				return; // means either not started or already executed
+
+			else if(_asyncResult.IsCompleted==false)
+				return; //Cannot proceed with EndExecute, report is still executing
+
+			try
+			{
+				string data=_asyncDelegate.EndInvoke( _asyncResult);
+				_cellset.LoadCellset(data);
+			}			
+			catch(Exception exc)
+			{						
+				_asyncResult=null;
+				_olapTaskGuid=Guid.Empty;
+				_state=Report.StateEnum.Open;
+
+				throw exc;
+			}
+
+			_asyncResult=null;
+			_olapTaskGuid=Guid.Empty;
+			_state=Report.StateEnum.Executed;
+		}
+
+
+		public System.Threading.WaitHandle ExecuteWaitHandle
+		{
+			get 
+			{ 
+				if(_asyncResult==null)
+					return null;
+				else
+					return _asyncResult.AsyncWaitHandle; 
+			}
+		}
+
+
+		public override FI.BusinessObjects.Report.StateEnum State
+		{
+			get
+			{
+				// try end execute
+				this.EndExecute();
+
+				return _state;
+			}
+		}
+
+		// ------------- async execute ------------- 
+
+
+		public void Pivot()
+		{
+			_pivotInProgress=true;
+
+			//pivot axes
+			_axes.Pivot();
+
+			//pivot cellset
+			_cellset.Pivot();
+
+			_pivotInProgress=false;
+		}
+
+		/*
+		public Olap.Hierarchies Hierarchies
+		{
+			get{return _hierarchies;}
+		}
+		*/
+
+
+		public Olap.Axes Axes
+		{
+			get{return _axes;}
+		}
+
+
+
+		public GraphTypeEnum GraphType
+		{
+			get{return _graphType;}
+			set{_graphType=value;}
+		}
+
+		public GraphOptionsEnum GraphOptions
+		{
+			get{return _graphOptions;}
+			set{_graphOptions=value;}
+		}
+
+		public void DrillUp(CellsetMember[] cstMems)
+		{
+			if(cstMems==null || cstMems.Length==0)
+				return;
+			
+			foreach(Hierarchy hier in this.Axes[0].Hierarchies)
+				hier.DrillUp(cstMems); // will understand if some members are not from hier
+			
+			foreach(Hierarchy hier in this.Axes[1].Hierarchies)
+				hier.DrillUp(cstMems); // will understand if some members are not from hier		
+		}
+
+
+		public void DrillDown(CellsetMember[] cstMems)
+		{
+			if(cstMems==null || cstMems.Length==0)
+				return;
+			
+			foreach(Hierarchy hier in this.Axes[0].Hierarchies)
+				hier.DrillDown(cstMems, true); // will understand if some members are not from hier
+			
+			foreach(Hierarchy hier in this.Axes[1].Hierarchies)
+				hier.DrillDown(cstMems, true); // will understand if some members are not from hier		
+		}
+
+
+		private void LoadFromXmlSchema(string schemaXml)
+		{
+			// cleanup schema
+			Schema.DiscardSchema();
+
+			XmlDocument doc=new XmlDocument();
+			doc.LoadXml(schemaXml);
+			foreach(XmlElement xmlEl in doc.FirstChild.ChildNodes) //dimensions
+			{
+				Olap.Dimension dim=new Olap.Dimension(this.Schema);
+				dim.LoadFromXmlSchema(xmlEl , this.Axes[2]);
+			}
+		}
+
+
+		private void LoadFromXml(string reportXml)
+		{
+			//remove hierarchies from axes and cleanup
+			foreach(Hierarchy hier in Schema.Hierarchies)
+				hier.Axis=this.Axes[2];
+
+			// load
+			XmlDocument doc=new XmlDocument();
+			doc.LoadXml(reportXml);
+			foreach(XmlElement axisEl in doc.FirstChild.ChildNodes) //axes
+			{
+				short axisOrdinal=short.Parse(axisEl.GetAttribute("ORD"));
+				this.Axes[axisOrdinal].LoadFromXml(axisEl);
+			}
+		}
+
+
+
+		internal string SaveToXml()
+		{
+			XmlDocument doc=new XmlDocument();
+			XmlElement rootEl=doc.CreateElement("R");
+			doc.AppendChild(rootEl);
+
+			XmlElement childEl=doc.CreateElement("A");
+			this.Axes[0].SaveToXml(childEl , doc);
+			rootEl.AppendChild(childEl);
+
+			childEl=doc.CreateElement("A");
+			this.Axes[1].SaveToXml(childEl , doc);
+			rootEl.AppendChild(childEl);
+
+			childEl=doc.CreateElement("A");
+			this.Axes[2].SaveToXml(childEl , doc);
+			rootEl.AppendChild(childEl);
+
+			//debug
+			//doc.Save(@"c:\test.txt");
+			return doc.InnerXml;
+		}
+
+
+			
+		private void LoadOpenNodesFromXml(string openNodesXml)
+		{
+			// discard open nodes
+			Schema.OpenNodes.Clear();
+
+			// load
+			XmlDocument doc=new XmlDocument();
+			doc.LoadXml(openNodesXml);
+			foreach(XmlElement onEl in doc.GetElementsByTagName("ON"))
+			{
+				string onUN=onEl.GetAttribute("UN");
+				Schema.OpenNodes.Add(onUN);
+			}
+		}
+
+		private string SaveOpenNodesToXml()
+		{
+			XmlDocument doc=new XmlDocument();
+			XmlElement rootEl=doc.CreateElement("NODES");
+			doc.AppendChild(rootEl);
+
+			foreach(string openNodeUn in Schema.OpenNodes)
+			{
+				XmlElement onEl=doc.CreateElement("ON");
+				onEl.SetAttribute("UN" , openNodeUn);
+				rootEl.AppendChild(onEl);
+			}
+
+			return doc.InnerXml;
+		}
+
+
+		public int GetOrderPosition(Axis axis)
+		{
+
+			if(axis.Ordinal==2 || this.Cellset.IsValid==false)
+				return -1;
+
+			if(axis.Ordinal==0)
+				for(int i=0;i<this.Cellset.Axis0PosCount;i++)
+				{
+					bool isMatch=false;
+					for(int j=0;j<this.Cellset.Axis0TupleMemCount;j++)
+					{
+						string orderTupleMember=axis.Hierarchies[j].OrderTupleMember;
+						if(orderTupleMember==null)
+							return -1;
+						if(this.Cellset.GetCellsetMember(0,j,i).UniqueName==orderTupleMember)
+							isMatch=true;
+						else
+						{
+							isMatch=false;
+							break;
+						}
+					}
+
+					if(isMatch)
+						return i;
+				}
+			else if(axis.Ordinal==1)
+				for(int i=0;i<this.Cellset.Axis1PosCount;i++)
+				{
+					bool isMatch=false;
+					for(int j=0;j<this.Cellset.Axis1TupleMemCount;j++)
+					{
+						string orderTupleMember=axis.Hierarchies[j].OrderTupleMember;
+						if(orderTupleMember==null)
+							return -1;
+						if(this.Cellset.GetCellsetMember(1,j,i).UniqueName==orderTupleMember)
+							isMatch=true;
+						else
+						{
+							isMatch=false;
+							break;
+						}
+					}
+
+					if(isMatch)
+						return i;
+				}
+
+			return -1;
+		}
+
+
+
+
+		private string ExportToHTML()
+		{
+			System.Text.StringBuilder sb=new System.Text.StringBuilder();
+
+			// style
+			sb.Append(@"
+			<html><head><meta charset='utf-8'></meta>
+			<style>
+			.tbl1_H {
+				text-align:left; PADDING-RIGHT: 2pt; border: solid 1px #aaaaaa; PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: black;   font-face: tahoma ; ; padding-top: 1px ; padding-bottom: 1px; BACKGROUND-COLOR: #e0e0e0; 
+				}
+			.tbl1_H1 {
+				text-align:left; PADDING-RIGHT: 2pt; border: solid 1px #aaaaaa; PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: black; FONT-WEIGHT: bold;   font-face: tahoma ; ; padding-top: 1px ; padding-bottom: 1px; BACKGROUND-COLOR: #e0e0e0; 
+				}
+
+			.tbl1_H2 {
+				text-align:center; PADDING-RIGHT: 2pt; border: solid 1px #aaaaaa;  PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: black;   font-face: tahoma ; padding-top: 1px ; padding-bottom: 1px; BACKGROUND-COLOR: #e0e0e0; 
+				}
+			.tbl1_H3 {
+				text-align:center; PADDING-RIGHT: 2pt; border: solid 1px #aaaaaa; PADDING-LEFT: 2pt; FONT-SIZE: 8pt;  COLOR: black; FONT-WEIGHT: bold;   font-face: tahoma ; ; padding-top: 1px ; padding-bottom: 1px; BACKGROUND-COLOR: #e0e0e0; 
+				}
+
+			.tbl1_HC {
+				background-color:#FFFFC0; FONT-SIZE: 8pt; font-face: tahoma;PADDING-LEFT: 2pt;PADDING-RIGHT: 2pt;
+				}
+
+			.tbl1_T {
+				border-collapse:collapse; 
+				}
+			.tbl1_C {
+				text-align:right; PADDING-RIGHT: 2pt; PADDING-LEFT: 2pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: white; font-face: tahoma; padding-top: 1px ; padding-bottom: 1px; border: solid 1px #888888;
+				}
+			.tbl1_C1 {
+				text-align:left; PADDING-RIGHT: 2pt; PADDING-LEFT: 2pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: white; font-face: tahoma; padding-top: 1px ; padding-bottom: 1px; border: solid 1px #888888;
+				}
+			.tbl1_C2 {
+				text-align:right; PADDING-RIGHT: 2pt; PADDING-LEFT: 6pt; FONT-SIZE: 8pt; BACKGROUND-COLOR: white; font-face: tahoma; padding-top: 1px ; padding-bottom: 1px; border: solid 1px #888888;
+				}
+			</style>
+			</head>
+			<body>
+			");
+
+
+			// ----- HEADER ------
+			sb.Append(@"
+			<table cellspacing=0 cellpadding=3 width=100% class=capt><tr><td align=right style='BORDER-WIDTH:0px;background-color:red'>
+			<font face=ArialBlack color=white size=1><b><i>&copy;&nbsp;FieldForce Solutions &nbsp;</b></i></font>
+			</tr></td>
+			<tr><td style='BACKGROUND:#e0e0e0; BORDER-WIDTH:0px;'>
+			<B><font color=red size=-1>" + this.Description + @"</font></B><font color=black size=-2><i>&nbsp;(description)</i></font>
+			<br>
+			<B><font color=4682b4 size=-2>" + this.Name + @"</font></B><font color=black size=-2><i>&nbsp;(name)</i></font>
+			<BR>
+			<B><font color=4682b4 size=-2>" + this.Owner.Name + @"</font></B><font color=black size=-2><i>&nbsp;(owner)</i></font>
+			<BR>
+			<B><font color=4682b4 size=-2>" + System.DateTime.Now.ToShortDateString() + " " + System.DateTime.Now.ToShortTimeString() + @"</font></B><font color=black size=-2><i>&nbsp;(distributed)</i></font>
+			</td></tr>
+			</table>
+			<hr>
+			");
+
+
+			//-------------------------------- slice---------------------------------------
+
+			// table start
+			sb.Append("<table cellpadding=0 cellspacing=0 width=100 class='tbl1_T'>");
+
+			Hierarchy[] hiers=this.Axes[2].Hierarchies.ToSortedByUniqueNameArray();
+
+			for (int i=0 ; i<hiers.Length  ; i++ )
+			{
+				Hierarchy hier=hiers[i];
+
+				//not displaying without mems
+				if(hier.FilterMember==null)
+					continue;
+
+				DataMember mem=hier.FilterMember;
+				//not displaying only with "All" members
+				if(mem.LevelDepth==0 && !(mem is CalculatedMember) && hier.Levels[0].IsAllLevel)
+					continue;
+
+				// add hier row
+				sb.Append("<tr><td class=tbl1_H nowrap=1>");
+				sb.Append(hier.UniqueName);
+				sb.Append("</td></tr>");
+
+				// add mem row
+				Olap.CalculatedMemberTemplates.MembersAggregate aggMem=mem as Olap.CalculatedMemberTemplates.MembersAggregate; 
+				if(aggMem!=null) //if aggregate, show children instead of agg itself
+				{
+					foreach(Olap.Object childMem in aggMem.Members)
+					{
+						sb.Append("<tr><td class=tbl1_C nowrap=1>");
+						sb.Append(childMem.Name);
+						sb.Append("</td></tr>");
+					}
+					continue;
+				}
+				sb.Append("<tr><td class=tbl1_C nowrap=1>");
+				sb.Append(mem.Name);
+				sb.Append("</td></tr>");
+			}
+
+			// table end
+			sb.Append("</table><br>");
+
+			//-----------------------------------------------------------------------------
+
+			
+
+			if(this.Cellset.IsValid==false)
+				return "Cellset contains no data";
+
+			int Ax0MemCount=this.Cellset.Axis0TupleMemCount;
+			int Ax1MemCount=this.Cellset.Axis1TupleMemCount;
+			int Ax0PosCount=this.Cellset.Axis0PosCount;
+			int Ax1PosCount=this.Cellset.Axis1PosCount;
+			
+			int ax0OrderPos=this.GetOrderPosition(this.Axes[0]);
+			int ax1OrderPos=this.GetOrderPosition(this.Axes[1]);
+
+			Hierarchy ax1Hier=null;
+			Hierarchy ax0Hier=null;
+			
+			// table start
+			sb.Append("<table cellpadding=0 cellspacing=0 class='tbl1_T'>");
+
+
+			if(Ax0PosCount==0 && Ax1PosCount==0)
+				return "Cellset contains no data";
+			
+
+			for (int i=0 ; i<Ax0MemCount  ; i++ )
+			{
+				sb.Append("<tr>"); //row start
+
+				for (int j=0 ; j<Ax1MemCount  ; j++ )
+				{
+					sb.Append("<td class='tbl1_HC' nowrap=1>");
+					//hier uname in last row
+					if(i==Ax0MemCount-1)
+						sb.Append(this.Axes[1].Hierarchies[j].UniqueName);
+					sb.Append("</td>");					
+				}
+
+				ax0Hier=this.Axes[0].Hierarchies[i];
+				for (int j=0 ; j<Ax0PosCount   ; j++ )
+				{
+					bool inOrderTuple=false;
+					CellsetMember mem=this.Cellset.GetCellsetMember(0,i,j);
+
+					//if same as prev, continue
+					if(j!=0 && this.Cellset.GetCellsetMember(0,i,j-1).UniqueName==mem.UniqueName)
+						continue;
+
+					// handle order position highlight
+					if(j==ax0OrderPos) // in order tuple
+						inOrderTuple=true;
+
+					// handle colspan
+					int spanCount=1;
+					for(int n=j+1;n<Ax0PosCount;n++)
+					{
+						CellsetMember nextMem=this.Cellset.GetCellsetMember(0,i,n);
+						if(nextMem.UniqueName==mem.UniqueName)
+						{
+							spanCount++;
+
+							// handle order position highlight
+							if(n==ax0OrderPos)
+								inOrderTuple=true;
+						}
+						else
+							break;
+					}
+
+					// handle order position highlight
+					if(inOrderTuple) // in order tuple
+						sb.Append("<td class='tbl1_H3' nowrap=1 ");
+					else
+						sb.Append("<td class='tbl1_H2' nowrap=1 ");
+
+					// if we span 
+					if(spanCount>1)
+						sb.Append("colspan=" + spanCount.ToString());
+
+					sb.Append(">");
+					sb.Append(mem.Name);
+					sb.Append("</td>");
+				}
+
+
+				// hier name in last col
+				sb.Append("<td class='tbl1_HC' nowrap=1>");
+				sb.Append(ax0Hier.UniqueName);
+				sb.Append("</td>"); 
+				
+				sb.Append("</tr>"); //row end
+			}
+
+
+
+
+			for (int i=0 ; i<Ax1PosCount ; i++ )
+			{
+				sb.Append("<tr>"); //row start
+						
+				for (int j=0 ; j<Ax1MemCount  ; j++ )
+				{	
+					bool inOrderTuple=false;
+					ax1Hier=this.Axes[1].Hierarchies[j];
+					CellsetMember mem=this.Cellset.GetCellsetMember(1,j,i);
+
+					//if same as prev, continue
+					if(i!=0 && this.Cellset.GetCellsetMember(1,j,i-1).UniqueName==mem.UniqueName)
+						continue;
+
+					// handle order position highlight
+					if(i==ax1OrderPos) // in order tuple
+						inOrderTuple=true;
+
+
+					// handle rowspan
+					int spanCount=1;
+					for(int n=i+1;n<Ax1PosCount;n++)
+					{
+						CellsetMember nextMem=this.Cellset.GetCellsetMember(1,j,n);
+						if(nextMem.UniqueName==mem.UniqueName)
+						{
+							spanCount++;
+
+							// handle order position highlight
+							if(n==ax1OrderPos)
+								inOrderTuple=true;
+						}
+						else
+							break;
+					}
+
+					// handle order position highlight
+					if(inOrderTuple) // in order tuple
+						sb.Append("<td class='tbl1_H1' nowrap=1 ");
+					else
+						sb.Append("<td class='tbl1_H' nowrap=1 ");
+
+					// if we span 
+					if(spanCount>1)
+						sb.Append("rowspan=" + spanCount.ToString());
+
+					sb.Append(">");
+					sb.Append(mem.Name);
+					sb.Append("</td>");
+				}
+
+				for (int j=0 ; j<Ax0PosCount   ; j++ )
+				{
+					sb.Append("<td class='tbl1_C' nowrap=1>");
+					Cell olapCell=this.Cellset.GetCell(j , i);
+					sb.Append(olapCell.FormattedValue);
+					sb.Append("</td>"); 
+				}
+
+				sb.Append("</tr>"); // row end
+			}
+
+			sb.Append("</table>"); // table end
+			sb.Append("</body></html>"); // body end
+
+			return sb.ToString();
+		}
+
+
+
+
+
+		private string ExportToCSV()
+		{
+			System.Text.StringBuilder sb=new System.Text.StringBuilder();
+
+			//-------------------------------- slice---------------------------------------
+
+			Hierarchy[] hiers=this.Axes[2].Hierarchies.ToSortedByUniqueNameArray();			
+			for (int i=0 ; i< hiers.Length  ; i++ )
+			{
+				Hierarchy hier=hiers[i];
+
+				//not displaying without mems
+				if(hier.FilterMember==null)
+					continue;
+
+				DataMember mem=hier.FilterMember;
+				//not displaying only with "All" members
+				if(mem.LevelDepth==0 && !(mem is CalculatedMember) && hier.Levels[0].IsAllLevel)
+					continue;
+
+				// add hier and mem
+				sb.Append(hier.UniqueName);
+				sb.Append(": ");
+
+				Olap.CalculatedMemberTemplates.MembersAggregate aggMem=mem as Olap.CalculatedMemberTemplates.MembersAggregate; 
+				if(aggMem!=null) //if aggregate, show children instead of agg itself
+				{
+					for(int j=0;j<aggMem.Members.Count;j++)
+					{
+						sb.Append(aggMem.Members[j].Name);
+
+						if(j<aggMem.Members.Count-1)
+							sb.Append(", ");
+					}
+				}
+				else
+				{
+					sb.Append(mem.Name);
+				}
+				sb.Append("\r\n");
+			}
+
+			sb.Append("\r\n");
+			//-----------------------------------------------------------------------------
+
+
+
+
+
+
+			int Ax0MemCount=this.Cellset.Axis0TupleMemCount;
+			int Ax1MemCount=this.Cellset.Axis1TupleMemCount;
+			int Ax0PosCount=this.Cellset.Axis0PosCount;
+			int Ax1PosCount=this.Cellset.Axis1PosCount;
+
+			Hierarchy ax1Hier=null;
+			Hierarchy ax0Hier=null;
+			
+			//-------------------------------- table---------------------------------------
+			System.Web.UI.HtmlControls.HtmlTableRow tr=null;
+			System.Web.UI.HtmlControls.HtmlTableCell td=null;
+
+			if(this.Cellset.IsValid==false)
+			{
+				return "Cellset contains no data";
+			}
+
+
+			for (int i=0 ; i<Ax0MemCount  ; i++ )
+			{
+
+				for (int j=0 ; j<Ax1MemCount  ; j++ )
+				{
+					//hier uname in last row
+					if(i==Ax0MemCount-1)
+						sb.Append(this.Axes[1].Hierarchies[j].UniqueName);
+
+					sb.Append("\t");
+					
+				}
+
+				ax0Hier=this.Axes[0].Hierarchies[i];
+				for (int j=0 ; j<Ax0PosCount   ; j++ )
+				{
+					CellsetMember mem=this.Cellset.GetCellsetMember(0, i , j);
+					sb.Append(mem.Name);
+					sb.Append("\t"); 
+				}
+
+
+				// hier name in last col
+				sb.Append(ax0Hier.UniqueName);
+				
+				sb.Append("\r\n");
+			}
+
+
+			for (int i=0 ; i<Ax1PosCount ; i++ )
+			{
+						
+				for (int j=0 ; j<Ax1MemCount  ; j++ )
+				{	
+					ax1Hier=this.Axes[1].Hierarchies[j];
+					CellsetMember mem=this.Cellset.GetCellsetMember(1 , j , i);
+					sb.Append(mem.Name);
+					sb.Append("\t"); 
+				}
+
+				for (int j=0 ; j<Ax0PosCount   ; j++ )
+				{
+					Cell olapCell=this.Cellset.GetCell(j , i);
+					sb.Append(olapCell.FormattedValue.Replace(System.Globalization.NumberFormatInfo.CurrentInfo.NumberGroupSeparator , ""));
+					sb.Append("\t"); 
+				}
+
+				sb.Append("\r\n");
+			}
+
+			return sb.ToString();
+		}
+
+	}
+
+
+}

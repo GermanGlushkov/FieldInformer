@@ -1,0 +1,444 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="ComponentEvent,fl.events.ComponentEvent,BUTTON_DOWN,ENTER,HIDE,LABEL_CHANGE,MOVE,RESIZE,SHOW,clone,toString" name="keywords">
+<title>fl.events.ComponentEvent</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'ComponentEvent - Yahoo! Astra Library';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Astra Library Documentation</td><td rowspan="2" align="right" class="titleTableLogo"><img alt="Yahoo! Logo" title="Yahoo! Logo" class="logoImage" src="../../images/yfp-stacked.gif"></td>
+</tr>
+<tr>
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;ComponentEvent</td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subNav" class="titleTableSubNav">
+<ul>
+<li>
+<a href="#methodSummary">Methods</a>&nbsp;| </li>
+<li>
+<a href="#constantSummary">Constants</a>
+</li>
+</ul>
+</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/events/ComponentEvent.html&amp;fl/events/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class ComponentEvent"); titleBar_setSubNav(true,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.events</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class ComponentEvent</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">ComponentEvent <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.events.Event</td>
+</tr>
+</table>
+<p></p>
+     The ComponentEvent class defines events that are associated with the UIComponent class.
+     These include the following events:
+     <ul>
+         <li><code>ComponentEvent.BUTTON_DOWN</code>: dispatched after a button is pressed.</li>
+         <li><code>ComponentEvent.ENTER</code>: dispatched after the Enter key is pressed.</li>
+         <li><code>ComponentEvent.HIDE</code>: dispatched after the visible property of a component is set to <code>false</code>.</li>
+         <li><code>ComponentEvent.LABEL_CHANGE</code>: dispatched after the Enter key is pressed.</li>
+         <li><code>ComponentEvent.MOVE</code>: dispatched after there is a change in the x or y properties that identify the component location.</li>
+         <li><code>ComponentEvent.RESIZE</code>: dispatched after a component is resized.</li>
+         <li><code>ComponentEvent.SHOW</code>: dispatched after the <code>visible</code> property of a component is set to <code>true</code>.</li>
+     </ul>
+     
+     <p></p>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#ComponentEvent()">ComponentEvent</a>(type:String, bubbles:Boolean = false, cancelable:Boolean = false)</div>
+<div class="summaryTableDescription">
+         Creates a new ComponentEvent object that contains information about a component 
+         event.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#clone()">clone</a>():Event</div>
+<div class="summaryTableDescription">
+         Creates a copy of the ComponentEvent object and sets the value of each parameter to
+         match the original.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#toString()">toString</a>():String</div>
+<div class="summaryTableDescription">
+         Returns a string that contains all the properties of the ComponentEvent object.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+</table>
+</div>
+<a name="constantSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Constants</div>
+<table id="summaryTableConstant" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Constant</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#BUTTON_DOWN">BUTTON_DOWN</a> : String = "buttonDown"<div class="summaryTableDescription">[static]
+         Defines the value of the <code>type</code> property of a <code>buttonDown</code>
+         event object.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#ENTER">ENTER</a> : String = "enter"<div class="summaryTableDescription">[static]
+         Defines the value of the <code>type</code> property of an <code>enter</code>
+         event object.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#HIDE">HIDE</a> : String = "hide"<div class="summaryTableDescription">[static]
+         Defines the value of the <code>type</code> property of a <code>hide</code>
+         event object.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#LABEL_CHANGE">LABEL_CHANGE</a> : String = "labelChange"<div class="summaryTableDescription">[static]
+         Defines the value of the <code>type</code> property of a <code>labelChange</code>
+         event object.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#MOVE">MOVE</a> : String = "move"<div class="summaryTableDescription">[static]
+         Defines the value of the <code>type</code> property of a <code>move</code>
+         event object.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#RESIZE">RESIZE</a> : String = "resize"<div class="summaryTableDescription">[static]
+         Defines the value of the <code>type</code> property of a <code>resize</code> 
+         event object.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#SHOW">SHOW</a> : String = "show"<div class="summaryTableDescription">[static]
+         Defines the value of the <code>type</code> property of a <code>show</code> event
+         object.</div>
+</td><td class="summaryTableOwnerCol">ComponentEvent</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="ComponentEvent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ComponentEvent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function ComponentEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)</code><p>
+         Creates a new ComponentEvent object that contains information about a component 
+         event. A ComponentEvent object is passed as a parameter to an event listener.
+                  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">type</span>:String</code> &mdash; The type of the event. Event listeners can access this information 
+                through the <code>type</code> property of the event object. A component can 
+                have the following types of events: <code>ComponentEvent.BUTTON_DOWN</code>, 
+                <code>ComponentEvent.ENTER</code>, <code>ComponentEvent.HIDE</code>, 
+                <code>ComponentEvent.LABEL_CHANGE</code>, <code>ComponentEvent.MOVE</code>, 
+                <code>ComponentEvent.RESIZE</code>, <code>ComponentEvent.SHOW</code>.
+                  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bubbles</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; Determines whether the ComponentEvent object participates in the 
+                bubbling phase of the event flow. Event listeners can access this information 
+                through the <code>bubbles</code> property of the event object.
+                  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">cancelable</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; Determines whether the ComponentEvent object can be canceled. Event 
+                listeners can access this information through the <code>cancelable</code> property
+                of the event object.
+                  </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="clone()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">clone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function clone():Event</code><p>
+         Creates a copy of the ComponentEvent object and sets the value of each parameter to
+         match the original.
+                  </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Event</code> &mdash; A new ComponentEvent object with property values that match those of the
+         original.
+                  </td>
+</tr>
+</table>
+</div>
+<a name="toString()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">toString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function toString():String</code><p>
+         Returns a string that contains all the properties of the ComponentEvent object. The 
+         string is in the following format:
+         <code></p><p>[ComponentEvent type=<em>value</em> bubbles=<em>value</em> cancelable=<em>value</em>]</p></code>
+         
+         <p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>String</code> &mdash; A string representation of the ComponentEvent object.
+                  </td>
+</tr>
+</table>
+</div>
+<a name="constantDetail"></a>
+<div class="detailSectionHeader">Constant detail</div>
+<a name="BUTTON_DOWN"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">BUTTON_DOWN</td><td class="detailHeaderType">constant</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const BUTTON_DOWN:String = "buttonDown"</code><p>
+         Defines the value of the <code>type</code> property of a <code>buttonDown</code>
+         event object. 
+         
+         </p><p>This event has the following properties:</p>
+          <table class="innertable" width="100%">
+             <tr><th>Property</th><th>Value</th></tr>
+            <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+             <tr><td><code>cancelable</code></td><td><code>false</code>; there is no default
+            behavior to cancel.</td></tr>
+             <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+            the event object with an event listener. </td></tr>
+             <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+                   not always the object listening for the event. Use the <code>currentTarget</code>
+            property to access the object that is listening for the event.</td></tr>
+          </table>
+                  </div>
+<a name="ENTER"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ENTER</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const ENTER:String = "enter"</code><p>
+         Defines the value of the <code>type</code> property of an <code>enter</code>
+         event object. 
+         
+         </p><p>This event has the following properties:</p>
+          <table class="innertable" width="100%">
+             <tr><th>Property</th><th>Value</th></tr>
+            <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+             <tr><td><code>cancelable</code></td><td><code>false</code>; there is no default
+                 behavior to cancel.</td></tr>
+             <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+                 the event object with an event listener.</td></tr>
+             <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+                 not always the object listening for the event. Use the <code>currentTarget</code>
+                 property to access the object that is listening for the event.</td></tr>
+          </table>
+         
+         </div>
+<a name="HIDE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">HIDE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const HIDE:String = "hide"</code><p>
+         Defines the value of the <code>type</code> property of a <code>hide</code>
+         event object. 
+         
+         </p><p>This event has the following properties:</p>
+          <table class="innertable" width="100%">
+             <tr><th>Property</th><th>Value</th></tr>
+            <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+             <tr><td><code>cancelable</code></td><td><code>false</code>; there is no default
+            behavior to cancel.</td></tr>
+             <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+            the event object with an event listener.</td></tr>
+             <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+                   not always the object listening for the event. Use the <code>currentTarget</code>
+            property to access the object that is listening for the event.</td></tr>
+          </table>
+                  <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../events/ComponentEvent.html#SHOW" target="">SHOW</a>
+</div>
+</div>
+<a name="LABEL_CHANGE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">LABEL_CHANGE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const LABEL_CHANGE:String = "labelChange"</code><p>
+         Defines the value of the <code>type</code> property of a <code>labelChange</code>
+         event object. 
+         
+         </p><p>This event has the following properties:</p>
+          <table class="innertable" width="100%">
+             <tr><th>Property</th><th>Value</th></tr>
+            <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+             <tr><td><code>cancelable</code></td><td><code>false</code>; there is no default
+            behavior to cancel.</td></tr>
+             <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+            the event object with an event listener.</td></tr>
+             <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+                   not always the object listening for the event. Use the <code>currentTarget</code>
+            property to access the object that is listening for the event.</td></tr>
+          </table>
+                  </div>
+<a name="MOVE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">MOVE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const MOVE:String = "move"</code><p>
+         Defines the value of the <code>type</code> property of a <code>move</code>
+         event object. 
+         
+         </p><p>This event has the following properties:</p>
+          <table class="innertable" width="100%">
+             <tr><th>Property</th><th>Value</th></tr>
+            <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+             <tr><td><code>cancelable</code></td><td><code>false</code>; there is no default
+            behavior to cancel.</td></tr>
+             <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+            the event object with an event listener. </td></tr>
+             <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+                   not always the object listening for the event. Use the <code>currentTarget</code>
+            property to access the object that is listening for the event.</td></tr>
+          </table>
+                  </div>
+<a name="RESIZE"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">RESIZE</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const RESIZE:String = "resize"</code><p>
+         Defines the value of the <code>type</code> property of a <code>resize</code> 
+         event object. 
+         
+         </p><p>This event has the following properties:</p>
+          <table class="innertable" width="100%">
+             <tr><th>Property</th><th>Value</th></tr>
+            <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+             <tr><td><code>cancelable</code></td><td><code>false</code>; there is no default
+            behavior to cancel.</td></tr>
+             <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+            the event object with an event listener. </td></tr>
+             <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+                   not always the object listening for the event. Use the <code>currentTarget</code>
+            property to access the object that is listening for the event.</td></tr>
+          </table>
+                  </div>
+<a name="SHOW"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SHOW</td><td class="detailHeaderType">constant</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static const SHOW:String = "show"</code><p>
+         Defines the value of the <code>type</code> property of a <code>show</code> event
+         object. 
+         
+         </p><p>This event has the following properties:</p>
+          <table class="innertable" width="100%">
+             <tr><th>Property</th><th>Value</th></tr>
+            <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+             <tr><td><code>cancelable</code></td><td><code>false</code>; there is no default
+            behavior to cancel.</td></tr>
+             <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+            the event object with an event listener.</td></tr>
+             <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+                   not always the object listening for the event. Use the <code>currentTarget</code>
+            property to access the object that is listening for the event.</td></tr>
+          </table>
+                  <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../events/ComponentEvent.html#HIDE" target="">HIDE</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<div class="feedbackLink">
+<center>
+<a target="_top" href="http://tech.groups.yahoo.com/group/ydn-flash/">Visit ydn-flash for Yahoo! ASTRA feedback and support</a>
+</center>
+</div>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

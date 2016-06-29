@@ -1,0 +1,26 @@
+USE DBSALESPP
+GO
+
+sp_dropuser 'spp_readonly'
+
+GO
+
+sp_droplogin 'spp_readonly'
+
+GO
+
+sp_addlogin @loginame = 'spp_readonly' , @passwd = 'spp_readonly' , @defdb = 'DBSALESPP'
+
+GO
+
+sp_grantdbaccess @loginame ='spp_readonly'
+
+GO
+
+sp_addrolemember 'db_datareader', 'spp_readonly'
+
+GO
+sp_change_users_login 'Auto_fix' , 'spp'
+
+GO
+sp_change_users_login 'Auto_fix' , 'spp_readonly'

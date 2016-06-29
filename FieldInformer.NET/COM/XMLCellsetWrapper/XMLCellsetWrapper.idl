@@ -1,0 +1,40 @@
+// XMLCellsetWrapper.idl : IDL source for XMLCellsetWrapper.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (XMLCellsetWrapper.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(4EBC672A-352F-4D0E-96B0-4025E513AC6D),
+		dual,
+		helpstring("IXMLCellset Interface"),
+		pointer_default(unique)
+	]
+	interface IXMLCellset : IDispatch
+	{
+		[id(1), helpstring("method Increment")] HRESULT Increment([out] int* outval);
+		[id(2), helpstring("method BuildCellset")] HRESULT BuildCellset([in] BSTR Mdx , [in] BSTR ConnString , [in] BSTR OutFilePath);
+	};
+
+[
+	uuid(74D91E29-9464-4E05-96A8-88629252B446),
+	version(1.0),
+	helpstring("XMLCellsetWrapper 1.0 Type Library")
+]
+library XMLCELLSETWRAPPERLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(D2456D0D-43CF-4CC1-BBF5-F8347F758990),
+		helpstring("XMLCellset Class")
+	]
+	coclass XMLCellset
+	{
+		[default] interface IXMLCellset;
+	};
+};

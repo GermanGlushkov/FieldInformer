@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Yahoo! Astra Library: Flash CS3 - Documentation</title>
+	<link rel="stylesheet" type="text/css" href="styles/screen.css"/>
+</head>
+<body>
+	<iframe id="header" src="header.html"></iframe>
+
+	<div id="content">
+		<h2>Flash CS3 Installation Instructions</h2>
+		<p>To use the Yahoo! Astra components for <a href="http://www.adobe.com/go/flash">Flash CS3</a>, you need to install an MXP file using <a href="http://www.adobe.com/go/extensionmanager">Adobe Extension Manager CS3</a>. Once installed, each component will appear in the Components panel under the Yahoo! category. To use the components in your FLA files, you can easily drag them onto the stage or into your library. Please see the documentation for each individual component for further details.</p>
+
+		<ol>
+			<li>Install <a href="http://www.adobe.com/go/extensionmanager">Adobe Extension Manager CS3</a>, if it is not installed already.</li>
+			<li>Open Astra.mxp. It should be at <code><em>[download location]</em>/Build/Astra.mxp</code>.</li>
+			<li>Read the disclaimer and license agreement, and click Accept.</li>
+			<li>You should receive a message, "The 'Yahoo! Astra Library' extension has successfully been installed."</li>
+			<li>Start up Flash CS3, and the new components will appear in the Components panel.</li>
+		</ol>
+
+		<h2>Documentation</h2>
+		<ul>
+			<li><a href="ClassReference/index.html">ActionScript 3.0 Class Reference</a></li>
+		</ul>
+
+		<h2>Examples</h2>
+		<ul>
+			<li><a href="../Examples/Alert/index.html">AlertManager</a></li>
+			<li><a href="../Examples/AudioPlayback/index.html">AudioPlayback</a></li>
+			<li><a href="../Examples/AutoComplete/index.html">AutoComplete</a></li>
+			<li><a href="../Examples/Carousel/index.html">Carousel</a></li>
+			<li><a href="../Examples/Charts/index.html">Charts</a></li>
+			<li><a href="../Examples/LayoutContainers/index.html">Layout Containers</a></li>
+			<li><a href="../Examples/Menu/index.html">Menu</a></li>
+			<li><a href="../Examples/MenuBar/index.html">MenuBar</a></li>
+			<li><a href="../Examples/TabBar/index.html">TabBar</a></li>
+			<li><a href="../Examples/Tree/index.html">Tree</a></li>
+			<li><a href="../Examples/Form/index.html">Form</a></li>
+		</ul>
+
+		<h2>Online Tutorials</h2>
+		<ul>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/alertmanager/">AlertManager</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/audioplayback/">AudioPlayback</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/autocomplete/">AutoComplete</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/carousel/">Carousel</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/charts/">Charts</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/layout-containers/">LayoutContainers</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/menu/">Menu</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/menubar/">MenuBar</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/tabbar/">TabBar</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/tree/">Tree</a></li>
+			<li><a href="http://developer.yahoo.com/flash/astra-flash/form/">Form</a></li>
+		</ul>
+
+		<h2>Known Issues</h2>
+		<p>None at this time.</p>
+
+
+
+		<h2>Release Notes</h2>
+			<h4>Astra 1.4</h4>
+			<ul>
+				<li>New Components:
+					<ul>
+						<li>Added Form.</li>
+					</ul>
+				</li>
+				<li>Carousel:
+					<ul>
+						<li>enhanced keyboard navigation</li>
+						<li>added accessibility</li>
+						<li>fixed bug: null reference error when setting multiple data providers</li>
+					</ul>
+				</li>
+				<li>Charts:
+					<ul>
+						<li>Allow for negative values in stacked bar and column charts.</li>
+						<li>Fixed bug in stacked bar and column charts in which markers were sized incorrectly for multiple series.</li>
+						<li>Fixed bug in TimeAxis in which majorUnit was not being calculated correctly.</li>
+						<li>Fixed bug in TimeAxis in which minorUnit was not being calculated.</li>
+						<li>Fixed bug in which <code>hideOverlappingLabels</code> style did not work on the y-axis</code>
+						<li>Refactored origin axes, <code>TimeAxis</code> and <code>NumericAxis</code>, to allow for factoring in the label size when calculating a <code>majorUnit</code>.</li>
+						<li>Added option to <code>CategoryAxis</code> to allow for a more systematic dropping of labels when there is not enough space for all categories on the axis.</li>
+						<li>Fixed bug in which null values break line series.</li>
+						<li>Fixed bug in NumericAxis in which external data was not being casted as a Number.</li>
+						<li>Allow option for rotating text when fonts are not embedded.</li>
+						<li>Fixed bug in which Cartesian Charts, were not being updated when the length of the <code>dataSource</code> was different.</li>
+						<li>Added enhanced styling of series by allowing the specification of fill, border and line color and alpha styles.</li>
+						<li>Added option of styling a highlighted zero gridline when the zero is beyond the origin of a <code>NumericAxis</code>.</li>
+					</ul>
+				</li>
+				<li>Menu:
+					<ul>
+						<li>enhanced keyboard navigation</li>
+						<li>fixed bug in labelField property</li>
+						<li>added support for non-XML data providers</li>
+						<li>added beta accessibility implementation</li>
+						<li>fixed bug where focusing out would not close menus</li>
+					</ul>
+				</li>
+				<li>MenuBar:
+					<ul>
+						<li>enhanced keyboard navigation</li>
+						<li>added beta accessibility implementation</li>
+						<li>added support for non-XML data providers</li>
+						<li>added labelField property</li>
+						<li>added support for disabled menu bar items</li>
+					</ul>
+				</li>
+				<li>TabBar:
+					<ul>
+						<li>Fixed bug in which fonts were not being properly embedded.</li>
+					</ul>
+				</li>
+				<li>Tree:
+					<ul>
+						<li>Fixed out-of-bounds index error that appeared under certain conditions.</li>
+						<li>improved keyboard navigation</li>
+						<li>added events for opening and closing of nodes</li>
+						<li>added accessibility implementation</li>
+						<li>added TreeEvent</li>
+					</ul>
+				</li>
+				<li>AlertManager:
+					<ul>
+						<li>fixed issue with keyboard focus on disabled controls</li>
+						<li>made some properties publicly accessible</li>
+						<li>added beta accessibility implementation</li>
+					</ul>
+				</li>
+				<li>AudioPlayback:
+					<ul>
+						<li>enhanced keyboard navigation - added keyboard support for volume control</li>
+						<li>made some properties publicly accessible</li>
+						<li>added accessibility implementations for subcontrols (volume, MediaInfoView)</li>
+					</ul>
+				</li>
+				
+
+			</ul>	
+				
+			<h3>Astra 1.3.1</h3>
+			<ul>
+				<li>AlertManager:
+					<ul>
+						<li>Added support for styling.</li>
+					</ul>
+				</li>
+				<li>AudioPlayback:
+					<ul>
+						<li>Bug fix: scrubber would not work properly while large file downloads.</li>
+					</ul>
+				</li>
+				<li>AutoComplete:
+					<ul>
+						<li>Bug fix: Fixed bug with ASTRA layout containers.</li>
+						<li>Made <code>itemToLabel</code> function public.</li>
+					</ul>
+				</li>
+				<li>Menu:
+					<ul>
+						<li>Added support for styling.</li>
+						<li>Added accessibility placeholders.</li>
+						<li>Bug fix: Fixed bug with MenuEvent not sending out appropriate menu property.</li>
+					</ul>
+				</li>
+				<li>MenuBar:
+					<ul>
+						<li>Added support for styling.</li>
+						<li>Bug fix: Fixed bug in which LivePreview was not showing properly in CS4 when component was dragged to stage.</li>
+					</ul>
+				</li>
+				<li>Tree:
+					<ul>
+						<li>Bug fix: Fixed index overrun bug.</li>
+						<li>Bug fix: Fixed shifting selected item when opening and closing branches bug.</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Astra 1.3.0</h3>
+			<ul>
+				<li>Aquarium:
+					<ul>
+						<li>Added Charts labels in piechart</li>
+					</ul>
+				</li>
+				<li>Charts:
+					<ul>
+						<li>Added support for rotating axis labels. See new styles <code>horizontalAxisLabelRotation</code> and <code>verticalAxisLabelRotation</code>. The font used by the axis labels must be embedded for rotation to work.</li>
+						<li>Added support for alternating fill colors between grid lines.</li>
+						<li>Added support for marker labels on PieSeries. Default is percentage values. May be customized with <code>labelFunction</code> property.</li>
+						<li>Added <code>showAreaFill</code> and <code>areaFillAlpha</code> properties to LineSeries. Allows the creation of an "area chart". The color automatically matches the line, but the alpha may be used to create a contrast.</li>
+						<li>Refactored axis code to seperate the axis from the axis renderer. Required minor API changes where some axis properties are now axis renderer styles. Also, all axis-related classes are now in the <code>com.yahoo.astra.fl.charts.axes.*</code> package. May require minor code changes to imports.</li>
+						<li><p>New styles on CartesianChart include <code>verticalAxisStyles</code>, <code>horizontalAxisStyles</code>, <code>verticalAxisGridLinesStyles</code>, and <code>horizontalAxisGridLinesStyles</code>. These are complex Objects that contain all the style data to pass to the axis or grid lines renderers. Since the charts now support custom axis renderers, a way to pass in arbitrary styles not supported by the default renderers was needed.</p>
+							<p>Additionally, new functions <code>setVerticalAxisStyle()</code>, <code>setHorizontalAxisStyle()</code>, <code>setVerticalAxisGridLinesStyle()</code> and <code>setHorizontalAxisGridLinesStyle()</code> allow developer to set individual styles on the axes and grid lines.</p>
+							<p>Note: The old styles exposed on CartesianChart are still available in order to support legacy style code, but they should be considered deprecated. The deprecated styles may be removed in the future. Hypothetical new styles that are added in the future to the default renderers will likely be exposed only through the new complex style objects and the new style setter functions.</li>
+						<li>New interfaces IStackingAxis and IStackedSeries provide support for stacking. NumericAxis and TimeAxis now support stacking with supported series as long as <code>stackingEnabled</code> is set to true on the axis.</li>
+						<li>New Chart Types: StackedColumnChart and StackedBarChart.</li>
+						<li>Bugfix: Series will throw an error if it redraws before massaging an Array of Number values with proper category data.</li>
+					</ul>
+				</li>
+				<li>TabBar:
+					<ul>
+						<li>Added <code>selectedTextFormat</code> style.</li>
+						<li>New Example: User Settings with TabBar Navigation.</li>
+						<li>New Example: Search Form with Tabs.</li>
+					</ul>
+				</li>
+				<li>Tree:
+					<ul>
+						<li>Bug fix: Enabled dynamic TextField resizing for tree cell labels.</li>
+						<li>Bug fix: Corrected indexing issues in LeafNode.as</li>
+					</ul>
+				</li>
+				<li>New Component:
+					<ul>
+						<li>Added Carousel component.</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Astra 1.2.0</h3>
+			<ul>
+				<li>Charts:
+					<ul>
+						<li>Added Legend component.</li>
+						<li>Added support for hidden lines on a LineSeries.</li>
+						<li>Added support for dashed lines between discontinuous (<code>null</code>) data on a LineSeries.</li>
+						<li>More flexibility to set certain series styles on an ISeries or the parent chart.</li>
+					</ul>
+				</li>
+				<li>MenuBar:
+					<ul>
+						<li>Bug fix: Reset menus array when the dataProvider is set.</li>
+						<li>Allow for explicit setting of width and height of the MenuBar.</li>
+					</ul>
+				</li>
+				<li>TabBar:
+					<ul>
+						<li>Added new <code>autoSizeTabsToTextWidth</code> property to specify sizing behavior.</li>
+						<li>Added new <code>selectionFollowsFocus</code> property to specify that keyboard arrow navigation affects selection.</code>
+					</ul>
+				</li>
+				<li>Aquarium example on Yahoo! Flash Developer Center uses new versions of components and includes some new icons and skins.</li>
+				<li>New Components:
+					<ul>
+						<li>Added BorderPane, FlowPane, HBoxPane, VBoxPane, and TilePane layout containers.</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Astra 1.1.2</h3>
+			<ul>
+				<li>Charts:
+					<ul>
+						<li>Bug fix: Chart components change the original data passed to dataProvider.</li>
+						<li>Bug fix: Larger dataprovider with auto-detected category names causes error.</li>
+						<li>Bug fix: Hiding axis labels causes runtime error.</li>
+						<li>Bug fix: If TimeAxis has no data, it can't calculate bounds.</li>
+					</ul>
+				</li>
+				<li>Tree:
+					<ul>
+						<li>Bugfixes in LeafNode and TreeCellRenderer.</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Astra 1.1.1</h3>
+			<ul>
+				<li>AlertManager:
+					<ul>
+						<li>Bug fix: Alert dialog lost focus if the user selected the text and then hit the tab key.</li>
+					</ul>
+				</li>
+				<li>Charts:
+					<ul>
+						<li>Improved animation and invalidation of markers.</li>
+						<li>Bug fix: Setting axis maximum less than the value of an origin-based marker (column, bar) hides the marker.</li>
+						<li>Bug fix: With large data sets, line charts are displayed offset from the left, which hides some data on the right</li>
+						<li>Bug fix: Axis displays improperly when all items have the same value.</li>
+						<li>Bug fix: Infinite loop when calculating minimum and maximum values in some cases.</li>
+						<li>Bug fix: PieChart displays the wrong category when values are primitive and equal.</li>
+					</ul>
+				</li>
+				<li>MenuBar:
+					<ul>
+						<li>Bug fix: Selected menubar button lost focus if it was toggled very quickly with keyboard shortcuts.</li>
+						<li>Bug fix: Skin conflicts between Menu and MenuBar.</li>
+					</ul>
+				</li>
+				<li>TabBar:
+					<ul>
+						<li>Bug fix: Styles like <code>textFormat</code> are not passed through to tabs.</li>
+						<li>Bug fix: focusIndex setter tries to access buttons before they are created.</li>
+					</ul>
+				</li>
+			</ul>
+			<h3>Astra 1.1.0</h3>
+			<ul>
+				<li>Tree:
+					<ul>
+						<li>New classes TNode, BranchNode, and LeafNode are now used for the node objects. The new classes contain the functionality for hierarchical node linking and provide methods for manipulating the Tree.</li>
+						<li>New functions have been added to Tree: openAllNodes(), closeAllNodes(), findNode(), showNode(), exposeNode().</li>
+						<li>toggleNode() method is being deprecated in favor of node object's own openNode() and closeNode() methods.</li>
+					</ul>
+				</li>
+
+				<li>Menu:
+					<ul>
+						<li>Changed keyDownHandler function so that it bubbles up to parent.</li>
+						<li>onTweenEnd dispatches hide event from the menu that hides instead of the root menu.</li>
+						<li>Parent is included as part of the menu in the isMouseOverMenu.</li>
+						<li>Allow turning off click event for items with submenus.</li>
+						<li>Enhanced itemRollOver and itemRollOut handling.</li>
+						<li>Added handler for stage resizing.</li>
+					</ul>
+				</li>
+
+				<li>Charts:
+					<ul>
+						<li>Moved all series-related classes into <code>com.yahoo.astra.fl.charts.series.*</code> package for better organization. Migration may require minor imports changes.</li>
+						<li>Created ISeriesItemRenderer interface and the default SeriesItemRenderer class.</li>
+						<li>Created library-based skins for chart background and data tip background.</li>
+						<li>Added animations to data changes for all charts. Includes several new styles for animation. See <code>com.yahoo.astra.animation.Animation</code>.</li>
+						<li>Added "No live preview data" message to PieChart when no data provider has been set in Flash's Parameters panel.</li>
+						<li>Bug fix: Setting axis titles will offset children by several pixels.</li>
+						<li>Bug fix: Non-zero-based numeric category labels appear at wrong positions.</li>
+						<li>Bug fix: Column and bar markers don't properly get positioned when multiple series have different marker sizes.</li>
+						<li>Bug fix: Setting the seriesColors style on a PieChart does nothing.</li>
+					</ul>
+				</li>
+				<li>New Components:
+					<ul>
+						<li>Added AlertManager, AudioPlayback, and MenuBar.</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Astra 1.0.0</h3>
+			<ul>
+				<li>Initial release.</li>
+				<li>Includes AutoComplete, Charts, Menu, TabBar, and Tree.</li>
+			</ul>
+		</dl>
+	</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8447.0 (227bbc1c).
+//
+// ADOConnPoolWrapper.tlh
+//
+// C++ source equivalent of Win32 type library C:\Documents and Settings\Administrator\My Documents\Visual Studio Projects\FI_CS_new\XMLAnalysisConPoolWrapper\ADOConnPoolWrapper.dll
+// compiler-generated file created 07/12/02 at 22:50:21 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace ADOConnPoolWrapper {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("b6719705-6e02-4fb3-891b-a672d482baa4"))
+/* dual interface */ _ADOConnPool;
+struct /* coclass */ ADOConnPool;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_ADOConnPool, __uuidof(_ADOConnPool));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("b6719705-6e02-4fb3-891b-a672d482baa4"))
+_ADOConnPool : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetSessions))
+    long Sessions;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IDispatchPtr GetConnection (
+        BSTR * ConnectionString );
+    HRESULT ReturnConnection (
+        IDispatch * * Connection );
+    HRESULT Shrink ( );
+    long GetSessions ( );
+    long GetMaxSessions ( );
+    void PutMaxSessions (
+        long * _arg1 );
+    long GetTimeout ( );
+    void PutTimeout (
+        long * _arg1 );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetConnection (
+        BSTR * ConnectionString,
+        IDispatch * * _arg2 ) = 0;
+    virtual HRESULT __stdcall raw_ReturnConnection (
+        IDispatch * * Connection ) = 0;
+    virtual HRESULT __stdcall raw_Shrink ( ) = 0;
+    virtual HRESULT __stdcall get_Sessions (
+        long * _arg1 ) = 0;
+    virtual HRESULT __stdcall get_MaxSessions (
+        long * _arg1 ) = 0;
+    virtual HRESULT __stdcall put_MaxSessions (
+        long * _arg1 ) = 0;
+    virtual HRESULT __stdcall get_Timeout (
+        long * _arg1 ) = 0;
+    virtual HRESULT __stdcall put_Timeout (
+        long * _arg1 ) = 0;
+};
+
+struct __declspec(uuid("4fbad375-b07a-4630-9237-34837c1c27ca"))
+ADOConnPool;
+    // [ default ] interface _ADOConnPool
+
+//
+// Wrapper method implementations
+//
+
+#include "ADOConnPoolWrapper.tli"
+
+} // namespace ADOConnPoolWrapper
+
+#pragma pack(pop)

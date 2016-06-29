@@ -1,0 +1,330 @@
+USE DBFINF
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[v_mdx_reports]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[v_mdx_reports]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[v_olap_reports]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[v_olap_reports]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[v_sql_reports]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[v_sql_reports]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[v_storecheck_reports]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[v_storecheck_reports]
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE view dbo.v_mdx_reports
+ 
+as
+SELECT
+	usr_reports.[id],
+	usr_reports.[parent_report_id],
+	usr_reports.[sharing_status],
+	ISNULL( (SELECT MAX(sharing_status) FROM dbo.T_MDX_REPORTS children WHERE children.parent_report_id=usr_reports.[id]) , 0) as max_subscriber_sharing_status,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[user_id]
+		WHEN 4 THEN parent_reports.[user_id]
+		ELSE usr_reports.[user_id]
+	END AS [owner_id],
+	usr_reports.[user_id] ,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[name]
+		WHEN 4 THEN parent_reports.[name]
+		ELSE usr_reports.[name]
+	END AS [name],
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[description]
+		WHEN 4 THEN parent_reports.[description]
+		ELSE usr_reports.[description]
+	END AS [description],
+	usr_reports.[is_selected] ,
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[mdx]
+		ELSE usr_reports.[mdx]
+	END AS [mdx] ,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[xsl]
+		WHEN 4 THEN parent_reports.[xsl]
+		ELSE usr_reports.[xsl]
+	END AS [xsl],
+	CASE
+		WHEN EXISTS(SELECT * FROM tdistribution WHERE tdistribution.rpt_id=usr_reports.id and rpt_type=3)	THEN	1
+		ELSE	0
+	END as is_in_distribution,
+	usr_reports.[timestamp]
+FROM dbo.T_MDX_REPORTS usr_reports
+LEFT OUTER JOIN dbo.T_MDX_REPORTS parent_reports
+ON usr_reports.parent_report_id=parent_reports.id
+
+
+
+
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE view dbo.v_olap_reports
+ 
+as
+SELECT
+	usr_reports.[id],
+	usr_reports.[parent_report_id],
+	usr_reports.[sharing_status],
+	ISNULL( (SELECT MAX(sharing_status) FROM dbo.T_OLAP_REPORTS children WHERE children.parent_report_id=usr_reports.[id]) , 0) as max_subscriber_sharing_status,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[user_id]
+		WHEN 4 THEN parent_reports.[user_id]
+		ELSE usr_reports.[user_id]
+	END AS [owner_id],
+	usr_reports.[user_id] ,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[name]
+		WHEN 4 THEN parent_reports.[name]
+		ELSE usr_reports.[name]
+	END AS [name],
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[description]
+		WHEN 4 THEN parent_reports.[description]
+		ELSE usr_reports.[description]
+	END AS [description],
+	usr_reports.[is_selected],
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[graph_type]
+		WHEN 4 THEN parent_reports.[graph_type]
+		ELSE usr_reports.[graph_type]
+	END AS [graph_type] ,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[graph_options]
+		WHEN 4 THEN parent_reports.[graph_options]
+		ELSE usr_reports.[graph_options]
+	END AS [graph_options] ,
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[data]
+		ELSE usr_reports.[data]
+	END AS [data] ,
+	usr_reports.[open_nodes],
+	CASE
+		WHEN EXISTS(SELECT * FROM tdistribution WHERE tdistribution.rpt_id=usr_reports.id and rpt_type=0)	THEN	1
+		ELSE	0
+	END as is_in_distribution,
+	usr_reports.[timestamp]
+FROM dbo.T_OLAP_REPORTS usr_reports
+LEFT OUTER JOIN dbo.T_OLAP_REPORTS parent_reports
+ON usr_reports.parent_report_id=parent_reports.id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE view dbo.v_sql_reports
+ 
+as
+SELECT
+	usr_reports.[id],
+	usr_reports.[parent_report_id],
+	usr_reports.[sharing_status],
+	ISNULL( (SELECT MAX(sharing_status) FROM dbo.T_SQL_REPORTS children WHERE children.parent_report_id=usr_reports.[id]) , 0) as max_subscriber_sharing_status,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[user_id]
+		WHEN 4 THEN parent_reports.[user_id]
+		ELSE usr_reports.[user_id]
+	END AS [owner_id],
+	usr_reports.[user_id] ,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[name]
+		WHEN 4 THEN parent_reports.[name]
+		ELSE usr_reports.[name]
+	END AS [name],
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[description]
+		WHEN 4 THEN parent_reports.[description]
+		ELSE usr_reports.[description]
+	END AS [description],
+	usr_reports.[is_selected],
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[sql]
+		ELSE usr_reports.[sql]
+	END AS [sql] ,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[xsl]
+		WHEN 4 THEN parent_reports.[xsl]
+		ELSE usr_reports.[xsl]
+	END AS [xsl],
+	CASE
+		WHEN EXISTS(SELECT * FROM tdistribution WHERE tdistribution.rpt_id=usr_reports.id and rpt_type=2)	THEN	1
+		ELSE	0
+	END as is_in_distribution,
+	usr_reports.[timestamp]
+FROM dbo.T_SQL_REPORTS usr_reports
+LEFT OUTER JOIN dbo.T_SQL_REPORTS parent_reports
+ON usr_reports.parent_report_id=parent_reports.id
+
+
+
+
+
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE view dbo.v_storecheck_reports
+ 
+as
+SELECT
+	usr_reports.[id],
+	usr_reports.[parent_report_id],
+	usr_reports.[sharing_status],
+	ISNULL( (SELECT MAX(sharing_status) FROM dbo.T_STORECHECK_REPORTS children WHERE children.parent_report_id=usr_reports.[id]) , 0) as max_subscriber_sharing_status,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[user_id]
+		WHEN 4 THEN parent_reports.[user_id]
+		ELSE usr_reports.[user_id]
+	END AS [owner_id],
+	usr_reports.[user_id] ,
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[name]
+		WHEN 4 THEN parent_reports.[name]
+		ELSE usr_reports.[name]
+	END AS [name],
+	CASE usr_reports.sharing_status
+		WHEN 3 THEN parent_reports.[description]
+		WHEN 4 THEN parent_reports.[description]
+		ELSE usr_reports.[description]
+	END AS [description],
+	usr_reports.[is_selected],
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[products_xml]
+		ELSE usr_reports.[products_xml]
+	END AS [products_xml] ,
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[products_logic]
+		ELSE usr_reports.[products_logic]
+	END AS [products_logic] ,
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[days]
+		ELSE usr_reports.[days]
+	END AS [days] ,
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[insel]
+		ELSE usr_reports.[insel]
+	END AS [insel] ,
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[inbsel]
+		ELSE usr_reports.[inbsel]
+	END AS [inbsel] ,
+	usr_reports.[filter_xml],
+	CASE usr_reports.sharing_status
+		WHEN 4 THEN parent_reports.[cache_timestamp]
+		ELSE usr_reports.[cache_timestamp]
+	END AS [cache_timestamp] ,
+	CAST(CASE
+		WHEN EXISTS(SELECT TOP 1 1 FROM t_storecheck_reports_cache WHERE t_storecheck_reports_cache.rpt_id=usr_reports.id)	THEN	1
+		ELSE	0
+	END as bit) as cache_exists,
+	CASE
+		WHEN EXISTS(SELECT TOP 1 1 FROM tdistribution WHERE tdistribution.rpt_id=usr_reports.id and rpt_type=1)	THEN	1
+		ELSE	0
+	END as is_in_distribution,
+	usr_reports.[timestamp]
+FROM dbo.T_STORECHECK_REPORTS usr_reports
+LEFT OUTER JOIN dbo.T_STORECHECK_REPORTS parent_reports
+ON usr_reports.parent_report_id=parent_reports.id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+

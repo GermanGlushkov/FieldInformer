@@ -1,0 +1,88 @@
+<OBJECT RUNAT=Server 
+ SCOPE=Application 
+ ID=m_ConnPool
+ PROGID=MSMDConnPool.ConnPool>
+</OBJECT>
+
+
+
+
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+
+
+'++
+'
+' Copyright (c) Microsoft Corporation 1999
+' All Rights Reserved
+'
+' This code supports connection pooling for use by ASP pages.
+' It was written for MS OLAP Services, but could work for any OLE DB provider.
+'
+' It is meant only as a temporary alternative to real OLE DB connection pooling.
+' Connection pooling is not fully implemented and is untested in the first release.
+' The main problem, as in this code as well, is that session state is not cleared.
+' It is with this limitation that this code is presented.
+'
+' Synopsis:
+'    To get a connection:
+'       GetConnectionFromPool( szConnectionString as string, con as ADODB.Connection )
+'    To return a connection:
+'       ReturnConnectionToPool( con as ADODB.Connection )
+'
+' We require that each ASP page have session state.
+' This is so that the session can time out.
+' You could disable with <%@ EnableSessionState=False %>.
+'
+' We create new connections on demand.
+' We destroy the entire pool when the last session times out.
+' This would normally occur after 20 minutes of no activity.
+'
+' A preferred approach would be to create an MTS (Microsft Transaction Services)
+' object, which would encapsulate the connection.
+' You would need to expose IObjectControl, which has the CanBePooled method.
+' This might be a better approach but not so straightforward.
+' The best approach is to use OLE DB connection pooling, but that
+' has to be supported by the provider.
+'
+' This implementation uses locks at a high level,
+' which will limit scalability.
+' We limit the operations to simple data structure manipulation,
+' we don't allocate ADODB objects or connect or disconnect within a lock.
+'
+' Created 1-Apr-1999, Eric Jacobsen
+'
+'--
+
+Sub Session_OnStart
+
+	' keep track of how many sessions we have
+	Application.Lock
+	Application("m_cSessions") = Application("m_cSessions") + 1
+	Application.Unlock
+
+End Sub
+
+
+Sub Session_OnEnd
+
+	' if the last session is terminating then
+	' clear the pool
+	Application.Lock
+	Application("m_cSessions") = Application("m_cSessions") - 1
+	if (Application("m_cSessions") <= 0) then
+		fClearPool = True
+	Else
+		fClearPool = False
+	End if
+	Application.Unlock
+
+    If (fClearPool) Then
+        m_ConnPool.ClearConnectionPool
+    End If
+
+End Sub
+
+
+</SCRIPT>
+
+

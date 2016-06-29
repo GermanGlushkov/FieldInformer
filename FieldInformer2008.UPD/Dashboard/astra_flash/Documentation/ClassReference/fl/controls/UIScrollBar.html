@@ -1,0 +1,806 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="UIScrollBar,fl.controls.UIScrollBar,direction,scrollTarget,getStyleDefinition,setScrollProperties,update" name="keywords">
+<title>fl.controls.UIScrollBar</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'UIScrollBar - Yahoo! Astra Library';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Astra Library Documentation</td><td rowspan="2" align="right" class="titleTableLogo"><img alt="Yahoo! Logo" title="Yahoo! Logo" class="logoImage" src="../../images/yfp-stacked.gif"></td>
+</tr>
+<tr>
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;UIScrollBar</td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subNav" class="titleTableSubNav">
+<ul>
+<li>
+<a href="#propertySummary">Properties</a>&nbsp;| </li>
+<li>
+<a href="#methodSummary">Methods</a>&nbsp;| </li>
+<li>
+<a href="#eventSummary">Events</a>&nbsp;| </li>
+<li>
+<a href="#styleSummary">Styles</a>
+</li>
+</ul>
+</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/controls/UIScrollBar.html&amp;fl/controls/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class UIScrollBar"); titleBar_setSubNav(false,true,true,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.controls</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class UIScrollBar</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">UIScrollBar <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> <a href="ScrollBar.html">ScrollBar</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> <a href="../core/UIComponent.html">UIComponent</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+</table>
+<p></p>
+  The UIScrollBar class includes all of the scroll bar functionality, but 
+     adds a <code>scrollTarget()</code> method so it can be attached
+  to a TextField component instance.
+    <p><strong>Note:</strong> When you use ActionScript to update properties of 
+  the TextField component that affect the text layout, you must call the 
+  <code>update()</code> method on the UIScrollBar component instance to refresh its scroll 
+  properties. Examples of text layout properties that belong to the TextField 
+  component include <code>width</code>, <code>height</code>, and <code>wordWrap</code>.</p>
+       <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#direction">direction</a> : String<div class="summaryTableDescription">
+   Gets or sets a value that indicates whether the scroll bar scrolls horizontally or vertically.</div>
+</td><td class="summaryTableOwnerCol">UIScrollBar</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a Boolean value that indicates whether the scroll bar is enabled.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#focusEnabled">focusEnabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a Boolean value that indicates whether the component can receive focus 
+         after the user clicks it.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#focusManager">focusManager</a> : <a href="../managers/IFocusManager.html">IFocusManager</a>
+<div class="summaryTableDescription">
+         Gets or sets the FocusManager that controls focus for this component and its
+         peers.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#height">height</a> : Number<div class="summaryTableDescription">
+         Gets or sets the height of the component, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#lineScrollSize">lineScrollSize</a> : Number<div class="summaryTableDescription">
+   Gets or sets a value that represents the increment by which to scroll the page
+   when the scroll bar track is pressed.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#maxScrollPosition">maxScrollPosition</a> : Number<div class="summaryTableDescription">
+   Gets or sets a number that represents the maximum scroll position.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#minScrollPosition">minScrollPosition</a> : Number<div class="summaryTableDescription">
+   Gets or sets a number that represents the minimum scroll position.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#mouseFocusEnabled">mouseFocusEnabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the component can receive focus after 
+         the user clicks it.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#pageScrollSize">pageScrollSize</a> : Number<div class="summaryTableDescription">
+   Gets or sets a value that represents the increment by which the page is scrolled
+   when the scroll bar track is pressed.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#pageSize">pageSize</a> : Number<div class="summaryTableDescription">
+   Gets or sets the number of lines that a page contains.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#scaleX">scaleX</a> : Number<div class="summaryTableDescription">
+         Multiplies the current width of the component by a scale factor.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#scaleY">scaleY</a> : Number<div class="summaryTableDescription">
+         Multiplies the current height of the component by a scale factor.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#scrollPosition">scrollPosition</a> : Number<div class="summaryTableDescription">
+   Gets or sets the current scroll position and updates the position 
+         of the thumb.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scrollTarget">scrollTarget</a> : TextField<div class="summaryTableDescription">
+   Registers a TextField component instance with the ScrollBar component instance.</div>
+</td><td class="summaryTableOwnerCol">UIScrollBar</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#version">version</a> : String = "3.0.0.15"<div class="summaryTableDescription">
+         The version number of the components.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#visible">visible</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the current component instance is visible.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="ScrollBar.html#width">width</a> : Number<div class="summaryTableDescription">
+         Gets or sets the width of the component, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#x">x</a> : Number<div class="summaryTableDescription">
+         Gets or sets the x coordinate that represents the position of the component along
+         the x axis within its parent container.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#y">y</a> : Number<div class="summaryTableDescription">
+         Gets or sets the y coordinate that represents the position of the component along 
+         the y axis within its parent container.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#UIScrollBar()">UIScrollBar</a>()</div>
+<div class="summaryTableDescription">
+         Creates a new UIScrollBar component instance.</div>
+</td><td class="summaryTableOwnerCol">UIScrollBar</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#clearStyle()">clearStyle</a>(style:String):void</div>
+<div class="summaryTableDescription">
+         Deletes a style property from this component instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#drawFocus()">drawFocus</a>(focused:Boolean):void</div>
+<div class="summaryTableDescription">
+         Shows or hides the focus indicator on this component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#drawNow()">drawNow</a>():void</div>
+<div class="summaryTableDescription">
+         Initiates an immediate draw operation, without invalidating everything as <code>invalidateNow</code> does.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#getFocus()">getFocus</a>():InteractiveObject</div>
+<div class="summaryTableDescription">
+         Retrieves the object that currently has focus.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#getStyle()">getStyle</a>(style:String):Object</div>
+<div class="summaryTableDescription">
+         Retrieves a style property that is set in the style lookup 
+         chain of the component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getStyleDefinition()">getStyleDefinition</a>():Object</div>
+<div class="summaryTableDescription">[static]
+         Retrieves the default style map for the current component.</div>
+</td><td class="summaryTableOwnerCol">UIScrollBar</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#invalidate()">invalidate</a>(property:String, callLater:Boolean = true):void</div>
+<div class="summaryTableDescription">
+         Marks a property as invalid and redraws the component on the
+         next frame unless otherwise specified.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#mergeStyles()">mergeStyles</a>(... list):Object</div>
+<div class="summaryTableDescription">[static]
+         Merges the styles from multiple classes into one object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#move()">move</a>(x:Number, y:Number):void</div>
+<div class="summaryTableDescription">
+         Moves the component to the specified position within its parent.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#setFocus()">setFocus</a>():void</div>
+<div class="summaryTableDescription">
+         Sets the focus to this component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setScrollProperties()">setScrollProperties</a>(pageSize:<a href="">Number</a>, minScrollPosition:<a href="">Number</a>, maxScrollPosition:<a href="">Number</a>, pageScrollSize:<a href="">Number</a> = 0):void</div>
+<div class="summaryTableDescription">
+         Sets the range and viewport size of the ScrollBar component.</div>
+</td><td class="summaryTableOwnerCol">UIScrollBar</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#setSize()">setSize</a>(width:Number, height:Number):void</div>
+<div class="summaryTableDescription">
+         Sets the component to the specified width and height.</div>
+</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#setStyle()">setStyle</a>(style:String, value:Object):void</div>
+<div class="summaryTableDescription">
+         Sets a style property on this component instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#update()">update</a>():void</div>
+<div class="summaryTableDescription">
+   Forces the scroll bar to update its scroll properties immediately.</div>
+</td><td class="summaryTableOwnerCol">UIScrollBar</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#validateNow()">validateNow</a>():void</div>
+<div class="summaryTableDescription">
+         Validates and updates the properties and layout of this object, redrawing it
+         if necessary.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<div class="showHideLinks">
+<div class="hideInheritedEvent" id="hideInheritedEvent">
+<a onclick="javascript:setInheritedVisible(false,'Event');" href="#eventSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Events</a>
+</div>
+<div class="showInheritedEvent" id="showInheritedEvent">
+<a onclick="javascript:setInheritedVisible(true,'Event');" href="#eventSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Events</a>
+</div>
+</div>
+<table id="summaryTableEvent" class="summaryTable hideInheritedEvent" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#event:hide">hide</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component visibility changes from visible to invisible.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#event:move">move</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component is moved.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#event:resize">resize</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component is resized.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#event:scroll">scroll</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched when the ScrollBar instance's <code>scrollPosition</code> property changes.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#event:show">show</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component visibility changes from invisible to visible.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="styleSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Styles</div>
+<div class="showHideLinks">
+<div class="hideInheritedStyle" id="hideInheritedStyle">
+<a onclick="javascript:setInheritedVisible(false,'Style');" href="#styleSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Styles</a>
+</div>
+<div class="showInheritedStyle" id="showInheritedStyle">
+<a onclick="javascript:setInheritedVisible(true,'Style');" href="#styleSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Styles</a>
+</div>
+</div>
+<table id="summaryTableStyle" class="summaryTable hideInheritedStyle" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Style</th><th>Description</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#style:disabledTextFormat">disabledTextFormat</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>flash.text.TextFormat<br>
+      The TextFormat object to use to render the component label when the button is disabled.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:downArrowDisabledSkin">downArrowDisabledSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the down arrow button of the scroll bar 
+     when it is disabled.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:downArrowDownSkin">downArrowDownSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the down arrow button of the scroll bar 
+     when you click the arrow button.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:downArrowOverSkin">downArrowOverSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the down arrow button of the scroll bar 
+     when the mouse pointer is over the arrow button.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:downArrowUpSkin">downArrowUpSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the down arrow button of the scroll bar.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#style:focusRectPadding">focusRectPadding</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number &nbsp; <span class="label">Format: </span>Length<br>
+     The padding that separates the outside boundaries of the component from the
+     outside edges of the focus indicator, in pixels.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#style:focusRectSkin">focusRectSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin to be used to display focus indicators.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:repeatDelay">repeatDelay</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number &nbsp; <span class="label">Format: </span>Time<br>
+  The number of milliseconds to wait after the <code>buttonDown</code> 
+  event is first dispatched before sending a second <code>buttonDown</code> 
+  event.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:repeatInterval">repeatInterval</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number &nbsp; <span class="label">Format: </span>Time<br>
+     The interval, in milliseconds, between <code>buttonDown</code> events 
+  that are dispatched after the delay that is specified by the <code>repeatDelay</code>
+  style.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#style:textFormat">textFormat</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>flash.text.TextFormat<br>
+      The TextFormat object to use to render the component label.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:thumbDisabledSkin">thumbDisabledSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin that is used to indicate the disabled state of the thumb.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:thumbDownSkin">thumbDownSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the thumb of the scroll bar when you 
+     click the thumb.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:thumbIcon">thumbIcon</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the icon for the thumb of the scroll bar.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:thumbOverSkin">thumbOverSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the thumb of the scroll bar when the 
+     mouse pointer is over the thumb.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:thumbUpSkin">thumbUpSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin used for the thumb of the scroll
+  bar.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:trackDisabledSkin">trackDisabledSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin that is used to indicate a disabled track.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:trackDownSkin">trackDownSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin that is used to indicate the down state of a disabled skin.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:trackOverSkin">trackOverSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin that is used to indicate the mouseover state for the scroll track.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:trackUpSkin">trackUpSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin used to indicate the mouse up state for the scroll track.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:upArrowDisabledSkin">upArrowDisabledSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the up arrow button of the scroll bar 
+     when it is disabled.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:upArrowDownSkin">upArrowDownSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the up arrow button of the scroll bar when 
+     you click the arrow button.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:upArrowOverSkin">upArrowOverSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the up arrow button of the scroll bar when the 
+     mouse pointer is over the arrow button.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="ScrollBar.html#style:upArrowUpSkin">upArrowUpSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the up arrow button of the scroll bar.</td><td class="summaryTableOwnerCol"><a href="ScrollBar.html">ScrollBar</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="direction"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">direction</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>direction:String</code>&nbsp;&nbsp;[read-write]<p>
+   Gets or sets a value that indicates whether the scroll bar scrolls horizontally or vertically.
+         Valid values are <code>ScrollBarDirection.HORIZONTAL</code> and 
+         <code>ScrollBarDirection.VERTICAL</code>.
+                  </p><p>The default value is <code>ScrollBarDirection.VERTICAL</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get direction():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set direction(value:String):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="ScrollBarDirection.html" target="">ScrollBarDirection</a>
+</div>
+</div>
+<a name="scrollTarget"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scrollTarget</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>scrollTarget:TextField</code>&nbsp;&nbsp;[read-write]<p>
+   Registers a TextField component instance with the ScrollBar component instance.
+                  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get scrollTarget():TextField</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set scrollTarget(value:TextField):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../controls/UIScrollBar.html#update()" target="">update()</a>
+</div>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="UIScrollBar()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">UIScrollBar</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function UIScrollBar()</code><p>
+         Creates a new UIScrollBar component instance.
+                  </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="getStyleDefinition()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getStyleDefinition</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getStyleDefinition():Object</code><p>
+         Retrieves the default style map for the current component. The style map contains
+         the type that is appropriate for the component, depending on the style that
+         the component uses. For example, the <code>disabledTextFormat</code> style 
+         contains a value of <code>null</code> or a TextFormat object. 
+         You can use these styles and call <code>setStyle()</code> on the current 
+         component. The following code overrides the default <code>disabledTextFormat</code> 
+         style on the specified component: 
+         <div class='listing'><pre>componentInstance.setStyle("disabledTextFormat", new TextFormat());</pre></div>
+         
+         </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; Default styles object.
+                  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../core/UIComponent.html#getStyle()" target="">fl.core.UIComponent.getStyle()</a>
+<br>
+<a href="../core/UIComponent.html#setStyle()" target="">fl.core.UIComponent.setStyle()</a>
+<br>
+<a href="../managers/StyleManager.html" target="">fl.managers.StyleManager</a>
+</div>
+</div>
+<a name="setScrollProperties()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setScrollProperties</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function setScrollProperties(pageSize:<a href="">Number</a>, minScrollPosition:<a href="">Number</a>, maxScrollPosition:<a href="">Number</a>, pageScrollSize:<a href="">Number</a> = 0):void</code><p>
+         Sets the range and viewport size of the ScrollBar component. The ScrollBar 
+         component updates the state of the arrow buttons and size of the scroll 
+         thumb accordingly. All of the scroll properties are relative to the
+   scale of the <code>minScrollPosition</code> and the <code>maxScrollPosition</code>.
+   Each number between the maximum and minumum values represents one scroll position.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">pageSize</span>:<a href="">Number</a></code> &mdash; Size of one page. Determines the size of the thumb, and the increment by which the scroll bar moves when the arrows are clicked.
+    </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">minScrollPosition</span>:<a href="">Number</a></code> &mdash; Bottom of the scrolling range.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">maxScrollPosition</span>:<a href="">Number</a></code> &mdash; Top of the scrolling range.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">pageScrollSize</span>:<a href="">Number</a></code> (default = <code>0</code>)<code></code> &mdash; Increment to move when a track is pressed, in pixels.
+            </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="ScrollBar.html#pageSize" target="">ScrollBar.pageSize</a>
+<br>
+<a href="ScrollBar.html#minScrollPosition" target="">ScrollBar.minScrollPosition</a>
+<br>
+<a href="ScrollBar.html#maxScrollPosition" target="">ScrollBar.maxScrollPosition</a>
+<br>
+<a href="ScrollBar.html#pageScrollSize" target="">ScrollBar.pageScrollSize</a>
+</div>
+</div>
+<a name="update()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">update</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function update():void</code><p>
+   Forces the scroll bar to update its scroll properties immediately.  
+         This is necessary after text in the specified <code>scrollTarget</code> text field
+   is added using ActionScript, and the scroll bar needs to be refreshed.
+                  </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../controls/UIScrollBar.html#scrollTarget" target="">scrollTarget</a>
+</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<div class="feedbackLink">
+<center>
+<a target="_top" href="http://tech.groups.yahoo.com/group/ydn-flash/">Visit ydn-flash for Yahoo! ASTRA feedback and support</a>
+</center>
+</div>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

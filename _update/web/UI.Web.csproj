@@ -1,0 +1,1568 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Web"
+        ProductVersion = "7.10.6030"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{25997E31-C4D3-4D43-AF24-E8CA9831F180}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "UI.Web"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "FI.UI.Web"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "true"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Web.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.0.3705\System.XML.dll"
+                />
+                <Reference
+                    Name = "Common"
+                    Project = "{ABD39750-227A-44D2-9469-00B1308A31B9}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "BusinessObjects"
+                    Project = "{6B10C452-21BE-463C-83EE-2367ED0A5113}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Web.Services.dll"
+                />
+                <Reference
+                    Name = "DataAccess"
+                    Project = "{BB222519-E24D-46CB-9946-E3573E4BCEAE}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "GRAPHCOMLib"
+                    Guid = "{401121DD-891B-4B72-B20E-7EA5F27AAD4F}"
+                    VersionMajor = "1"
+                    VersionMinor = "0"
+                    Lcid = "0"
+                    WrapperTool = "tlbimp"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ColorScheme.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ColorScheme.aspx.cs"
+                    DependentUpon = "ColorScheme.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ColorScheme.aspx.resx"
+                    DependentUpon = "ColorScheme.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ContactList.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ContactList.aspx.cs"
+                    DependentUpon = "ContactList.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ContactList.aspx.resx"
+                    DependentUpon = "ContactList.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Default.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Default.aspx.cs"
+                    DependentUpon = "Default.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Default.aspx.resx"
+                    DependentUpon = "Default.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "DistributionLog.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DistributionLog.aspx.cs"
+                    DependentUpon = "DistributionLog.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DistributionLog.aspx.resx"
+                    DependentUpon = "DistributionLog.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "DistributionQueue.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DistributionQueue.aspx.cs"
+                    DependentUpon = "DistributionQueue.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DistributionQueue.aspx.resx"
+                    DependentUpon = "DistributionQueue.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Global.asax"
+                    SubType = "Component"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax.cs"
+                    DependentUpon = "Global.asax"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Global.asax.resx"
+                    DependentUpon = "Global.asax.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PageBase.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PageBase.aspx.cs"
+                    DependentUpon = "PageBase.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PageBase.aspx.resx"
+                    DependentUpon = "PageBase.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportCopyControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportCopyControl.ascx.cs"
+                    DependentUpon = "ReportCopyControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportCopyControl.ascx.resx"
+                    DependentUpon = "ReportCopyControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportDeleteControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportDeleteControl.ascx.cs"
+                    DependentUpon = "ReportDeleteControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportDeleteControl.ascx.resx"
+                    DependentUpon = "ReportDeleteControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportDistributionControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportDistributionControl.ascx.cs"
+                    DependentUpon = "ReportDistributionControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportDistributionControl.ascx.resx"
+                    DependentUpon = "ReportDistributionControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportDistributionLogControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportDistributionLogControl.ascx.cs"
+                    DependentUpon = "ReportDistributionLogControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportDistributionLogControl.ascx.resx"
+                    DependentUpon = "ReportDistributionLogControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportExportControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportExportControl.ascx.cs"
+                    DependentUpon = "ReportExportControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportExportControl.ascx.resx"
+                    DependentUpon = "ReportExportControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportGridControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportGridControl.ascx.cs"
+                    DependentUpon = "ReportGridControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportGridControl.ascx.resx"
+                    DependentUpon = "ReportGridControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportList.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportList.aspx.cs"
+                    DependentUpon = "ReportList.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportList.aspx.resx"
+                    DependentUpon = "ReportList.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportListControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportListControl.ascx.cs"
+                    DependentUpon = "ReportListControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportListControl.ascx.resx"
+                    DependentUpon = "ReportListControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportPrint.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportPrint.aspx.cs"
+                    DependentUpon = "ReportPrint.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportPrint.aspx.resx"
+                    DependentUpon = "ReportPrint.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportSaveControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportSaveControl.ascx.cs"
+                    DependentUpon = "ReportSaveControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportSaveControl.ascx.resx"
+                    DependentUpon = "ReportSaveControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ReportSharingControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ReportSharingControl.ascx.cs"
+                    DependentUpon = "ReportSharingControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportSharingControl.ascx.resx"
+                    DependentUpon = "ReportSharingControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UI.Web.vsdisco"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "UserList.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserList.aspx.cs"
+                    DependentUpon = "UserList.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserList.aspx.resx"
+                    DependentUpon = "UserList.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserPassChangeControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserPassChangeControl.ascx.cs"
+                    DependentUpon = "UserPassChangeControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserPassChangeControl.ascx.resx"
+                    DependentUpon = "UserPassChangeControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Web.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\FIDataEdit.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\FIDataEdit.ascx.cs"
+                    DependentUpon = "FIDataEdit.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\FIDataEdit.ascx.resx"
+                    DependentUpon = "FIDataEdit.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\FIDataTableGrid.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\FIDataTableGrid.ascx.cs"
+                    DependentUpon = "FIDataTableGrid.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\FIDataTableGrid.ascx.resx"
+                    DependentUpon = "FIDataTableGrid.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\FIDropDownControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\FIDropDownControl.ascx.cs"
+                    DependentUpon = "FIDropDownControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\FIDropDownControl.ascx.resx"
+                    DependentUpon = "FIDropDownControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\FieldEditControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\FieldEditControl.ascx.cs"
+                    DependentUpon = "FieldEditControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\FieldEditControl.ascx.resx"
+                    DependentUpon = "FieldEditControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\_Discarded\_OldTableGrid.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\Tabs\Space.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\Space.ascx.cs"
+                    DependentUpon = "Space.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\Tabs\Space.ascx.resx"
+                    DependentUpon = "Space.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\Tabs\Tab.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\Tab.ascx.cs"
+                    DependentUpon = "Tab.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\Tabs\Tab.ascx.resx"
+                    DependentUpon = "Tab.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\Tabs\TabsData.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "TabsData1.cs"
+                />
+                <File
+                    RelPath = "Controls\Tabs\TabsData.xsx"
+                    DependentUpon = "TabsData.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Controls\Tabs\TabsData1.cs"
+                    DependentUpon = "TabsData.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Controls\Tabs\TabView.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\TabView.ascx.cs"
+                    DependentUpon = "TabView.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\Tabs\TabView.ascx.resx"
+                    DependentUpon = "TabView.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\distr.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\distr_change.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\envelope.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\logout.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\share.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\share_change.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\left_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\left_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\left_root_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\left_root_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\right_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\right_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\right_root_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\right_root_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style1\tab_corn.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\left_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\left_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\left_root_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\left_root_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\right_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\right_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\right_root_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\right_root_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style2\tab_corn.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\left_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\left_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\left_root_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\left_root_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\right_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\right_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\right_root_act.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\right_root_notact.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\Tabs\images\style3\tab_corn.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\aggr_off.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\aggr_on.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\avg_off.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\avg_on.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\distr.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\distr_change.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\envelope.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\h_del.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\h_down.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\h_tocol.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\h_torow.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\h_up.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\leaf.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\max_off.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\max_on.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\min_off.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\min_on.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\n_close.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\n_deselall.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\n_open.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\n_selall.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\n_selauto.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\share.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\share_change.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\Style1_screenshot.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\Style2_screenshot.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\Style3_screenshot.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\sum_off.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\sum_on.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\Design.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\Design.aspx.cs"
+                    DependentUpon = "Design.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MdxReport\Design.aspx.resx"
+                    DependentUpon = "Design.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MdxReport\DesignControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\DesignControl.ascx.cs"
+                    DependentUpon = "DesignControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MdxReport\DesignControl.ascx.resx"
+                    DependentUpon = "DesignControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MdxReport\ExecuteControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\ExecuteControl.ascx.cs"
+                    DependentUpon = "ExecuteControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MdxReport\ExecuteControl.ascx.resx"
+                    DependentUpon = "ExecuteControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MdxReport\ImportOlapReportControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\ImportOlapReportControl.ascx.cs"
+                    DependentUpon = "ImportOlapReportControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MdxReport\ImportOlapReportControl.ascx.resx"
+                    DependentUpon = "ImportOlapReportControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MdxReport\PageBase.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\PageBase.aspx.cs"
+                    DependentUpon = "PageBase.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MdxReport\PageBase.aspx.resx"
+                    DependentUpon = "PageBase.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MdxReport\ReportLoadControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\ReportLoadControl.ascx.cs"
+                    DependentUpon = "ReportLoadControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MdxReport\ReportLoadControl.ascx.resx"
+                    DependentUpon = "ReportLoadControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MdxReport\ReportPropertiesControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\ReportPropertiesControl.ascx.cs"
+                    DependentUpon = "ReportPropertiesControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MdxReport\ReportPropertiesControl.ascx.resx"
+                    DependentUpon = "ReportPropertiesControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MdxReport\Table.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MdxReport\Table.aspx.cs"
+                    DependentUpon = "Table.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MdxReport\Table.aspx.resx"
+                    DependentUpon = "Table.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\Controller.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\Design.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\Design.aspx.cs"
+                    DependentUpon = "Design.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\Design.aspx.resx"
+                    DependentUpon = "Design.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\ExecuteControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\ExecuteControl.ascx.cs"
+                    DependentUpon = "ExecuteControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\ExecuteControl.ascx.resx"
+                    DependentUpon = "ExecuteControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\Format.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\Format.aspx.cs"
+                    DependentUpon = "Format.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\Format.aspx.resx"
+                    DependentUpon = "Format.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\FormatControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\FormatControl.ascx.cs"
+                    DependentUpon = "FormatControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\FormatControl.ascx.resx"
+                    DependentUpon = "FormatControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\Graph.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\Graph.aspx.cs"
+                    DependentUpon = "Graph.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\Graph.aspx.resx"
+                    DependentUpon = "Graph.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\GraphControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\GraphControl.ascx.cs"
+                    DependentUpon = "GraphControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\GraphControl.ascx.resx"
+                    DependentUpon = "GraphControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\PageBase.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\PageBase.aspx.cs"
+                    DependentUpon = "PageBase.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\PageBase.aspx.resx"
+                    DependentUpon = "PageBase.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\ReportLoadControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\ReportLoadControl.ascx.cs"
+                    DependentUpon = "ReportLoadControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\ReportLoadControl.ascx.resx"
+                    DependentUpon = "ReportLoadControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\ReportPropertiesControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\ReportPropertiesControl.ascx.cs"
+                    DependentUpon = "ReportPropertiesControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\ReportPropertiesControl.ascx.resx"
+                    DependentUpon = "ReportPropertiesControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\SelectControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\SelectControl.ascx.cs"
+                    DependentUpon = "SelectControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\SelectControl.ascx.resx"
+                    DependentUpon = "SelectControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\SliceControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\SliceControl.ascx.cs"
+                    DependentUpon = "SliceControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\SliceControl.ascx.resx"
+                    DependentUpon = "SliceControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\Table.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\Table.aspx.cs"
+                    DependentUpon = "Table.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\Table.aspx.resx"
+                    DependentUpon = "Table.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\TableControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\TableControl.ascx.cs"
+                    DependentUpon = "TableControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\TableControl.ascx.resx"
+                    DependentUpon = "TableControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "OlapReport\CalculatedMemberControls\FilteredByNameSetControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "OlapReport\CalculatedMemberControls\FilteredByNameSetControl.ascx.cs"
+                    DependentUpon = "FilteredByNameSetControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "OlapReport\CalculatedMemberControls\FilteredByNameSetControl.ascx.resx"
+                    DependentUpon = "FilteredByNameSetControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlReport\Design.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SqlReport\Design.aspx.cs"
+                    DependentUpon = "Design.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SqlReport\Design.aspx.resx"
+                    DependentUpon = "Design.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlReport\DesignControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SqlReport\DesignControl.ascx.cs"
+                    DependentUpon = "DesignControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SqlReport\DesignControl.ascx.resx"
+                    DependentUpon = "DesignControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlReport\ExecuteControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SqlReport\ExecuteControl.ascx.cs"
+                    DependentUpon = "ExecuteControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SqlReport\ExecuteControl.ascx.resx"
+                    DependentUpon = "ExecuteControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlReport\PageBase.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SqlReport\PageBase.aspx.cs"
+                    DependentUpon = "PageBase.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SqlReport\PageBase.aspx.resx"
+                    DependentUpon = "PageBase.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlReport\ReportLoadControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SqlReport\ReportLoadControl.ascx.cs"
+                    DependentUpon = "ReportLoadControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SqlReport\ReportLoadControl.ascx.resx"
+                    DependentUpon = "ReportLoadControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlReport\ReportPropertiesControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SqlReport\ReportPropertiesControl.ascx.cs"
+                    DependentUpon = "ReportPropertiesControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SqlReport\ReportPropertiesControl.ascx.resx"
+                    DependentUpon = "ReportPropertiesControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlReport\Table.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SqlReport\Table.aspx.cs"
+                    DependentUpon = "Table.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SqlReport\Table.aspx.resx"
+                    DependentUpon = "Table.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StorecheckReport\AddProductsControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StorecheckReport\AddProductsControl.ascx.cs"
+                    DependentUpon = "AddProductsControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StorecheckReport\AddProductsControl.ascx.resx"
+                    DependentUpon = "AddProductsControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StorecheckReport\Design.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StorecheckReport\Design.aspx.cs"
+                    DependentUpon = "Design.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StorecheckReport\Design.aspx.resx"
+                    DependentUpon = "Design.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StorecheckReport\DesignControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StorecheckReport\DesignControl.ascx.cs"
+                    DependentUpon = "DesignControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StorecheckReport\DesignControl.ascx.resx"
+                    DependentUpon = "DesignControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StorecheckReport\ExecuteControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StorecheckReport\ExecuteControl.ascx.cs"
+                    DependentUpon = "ExecuteControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StorecheckReport\ExecuteControl.ascx.resx"
+                    DependentUpon = "ExecuteControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StorecheckReport\PageBase.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StorecheckReport\PageBase.aspx.cs"
+                    DependentUpon = "PageBase.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StorecheckReport\PageBase.aspx.resx"
+                    DependentUpon = "PageBase.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StorecheckReport\ReportLoadControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StorecheckReport\ReportLoadControl.ascx.cs"
+                    DependentUpon = "ReportLoadControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StorecheckReport\ReportLoadControl.ascx.resx"
+                    DependentUpon = "ReportLoadControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StorecheckReport\ReportPropertiesControl.ascx"
+                    SubType = "UserControl"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StorecheckReport\ReportPropertiesControl.ascx.cs"
+                    DependentUpon = "ReportPropertiesControl.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StorecheckReport\ReportPropertiesControl.ascx.resx"
+                    DependentUpon = "ReportPropertiesControl.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StorecheckReport\Table.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StorecheckReport\Table.aspx.cs"
+                    DependentUpon = "Table.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StorecheckReport\Table.aspx.resx"
+                    DependentUpon = "Table.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "style\style1\grad_blue.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style1\grad_grey.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style1\grad_white.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style1\grad_yellow.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style1\StyleSheet.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style2\grad_blue.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style2\grad_grey.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style2\grad_red.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style2\grad_white.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style2\grad_yellow.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style2\StyleSheet.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style3\grad_blue.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style3\grad_grey.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style3\grad_red.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style3\grad_white.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style3\grad_yellow.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "style\style3\StyleSheet.css"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "Temp\" />
+                <File
+                    RelPath = "WebServices\DistributionDetails.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebServices\DistributionDetails.aspx.cs"
+                    DependentUpon = "DistributionDetails.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebServices\DistributionDetails.aspx.resx"
+                    DependentUpon = "DistributionDetails.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "WebServices\DistributionManager.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebServices\DistributionManager.aspx.cs"
+                    DependentUpon = "DistributionManager.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebServices\DistributionManager.aspx.resx"
+                    DependentUpon = "DistributionManager.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "WebServices\DistributionService.asmx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebServices\DistributionService.asmx.cs"
+                    DependentUpon = "DistributionService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebServices\DistributionService.asmx.resx"
+                    DependentUpon = "DistributionService.asmx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "WebServices\OlapProcessorManager.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebServices\OlapProcessorManager.aspx.cs"
+                    DependentUpon = "OlapProcessorManager.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebServices\OlapProcessorManager.aspx.resx"
+                    DependentUpon = "OlapProcessorManager.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "WebServices\PingService.asmx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebServices\PingService.asmx.cs"
+                    DependentUpon = "PingService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebServices\PingService.asmx.resx"
+                    DependentUpon = "PingService.asmx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

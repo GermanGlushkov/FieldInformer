@@ -1,0 +1,42 @@
+// TestXML.odl : type library source for TestXML.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (TestXML.tlb).
+
+[ uuid(91E6A199-A985-425E-A4B4-2D9667F475B8), version(1.0) ]
+library TestXML
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CTestXMLDoc
+	
+	[ uuid(21F7F3BE-425C-4239-BC76-3973486A7DBB) ]
+	dispinterface ITestXML
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CTestXMLDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CTestXMLDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CTestXMLDoc
+	
+	[ uuid(7FB7A18F-752D-430C-B30D-85732E10D4B5) ]
+	coclass TestXML
+	{
+		[default] dispinterface ITestXML;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

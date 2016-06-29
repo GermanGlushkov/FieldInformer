@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SourceSchemaMap" targetNamespace="http://tempuri.org/SourceSchemaMap.xsd" xmlns:mstns="http://tempuri.org/SourceSchemaMap.xsd" xmlns="http://tempuri.org/SourceSchemaMap.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SourceSchemaMap" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="SourceSchemaMap" msprop:Generator_DataSetName="SourceSchemaMap">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Map" msprop:Generator_UserTableName="Map" msprop:Generator_RowDeletedName="MapRowDeleted" msprop:Generator_RowChangedName="MapRowChanged" msprop:Generator_RowClassName="MapRow" msprop:Generator_RowChangingName="MapRowChanging" msprop:Generator_RowEvArgName="MapRowChangeEvent" msprop:Generator_RowEvHandlerName="MapRowChangeEventHandler" msprop:Generator_TableClassName="MapDataTable" msprop:Generator_TableVarName="tableMap" msprop:Generator_RowDeletingName="MapRowDeleting" msprop:Generator_TablePropName="Map">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SourceUniqueName" msprop:Generator_UserColumnName="SourceUniqueName" msprop:Generator_ColumnVarNameInTable="columnSourceUniqueName" msprop:Generator_ColumnPropNameInRow="SourceUniqueName" msprop:Generator_ColumnPropNameInTable="SourceUniqueNameColumn" type="xs:string" />
+              <xs:element name="DestUniqueName" msprop:Generator_UserColumnName="DestUniqueName" msprop:Generator_ColumnVarNameInTable="columnDestUniqueName" msprop:Generator_ColumnPropNameInRow="DestUniqueName" msprop:Generator_ColumnPropNameInTable="DestUniqueNameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Map" />
+      <xs:field xpath="mstns:SourceUniqueName" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

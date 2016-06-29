@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="OlapReportData" targetNamespace="http://tempuri.org/OlapReportData.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/OlapReportData.xsd" xmlns:mstns="http://tempuri.org/OlapReportData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="OlapReportData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Header">
+					<xs:complexType>
+						<xs:sequence>
+							<!-- percentage fields are temporary, they should exist as calculated members, 
+									but they are for backward compatibility-->
+							<xs:element name="RptId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="RptOwnerId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="ParentRptId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="RptName" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptDescription" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptSchemaId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="RptSchemaName" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptSchemaServer" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptSchemaDatabase" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptOrder" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptTimeRangeEnabled" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="RptTimeRangePrompt" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="RptTimeRangeStart" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptTimeRangeEnd" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptTimeRangeLevel" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptPercentageType" type="xs:unsignedByte" minOccurs="0" nillable="true" />
+							<xs:element name="RptPercentageDim" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptPercentageMeasure" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="RptShowRowsOption" type="xs:unsignedByte" minOccurs="0" nillable="true" />
+							<xs:element name="RptShowColumnsOption" type="xs:unsignedByte" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Dimensions">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" type="xs:int" minOccurs="0" nillable="true" msdata:AutoIncrement="true" />
+							<xs:element name="UniqueName" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="IsOpen" type="xs:boolean" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Hierarchies">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" type="xs:int" minOccurs="0" nillable="true" msdata:AutoIncrement="true" />
+							<xs:element name="DimId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="UniqueName" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="IsOpen" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="Axis" type="xs:short" minOccurs="0" nillable="true" />
+							<xs:element name="AxisPositionOrdinal" type="xs:short" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Levels">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" type="xs:int" minOccurs="0" nillable="true" msdata:AutoIncrement="true" />
+							<xs:element name="HierId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="UniqueName" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="Depth" type="xs:short" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Members">
+					<xs:complexType>
+						<xs:sequence>
+							<!-- MemId is ID for current olap schema -->
+							<!-- MemSerNo is ID for current report (identity) -->
+							<!-- MemIsInMDX shows if member is in MDX (because there could exists 2 set of time members 
+									(from time range and from selection) , only one set is in MDX-->
+							<xs:element name="Id" type="xs:int" minOccurs="0" nillable="true" msdata:AutoIncrement="true" />
+							<xs:element name="HierId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="ParentMemberId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="LevelId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="UniqueName" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="ChildCount" type="xs:short" minOccurs="0" nillable="true" />
+							<xs:element name="LevelDepth" type="xs:short" minOccurs="0" nillable="true" />
+							<xs:element name="IsCalculated" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="IsOpen" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="IsPlaceholder" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="IsInMDX" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="IsVisible" type="xs:boolean" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CalculatedMembers">
+					<xs:complexType>
+						<xs:sequence>
+							<!-- EXPRESSION is encoded :
+								** no entries in link tables, because uses WHOLE SET OF MEMBERS from CURRENT hierarchy
+									HIER_SUM
+									HIER_MIN
+									HIER_MAX
+									HIER_AVG
+									HIER_COUNT
+								** 
+								** using LINKS to check EXISTENCE of members or hierarchies or levels or dimensions in expression
+								** if LINK exists, it must be validated on report load, if something is MISSING , 
+								** calculated member will be DISCARDED.
+								**
+							-->
+							<!-- IsWithDimensions means with dimensions , EXCLUDING CURRENT dimension, because it exists for sure, it's parent -->
+							<!-- IsWithHierarchies means with hierarchies , EXCLUDING CURRENT hierarchy, because it exists for sure, it's parent -->
+							<!-- IsWithLevels means with levels , INCLUDING current levels, bcause they can change -->
+							<!-- IsWithMembers means with members , INCLUDING current hierarchy members, bcause they can change -->
+							<xs:element name="MemberId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="Expression" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="SolveOrder" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="FormatString" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="IsWithMembers" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="IsWithLevels" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="IsWithHierarchies" type="xs:boolean" minOccurs="0" nillable="true" />
+							<xs:element name="IsWithDimensions" type="xs:boolean" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OrderTuple">
+					<xs:complexType>
+						<xs:sequence>
+							<!-- validity must be checked by business logic -->
+							<xs:element name="UniqueName" type="xs:string" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Link_Mem_Hier">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MemId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="HierId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="IsVital" type="xs:boolean" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Link_Mem_Level">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MemId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="LevelId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="IsVital" type="xs:boolean" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Link_Mem_Mem">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ParentMemId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="ChildMemId" type="xs:int" minOccurs="0" nillable="true" />
+							<xs:element name="IsVital" type="xs:boolean" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OpenNodes">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UniqueName" type="xs:string" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="PK_Hierarchies" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Hierarchies" />
+			<xs:field xpath="mstns:Id" />
+		</xs:key>
+		<xs:key name="PK_Levels">
+			<xs:selector xpath=".//mstns:Levels" msdata:PrimaryKey="true" />
+			<xs:field xpath="mstns:Id" />
+		</xs:key>
+		<xs:key name="PK_Dimensions">
+			<xs:selector xpath=".//mstns:Dimensions" msdata:PrimaryKey="true" />
+			<xs:field xpath="mstns:Id" />
+		</xs:key>
+		<xs:keyref name="DimensionsHierarchies" refer="PK_Dimensions">
+			<xs:selector xpath=".//mstns:Hierarchies" />
+			<xs:field xpath="mstns:DimId" />
+		</xs:keyref>
+		<xs:keyref name="MembersCalculatedMembers" refer="PK_Members">
+			<xs:selector xpath=".//mstns:CalculatedMembers" />
+			<xs:field xpath="mstns:MemberId" />
+		</xs:keyref>
+		<xs:key name="PK_CalculatedMembers" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:CalculatedMembers" />
+			<xs:field xpath="mstns:MemberId" />
+		</xs:key>
+		<xs:keyref name="HierarchiesLevels" refer="PK_Hierarchies" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Levels" />
+			<xs:field xpath="mstns:HierId" />
+		</xs:keyref>
+		<xs:key name="PK_Members" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Members" />
+			<xs:field xpath="mstns:Id" />
+		</xs:key>
+		<xs:keyref name="HierarchiesMembers" refer="PK_Hierarchies">
+			<xs:selector xpath=".//mstns:Members" />
+			<xs:field xpath="mstns:HierId" />
+		</xs:keyref>
+		<xs:keyref name="MembersLink_Mem_Mem" refer="PK_Members">
+			<xs:selector xpath=".//mstns:Link_Mem_Mem" />
+			<xs:field xpath="mstns:ParentMemId" />
+		</xs:keyref>
+		<xs:keyref name="MembersLink_Mem_Level" refer="PK_Members">
+			<xs:selector xpath=".//mstns:Link_Mem_Level" />
+			<xs:field xpath="mstns:MemId" />
+		</xs:keyref>
+		<xs:keyref name="MembersLink_Mem_Hier" refer="PK_Members">
+			<xs:selector xpath=".//mstns:Link_Mem_Hier" />
+			<xs:field xpath="mstns:MemId" />
+		</xs:keyref>
+		<xs:key name="PK_OpenNodes" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:OpenNodes" />
+			<xs:field xpath="mstns:UniqueName" />
+		</xs:key>
+		<xs:key name="IX_Hierarchies_UN" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Hierarchies" />
+			<xs:field xpath="mstns:UniqueName" />
+		</xs:key>
+		<xs:key name="IX_Members_UN" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Members" />
+			<xs:field xpath="mstns:UniqueName" />
+		</xs:key>
+		<xs:key name="IX_Dimensions_UN" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Dimensions" />
+			<xs:field xpath="mstns:UniqueName" />
+		</xs:key>
+		<xs:key name="IX_levels_UN" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Levels" />
+			<xs:field xpath="mstns:UniqueName" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

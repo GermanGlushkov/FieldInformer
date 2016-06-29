@@ -1,0 +1,237 @@
+All code covered by GPLversion 2 or higher. 
+http://www.fsf.org/licensing/licenses/info/GPLv2.html
+
+Original code by Charles Nichols with some help from Richard Wagner while I was learning 
+ActionScript. Thanks Rick!
+
+All images created by Charles Nichols. Feel free to use any image as you see fit.
+
+Released: Jan. 10th, 2008
+Version 1.0
+
+# =================================================================================
+BUGFIX Release! April 30, 2009
+
+Version 1.0.1 thanks to Tyrell Perera <tyrell.perera@gmail.com>
+This release addresses a bug in which custom data file would not refresh rendering 
+the gauges usless after the first refresh. 
+
+Update to documentation. 
+
+Caching: Make sure you you disable caching on the server for the client or a user
+allowing these objects to display for long periods will have large amounts of cache 
+filling up on their system, which may cause their machine to act strange. Disable 
+caching for controller, flashdata, and swf on the page containing the gauges.
+
+Here are a few examples: http://lab.artlung.com/anti-cache/
+
+# =================================================================================
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+# =================================================================================
+Plugs:
+SWFObject : http://blog.deconcept.com/swfobject/
+
+Need a preconfigured web server that supports PHP?
+Windows:    http://apache2triad.net/
+Macintosh:  http://www.mamp.info/en/index.php
+
+If you need GPL'ed Live Flash Graphs and charts please visit:
+http://teethgrinder.co.uk/open-flash-chart/
+# =================================================================================
+Documentation:
+
+Copy all the contents to your web server. SWFObject is required and is included only for simplicity.
+For more information and updates to SWFObject please visit: http://blog.deconcept.com/swfobject/
+
+Point the browser to http://localhost/php_all.html, adding any path differences of course. Your server must be running PHP for this example. View the asp_example.html for IIs or Python in ASP. I only give one example there, but using the php_all.html as a guide
+you will notice not much is required to switch between different languages and servers.
+
+IMPORTANT!
+You will find flashdata.php and flashdata.asp in /flash. This file must be in this directory unless you change the path in each Flash object. If you prefer to use html and return the data using Javascript just create a flashdata.js and specify js when you add the Flash object to your page. In the case of SWFObject you would do:
+ so.addVariable("exec_type", "js");
+To use ASP you would do:
+ so.addVariable("exec_type", "asp");
+
+PHP is the default and does not need to be set if you're planning on using PHP...
+
+IMPORTANT!
+
+To separate data, like in the instance you have two of the same gauge using different data, you must set the funcName var, for example: 
+
+so.addVariable("funcName", "pgauge_data"); 
+
+What happens:
+
+I say use asp when the page loads, so.addVariable("exec_type", "asp");
+The Flash object sends funcName, so.addVariable("funcName", "pgauge_data"); to flashdata.asp. 
+pgauge_data function returns a standard HTTP string back.
+
+What if I don't want to use SWFObject?
+
+In that case do the usual for a Flash object. Be aware, IE will require a user click before tooltips will work. SWFObject eliminates this issue. Also, all vars will need to be appended to the source string using object/embed:
+value="flash/pgauge.swf?funcName=pgauge_data&title=test&title_color=etc..." SWFOject majorly cleans that as you can see by the examples. Yes, I do really like SWFObject! Anyway, here is an example if you're not convinced:
+  
+		<div>
+		<!- Flash Gauge Embedded -->
+		    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+		    codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+		    width="195" id="percent_gauge" align="top">
+		    <param name="allowScriptAccess" value="sameDomain" />
+			
+	            <!- IMPORTANT, this is the function, funcName=pgauge_data, in flashdata. -->
+		    <param name="movie" value="flash/pgauge.swf?funcName=pgauge_data&title=test" /> 
+		    <param name="menu" value="false" />
+		    <param name="quality" value="high" />
+		    <param name="wmode" value="transparent" />
+		    <param name="bgcolor" value="#ffffff" />
+			
+			<!- IMPORTANT, this is the function, funcName=pgauge_data, in flashdata. -->
+		    <embed src="flash/pgauge.swf?funcName=pgauge_data&title=test"
+		    menu="false" quality="high" wmode="transparent" bgcolor="#ffffff"
+		    width="195" name="percent_gauge" align="top"
+		    allowScriptAccess="sameDomain" type="application/x-shockwave-flash"
+		    pluginspage="http://www.macromedia.com/go/getflashplayer" />
+		    </object>
+		<!- Flash Gauge Embedded -->
+		</div>
+
+Resizing smaller should work ok if you don't over do. This can be done when embedding the object. Sizing up will yield bad results in most cases.
+
+::Object and Settings::
+
+PGAUGE.SWF      Default size: 200X200 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ title          Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA:
+  value : 0 to 100 %
+
+DGAUGE.SWF      Default size: 200X200 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ title          Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA:
+  value : 0 to 60 seconds (one minute) 
+  range : whatever you choose... !NOT IMPLEMENTED!
+
+DPGAUGE.SWF     Default size: 200X200 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ title          Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA:
+  value : 0 to 100 %
+  range : whatever you choose... !NOT IMPLEMENTED!
+
+BAR.SWF		Default size: 190X100 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ title          Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA:
+  value : 0 to range
+  range : whatever you choose...
+
+RESOURCE_METER.SWF   Default size: 195X125 px
+ funcName            Required unless overriding with "custom"
+ exec_type           Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom              Call your own script, see php_custom.html.
+ bgimage             Background image
+ title               Required. Object title
+ title-color         Default: silver. Options: black, white
+ DATA:
+  value : 0 to 100 % 
+
+METER.SWF       Default size: 200X180 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ title          Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA:
+  value : 0 to range
+  range : whatever you choose...
+
+PMETER.SWF      Default size: 200X180 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ title          Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA:
+  value : 0 to range. Can be positive or negative "+num" or "-num"
+  range : whatever you choose...
+
+STATUS.SWF      Default size: 200X45 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ title          Required. Object title
+ DATA:
+  value : 0 or 1 (avail or not)
+
+TEMP.SWF        Default size: 110X300 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ title          Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA:
+  value : 0 to range.
+  range : whatever you choose...
+
+IOGAUGE.SWF     Default size: 205X135 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ title          Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA
+  in_range  : whatever you choose...
+  out_range : whatever you choose...
+  in_value  : 0 to range.
+  out_value : 0 to range.
+  avg_in_value  : average or last val
+  avg_out_value : average or last val
+
+DIGITAL.SWF     Default size: 190X150 px
+ funcName       Required unless overriding with "custom"
+ exec_type      Default: php Options: asp, js, whatever you choose. Not needed is using "custom"
+ custom         Call your own script, see php_custom.html.
+ refresh        Required. Seconds to poll for new data. 1000 = 1 sec.
+ bgimage        Background image
+ exec_type      Default: php Options: asp, js, whatever you choose.
+ title_a        Required. Object title
+ title_b        Required. Object title
+ title-color    Default: silver. Options: black, white
+ DATA:
+  value_a : 0 to nnnnnn
+  value_b : 0 to nnnnnn
+ 
+Hope I covered everything. If you need help, have questions, ideas, complaints feel free to email me:
+Charles Nichols
+mohawke@darkartistry.com

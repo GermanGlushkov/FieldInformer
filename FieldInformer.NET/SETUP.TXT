@@ -1,0 +1,12 @@
+Prerequisites:
+1) Latest Analysis Services Service Pack (restart)
+2) Data Access Components 2.8 (restart)
+3) DotNet Framework 1.1
+
+Installation:
+1) Sql components
+2) Service components
+3) Web components
+4) IF CONVERSION NEEDED FROM PRE-dotNet VERSION:
+	Process cubes first !!!
+	Start Setup.PlugIn.exe

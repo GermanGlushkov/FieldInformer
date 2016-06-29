@@ -1,0 +1,1723 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../../print.css" type="text/css" media="print">
+<meta content="Menu,com.yahoo.astra.fl.controls.Menu,closeOnMouseLeave,createAccessibilityImplementation,groups,parentMenuClickable,specifiedPoint,dataProvider,labelField,parentMenu,subMenus,createMenu,hide,initializeAccessibility,popUpMenu,setRendererStyle,setStyle,show" name="keywords">
+<title>com.yahoo.astra.fl.controls.Menu</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Menu - Yahoo! Astra Library';
+				var baseRef = '../../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Astra Library Documentation</td><td rowspan="2" align="right" class="titleTableLogo"><img alt="Yahoo! Logo" title="Yahoo! Logo" class="logoImage" src="../../../../../images/yfp-stacked.gif"></td>
+</tr>
+<tr>
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Menu</td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subNav" class="titleTableSubNav">
+<ul>
+<li>
+<a href="#propertySummary">Properties</a>&nbsp;| </li>
+<li>
+<a href="#methodSummary">Methods</a>&nbsp;| </li>
+<li>
+<a href="#eventSummary">Events</a>&nbsp;| </li>
+<li>
+<a href="#styleSummary">Styles</a>
+</li>
+</ul>
+</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../../all-classes.html')" href="../../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../../all-classes.html')" href="../../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../../index-list.html')" href="../../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../../index.html?com/yahoo/astra/fl/controls/Menu.html&amp;com/yahoo/astra/fl/controls/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Menu"); titleBar_setSubNav(false,true,true,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.yahoo.astra.fl.controls</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Menu</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Menu <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../../images/inherit-arrow.gif"> <a href="../../../../../fl/controls/List.html">List</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../../images/inherit-arrow.gif"> <a href="../../../../../fl/controls/SelectableList.html">SelectableList</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../../images/inherit-arrow.gif"> <a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../../images/inherit-arrow.gif"> <a href="../../../../../fl/core/UIComponent.html">UIComponent</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="../containers/IRendererContainer.html">IRendererContainer</a></td>
+</tr>
+</table>
+<p></p>
+  The Menu class creates an array of menus from an XML data provider.
+  Add the Menu to your library (either by dragging it onto the stage and then deleting it, or
+  dragging it directly to your library). Then call the static <code>Menu.createMenu(parent)</code> 
+  method to create a menu, and call <code>yourMenuInstance.show()</code> to display it.
+   <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#allowMultipleSelection">allowMultipleSelection</a> : Boolean<div class="summaryTableDescription">
+   Gets a Boolean value that indicates whether more than one list item 
+   can be selected at a time.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#closeOnMouseLeave">closeOnMouseLeave</a> : Boolean<div class="summaryTableDescription">
+  Indicates whether the menu will close when the mouse leaves the stage.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#createAccessibilityImplementation">createAccessibilityImplementation</a> : Function<div class="summaryTableDescription">[static]
+ Placeholder for mixin by MenuAccImpl.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#dataProvider">dataProvider</a> : <a href="../../../../../fl/data/DataProvider.html">DataProvider</a>
+<div class="summaryTableDescription">
+   Gets or sets the data model of the list of items to be viewed.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the component can accept user interaction.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#focusEnabled">focusEnabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a Boolean value that indicates whether the component can receive focus 
+         after the user clicks it.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#focusManager">focusManager</a> : <a href="../../../../../fl/managers/IFocusManager.html">IFocusManager</a>
+<div class="summaryTableDescription">
+         Gets or sets the FocusManager that controls focus for this component and its
+         peers.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#groups">groups</a> : Object<div class="summaryTableDescription">
+  Object that contains arrays of groups.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#height">height</a> : Number<div class="summaryTableDescription">
+         Gets or sets the height of the component, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#horizontalLineScrollSize">horizontalLineScrollSize</a> : Number<div class="summaryTableDescription">
+   Gets or sets a value that describes the amount of content to be scrolled,
+   horizontally, when a scroll arrow is clicked.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#horizontalPageScrollSize">horizontalPageScrollSize</a> : Number<div class="summaryTableDescription">
+   Gets or sets the count of pixels by which to move the scroll thumb 
+   on the horizontal scroll bar when the scroll bar track is pressed.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#horizontalScrollBar">horizontalScrollBar</a> : <a href="../../../../../fl/controls/ScrollBar.html">ScrollBar</a>
+<div class="summaryTableDescription">
+   Gets a reference to the horizontal scroll bar.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#horizontalScrollPolicy">horizontalScrollPolicy</a> : String<div class="summaryTableDescription">
+         Gets or sets a value that indicates the state of the horizontal scroll
+   bar.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#horizontalScrollPosition">horizontalScrollPosition</a> : Number<div class="summaryTableDescription">
+   Gets or sets a value that describes the horizontal position of the 
+   horizontal scroll bar in the scroll pane, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/List.html#iconField">iconField</a> : String<div class="summaryTableDescription">
+         Gets or sets the item field that provides the icon for the item.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/List.html">List</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/List.html#iconFunction">iconFunction</a> : Function<div class="summaryTableDescription">
+   Gets or sets the function to be used to obtain the icon for the item.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/List.html">List</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#labelField">labelField</a> : String<div class="summaryTableDescription">
+      Name of the field in the items in the <code>dataProvider</code> 
+      Array to display as the label in the Menu.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/List.html#labelFunction">labelFunction</a> : Function<div class="summaryTableDescription">
+         Gets or sets the function to be used to obtain the label for the item.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/List.html">List</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#length">length</a> : uint<div class="summaryTableDescription">
+         Gets the number of items in the data provider.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#maxHorizontalScrollPosition">maxHorizontalScrollPosition</a> : Number<div class="summaryTableDescription">
+   Gets or sets the number of pixels that the list scrolls to the right when the
+         <code>horizontalScrollPolicy</code> property is set to <code>ScrollPolicy.ON</code>.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#maxVerticalScrollPosition">maxVerticalScrollPosition</a> : Number<div class="summaryTableDescription">
+   Gets the maximum vertical scroll position for the current content, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#mouseFocusEnabled">mouseFocusEnabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the component can receive focus after 
+         the user clicks it.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#parentMenu">parentMenu</a> : <a href="../controls/Menu.html">Menu</a>
+<div class="summaryTableDescription">
+   The parent menu in a hierarchical chain of menus, where the current 
+   menu is a submenu of the parent.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#parentMenuClickable">parentMenuClickable</a> : Boolean<div class="summaryTableDescription">
+  Indicates whether or not a menu item with a submenu is clickable.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/List.html#rowCount">rowCount</a> : uint<div class="summaryTableDescription">
+   Gets or sets the number of rows that are at least partially visible in the 
+         list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/List.html">List</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/List.html#rowHeight">rowHeight</a> : Number<div class="summaryTableDescription">
+   Gets or sets the height of each row in the list, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/List.html">List</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#scaleX">scaleX</a> : Number<div class="summaryTableDescription">
+         Multiplies the current width of the component by a scale factor.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#scaleY">scaleY</a> : Number<div class="summaryTableDescription">
+         Multiplies the current height of the component by a scale factor.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#selectable">selectable</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a Boolean value that indicates whether the items in the list 
+   can be selected.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#selectedIndex">selectedIndex</a> : int<div class="summaryTableDescription">
+   Gets or sets the index of the item that is selected in a single-selection
+   list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#selectedIndices">selectedIndices</a> : Array<div class="summaryTableDescription">
+   Gets or sets an array that contains the items that were selected from
+   a multiple-selection list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#selectedItem">selectedItem</a> : Object<div class="summaryTableDescription">
+   Gets or sets the item that was selected from a single-selection list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#selectedItems">selectedItems</a> : Array<div class="summaryTableDescription">
+   Gets or sets an array that contains the objects for the  
+   items that were selected from the multiple-selection list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#specifiedPoint">specifiedPoint</a> : Point<div class="summaryTableDescription">
+  Coordinates indicating the ideal position of the menu.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#subMenus">subMenus</a> : Array<div class="summaryTableDescription">[read-only]
+   Get the current set of submenus for a Menu
+  </div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#useBitmapScrolling">useBitmapScrolling</a> : Boolean<div class="summaryTableDescription">
+   When set to <code>true</code>, the <code>cacheAsBitmap</code> property for the scrolling content is set 
+   to <code>true</code>; when set to <code>false</code> this value is turned off.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#version">version</a> : String = "3.0.0.15"<div class="summaryTableDescription">
+         The version number of the components.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#verticalLineScrollSize">verticalLineScrollSize</a> : Number<div class="summaryTableDescription">
+   Gets or sets a value that describes how many pixels to scroll vertically when a scroll arrow is clicked.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#verticalPageScrollSize">verticalPageScrollSize</a> : Number<div class="summaryTableDescription">
+         Gets or sets the count of pixels by which to move the scroll thumb 
+   on the vertical scroll bar when the scroll bar track is pressed.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#verticalScrollBar">verticalScrollBar</a> : <a href="../../../../../fl/controls/ScrollBar.html">ScrollBar</a>
+<div class="summaryTableDescription">
+   Gets a reference to the vertical scroll bar.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#verticalScrollPolicy">verticalScrollPolicy</a> : String<div class="summaryTableDescription">
+         Gets or sets a value that indicates the state of the vertical scroll
+   bar.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#verticalScrollPosition">verticalScrollPosition</a> : Number<div class="summaryTableDescription">
+   Gets or sets a value that describes the vertical position of the 
+   vertical scroll bar in the scroll pane, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#visible">visible</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the current component instance is visible.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#width">width</a> : Number<div class="summaryTableDescription">
+         Gets or sets the width of the component, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#x">x</a> : Number<div class="summaryTableDescription">
+         Gets or sets the x coordinate that represents the position of the component along
+         the x axis within its parent container.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../../../../../fl/core/UIComponent.html#y">y</a> : Number<div class="summaryTableDescription">
+         Gets or sets the y coordinate that represents the position of the component along 
+         the y axis within its parent container.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Menu()">Menu</a>()</div>
+<div class="summaryTableDescription">
+      Constructor.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#addItem()">addItem</a>(item:Object):void</div>
+<div class="summaryTableDescription">
+   Appends an item to the end of the list of items.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#addItemAt()">addItemAt</a>(item:Object, index:uint):void</div>
+<div class="summaryTableDescription">
+   Inserts an item into the list at the specified index location.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#clearRendererStyle()">clearRendererStyle</a>(name:String, column:int = -1):void</div>
+<div class="summaryTableDescription">
+   Clears a style that is set on the renderers in the list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#clearSelection()">clearSelection</a>():void</div>
+<div class="summaryTableDescription">
+         Clears the currently selected item in the list and sets the <code>selectedIndex</code> property to -1.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#clearStyle()">clearStyle</a>(style:String):void</div>
+<div class="summaryTableDescription">
+         Deletes a style property from this component instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createMenu()">createMenu</a>(inParent:DisplayObjectContainer, xmlDataProvider:Object = null):<a href="../controls/Menu.html">Menu</a>
+</div>
+<div class="summaryTableDescription">[static]
+      Creates and returns an instance of the Menu class.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#drawFocus()">drawFocus</a>(focused:Boolean):void</div>
+<div class="summaryTableDescription">
+         Shows or hides the focus indicator on this component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#drawNow()">drawNow</a>():void</div>
+<div class="summaryTableDescription">
+         Initiates an immediate draw operation, without invalidating everything as <code>invalidateNow</code> does.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#getFocus()">getFocus</a>():InteractiveObject</div>
+<div class="summaryTableDescription">
+         Retrieves the object that currently has focus.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#getItemAt()">getItemAt</a>(index:uint):Object</div>
+<div class="summaryTableDescription">
+   Retrieves the item at the specified index.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#getNextIndexAtLetter()">getNextIndexAtLetter</a>(firstLetter:String, startIndex:int = -1):int</div>
+<div class="summaryTableDescription">
+   Returns the index of the next item in the dataProvider in which
+   the label's first character matches a specified string character.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#getRendererStyle()">getRendererStyle</a>(name:String, column:int = -1):Object</div>
+<div class="summaryTableDescription">
+   Retrieves a style that is set on the renderers in the list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#getStyle()">getStyle</a>(style:String):Object</div>
+<div class="summaryTableDescription">
+         Retrieves a style property that is set in the style lookup 
+         chain of the component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/List.html#getStyleDefinition()">getStyleDefinition</a>():Object</div>
+<div class="summaryTableDescription">[static]
+         Retrieves the default style map for the current component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/List.html">List</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hide()">hide</a>(useTween:Boolean = true):void</div>
+<div class="summaryTableDescription">
+   Hides the Menu control and any of its submenus if visible
+  </div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#invalidate()">invalidate</a>(property:String, callLater:Boolean = true):void</div>
+<div class="summaryTableDescription">
+         Marks a property as invalid and redraws the component on the
+         next frame unless otherwise specified.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#invalidateItem()">invalidateItem</a>(item:Object):void</div>
+<div class="summaryTableDescription">
+   Invalidates a specific item renderer.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#invalidateItemAt()">invalidateItemAt</a>(index:uint):void</div>
+<div class="summaryTableDescription">
+   Invalidates the renderer for the item at the specified index.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#invalidateList()">invalidateList</a>():void</div>
+<div class="summaryTableDescription">
+   Invalidates the whole list, forcing the list items to be redrawn.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#isItemSelected()">isItemSelected</a>(item:Object):Boolean</div>
+<div class="summaryTableDescription">
+   Checks whether the specified item is selected in the list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#itemToCellRenderer()">itemToCellRenderer</a>(item:Object):<a href="../../../../../fl/controls/listClasses/ICellRenderer.html">ICellRenderer</a>
+</div>
+<div class="summaryTableDescription"> 
+   Retrieves the ICellRenderer for a given item object, if there is one.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/List.html#itemToLabel()">itemToLabel</a>(item:Object):String</div>
+<div class="summaryTableDescription">
+   Retrieves the string that the renderer displays for the given data object 
+         based on the <code>labelField</code> and <code>labelFunction</code> properties.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/List.html">List</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#mergeStyles()">mergeStyles</a>(... list):Object</div>
+<div class="summaryTableDescription">[static]
+         Merges the styles from multiple classes into one object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#move()">move</a>(x:Number, y:Number):void</div>
+<div class="summaryTableDescription">
+         Moves the component to the specified position within its parent.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#popUpMenu()">popUpMenu</a>(menu:<a href="Menu.html">Menu</a>, parent:DisplayObjectContainer, dp:Object = null):void</div>
+<div class="summaryTableDescription">[static]
+      Sets the dataProvider of an existing Menu control and places the Menu 
+      control in the specified parent container.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#removeAll()">removeAll</a>():void</div>
+<div class="summaryTableDescription">
+         Removes all items from the list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#removeItem()">removeItem</a>(item:Object):Object</div>
+<div class="summaryTableDescription">
+   Removes the specified item from the list.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#removeItemAt()">removeItemAt</a>(index:uint):Object</div>
+<div class="summaryTableDescription">
+   Removes the item at the specified index position.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#replaceItemAt()">replaceItemAt</a>(item:Object, index:uint):Object</div>
+<div class="summaryTableDescription">
+   Replaces the item at the specified index location with another item.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/List.html#scrollToIndex()">scrollToIndex</a>(newCaretIndex:int):void</div>
+<div class="summaryTableDescription">
+   Scrolls the list to the item at the specified index.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/List.html">List</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#scrollToSelected()">scrollToSelected</a>():void</div>
+<div class="summaryTableDescription">
+         Scrolls the list to the item at the location indicated by    
+   the current value of the <code>selectedIndex</code> property.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#setFocus()">setFocus</a>():void</div>
+<div class="summaryTableDescription">
+         Sets the focus to this component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setRendererStyle()">setRendererStyle</a>(name:String, style:Object, column:uint = 0):void</div>
+<div class="summaryTableDescription">
+   Sets a style on the renderers in the list.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#setSize()">setSize</a>(width:Number, height:Number):void</div>
+<div class="summaryTableDescription">
+         Sets the component to the specified width and height.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setStyle()">setStyle</a>(style:String, value:Object):void</div>
+<div class="summaryTableDescription">
+   
+      </div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#show()">show</a>(xShow:Object = null, yShow:Object = null):void</div>
+<div class="summaryTableDescription">
+      Shows the Menu control.</div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#sortItems()">sortItems</a>(... sortArgs):*</div>
+<div class="summaryTableDescription">
+   Sorts the elements of the current data provider.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#sortItemsOn()">sortItemsOn</a>(field:String, options:Object = null):*</div>
+<div class="summaryTableDescription">
+   Sorts the elements of the current data provider by one or more  
+   of its fields.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#validateNow()">validateNow</a>():void</div>
+<div class="summaryTableDescription">
+         Validates and updates the properties and layout of this object, redrawing it
+         if necessary.</div>
+</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#initializeAccessibility()">initializeAccessibility</a>():void</div>
+<div class="summaryTableDescription">
+       
+         </div>
+</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<div class="showHideLinks">
+<div class="hideInheritedEvent" id="hideInheritedEvent">
+<a onclick="javascript:setInheritedVisible(false,'Event');" href="#eventSummary" class="showHideLink"><img src="../../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Events</a>
+</div>
+<div class="showInheritedEvent" id="showInheritedEvent">
+<a onclick="javascript:setInheritedVisible(true,'Event');" href="#eventSummary" class="showHideLink"><img src="../../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Events</a>
+</div>
+</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:change">change</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when a different item is selected in the Menu.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#event:change">change</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when a different item is selected in the list.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#event:hide">hide</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component visibility changes from visible to invisible.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:itemClick">itemClick</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the user clicks an item in the menu.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#event:itemClick">itemClick</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched when the user clicks an item in the component.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#event:itemDoubleClick">itemDoubleClick</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched when the user clicks an item in the component twice in
+     rapid succession.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:itemRollOut">itemRollOut</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the user rolls the pointer off a row.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#event:itemRollOut">itemRollOut</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the user rolls the pointer off of an item in the component.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:itemRollOver">itemRollOver</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when the user rolls the pointer over a row.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#event:itemRollOver">itemRollOver</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the user rolls the pointer over an item in the component.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:menuHide">menuHide</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when a menu is hidden.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:menuShow">menuShow</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+ Dispatched when a menu is shown
+  </td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#event:move">move</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component is moved.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#event:resize">resize</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component is resized.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#event:rollOut">rollOut</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the user rolls the pointer off of the component.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#event:rollOver">rollOver</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the user rolls the pointer over the component.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#event:scroll">scroll</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the user scrolls horizontally or vertically.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#event:scroll">scroll</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+  Dispatched when the user scrolls content by using the scroll bars on the
+  component or the wheel on a mouse device.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#event:show">show</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component visibility changes from invisible to visible.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="styleSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Styles</div>
+<div class="showHideLinks">
+<div class="hideInheritedStyle" id="hideInheritedStyle">
+<a onclick="javascript:setInheritedVisible(false,'Style');" href="#styleSummary" class="showHideLink"><img src="../../../../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Styles</a>
+</div>
+<div class="showInheritedStyle" id="showInheritedStyle">
+<a onclick="javascript:setInheritedVisible(true,'Style');" href="#styleSummary" class="showHideLink"><img src="../../../../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Styles</a>
+</div>
+</div>
+<table id="summaryTableStyle" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Style</th><th>Description</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol"><a name="style:bottomMargin"></a>&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<span class="signatureLink">bottomMargin</span>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number<br>
+  The number of pixels for a bottom gutter to a menu when the stage to short to 
+  fit the menu. If the value were set to 0, the bottom of the menu would be 
+  flush with the bottom edge of the stage. 
+           The default value is <code>0</code>.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#style:cellRenderer">cellRenderer</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The class that provides the cell renderer for each item in the component.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#style:contentPadding">contentPadding</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number &nbsp; <span class="label">Format: </span>Length<br>
+     The padding that separates the border of the list from its contents, in pixels.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#style:disabledAlpha">disabledAlpha</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number<br>
+     The alpha value to set the list to when the <code>enabled</code> property is <code>false</code>.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#style:disabledTextFormat">disabledTextFormat</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>flash.text.TextFormat<br>
+      The TextFormat object to use to render the component label when the button is disabled.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:downArrowDisabledSkin">downArrowDisabledSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the down arrow button of the scroll bar 
+     when it is disabled.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:downArrowDownSkin">downArrowDownSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the down arrow button of the scroll bar 
+     when you click the arrow button.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:downArrowOverSkin">downArrowOverSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the down arrow button of the scroll bar 
+     when the mouse pointer is over the arrow button.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:downArrowUpSkin">downArrowUpSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the down arrow button of the scroll bar.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#style:focusRectPadding">focusRectPadding</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number &nbsp; <span class="label">Format: </span>Length<br>
+     The padding that separates the outside boundaries of the component from the
+     outside edges of the focus indicator, in pixels.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#style:focusRectSkin">focusRectSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin to be used to display focus indicators.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol"><a name="style:leftMargin"></a>&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<span class="signatureLink">leftMargin</span>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number<br>
+  The number of pixels between the left edge of the menu and the left edge of 
+  the stage when the stage is too narrow to fit the menu. If the value were set 
+  to 0, the left edge of the menu would be flush with the left edge of the stage. 
+           The default value is <code>0</code>.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:repeatDelay">repeatDelay</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number &nbsp; <span class="label">Format: </span>Time<br>
+  The number of milliseconds to wait after the <code>buttonDown</code> 
+  event is first dispatched before sending a second <code>buttonDown</code> 
+  event.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:repeatInterval">repeatInterval</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number &nbsp; <span class="label">Format: </span>Time<br>
+     The interval, in milliseconds, between <code>buttonDown</code> events 
+  that are dispatched after the delay that is specified by the <code>repeatDelay</code>
+  style.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol"><a name="style:rightMargin"></a>&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<span class="signatureLink">rightMargin</span>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number<br>
+  The number of pixels between the right edge of the menu and the right edge of 
+  the stage when the stage is too narrow to fit the menu. If the value were set 
+  to 0, the right edge of the menu would be flush with the left edge of the 
+  stage.  
+           The default value is <code>0</code>.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/controls/SelectableList.html#style:skin">skin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The class that provides the skin for the background of the component.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/controls/SelectableList.html">SelectableList</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/core/UIComponent.html#style:textFormat">textFormat</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>flash.text.TextFormat<br>
+      The TextFormat object to use to render the component label.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:thumbDisabledSkin">thumbDisabledSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin that is used to indicate the disabled state of the thumb.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:thumbDownSkin">thumbDownSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the thumb of the scroll bar when you 
+     click the thumb.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:thumbIcon">thumbIcon</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the icon for the thumb of the scroll bar.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:thumbOverSkin">thumbOverSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the thumb of the scroll bar when the 
+     mouse pointer is over the thumb.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:thumbUpSkin">thumbUpSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin used for the thumb of the scroll
+  bar.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol"><a name="style:topMargin"></a>&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<span class="signatureLink">topMargin</span>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number<br>
+  The number of pixels between the bottom of the menuBar and the top of the 
+  menu when the stage is to short to fit the menu. If the value were set to 0, 
+  the top of the menu would be flush with bottom edge of the menuBar. 
+           The default value is <code>0</code>.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:trackDisabledSkin">trackDisabledSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin that is used to indicate a disabled track.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:trackDownSkin">trackDownSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin that is used to indicate the down state of a disabled skin.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:trackOverSkin">trackOverSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin that is used to indicate the mouseover state for the scroll track.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:trackUpSkin">trackUpSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin used to indicate the mouse up state for the scroll track.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:upArrowDisabledSkin">upArrowDisabledSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the up arrow button of the scroll bar 
+     when it is disabled.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:upArrowDownSkin">upArrowDownSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the up arrow button of the scroll bar when 
+     you click the arrow button.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:upArrowOverSkin">upArrowOverSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the up arrow button of the scroll bar when the 
+     mouse pointer is over the arrow button.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../../../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../../../../../fl/containers/BaseScrollPane.html#style:upArrowUpSkin">upArrowUpSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     Name of the class to use as the skin for the up arrow button of the scroll bar.</td><td class="summaryTableOwnerCol"><a href="../../../../../fl/containers/BaseScrollPane.html">BaseScrollPane</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol"><a name="style:xOffset"></a>&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<span class="signatureLink">xOffset</span>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number<br>
+  The number of pixels that each submenu will appear to right of its parent 
+  menu. A negative value can be used to have the menus overlap. 
+           The default value is <code>-3</code>.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol"><a name="style:yOffset"></a>&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<span class="signatureLink">yOffset</span>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number<br>
+  The number of pixels that each submenu will appear below the top of its parent 
+  menu. A negative value can be used to have the menu appear above its parent 
+  menu.  
+        The default value is <code>3</code>.</td><td class="summaryTableOwnerCol">Menu</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="closeOnMouseLeave"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">closeOnMouseLeave</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var closeOnMouseLeave:Boolean</code><p>
+  Indicates whether the menu will close when the mouse leaves the stage.
+  </p></div>
+<a name="createAccessibilityImplementation"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createAccessibilityImplementation</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static var createAccessibilityImplementation:Function</code><p>
+ Placeholder for mixin by MenuAccImpl.
+ </p></div>
+<a name="dataProvider"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">dataProvider</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>dataProvider:<a href="../../../../../fl/data/DataProvider.html">DataProvider</a></code>&nbsp;&nbsp;[read-write]<p>
+   Gets or sets the data model of the list of items to be viewed. 
+   A data provider can be shared by multiple list-based components. 
+   Changes to the data provider are immediately available to all components that use it as a data source.
+  
+   To use XML data, you should set the dataProvider as type <code>XMLDataProvider</code>:
+   <code>menu.dataProvider = new XMLDataProvider(someXML);</code>
+     </p><p>You can also use an array of objects in the format:
+   <code>
+  
+  var dp:Array = [
+    {
+     label:"top level item A",
+     data:
+     [ 
+      { label:"submenu A1" }, 
+      { label:"submenu A2" } 
+     ]
+    },
+    {
+     label:"top level item B"
+    },
+    {
+     label:"top level item C"
+    }
+  ];
+  
+  menu.dataProvider = new DataProvider(dp);
+   </code>
+  </p>
+
+   However, using the <code>createMenu()</code> method and passing in XML or an array will do this for you.
+   <p>The default value is <code>null</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get dataProvider():<a href="../../../../../fl/data/DataProvider.html">DataProvider</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set dataProvider(value:<a href="../../../../../fl/data/DataProvider.html">DataProvider</a>):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../data/XMLDataProvider.html" target="">com.yahoo.astra.fl.data.XMLDataProvider</a>
+<br>
+<a href="../controls/Menu.html#labelField" target="">labelField</a>
+</div>
+</div>
+<a name="groups"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">groups</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var groups:Object</code><p>
+  Object that contains arrays of groups.  Used when menu items toggle with each other.
+  </p></div>
+<a name="labelField"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">labelField</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>labelField:String</code>&nbsp;&nbsp;[read-write]<p>
+      Name of the field in the items in the <code>dataProvider</code> 
+      Array to display as the label in the Menu.
+      By default, the control uses a property named <code>label</code>
+      on each Array object and displays it.
+      </p><p>However, if the <code>dataProvider</code> items do not contain
+      a <code>label</code> property, you can set the <code>labelField</code>
+      property to use a different property.</p>
+          <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get labelField():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set labelField(value:String):void</code>
+<br>
+</div>
+<a name="parentMenu"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">parentMenu</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>parentMenu:<a href="../controls/Menu.html">Menu</a></code>&nbsp;&nbsp;[read-write]<p>
+   The parent menu in a hierarchical chain of menus, where the current 
+   menu is a submenu of the parent.
+  
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get parentMenu():<a href="../controls/Menu.html">Menu</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set parentMenu(value:<a href="../controls/Menu.html">Menu</a>):void</code>
+<br>
+</div>
+<a name="parentMenuClickable"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">parentMenuClickable</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var parentMenuClickable:Boolean</code><p>
+  Indicates whether or not a menu item with a submenu is clickable.
+  </p></div>
+<a name="specifiedPoint"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">specifiedPoint</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var specifiedPoint:Point</code><p>
+  Coordinates indicating the ideal position of the menu.  These are used to determine where 
+  to position the menu when the stage is resized outward.
+  </p></div>
+<a name="subMenus"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">subMenus</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>subMenus:Array</code>&nbsp;&nbsp;[read-only]<p>
+   Get the current set of submenus for a Menu
+  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get subMenus():Array</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Menu()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Menu</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Menu()</code><p>
+      Constructor.
+           </p><p>Applications do not normally call the Menu constructor directly.
+      Call the <code>Menu.createMenu()</code> method.</p>
+   <p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../controls/Menu.html#createMenu()" target="">createMenu()</a>
+</div>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="createMenu()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createMenu</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function createMenu(inParent:DisplayObjectContainer, xmlDataProvider:Object = null):<a href="../controls/Menu.html">Menu</a></code><p>
+      Creates and returns an instance of the Menu class. The Menu control's 
+      content is determined by the method's <code>xmlDataProvider</code> argument. The 
+      Menu control is placed in the parent container specified by the 
+      method's <code>parent</code> argument.
+     
+      This method does not show the Menu control. Instead, 
+      this method just creates the Menu control and allows for modifications
+      to be made to the Menu instance before the Menu is shown. To show the 
+      Menu, call the <code>Menu.show()</code> method.
+           </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">inParent</span>:DisplayObjectContainer</code> &mdash; A container that the PopUpManager uses to place the Menu 
+      control in. The Menu control may not actually be parented by this object.
+     
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">xmlDataProvider</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; The data provider for the Menu control. 
+      </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../controls/Menu.html">Menu</a></code> &mdash; 
+                        An instance of the Menu class. 
+           
+                        
+                     </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../controls/Menu.html#dataProvider" target="">dataProvider</a>
+<br>
+<a href="../controls/Menu.html#popUpMenu()" target="">popUpMenu()</a>
+<br>
+<a href="../data/XMLDataProvider.html" target="">com.yahoo.astra.fl.data.XMLDataProvider</a>
+</div>
+</div>
+<a name="hide()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hide</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function hide(useTween:Boolean = true):void</code><p>
+   Hides the Menu control and any of its submenus if visible
+  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">useTween</span>:Boolean</code> (default = <code>true</code>)<code></code></td>
+</tr>
+</table>
+</div>
+<a name="initializeAccessibility()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">initializeAccessibility</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected override function initializeAccessibility():void</code><p>
+       
+         </p></div>
+<a name="popUpMenu()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">popUpMenu</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function popUpMenu(menu:<a href="Menu.html">Menu</a>, parent:DisplayObjectContainer, dp:Object = null):void</code><p>
+      Sets the dataProvider of an existing Menu control and places the Menu 
+      control in the specified parent container.
+      
+      This method does not show the Menu control; you must use the 
+      <code>Menu.show()</code> method to display the Menu control. 
+     
+      The <code>Menu.createMenu()</code> method uses this method.
+           </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">menu</span>:<a href="Menu.html">Menu</a></code> &mdash; Menu control to popup. 
+     
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">parent</span>:DisplayObjectContainer</code> &mdash; A container that the PopUpManager uses to place the Menu 
+      control in. The Menu control may not actually be parented by this object.
+      If you omit this property, the method sets the Menu control's parent to 
+      the stage. 
+     
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">dp</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; dataProvider object set on the popped up Menu. If you omit this 
+      property, the method sets the Menu data provider to a new, empty XML object.
+     </td>
+</tr>
+</table>
+</div>
+<a name="setRendererStyle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setRendererStyle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function setRendererStyle(name:String, style:Object, column:uint = 0):void</code><p>
+   Sets a style on the renderers in the list.
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; The name of the style to be set.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">style</span>:Object</code> &mdash; The value of the style to be set.
+                  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">column</span>:uint</code> (default = <code>0</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../controls/Menu.html#clearRendererStyle()" target="">clearRendererStyle()</a>
+<br>
+<a href="../controls/Menu.html#getRendererStyle()" target="">getRendererStyle()</a>
+</div>
+</div>
+<a name="setStyle()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setStyle</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function setStyle(style:String, value:Object):void</code><p>
+   
+      </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">style</span>:String</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">value</span>:Object</code></td>
+</tr>
+</table>
+</div>
+<a name="show()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">show</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function show(xShow:Object = null, yShow:Object = null):void</code><p>
+      Shows the Menu control. If the Menu control is not visible, this method 
+      places the Menu in the upper-left corner of the stage, resizes the Menu control as needed, 
+   and makes it visible.
+     
+      The x and y arguments of the <code>show()</code> method specify the 
+      coordinates of the upper-left corner of the Menu control relative to the 
+      stage, which is not necessarily the direct parent of the Menu control. 
+     
+      For example, if the Menu control is in a container, the x and y coordinates are 
+      relative to the stage, not the container.
+           </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xShow</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; Horizontal location of the Menu control's upper-left 
+      corner (optional).
+      </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">yShow</span>:Object</code> (default = <code>null</code>)<code></code> &mdash; Vertical location of the Menu control's upper-left 
+      corner (optional).
+     </td>
+</tr>
+</table>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:change"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">change</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.Event</code></a>
+<br>
+<p></p><p>
+ Dispatched when a different item is selected in the Menu.
+  </p></div>
+<a name="event:itemClick"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">itemClick</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/MenuEvent.html"><code>com.yahoo.astra.fl.events.MenuEvent</code></a>
+<br>
+<span class="label">MenuEvent.type property = </span><a href="../events/MenuEvent.html#ITEM_CLICK"><code>com.yahoo.astra.fl.events.MenuEvent.ITEM_CLICK</code></a>
+<br><p>
+ Dispatched when the user clicks an item in the menu. 
+  </p><p>
+      The MenuEvent.ITEM_CLICK event type constant indicates that the
+      user selected a menu item.
+           </p></div>
+<a name="event:itemRollOut"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">itemRollOut</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/MenuEvent.html"><code>com.yahoo.astra.fl.events.MenuEvent</code></a>
+<br>
+<span class="label">MenuEvent.type property = </span><a href="../events/MenuEvent.html#ITEM_ROLL_OUT"><code>com.yahoo.astra.fl.events.MenuEvent.ITEM_ROLL_OUT</code></a>
+<br><p>
+ Dispatched when the user rolls the pointer off a row.
+  </p><p>
+      The MenuEvent.ITEM_ROLL_OUT type constant indicates that
+      the mouse pointer rolled out of a menu item.
+           </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../controls/Menu.html#event:itemRollOver" target="">itemRollOver</a>
+</div>
+</div>
+<a name="event:itemRollOver"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">itemRollOver</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/MenuEvent.html"><code>com.yahoo.astra.fl.events.MenuEvent</code></a>
+<br>
+<span class="label">MenuEvent.type property = </span><a href="../events/MenuEvent.html#ITEM_ROLL_OVER"><code>com.yahoo.astra.fl.events.MenuEvent.ITEM_ROLL_OVER</code></a>
+<br><p>
+ Dispatched when the user rolls the pointer over a row.
+  </p><p>
+      The MenuEvent.ITEM_ROLL_OVER type constant indicates that
+      the mouse pointer rolled over a menu item.
+      </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../controls/Menu.html#event:itemRollOut" target="">itemRollOut</a>
+</div>
+</div>
+<a name="event:menuHide"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">menuHide</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/MenuEvent.html"><code>com.yahoo.astra.fl.events.MenuEvent</code></a>
+<br>
+<span class="label">MenuEvent.type property = </span><a href="../events/MenuEvent.html#MENU_HIDE"><code>com.yahoo.astra.fl.events.MenuEvent.MENU_HIDE</code></a>
+<br><p>
+ Dispatched when a menu is hidden.
+  </p><p>
+      The MenuEvent.MENU_HIDE event type constant indicates that
+      a menu or submenu closed.
+           </p></div>
+<a name="event:menuShow"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">menuShow</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/MenuEvent.html"><code>com.yahoo.astra.fl.events.MenuEvent</code></a>
+<br>
+<span class="label">MenuEvent.type property = </span><a href="../events/MenuEvent.html#MENU_SHOW"><code>com.yahoo.astra.fl.events.MenuEvent.MENU_SHOW</code></a>
+<br><p>
+ Dispatched when a menu is shown
+  </p><p>
+      The MenuEvent.MENU_SHOW type constant indicates that
+      the mouse pointer rolled a menu or submenu opened.
+           </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<div class="feedbackLink">
+<center>
+<a target="_top" href="http://tech.groups.yahoo.com/group/ydn-flash/">Visit ydn-flash for Yahoo! ASTRA feedback and support</a>
+</center>
+</div>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

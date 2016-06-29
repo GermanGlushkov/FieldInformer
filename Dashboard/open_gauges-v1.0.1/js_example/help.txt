@@ -1,0 +1,16 @@
+Copy js_example/ and all its contents to the root of your web server:  htdocs/
+
+then point your browser to:
+
+http://localhost/js_example/gauge.html
+http://localhost/js_example/bar.html
+http://localhost/js_example/digital.html
+
+Of course I use a form to fill in the values, but this could simply be any form of Javascript\Ajax
+For an example of this using Mootools and Ajax see:
+http://www.darkartistry.com/Public/moo_example.tar.gz
+
+This should be enough to get you started, but be aware that the opengauges are for server scripting and are different 
+from these examples...
+
+

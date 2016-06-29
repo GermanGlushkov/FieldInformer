@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="IFocusManagerComponent,fl.managers.IFocusManagerComponent,focusEnabled,mouseFocusEnabled,tabEnabled,tabIndex,drawFocus,setFocus" name="keywords">
+<title>fl.managers.IFocusManagerComponent</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'IFocusManagerComponent - Yahoo! Astra Library';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Astra Library Documentation</td><td rowspan="2" align="right" class="titleTableLogo"><img alt="Yahoo! Logo" title="Yahoo! Logo" class="logoImage" src="../../images/yfp-stacked.gif"></td>
+</tr>
+<tr>
+<td align="left" id="subTitle" class="titleTableSubTitle">Interface&nbsp;IFocusManagerComponent</td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subNav" class="titleTableSubNav">
+<ul>
+<li>
+<a href="#propertySummary">Properties</a>&nbsp;| </li>
+<li>
+<a href="#methodSummary">Methods</a>
+</li>
+</ul>
+</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/managers/IFocusManagerComponent.html&amp;fl/managers/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Interface IFocusManagerComponent"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.managers</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Interface</td><td class="classSignature">public interface IFocusManagerComponent</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implementors</td><td><a href="../controls/Button.html">Button</a>, <a href="../controls/ColorPicker.html">ColorPicker</a>, <a href="../controls/ComboBox.html">ComboBox</a>, <a href="../controls/LabelButton.html">LabelButton</a>, <a href="../controls/List.html">List</a>, <a href="../../com/yahoo/astra/fl/controls/mediaPlayerClasses/MediaInfoView.html">MediaInfoView</a>, <a href="../../com/yahoo/astra/fl/controls/MenuBar.html">MenuBar</a>, <a href="../../com/yahoo/astra/fl/controls/menuBarClasses/MenuButtonRow.html">MenuButtonRow</a>, <a href="../controls/NumericStepper.html">NumericStepper</a>, <a href="../controls/SelectableList.html">SelectableList</a>, <a href="../../com/yahoo/astra/fl/controls/TabBar.html">TabBar</a>, <a href="../controls/TextArea.html">TextArea</a>, <a href="../controls/TextInput.html">TextInput</a>, <a href="../controls/TileList.html">TileList</a>, <a href="../../com/yahoo/astra/fl/controls/mediaPlayerClasses/VolumeSlider.html">VolumeSlider</a></td>
+</tr>
+</table>
+<p></p>
+  The IFocusManagerComponent interface provides methods and properties
+  that give components the capability to receive focus. Components
+  must implement this interface to receive focus from the FocusManager.
+       <p>The UIComponent class provides a base implementation of this interface
+  but does not fully implement it because not all UIComponent objects 
+  receive focus. Components that are derived from the UIComponent
+  class must implement this interface to be capable of receiving focus.
+  To enable focus, add the statement <code>implements IFocusManagerComponent</code>
+  to the class definition of a component that is derived from the UIComponent
+  class.</p>
+  
+     <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="FocusManager.html" target="">FocusManager</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#focusEnabled">focusEnabled</a> : Boolean<div class="summaryTableDescription">
+   Gets or sets a Boolean value that indicates whether a selected component can receive 
+   focus from the focus manager.</div>
+</td><td class="summaryTableOwnerCol">IFocusManagerComponent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#mouseFocusEnabled">mouseFocusEnabled</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Gets a Boolean value that indicates whether a component that is
+   selected by using a mouse device can receive focus.</div>
+</td><td class="summaryTableOwnerCol">IFocusManagerComponent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tabEnabled">tabEnabled</a> : Boolean<div class="summaryTableDescription">[read-only]
+   Gets a Boolean value that indicates whether pressing the Tab key can 
+   move focus to this component.</div>
+</td><td class="summaryTableOwnerCol">IFocusManagerComponent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tabIndex">tabIndex</a> : int<div class="summaryTableDescription">[read-only]
+   Gets the order in which the component receives focus, if <code>tabEnabled</code>is set
+         to <code>true</code>.</div>
+</td><td class="summaryTableOwnerCol">IFocusManagerComponent</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawFocus()">drawFocus</a>(draw:Boolean):void</div>
+<div class="summaryTableDescription">
+   Draws a visual focus indicator.</div>
+</td><td class="summaryTableOwnerCol">IFocusManagerComponent</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setFocus()">setFocus</a>():void</div>
+<div class="summaryTableDescription">
+   Sets focus for a component.</div>
+</td><td class="summaryTableOwnerCol">IFocusManagerComponent</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="focusEnabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">focusEnabled</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>focusEnabled:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   Gets or sets a Boolean value that indicates whether a selected component can receive 
+   focus from the focus manager. 
+   
+   </p><p>To make a component capable of receiving focus from the focus manager, 
+   set this property to <code>true</code>. To make the component incapable of receiving 
+   focus, set this property to <code>false</code>. When <code>focusEnabled</code>  
+   is set to <code>false</code>, the focus manager ignores the component over the
+   component's lifetime and does not monitor it for changes in the following 
+   properties: <code>tabEnabled</code>, <code>tabChildren</code>, and 
+   <code>mouseFocusEnabled</code>.</p>
+   
+   <p>You can use the <code>focusEnabled</code> property to prevent the child component of 
+   a component that implements the IFocusManagerComponent interface 
+   from receiving focus from the focus manager. To do so, set this property to <code>false</code> 
+   before using the <code>addChild()</code> method to add the child component
+   to the display list. Note that if you set this property to <code>false</code> 
+   before adding the component to the display list, the focus manager will continue to 
+   ignore the component even if you set this property to <code>true</code> 
+   later on.</p>
+   
+         <p><strong>Note:</strong> Even if you set this property to <code>false</code>, 
+         you can still set focus programmatically by using the <code>setFocus()</code>
+         method.</p>
+                  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get focusEnabled():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set focusEnabled(value:Boolean):void</code>
+<br>
+</div>
+<a name="mouseFocusEnabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">mouseFocusEnabled</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>mouseFocusEnabled:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Gets a Boolean value that indicates whether a component that is
+   selected by using a mouse device can receive focus.
+   
+   </p><p>Set this property to <code>true</code> to give focus
+   to components that are selected by using a mouse device.
+   Set this property to <code>false</code> to prevent focus
+   from being given to components that are selected by using
+   a mouse device. If this property is set to <code>false</code>
+   when a component is selected by using a mouse device, focus
+   is transferred to the first parent component for which
+         this property is set to <code>true</code>.</p>
+                  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get mouseFocusEnabled():Boolean</code>
+<br>
+</div>
+<a name="tabEnabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tabEnabled</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>tabEnabled:Boolean</code>&nbsp;&nbsp;[read-only]<p>
+   Gets a Boolean value that indicates whether pressing the Tab key can 
+   move focus to this component. A value of <code>true</code> indicates
+   that pressing the Tab key can cause focus to be moved to this component;
+   a value of <code>false</code> indicates that the Tab key cannot be
+   used to give this component focus. 
+      </p><p>Even if this value is set to <code>false</code>, the component can still 
+   receive focus when it is selected by a mouse device or through a call to the 
+         <code>setFocus()</code> method.</p>
+                  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get tabEnabled():Boolean</code>
+<br>
+</div>
+<a name="tabIndex"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tabIndex</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>tabIndex:int</code>&nbsp;&nbsp;[read-only]<p>
+   Gets the order in which the component receives focus, if <code>tabEnabled</code>is set
+         to <code>true</code>. The <code>tabIndex</code> property is -1 by default, meaning 
+         that no tab index is set for the object and that the object receives focus based on z-order.
+   
+         </p><p>The <code>tabIndex</code> property can also be a non-negative integer. In this 
+         case, the objects are ordered according to their <code>tabIndex</code> properties, 
+         in ascending order. An object with a <code>tabIndex</code> value of 1 precedes an 
+         object with a <code>tabIndex</code> value of 2. If two objects have the same 
+         <code>tabIndex</code> value, the one that comes first in the default tab ordering 
+         precedes the other.</p>
+                  <p>The default value is <code>-1</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get tabIndex():int</code>
+<br>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="drawFocus()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawFocus</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawFocus(draw:Boolean):void</code><p>
+   Draws a visual focus indicator.
+   
+   </p><p>This method is called by the focus manager when the component receives focus. 
+   The component should draw or hide a graphic that indicates that the component has focus.</p>
+      <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">draw</span>:Boolean</code> &mdash; If <code>true</code>, draw the focus indicator,
+         otherwise hide it.
+                  </td>
+</tr>
+</table>
+</div>
+<a name="setFocus()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setFocus</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setFocus():void</code><p>
+   Sets focus for a component.
+   
+   </p><p>This method is called by the focus manager when the component receives focus.
+         The component may in turn set focus to an internal component.</p>
+                  </div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<div class="feedbackLink">
+<center>
+<a target="_top" href="http://tech.groups.yahoo.com/group/ydn-flash/">Visit ydn-flash for Yahoo! ASTRA feedback and support</a>
+</center>
+</div>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

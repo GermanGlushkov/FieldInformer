@@ -1,0 +1,65 @@
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+[Version 01.11.0]
+
+Strictly Bug Fixes:
+Fixed MailMessage.CreateList error in email address separation - now uses , instead of ;
+Fixed Regex in EmailAddress - now only compiles once (In static constructor)
+Fixed QP Encoding in MailEncoder class to address many encoding errors
+Fixed MailMessage class - All email address .name fields now enclosed in quotations when sent to SMTP server
+Fixed Wrong HELO and EHLO command - now sends correct host name (local host name)
+Fixed error when sending \r or \r\n in Subject
+Fixed Attachment class - attachment name and file name are now encoded when sending
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+[Version 01.10.0]
+
+Added embeded image support in html in the MailMessage class (thanks to Mike Bridge)
+Fixed phantom attachment bug (thanks to Mike Bridge)
+When encoding headers as quoted-printable, added autodetection of 7-bit ascii characters.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+[Version 01.09.8]
+
+Moved Tests into seperate directory and created seperate build in makefile for debug. Nunit Tests are NOT included by default now.
+Added support for charsets in MailEncoder and MIME body (thanks to Alex D)
+Converted NUnit tests to version 2.0
+Removed ESMTP Pipelining support until further testing can be done. Later version will implement pipelining PROPERLY.
+Added support for adding an Attachment using a Stream
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+[Version 01.09.6]
+
+Fixed Encoding problem in both header and body.
+Fixed MailMessage Content-Type errors
+Added support for Pipelining (See RFC 2920)
+Added .LogMaxLength property for log file in SmtpConfig to avoid running out of disk space due to logging. Default size is 1mb
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+[Version 01.09.5]
+
+Fixed Carriage return bug in MailMessage.ToString()
+Added Events for Connected, Authenticated, StartedMessageTransfer, EndedMessageTransfer, and Disconnected
+Added Base64 and Quoted Printable decoding to MailEncoder class (To be used in future for parsing MIME messages)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+[Version 01.09.4]
+
+Fixed two CRLF errors in MaillMessage.ToString()
+Turned off SMTP logging by default in SmtpConfig
+Added .Copy() to MailMessage class for cloning
+Added .Compare() to Attachment class for sorting
+Changed default send and receive timeout to 50000 ms
+Added override keyword to MailMessage.ToString()
+Added installer for OpenSmtp.Net
+

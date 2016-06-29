@@ -1,0 +1,25 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="29fb0b5d-8f5d-4c87-a3fa-b5d67aafee67" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Survey</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>V OLAP SURVEY FACT</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="9695de0f-4a8c-46fd-b5b3-0bee340d8b19">
+          <ID>V OLAP SURVEY FACT</ID>
+          <Name>V OLAP SURVEY FACT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="745018ba-c27e-4858-ab2a-6c08942f15fa">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_SURVEY_FACT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

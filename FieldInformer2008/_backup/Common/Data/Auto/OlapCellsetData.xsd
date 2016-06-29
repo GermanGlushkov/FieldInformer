@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="OlapCellsetData" targetNamespace="http://tempuri.org/OlapCellsetData.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/OlapCellsetData.xsd" xmlns:mstns="http://tempuri.org/OlapCellsetData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="OlapCellsetData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Error" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Number" type="xs:string" minOccurs="0" />
+							<xs:element name="Description" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Cl" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Ax0" type="xs:int" minOccurs="0" />
+							<xs:element name="Ax1" type="xs:int" minOccurs="0" />
+							<xs:element name="Val" type="xs:string" minOccurs="0" />
+							<xs:element name="FVal" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Ax0Mem" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Pos" type="xs:int" minOccurs="0" />
+							<xs:element name="MPos" type="xs:int" minOccurs="0" />
+							<xs:element name="UName" type="xs:string" minOccurs="0" />
+							<xs:element name="Name" type="xs:string" minOccurs="0" />
+							<xs:element name="CCnt" type="xs:short" minOccurs="0" />
+							<xs:element name="Lvl" type="xs:unsignedByte" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Ax1Mem" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Pos" type="xs:int" minOccurs="0" />
+							<xs:element name="MPos" type="xs:int" minOccurs="0" />
+							<xs:element name="UName" type="xs:string" minOccurs="0" />
+							<xs:element name="Name" type="xs:string" minOccurs="0" />
+							<xs:element name="CCnt" type="xs:short" minOccurs="0" />
+							<xs:element name="Lvl" type="xs:unsignedByte" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CellsetMetaData" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Ax0PosCount" type="xs:int" minOccurs="0" />
+							<xs:element name="Ax0MemCount" type="xs:short" minOccurs="0" />
+							<xs:element name="Ax1PosCount" type="xs:int" minOccurs="0" />
+							<xs:element name="Ax1MemCount" type="xs:short" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

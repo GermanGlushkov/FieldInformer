@@ -1,0 +1,247 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6B10C452-21BE-463C-83EE-2367ED0A5113}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>FI.BusinessObjects</AssemblyName>
+    <AssemblyOriginatorKeyFile>FI.KeyFile.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FI.BusinessObjects</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Messaging">
+      <Name>System.Messaging</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <Name>System.Runtime.Remoting</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Name>Common</Name>
+      <Project>{ABD39750-227A-44D2-9469-00B1308A31B9}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessFacade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomMdxReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomSqlReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataAccessFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Distribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DistributionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DistributionSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OlapReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Axis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMember.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\FilteredByMeasureSet.cs" />
+    <Compile Include="Olap\CalculatedMemberTemplates\FilteredByNameSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MeasureInheritedNull.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MeasureToMeasure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MeasureWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MemberChildrenSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MembersAggregate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MemberWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MemToAll.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MemToParent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\MemToVisAggr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\Set.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CalculatedMemberTemplates\VisualAggregate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Cell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Cellset.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\CellsetMember.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\DataMember.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Dimension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Exceptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Hierarchy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Level.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Member.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Object.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Schema.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\SchemaMember.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olap\Tuple.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportSystem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StorecheckReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FI.KeyFile.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,45 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="85714731-f1e9-4a85-9fd5-059740f2fb5d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Store</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Store</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="930600c0-215a-4c6d-9335-aa99184a29dd">
+          <ID>V OLAP STORE FACT</ID>
+          <Name>V OLAP STORE FACT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6e1f0890-cb18-4398-a07c-2dab52cf501a">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_STORE_FACT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP STORE ACTIVE FACT</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="6eb8b9d1-82c0-431e-8956-fcdfcc66555b">
+          <ID>V OLAP STORE ACTIVE FACT</ID>
+          <Name>V OLAP STORE ACTIVE FACT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="cdeec158-a0b2-4aea-ada3-d0b11ce60c87">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_STORE_ACTIVE_FACT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

@@ -1,0 +1,81 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8447.0 (e1ef65ea).
+//
+// XMLCellsetWrapper.tlh
+//
+// C++ source equivalent of Win32 type library C:\Program Files\Microsoft Visual Studio\VC98\Project\Ch3\XMLCellsetWrapper\Debug\XMLCellsetWrapper.dll
+// compiler-generated file created 07/12/02 at 10:08:44 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace XMLCELLSETWRAPPERLib {
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ XMLCellset;
+struct __declspec(uuid("4ebc672a-352f-4d0e-96b0-4025e513ac6d"))
+/* dual interface */ IXMLCellset;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IXMLCellset, __uuidof(IXMLCellset));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("d2456d0d-43cf-4cc1-bbf5-f8347f758990"))
+XMLCellset;
+    // [ default ] interface IXMLCellset
+
+struct __declspec(uuid("4ebc672a-352f-4d0e-96b0-4025e513ac6d"))
+IXMLCellset : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Increment (
+        int * outval );
+    HRESULT BuildCellset (
+        _bstr_t Mdx,
+        _bstr_t ConnString );
+    HRESULT BuildCellset1 (
+        BSTR * Mdx,
+        BSTR * ConnString );
+    HRESULT BuildCellset2 ( );
+    HRESULT GetHr (
+        long * test );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Increment (
+        int * outval ) = 0;
+    virtual HRESULT __stdcall raw_BuildCellset (
+        BSTR Mdx,
+        BSTR ConnString ) = 0;
+    virtual HRESULT __stdcall raw_BuildCellset1 (
+        BSTR * Mdx,
+        BSTR * ConnString ) = 0;
+    virtual HRESULT __stdcall raw_BuildCellset2 ( ) = 0;
+    virtual HRESULT __stdcall raw_GetHr (
+        long * test ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "XMLCellsetWrapper.tli"
+
+} // namespace XMLCELLSETWRAPPERLib
+
+#pragma pack(pop)

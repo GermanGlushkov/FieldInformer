@@ -1,0 +1,393 @@
+﻿<Project xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <ProductVersion>9.0.5000.0</ProductVersion>
+  <SchemaVersion>9.0.2.10</SchemaVersion>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmR3ZD0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9EYXRhV2FyZWhvdXNlL0Rlc2lnbmVyLzEuMCI+DQogIDxFbmFibGVkPmZhbHNlPC9FbmFibGVkPg0KICA8UHJvamVjdE5hbWU+PC9Qcm9qZWN0TmFtZT4NCiAgPEF1eFBhdGg+PC9BdXhQYXRoPg0KICA8TG9jYWxQYXRoPjwvTG9jYWxQYXRoPg0KICA8UHJvdmlkZXI+PC9Qcm92aWRlcj4NCjwvU291cmNlQ29udHJvbEluZm8+</State>
+  <Database>
+    <Name>DBSALESPP.database</Name>
+    <FullPath>DBSALESPP.database</FullPath>
+  </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>SalesforceGroups.cube</Name>
+      <FullPath>SalesforceGroups.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>SalesforceGroups.partitions</Name>
+          <FullPath>SalesforceGroups.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>BaseSelection.cube</Name>
+      <FullPath>BaseSelection.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BaseSelection.partitions</Name>
+          <FullPath>BaseSelection.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Calendar.cube</Name>
+      <FullPath>Calendar.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Calendar.partitions</Name>
+          <FullPath>Calendar.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Delivery.cube</Name>
+      <FullPath>Delivery.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Delivery.partitions</Name>
+          <FullPath>Delivery.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order.cube</Name>
+      <FullPath>Order.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Order.partitions</Name>
+          <FullPath>Order.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>POS.cube</Name>
+      <FullPath>POS.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>POS.partitions</Name>
+          <FullPath>POS.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Pricelist.cube</Name>
+      <FullPath>Pricelist.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Pricelist.partitions</Name>
+          <FullPath>Pricelist.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Product.cube</Name>
+      <FullPath>Product.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Product.partitions</Name>
+          <FullPath>Product.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Selection.cube</Name>
+      <FullPath>Selection.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Selection.partitions</Name>
+          <FullPath>Selection.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Store.cube</Name>
+      <FullPath>Store.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Store.partitions</Name>
+          <FullPath>Store.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Survey.cube</Name>
+      <FullPath>Survey.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Survey.partitions</Name>
+          <FullPath>Survey.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Virtual.cube</Name>
+      <FullPath>Virtual.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Virtual.partitions</Name>
+          <FullPath>Virtual.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dpm.cube</Name>
+      <FullPath>Dpm.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Dpm.partitions</Name>
+          <FullPath>Dpm.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MSA.cube</Name>
+      <FullPath>MSA.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>MSA.partitions</Name>
+          <FullPath>MSA.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>_OrdDate.dim</Name>
+      <FullPath>_OrdDate.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_ProdExpand.dim</Name>
+      <FullPath>_ProdExpand.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Central Chain.dim</Name>
+      <FullPath>Central Chain.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Chain.dim</Name>
+      <FullPath>Chain.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Expand Compound Products.dim</Name>
+      <FullPath>Expand Compound Products.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Attributes.dim</Name>
+      <FullPath>Order Attributes.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Date.dim</Name>
+      <FullPath>Order Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Direct Delivery.dim</Name>
+      <FullPath>Order Direct Delivery.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Pre-Sales.dim</Name>
+      <FullPath>Order Pre-Sales.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Sent.dim</Name>
+      <FullPath>Order Sent.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Order Status.dim</Name>
+      <FullPath>Order Status.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Pricelist.dim</Name>
+      <FullPath>Pricelist.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Product.dim</Name>
+      <FullPath>Product.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Attributes.dim</Name>
+      <FullPath>Sales Call Attributes.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call DPM Status.dim</Name>
+      <FullPath>Sales Call DPM Status.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Is Call.dim</Name>
+      <FullPath>Sales Call Is Call.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Is Unnecessary.dim</Name>
+      <FullPath>Sales Call Is Unnecessary.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call MSA Done.dim</Name>
+      <FullPath>Sales Call MSA Done.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Pending.dim</Name>
+      <FullPath>Sales Call Pending.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Phone Call.dim</Name>
+      <FullPath>Sales Call Phone Call.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Planning Done.dim</Name>
+      <FullPath>Sales Call Planning Done.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Proposal Left.dim</Name>
+      <FullPath>Sales Call Proposal Left.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Retailer Took Order.dim</Name>
+      <FullPath>Sales Call Retailer Took Order.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Salesman Took Order.dim</Name>
+      <FullPath>Sales Call Salesman Took Order.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Status.dim</Name>
+      <FullPath>Sales Call Status.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Survey Done.dim</Name>
+      <FullPath>Sales Call Survey Done.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Time Reserved.dim</Name>
+      <FullPath>Sales Call Time Reserved.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Call Type.dim</Name>
+      <FullPath>Sales Call Type.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Salesforce Groups.dim</Name>
+      <FullPath>Salesforce Groups.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Salesforce Stores.dim</Name>
+      <FullPath>Salesforce Stores.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Salesforce.dim</Name>
+      <FullPath>Salesforce.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Store.dim</Name>
+      <FullPath>Store.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Survey Question.dim</Name>
+      <FullPath>Survey Question.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Time.dim</Name>
+      <FullPath>Time.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Wholesaler.dim</Name>
+      <FullPath>Wholesaler.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_MsaDate.dim</Name>
+      <FullPath>_MsaDate.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MSA Attributes.dim</Name>
+      <FullPath>MSA Attributes.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MSA Date.dim</Name>
+      <FullPath>MSA Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MSA Payment Criterium.dim</Name>
+      <FullPath>MSA Payment Criterium.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MSA Status.dim</Name>
+      <FullPath>MSA Status.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MSA Marketing Allowance Type.dim</Name>
+      <FullPath>MSA Marketing Allowance Type.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MSA Type.dim</Name>
+      <FullPath>MSA Type.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_OrdHeader.dim</Name>
+      <FullPath>_OrdHeader.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_MsaHeader.dim</Name>
+      <FullPath>_MsaHeader.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_MsaAttrValues.dim</Name>
+      <FullPath>_MsaAttrValues.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_MsaAttrValuesHier.dim</Name>
+      <FullPath>_MsaAttrValuesHier.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_OrdAttrValues.dim</Name>
+      <FullPath>_OrdAttrValues.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_OrdAttrValuesHier.dim</Name>
+      <FullPath>_OrdAttrValuesHier.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_SalcAttrValues.dim</Name>
+      <FullPath>_SalcAttrValues.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>_SalcAttrValuesHier.dim</Name>
+      <FullPath>_SalcAttrValuesHier.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>DBSALESPP.ds</Name>
+      <FullPath>DBSALESPP.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>DBSALESPP.dsv</Name>
+      <FullPath>DBSALESPP.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
+  <Roles>
+    <ProjectItem>
+      <Name>Role.role</Name>
+      <FullPath>Role.role</FullPath>
+    </ProjectItem>
+  </Roles>
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>DBSALESPP</Id>
+            <Name>DBSALESPP</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI.1;Data Source=10.2.0.68;Persist Security Info=True;Password=;User ID=;Initial Catalog=DBSALESPP</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>DBSALESPP</Id>
+            <Name>DBSALESPP</Name>
+            <Value xsi:type="xsd:int">1</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+        <DeploymentServerEdition>Standard</DeploymentServerEdition>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

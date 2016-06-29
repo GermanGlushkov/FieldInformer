@@ -1,0 +1,498 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8f0d441d-4324-4fda-8dbe-b3195c0188d9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Store</ID>
+  <Name>Store</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2566" scrolltop="-5649" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7382" y="11827" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="OLAP_STORE (spp.OLAP_STORE)" left="-1429" top="-1032" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4736" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800008012000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_OLAP_STORE" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2566</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5649</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-1429</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-1032</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="8843772a-3866-4049-9feb-086ab9a932f0">
+    <DataSourceViewID>DBSALESPP</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="edc715f1-e1c0-4df9-afcf-9fcad2c6ab08">
+    <KeyErrorLimitAction>StopLogging</KeyErrorLimitAction>
+    <KeyNotFound>IgnoreError</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>IgnoreError</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="01d271de-a9fe-4e8d-82ff-20efa2b4ce51">
+      <ID>OLAP STORE</ID>
+      <Name>Store Attr</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>1597</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ae22ccfb-6ab9-4a90-a7f9-f3857befbcd2">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9cbc3ba9-7edd-41ec-adba-1b4074f1b19a">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>COMSERNO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="57bfd035-2146-4003-a8f7-2d7a5721562d">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5f9ec20d-58d0-4a63-87a5-2643b4b9d526">
+          <TableID>spp_OLAP_STORE</TableID>
+          <ColumnID>COMNAME</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="91aa75df-ff33-4f5d-b7b8-12872426fb86">
+          <AttributeID>COMCLASS</AttributeID>
+          <Name>Class</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="df3aaa84-ab9e-4497-ba2d-bdb0f3928e56">
+          <AttributeID>COMCALL</AttributeID>
+          <Name>Call Address</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="501f3a50-0202-45fa-943e-7d70573cce22">
+          <AttributeID>COMTYNAME</AttributeID>
+          <Name>Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="51c79369-4659-4f56-aa18-db0460217b89">
+          <AttributeID>COMPCODE</AttributeID>
+          <Name>Postal Code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fed8a13e-c739-4ae0-b0fb-ce604671f858">
+          <AttributeID>CHNNAME</AttributeID>
+          <Name>Chain</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="79e19b72-595a-4769-bafa-0d4e757a10b9">
+          <AttributeID>COMTURNCLS</AttributeID>
+          <Name>Turnover Class</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ValueColumn dwd:design-time-name="4e6e46f6-ddb2-4ce1-901a-94dbec791fc0">
+        <DataType>WChar</DataType>
+        <DataSize>15</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d155c505-5ddb-46ba-9cd0-c2055c59ee6e">
+          <TableID>spp_OLAP_STORE</TableID>
+          <ColumnID>COMSERNO</ColumnID>
+        </Source>
+      </ValueColumn>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+    <Attribute dwd:design-time-name="153702fd-084e-4395-968e-16c75a7c9435">
+      <ID>COMPCODE</ID>
+      <Name>Postal Code Attr</Name>
+      <EstimatedCount>894</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="570c6f00-7b94-4fa5-bc24-ad64e8e6cf3a">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="21522369-32da-4e17-90d5-eeaa7cb19e35">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>COMPCITY</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="77e0a92c-076d-40ee-9117-1f71ccad868d">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ef744710-1857-448f-ae45-5dc5de8b88b6">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>COMPCODE</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="0e32a8c1-9389-428f-8e4e-b681eb710bef">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="49e5c18d-f278-4d58-872d-e33a110dee81">
+          <TableID>spp_OLAP_STORE</TableID>
+          <ColumnID>COMPCODE</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="9fb3cbd5-7dea-487d-bb5c-6f9046e29371">
+          <AttributeID>COMPCITY</AttributeID>
+          <Name>City</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>FilteredList</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="68a4b994-b47c-479c-9977-ef8d9219086e">
+      <ID>COMPCITY</ID>
+      <Name>City Attr</Name>
+      <EstimatedCount>608</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="77ba2e3e-6680-4095-aada-0eb232519b0a">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0358d79d-04ce-49a8-9719-917d606b6363">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>COMPCITY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>FilteredList</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="4f68f275-e9c8-4c98-9543-585af9e30088">
+      <ID>COMTYNAME</ID>
+      <Name>Type Attr</Name>
+      <EstimatedCount>13</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="75ecb70f-e531-4aa9-aff5-0634054c2624">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a7ffaf4d-e244-4952-b94b-55d46ddf4e12">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>COMTYNAME</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="a062cbaa-a27f-43ff-92b6-94d3e34c6f01">
+      <ID>COMCLASS</ID>
+      <Name>Class Attr</Name>
+      <EstimatedCount>1</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="75e7ccf4-9b9a-43d8-8dcc-dd1c85b7a280">
+          <DataType>WChar</DataType>
+          <DataSize>8</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="09992d9f-172e-43c5-956c-9a91db73ee2a">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>COMCLASS</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="f01370f6-13f3-44c8-916e-72579708edd8">
+      <ID>COMTURNCLS</ID>
+      <Name>Turnover Class Attr</Name>
+      <EstimatedCount>173</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="979b8698-eebc-4175-97e6-97a9c6fef86d">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a8ce989a-1490-435b-bc3a-49cd561b3e0a">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>COMTURNCLS</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="7eeac100-4234-4256-b194-40ee68d2c78b">
+      <ID>TGRNAME</ID>
+      <Name>Trade Group Attr</Name>
+      <EstimatedCount>1</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ef9fecc5-97c7-4855-85d3-fd6cc88ecac0">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d008dd5c-6a48-49fc-94a6-e747c6953bea">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>TGRNAME</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="9548c335-719b-41ff-86cb-29de8f410a59">
+      <ID>CCHNAME</ID>
+      <Name>Central Chain Attr</Name>
+      <EstimatedCount>5</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eef79d97-2839-46a9-9a5f-b9f17bce781d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="544752e1-aa0b-4a45-a4f3-92a1218106de">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>TGRNAME</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="df38b1eb-030d-42b4-bb3c-c9a0ef289d26">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2f0b2479-85d5-40f2-befe-4be6d8e740b7">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>CCHNAME</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="55617906-6719-49be-98f3-1f4bff0b1cd8">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="322f79a4-bca2-4cbb-bd7b-d46def012ba1">
+          <TableID>spp_OLAP_STORE</TableID>
+          <ColumnID>CCHNAME</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="50b33cce-9299-4dbe-8ac6-903a3a6c6600">
+          <AttributeID>TGRNAME</AttributeID>
+          <Name>Trade Group</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="dd8d54ef-e622-439f-9fcb-8558058c1c57">
+      <ID>CHNNAME</ID>
+      <Name>Chain Attr</Name>
+      <EstimatedCount>27</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="27b52d57-6aac-4673-a494-62d926cf539e">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4d72f721-7de8-4fac-bcea-c7d40b816b5e">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>CCHNAME</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="03d7b467-e175-4fa9-b836-df3d7de2a66f">
+          <DataType>WChar</DataType>
+          <DataSize>30</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f8f9992c-07fc-4547-aa6f-35798c2e8c4d">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>CHNNAME</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="22b9bb77-f583-4fd6-ab69-9d7a344d3fd7">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ec0d4991-d046-4391-a346-9be5e7170a27">
+          <TableID>spp_OLAP_STORE</TableID>
+          <ColumnID>CHNNAME</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="b5dadafc-fc44-433e-bc78-f86e23e804a6">
+          <AttributeID>CCHNAME</AttributeID>
+          <Name>Central Chain</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="7a69ce30-ac6c-46e1-9b7f-c946156ec1c4">
+      <ID>COMCALL</ID>
+      <Name>Call Address Attr</Name>
+      <EstimatedCount>2</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="270d8c52-22ee-4e09-9cb1-c21561eb5571">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9611cfd3-8bfa-4dd3-82ff-273655a72909">
+            <TableID>spp_OLAP_STORE</TableID>
+            <ColumnID>COMCALL</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="4f5e4be7-63ac-4180-aee9-6b7e7b071d3b">
+      <ID>Hierarchy</ID>
+      <Name>Central Chain</Name>
+      <Levels>
+        <Level dwd:design-time-name="29e31ded-f12f-46b8-82da-1434cae95025">
+          <ID>TradeGroup</ID>
+          <Name>Trade Group</Name>
+          <SourceAttributeID>TGRNAME</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="316705bf-8588-4e3a-adcd-d3a39beb955d">
+          <ID>CentralChain</ID>
+          <Name>Central Chain</Name>
+          <SourceAttributeID>CCHNAME</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="293ed9f7-4835-4549-898e-8a783ac772f0">
+          <ID>Chain</ID>
+          <Name>Chain</Name>
+          <SourceAttributeID>CHNNAME</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="7fd945c4-aa0c-40c9-bab1-52cd1f482e9a">
+          <ID>Store</ID>
+          <Name>Store</Name>
+          <SourceAttributeID>OLAP STORE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="0b81b12a-ba45-4747-89da-fc49cf6aaf0f">
+      <ID>Hierarchy 2</ID>
+      <Name>Postal Code</Name>
+      <Levels>
+        <Level dwd:design-time-name="88b6ac1d-19f9-4034-b71b-39d834f70d36">
+          <ID>City</ID>
+          <Name>City</Name>
+          <SourceAttributeID>COMPCITY</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="d41fe731-3eca-4a07-bb2a-48e434ec04bc">
+          <ID>PostalCode</ID>
+          <Name>Postal Code</Name>
+          <SourceAttributeID>COMPCODE</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="d37aabeb-2d85-49bf-9b54-6dd2b3222aa4">
+          <ID>Store</ID>
+          <Name>Store</Name>
+          <SourceAttributeID>OLAP STORE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="8f6e7762-20ef-4bc2-ba1d-7db309886fd5">
+      <ID>Hierarchy 3</ID>
+      <Name>Type</Name>
+      <Levels>
+        <Level dwd:design-time-name="354d7253-24f4-4380-b5ff-4534a94318a7">
+          <ID>Type</ID>
+          <Name>Type</Name>
+          <SourceAttributeID>COMTYNAME</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="4e64a024-adf3-488d-8480-a18dd7b1c7cf">
+          <ID>Store</ID>
+          <Name>Store</Name>
+          <SourceAttributeID>OLAP STORE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="c47b3777-3fec-46bf-9b08-997890e36702">
+      <ID>Hierarchy 1</ID>
+      <Name>Chain</Name>
+      <Levels>
+        <Level dwd:design-time-name="051cba51-cc57-4670-a37c-43e4f533a70c">
+          <ID>Chain</ID>
+          <Name>Chain</Name>
+          <SourceAttributeID>CHNNAME</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="5f726513-b5ba-42a7-8e05-ead6f6362312">
+          <ID>Store</ID>
+          <Name>Store</Name>
+          <SourceAttributeID>OLAP STORE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="fe34d925-f5d5-4098-a32f-70515fa74d67">
+      <ID>Hierarchy 4</ID>
+      <Name>Call Address</Name>
+      <Levels>
+        <Level dwd:design-time-name="4e458f1f-0a28-4d20-81bf-4abf41178e91">
+          <ID>Call Address Attr</ID>
+          <Name>Call Address</Name>
+          <SourceAttributeID>COMCALL</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="8ae0ac63-5ec4-447d-9da1-013208d54d9f">
+          <ID>Store Attr</ID>
+          <Name>Store</Name>
+          <SourceAttributeID>OLAP STORE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="c2657831-42c4-46aa-9923-3bdfd91b5f27">
+      <ID>Hierarchy 5</ID>
+      <Name>Class</Name>
+      <Levels>
+        <Level dwd:design-time-name="bd36a06a-552c-4653-8a5a-b1e46e94bc86">
+          <ID>Class Attr</ID>
+          <Name>Class</Name>
+          <SourceAttributeID>COMCLASS</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="ef48fc21-21f6-41e6-a41a-217b0d7dfbc9">
+          <ID>Store Attr</ID>
+          <Name>Store</Name>
+          <SourceAttributeID>OLAP STORE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="6c687517-9474-4e83-9e72-89e92f6ce748">
+      <ID>Hierarchy 6</ID>
+      <Name>Turnover Class</Name>
+      <Levels>
+        <Level dwd:design-time-name="87624bb4-682e-4bce-bb42-01992ae9f9f4">
+          <ID>Turnover Class Attr</ID>
+          <Name>Turnover Class</Name>
+          <SourceAttributeID>COMTURNCLS</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="b7133984-8e86-42ed-9da0-2a174f89c19e">
+          <ID>Store Attr</ID>
+          <Name>Store</Name>
+          <SourceAttributeID>OLAP STORE</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="OlapMemSet" targetNamespace="http://tempuri.org/OlapMemSet.xsd" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" xmlns="http://tempuri.org/OlapMemSet.xsd" xmlns:mstns="http://tempuri.org/OlapMemSet.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="OlapMemSet" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="M">
+					<xs:complexType>
+						<xs:sequence></xs:sequence>
+						<xs:attribute name="UN" type="xs:string" />
+						<xs:attribute name="N" type="xs:string" />
+						<xs:attribute name="CC" type="xs:short" />
+						<xs:attribute name="LD" type="xs:short" />
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="PK_OlapMemSet" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:M" />
+			<xs:field xpath="@UN" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

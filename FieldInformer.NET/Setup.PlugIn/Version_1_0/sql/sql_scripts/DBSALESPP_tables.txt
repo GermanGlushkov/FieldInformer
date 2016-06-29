@@ -1,0 +1,1056 @@
+USE DBSALESPP
+GO
+
+---- not needed anymore ---------------
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_MEASURES_HIERARCHY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_MEASURES_HIERARCHY]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DPM]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DPM]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_ORDDISTR]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_ORDDISTR]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DELDISTR]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DELDISTR]
+GO
+
+-----------------------------------------------
+
+
+
+--------------------- new --------------------
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STORE_SALESFORCE_HIERARCHY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STORE_SALESFORCE_HIERARCHY]
+GO
+
+CREATE TABLE [spp].[OLAP_STORE_SALESFORCE_HIERARCHY] (
+	[SALMSERN] [varchar] (15) NOT NULL ,
+	[SALMNAME] [varchar] (30) NOT NULL ,
+	[SALMGRP] [varchar] (30) NOT NULL ,
+	[COMSERNO] [varchar] (15) NOT NULL ,
+	[COMNAME] [varchar] (50) NULL ,
+	[DUMMY_LINK_HIERARCHY] [int] IDENTITY (1, 1) NOT NULL 
+) ON [PRIMARY]
+GO
+
+----------------------------------------------
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_AUDIT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_AUDIT]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_BASE_SELECTION]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_BASE_SELECTION]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_CCH]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_CCH]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_CHN]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_CHN]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_CURRENCY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_CURRENCY]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DATE]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DATE]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DATE_CORRUPT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DATE_CORRUPT]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DELDISTR_EXP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DELDISTR_EXP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DELDISTR_NOTEXP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DELDISTR_NOTEXP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DELDISTR_TMP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DELDISTR_TMP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DELDISTR_TMP2]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DELDISTR_TMP2]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DPM_EXP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DPM_EXP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DPM_NOTEXP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DPM_NOTEXP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_DPM_TMP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_DPM_TMP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_FIXTURE]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_FIXTURE]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_LCOMPGR]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_LCOMPGR]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_LCOMSEL]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_LCOMSEL]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_LOG]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_LOG]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_LPROPGR]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_LPROPGR]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_LPROPROD]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_LPROPROD]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_ORDDISTR_EXP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_ORDDISTR_EXP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_ORDDISTR_NOTEXP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_ORDDISTR_NOTEXP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_ORDDISTR_TMP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_ORDDISTR_TMP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_ORDDISTR_TMP2]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_ORDDISTR_TMP2]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_PGROUPS]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_PGROUPS]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_PRODUCT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_PRODUCT]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SALESCALL]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SALESCALL]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SALESCALL_HIERARCHY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SALESCALL_HIERARCHY]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SALESFORCE]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SALESFORCE]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SALESFORCE_CORRUPT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SALESFORCE_CORRUPT]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SALESFORCE_HIERARCHY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SALESFORCE_HIERARCHY]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SELDATE]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SELDATE]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SELECTION]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SELECTION]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SELRANGE]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SELRANGE]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STORE]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STORE]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STOREACT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STOREACT]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STORE_CORRUPT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STORE_CORRUPT]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SURVEY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SURVEY]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_TSELENTR]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_TSELENTR]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_TTARENTR_PRODGRP]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_TTARENTR_PRODGRP]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_TTARENTR_PRODUCT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_TTARENTR_PRODUCT]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_UPD_DIM]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_UPD_DIM]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_WHOLESALER]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_WHOLESALER]
+GO
+
+CREATE TABLE [spp].[OLAP_AUDIT] (
+	[AUDITSERN] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[KEYSERN1] [varchar] (15) NULL ,
+	[KEYSERN2] [varchar] (15) NULL ,
+	[KEYSERN3] [varchar] (15) NULL ,
+	[KEYTYPE] [varchar] (15) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_BASE_SELECTION] (
+	[COMSERNO] [varchar] (15) NULL ,
+	[PRODSERN] [varchar] (15) NULL ,
+	[SELDATE] [varchar] (8) NOT NULL ,
+	[INSEL] [smallint] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_CCH] (
+	[COMSERNCCH] [varchar] (15) NOT NULL ,
+	[TGRNAME] [varchar] (30) NULL ,
+	[CCHNAME] [varchar] (30) NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_CHN] (
+	[COMSERNCHN] [varchar] (15) NOT NULL ,
+	[CHNNAME] [varchar] (30) NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_CURRENCY] (
+	[CURRENCY] [varchar] (4) NOT NULL ,
+	[RATE_TO_EURO] [float] NOT NULL ,
+	[RATE_TO_DEFAULT] [float] NOT NULL ,
+	[DEFAULT] [varchar] (4) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DATE] (
+	[DATE] [varchar] (8) NOT NULL ,
+	[YEAR] [varchar] (4) NOT NULL ,
+	[QUARTER] [varchar] (5) NOT NULL ,
+	[MONTH] [varchar] (6) NOT NULL ,
+	[WEEK] [varchar] (6) NOT NULL ,
+	[SALENUM] [varchar] (6) NOT NULL ,
+	[SNAPSHOT_DATE] [varchar] (8) NOT NULL ,
+	[YEAR_SNAPSHOT_DATE] [varchar] (8) NULL ,
+	[WRKDAY] [tinyint] NULL ,
+	[WRKDAY_SUM] [numeric](18, 0) NULL ,
+	[WRKDAY_SERNO] [int] NOT NULL ,
+	[MSA_WRKDAY] [tinyint] NULL ,
+	[WEEKEND] [tinyint] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DATE_CORRUPT] (
+	[DATE] [varchar] (8) NULL ,
+	[YEAR] [varchar] (4) NULL ,
+	[QUARTER] [varchar] (5) NULL ,
+	[MONTH] [varchar] (6) NULL ,
+	[WEEK] [varchar] (6) NULL ,
+	[SALENUM] [varchar] (6) NULL ,
+	[SNAPSHOT_DATE] [varchar] (8) NULL ,
+	[YEAR_SNAPSHOT_DATE] [varchar] (8) NULL ,
+	[WRKDAY] [tinyint] NULL ,
+	[MSA_WRKDAY] [tinyint] NULL ,
+	[WEEKEND] [tinyint] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DELDISTR_EXP] (
+	[COMSERNO] [char] (15) NOT NULL ,
+	[PRODSERN] [char] (15) NOT NULL ,
+	[DELDATE] [char] (8) NOT NULL ,
+	[PREV_INDISTR_CUM_SUM] [smallint] NOT NULL ,
+	[PREV_INSEL_CUM_SUM] [smallint] NOT NULL ,
+	[PREV_INBSEL_CUM_SUM] [smallint] NOT NULL ,
+	[CUR_INDISTR_CUM_SUM] [smallint] NOT NULL ,
+	[CUR_INSEL_CUM_SUM] [smallint] NOT NULL ,
+	[CUR_INBSEL_CUM_SUM] [smallint] NOT NULL ,
+	[INDISTR_CUM] [smallint] NOT NULL ,
+	[INSELDISTR_CUM] [smallint] NOT NULL ,
+	[INBSELDISTR_CUM] [smallint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DELDISTR_NOTEXP] (
+	[COMSERNO] [char] (15) NOT NULL ,
+	[PRODSERN] [char] (15) NOT NULL ,
+	[DELDATE] [char] (8) NOT NULL ,
+	[INSEL_CUM] [smallint] NOT NULL ,
+	[INBSEL_CUM] [smallint] NOT NULL ,
+	[INDISTR_CUM] [smallint] NOT NULL ,
+	[INSELDISTR_CUM] [smallint] NOT NULL ,
+	[INBSELDISTR_CUM] [smallint] NOT NULL ,
+	[PRODEXPAND] [tinyint] NOT NULL ,
+	[PRODEXPAND_INTERSECT] [tinyint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DELDISTR_TMP] (
+	[COMSERNO] [char] (15) NOT NULL ,
+	[PRODSERN] [char] (15) NOT NULL ,
+	[DELDATE] [char] (8) NOT NULL ,
+	[RANGESTART_DATE] [char] (8) NOT NULL ,
+	[OUTOFSTOCK_DATE] [char] (8) NOT NULL ,
+	[WRKDAYS_IN_RANGE] [int] NOT NULL ,
+	[DELDMONTH] [char] (6) NOT NULL ,
+	[WRKDAY_SERNO] [int] NOT NULL ,
+	[DELEACTVOL] [float] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DELDISTR_TMP2] (
+	[COMSERNO] [char] (15) NOT NULL ,
+	[PRODSERN] [char] (15) NOT NULL ,
+	[DELDATE] [char] (8) NOT NULL ,
+	[PREV_DELDATE] [char] (8) NOT NULL ,
+	[INDISTR] [smallint] NOT NULL ,
+	[INBSEL] [bit] NOT NULL ,
+	[INSEL] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DPM_EXP] (
+	[comserno] [char] (15) NOT NULL ,
+	[prodsern] [char] (15) NOT NULL ,
+	[dpmhdate] [char] (8) NOT NULL ,
+	[prev_dpmecover_cum_sum] [smallint] NOT NULL ,
+	[prev_dpmeinsel_cum_sum] [smallint] NOT NULL ,
+	[prev_dpmeinbsel_cum_sum] [smallint] NOT NULL ,
+	[cur_dpmecover_cum_sum] [smallint] NOT NULL ,
+	[cur_dpmeinsel_cum_sum] [smallint] NOT NULL ,
+	[cur_dpmeinbsel_cum_sum] [smallint] NOT NULL ,
+	[dpmecover_cum] [smallint] NOT NULL ,
+	[dpmeselcover_cum] [smallint] NOT NULL ,
+	[dpmebselcover_cum] [smallint] NOT NULL ,
+	[dpmmeasured_cum] [smallint] NOT NULL ,
+	[dpmbselmeasured_cum] [smallint] NOT NULL ,
+	[dpmefacing_cum] [real] NOT NULL ,
+	[dpmechan_cum] [real] NOT NULL ,
+	[dpmesalesp_cum] [real] NOT NULL ,
+	[dpmeavestp_cum] [real] NOT NULL ,
+	[dpmeprice_net] [real] NOT NULL ,
+	[dpmeprice_gross] [real] NOT NULL ,
+	[dpmcount] [tinyint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DPM_NOTEXP] (
+	[comserno] [char] (15) NOT NULL ,
+	[prodsern] [char] (15) NOT NULL ,
+	[dpmhdate] [char] (8) NOT NULL ,
+	[dpmeinsel_cum] [smallint] NOT NULL ,
+	[dpmeinbsel_cum] [smallint] NOT NULL ,
+	[dpmefacing_cum] [real] NOT NULL ,
+	[dpmechan_cum] [real] NOT NULL ,
+	[dpmesalesp_cum] [real] NOT NULL ,
+	[dpmeavestp_cum] [real] NOT NULL ,
+	[dpmeprice_net] [real] NOT NULL ,
+	[dpmeprice_gross] [real] NOT NULL ,
+	[dpmecover_cum] [smallint] NOT NULL ,
+	[dpmeselcover_cum] [smallint] NOT NULL ,
+	[dpmebselcover_cum] [smallint] NOT NULL ,
+	[dpmmeasured_cum] [smallint] NOT NULL ,
+	[dpmbselmeasured_cum] [smallint] NOT NULL ,
+	[dpmcount] [tinyint] NOT NULL ,
+	[prodexpand] [tinyint] NOT NULL ,
+	[prodexpand_intersect] [tinyint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_DPM_TMP] (
+	[comserno] [char] (15) NOT NULL ,
+	[prodsern] [char] (15) NOT NULL ,
+	[dpmhdate] [char] (8) NOT NULL ,
+	[dpmecover] [bit] NOT NULL ,
+	[dpmefacing] [real] NOT NULL ,
+	[dpmechan] [real] NOT NULL ,
+	[dpmesalesp] [real] NOT NULL ,
+	[dpmeavestp] [real] NOT NULL ,
+	[dpmeprice_net] [real] NOT NULL ,
+	[dpmeprice_gross] [real] NOT NULL ,
+	[dpmeinsel] [bit] NOT NULL ,
+	[dpmeinbsel] [bit] NOT NULL ,
+	[sel_placeholder] [bit] NOT NULL ,
+	[prev_dpmhdate] [char] (8) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_FIXTURE] (
+	[FXTRSERN] [varchar] (15) NOT NULL ,
+	[FXTRNAME] [varchar] (30) NOT NULL ,
+	[PARENT_FXTRNAME] [varchar] (30) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_LCOMPGR] (
+	[COMSERNO] [varchar] (15) NOT NULL ,
+	[PGRSERN] [varchar] (15) NOT NULL ,
+	[SALMSERN] [varchar] (15) NOT NULL ,
+	[DUMMY_LINK_HIERARCHY] [int] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_LCOMSEL] (
+	[SELSERN] [varchar] (15) NULL ,
+	[COMSERNO] [varchar] (15) NULL ,
+	[SALMSERN] [varchar] (15) NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_LOG] (
+	[log_id] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[message] [varchar] (512) NULL ,
+	[timestamp] [datetime] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_LPROPGR] (
+	[PRODSERN] [varchar] (15) NOT NULL ,
+	[PGRSERN] [varchar] (15) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_LPROPROD] (
+	[PARENT_PRODSERN] [varchar] (15) NOT NULL ,
+	[PRODSERN] [varchar] (15) NOT NULL ,
+	[PRODCPG_MULT] [real] NOT NULL ,
+	[PRODCASE_MULT] [real] NOT NULL ,
+	[CHILDCASE_MULT] [real] NOT NULL ,
+	[PRODPALLET_MULT] [real] NOT NULL ,
+	[PRODUNIT_MULT] [real] NOT NULL ,
+	[PRODMONEY_MULT] [real] NOT NULL ,
+	[PRODSIZE] [float] NOT NULL ,
+	[PRODCPS] [float] NOT NULL ,
+	[PRODTAX] [float] NOT NULL ,
+	[PRODPALLET] [float] NOT NULL ,
+	[PRODPRICE] [float] NOT NULL ,
+	[PRODCPWNET] [float] NOT NULL ,
+	[PRODCPWGR] [float] NOT NULL ,
+	[PRODCASEWGR] [float] NOT NULL ,
+	[PRODEXPAND] [tinyint] NOT NULL ,
+	[PRODEXPAND_INTERSECT] [tinyint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_ORDDISTR_EXP] (
+	[COMSERNO] [char] (15) NOT NULL ,
+	[PRODSERN] [char] (15) NOT NULL ,
+	[ORDDDATE] [char] (8) NOT NULL ,
+	[PREV_INDISTR_CUM_SUM] [smallint] NOT NULL ,
+	[PREV_INSEL_CUM_SUM] [smallint] NOT NULL ,
+	[PREV_INBSEL_CUM_SUM] [smallint] NOT NULL ,
+	[CUR_INDISTR_CUM_SUM] [smallint] NOT NULL ,
+	[CUR_INSEL_CUM_SUM] [smallint] NOT NULL ,
+	[CUR_INBSEL_CUM_SUM] [smallint] NOT NULL ,
+	[INDISTR_CUM] [smallint] NOT NULL ,
+	[INSELDISTR_CUM] [smallint] NOT NULL ,
+	[INBSELDISTR_CUM] [smallint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_ORDDISTR_NOTEXP] (
+	[COMSERNO] [char] (15) NOT NULL ,
+	[PRODSERN] [char] (15) NOT NULL ,
+	[ORDDDATE] [char] (8) NOT NULL ,
+	[INSEL_CUM] [smallint] NOT NULL ,
+	[INBSEL_CUM] [smallint] NOT NULL ,
+	[INDISTR_CUM] [smallint] NOT NULL ,
+	[INSELDISTR_CUM] [smallint] NOT NULL ,
+	[INBSELDISTR_CUM] [smallint] NOT NULL ,
+	[PRODEXPAND] [tinyint] NOT NULL ,
+	[PRODEXPAND_INTERSECT] [tinyint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_ORDDISTR_TMP] (
+	[COMSERNO] [char] (15) NOT NULL ,
+	[PRODSERN] [char] (15) NOT NULL ,
+	[ORDDDATE] [char] (8) NOT NULL ,
+	[RANGESTART_DATE] [char] (8) NOT NULL ,
+	[OUTOFSTOCK_DATE] [char] (8) NOT NULL ,
+	[WRKDAYS_IN_RANGE] [int] NOT NULL ,
+	[ORDDMONTH] [char] (6) NOT NULL ,
+	[WRKDAY_SERNO] [int] NOT NULL ,
+	[ORDEVOL] [float] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_ORDDISTR_TMP2] (
+	[COMSERNO] [char] (15) NOT NULL ,
+	[PRODSERN] [char] (15) NOT NULL ,
+	[ORDDDATE] [char] (8) NOT NULL ,
+	[PREV_ORDDDATE] [char] (8) NOT NULL ,
+	[INDISTR] [smallint] NOT NULL ,
+	[INBSEL] [bit] NOT NULL ,
+	[INSEL] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_PGROUPS] (
+	[PGRSERN] [varchar] (15) NOT NULL ,
+	[PGRPNAME] [varchar] (50) NULL ,
+	[PGRPVAL] [varchar] (30) NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_PRODUCT] (
+	[PRODSERN] [varchar] (15) NOT NULL ,
+	[PRODNAME] [varchar] (45) NULL ,
+	[PRODSNAME] [varchar] (15) NULL ,
+	[PRODSIZE] [float] NULL ,
+	[PRODCPS] [float] NULL ,
+	[PRODTAX] [float] NULL ,
+	[PRODPALLET] [float] NULL ,
+	[PRODPRICE] [float] NULL ,
+	[PRODCPWNET] [float] NULL ,
+	[PRODCPWGR] [float] NULL ,
+	[PRODCASEWGR] [float] NULL
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SALESCALL] (
+	[ATTR_KEY] [varchar] (15) NOT NULL ,
+	[ATTR] [varchar] (50) NOT NULL ,
+	[KEY] [varchar] (50) NOT NULL ,
+	[ATTR_NAME] [varchar] (50) NOT NULL ,
+	[ATTR_VAL] [varchar] (50) NOT NULL ,
+	[DUMMY_LINK_HIERARCHY] [smallint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SALESCALL_HIERARCHY] (
+	[ATTR_KEY] [varchar] (15) NOT NULL ,
+	[ATTR] [varchar] (50) NOT NULL ,
+	[KEY] [varchar] (50) NOT NULL ,
+	[ATTR_NAME] [varchar] (50) NOT NULL ,
+	[ATTR_VAL] [varchar] (50) NOT NULL ,
+	[DUMMY_LINK_HIERARCHY] [smallint] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SALESFORCE] (
+	[SALMSERN] [varchar] (15) NULL ,
+	[SALMNAME] [varchar] (30) NULL ,
+	[PGRSERN] [varchar] (15) NULL ,
+	[DUMMY_LINK_HIERARCHY] [int] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SALESFORCE_CORRUPT] (
+	[SALMSERN] [varchar] (15) NULL ,
+	[SALMNAME] [varchar] (30) NULL ,
+	[PGRSERN] [varchar] (15) NULL ,
+	[DUMMY_LINK_HIERARCHY] [int] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SALESFORCE_HIERARCHY] (
+	[SALMSERN] [varchar] (15) NOT NULL ,
+	[SALMNAME] [varchar] (30) NOT NULL ,
+	[SALMGRP] [varchar] (30) NOT NULL ,
+	[DUMMY_LINK_HIERARCHY] [int] IDENTITY (1, 1) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SELDATE] (
+	[SELDATE] [varchar] (8) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SELECTION] (
+	[COMSERNO] [varchar] (15) NULL ,
+	[PRODSERN] [varchar] (15) NULL ,
+	[SELDATE] [varchar] (8) NOT NULL ,
+	[INSEL] [smallint] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SELRANGE] (
+	[SELE_VALID_RANGE_SERN] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[SELE_VALID_START] [varchar] (8) NOT NULL ,
+	[SELE_VALID_END] [varchar] (8) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_STORE] (
+	[COMSERNO] [varchar] (15) NOT NULL ,
+	[NR] [int] IDENTITY (1, 1) NOT NULL ,
+	[COMNAME] [varchar] (50) NULL ,
+	[COMPCODE] [varchar] (10) NULL ,
+	[COMPCITY] [varchar] (30) NULL ,
+	[COMPADDR] [varchar] (40) NULL ,
+	[COMTYNAME] [varchar] (15) NULL ,
+	[COMCLASS] [varchar] (8) NULL ,
+	[COMTURNCLS] [varchar] (4) NULL ,
+	[TGRNAME] [varchar] (30) NULL ,
+	[CCHNAME] [varchar] (30) NULL ,
+	[CHNNAME] [varchar] (30) NULL ,
+	[COMCALL] [varchar] (3) NULL ,
+	[COMINACT] [varchar] (8) NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_STOREACT] (
+	[COMSERNO] [varchar] (15) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_STORE_CORRUPT] (
+	[COMSERNO] [varchar] (15) NOT NULL ,
+	[NR] [int] IDENTITY (1, 1) NOT NULL ,
+	[COMNAME] [varchar] (50) NULL ,
+	[COMPCODE] [varchar] (10) NULL ,
+	[COMPCITY] [varchar] (30) NULL ,
+	[COMPADDR] [varchar] (40) NULL ,
+	[COMTYNAME] [varchar] (15) NULL ,
+	[COMCLASS] [varchar] (8) NULL ,
+	[COMTURNCLS] [varchar] (4) NULL ,
+	[TGRNAME] [varchar] (30) NULL ,
+	[CCHNAME] [varchar] (30) NULL ,
+	[CHNNAME] [varchar] (30) NULL ,
+	[COMCALL] [varchar] (3) NULL ,
+	[COMINACT] [varchar] (8) NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_SURVEY] (
+	[SURVEY_KEY] [int] IDENTITY (1, 1) NOT NULL ,
+	[SALMSERN] [varchar] (15) NULL ,
+	[COMSERNO] [varchar] (15) NULL ,
+	[SAMCHDATE] [varchar] (8) NULL ,
+	[ANSWER] [varchar] (40) NULL ,
+	[QUESTION] [varchar] (60) NULL ,
+	[ANSWER_MEASURE] [real] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_TSELENTR] (
+	[SELSERN] [varchar] (15) NULL ,
+	[SELESERN] [varchar] (15) NULL ,
+	[PRODSERN] [varchar] (15) NULL ,
+	[SELESTART] [varchar] (8) NULL ,
+	[SELEEND] [varchar] (8) NULL ,
+	[SELE_VALID_RANGE_SERN] [numeric](18, 0) NULL ,
+	[SELE_VALID_START] [varchar] (8) NULL ,
+	[SELE_VALID_END] [varchar] (8) NULL ,
+	[SELE_PURCH_PRICE_NET] [numeric](19, 4) NULL ,
+	[SELE_PURCH_PRICE_GROSS] [numeric](19, 4) NULL ,
+	[SELE_CONS_PRICE_NET] [numeric](19, 4) NULL ,
+	[SELE_CONS_PRICE_GROSS] [numeric](19, 4) NULL ,
+	[SELE_MARGIN] [numeric](19, 4) NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_TTARENTR_PRODGRP] (
+	[TARGSERN] [varchar] (15) NULL ,
+	[SALMSERN] [varchar] (15) NULL ,
+	[COMSERNO] [varchar] (15) NULL ,
+	[PRODSERN] [varchar] (15) NULL ,
+	[DATE] [varchar] (8) NULL ,
+	[TARGEVOLUM] [float] NULL ,
+	[TARGEMONEY] [float] NULL ,
+	[TARGENUM1] [float] NULL ,
+	[TARGENUM2] [float] NULL ,
+	[TARGENUM3] [float] NULL ,
+	[TARGENUM4] [float] NULL ,
+	[TARGMONEY1] [float] NULL ,
+	[TARGMONEY2] [float] NULL ,
+	[TARGMONEY3] [float] NULL ,
+	[TARGMONEY4] [float] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_TTARENTR_PRODUCT] (
+	[TARGSERN] [varchar] (15) NULL ,
+	[SALMSERN] [varchar] (15) NULL ,
+	[COMSERNO] [varchar] (15) NULL ,
+	[PRODSERN] [varchar] (15) NULL ,
+	[DATE] [varchar] (8) NULL ,
+	[TARGEVOLUM] [float] NULL ,
+	[TARGEMONEY] [float] NULL ,
+	[TARGENUM1] [float] NULL ,
+	[TARGENUM2] [float] NULL ,
+	[TARGENUM3] [float] NULL ,
+	[TARGENUM4] [float] NULL ,
+	[TARGMONEY1] [float] NULL ,
+	[TARGMONEY2] [float] NULL ,
+	[TARGMONEY3] [float] NULL ,
+	[TARGMONEY4] [float] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_UPD_DIM] (
+	[DIM_UPD_ID] [numeric](18, 0) IDENTITY (1, 1) NOT NULL ,
+	[DIM_NAME] [varchar] (255) NOT NULL ,
+	[DIM_TYPE] [varchar] (50) NOT NULL ,
+	[UPD_FLAG] [varchar] (50) NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [spp].[OLAP_WHOLESALER] (
+	[COMSERNWHS] [varchar] (15) NOT NULL ,
+	[COMNAME] [varchar] (30) NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [spp].[OLAP_AUDIT] WITH NOCHECK ADD 
+	CONSTRAINT [PK_OLAP_AUDIT] PRIMARY KEY  CLUSTERED 
+	(
+		[AUDITSERN]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_CCH] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[COMSERNCCH]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_CHN] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[COMSERNCHN]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_CURRENCY] WITH NOCHECK ADD 
+	CONSTRAINT [PK__OLAP_CURRENCY__3C0B9F94] PRIMARY KEY  CLUSTERED 
+	(
+		[CURRENCY]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_DATE] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[DATE]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_FIXTURE] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[FXTRSERN]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_LOG] WITH NOCHECK ADD 
+	CONSTRAINT [PK_OLAP_LOG] PRIMARY KEY  CLUSTERED 
+	(
+		[log_id]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_PGROUPS] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[PGRSERN]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_PRODUCT] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[PRODSERN]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_SALESCALL] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[ATTR_KEY]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_SALESCALL_HIERARCHY] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[ATTR_KEY]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_SELDATE] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[SELDATE]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_SELRANGE] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[SELE_VALID_RANGE_SERN]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_STORE] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[COMSERNO]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_STORE_CORRUPT] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[COMSERNO]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_UPD_DIM] WITH NOCHECK ADD 
+	CONSTRAINT [PK_OLAP_UPD_DIM] PRIMARY KEY  CLUSTERED 
+	(
+		[DIM_UPD_ID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [spp].[OLAP_WHOLESALER] WITH NOCHECK ADD 
+	 PRIMARY KEY  CLUSTERED 
+	(
+		[COMSERNWHS]
+	)  ON [PRIMARY] 
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_BASE_SELECTION] ON [spp].[OLAP_BASE_SELECTION]([COMSERNO], [PRODSERN], [SELDATE]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_DELDISTR_EXP_DATE] ON [spp].[OLAP_DELDISTR_EXP]([DELDATE]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_DELDISTR_NOTEXP] ON [spp].[OLAP_DELDISTR_NOTEXP]([COMSERNO], [PRODSERN], [DELDATE]) ON [PRIMARY]
+GO
+
+ CREATE  UNIQUE  CLUSTERED  INDEX [IX_OLAP_DELDISTR_TMP] ON [spp].[OLAP_DELDISTR_TMP]([COMSERNO], [PRODSERN], [DELDATE]) ON [PRIMARY]
+GO
+
+ CREATE  UNIQUE  CLUSTERED  INDEX [IX_OLAP_DELDISTR_TMP2] ON [spp].[OLAP_DELDISTR_TMP2]([COMSERNO], [PRODSERN], [DELDATE]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [ix_OLAP_DPM_NOTEXP] ON [spp].[OLAP_DPM_NOTEXP]([comserno], [prodsern], [dpmhdate]) ON [PRIMARY]
+GO
+
+ CREATE  UNIQUE  CLUSTERED  INDEX [ix_OLAP_DPM_TMP] ON [spp].[OLAP_DPM_TMP]([comserno], [prodsern], [dpmhdate]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_LCOMPGR] ON [spp].[OLAP_LCOMPGR]([COMSERNO], [PGRSERN]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [ix_tmp_olap_lcomsel_keys] ON [spp].[OLAP_LCOMSEL]([SELSERN], [COMSERNO]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_LPROPGR] ON [spp].[OLAP_LPROPGR]([PRODSERN], [PGRSERN]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_LPROPROD] ON [spp].[OLAP_LPROPROD]([PARENT_PRODSERN], [PRODSERN], [PRODEXPAND], [PRODEXPAND_INTERSECT]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_ORDDISTR_EXP_DATE] ON [spp].[OLAP_ORDDISTR_EXP]([ORDDDATE]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_ORDDISTR_NOTEXP] ON [spp].[OLAP_ORDDISTR_NOTEXP]([COMSERNO], [PRODSERN], [ORDDDATE]) ON [PRIMARY]
+GO
+
+ CREATE  UNIQUE  CLUSTERED  INDEX [IX_OLAP_ORDDISTR_TMP] ON [spp].[OLAP_ORDDISTR_TMP]([COMSERNO], [PRODSERN], [ORDDDATE]) ON [PRIMARY]
+GO
+
+ CREATE  UNIQUE  CLUSTERED  INDEX [IX_OLAP_ORDDISTR_TMP2] ON [spp].[OLAP_ORDDISTR_TMP2]([COMSERNO], [PRODSERN], [ORDDDATE]) ON [PRIMARY]
+GO
+
+ CREATE  UNIQUE  CLUSTERED  INDEX [IX_OLAP_SALESFORCE_SALMSERN] ON [spp].[OLAP_SALESFORCE]([SALMSERN]) ON [PRIMARY]
+GO
+
+ CREATE  UNIQUE  CLUSTERED  INDEX [IX_OLAP_SALESFORCE_CORRUPT_SALMSERN] ON [spp].[OLAP_SALESFORCE_CORRUPT]([SALMSERN]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_SALESFORCE_HIERARCHY_DUMMY_LINK_HIERARCHY] ON [spp].[OLAP_SALESFORCE_HIERARCHY]([DUMMY_LINK_HIERARCHY]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [IX_OLAP_SELECTION] ON [spp].[OLAP_SELECTION]([COMSERNO], [PRODSERN], [SELDATE]) ON [PRIMARY]
+GO
+
+ CREATE  CLUSTERED  INDEX [ix_tmp_tselentr_keys] ON [spp].[OLAP_TSELENTR]([SELSERN], [PRODSERN]) ON [PRIMARY]
+GO
+
+ALTER TABLE [spp].[OLAP_CCH] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_CCH__TGRNAM__32352105] DEFAULT ('Default Trade Group') FOR [TGRNAME],
+	CONSTRAINT [DF__OLAP_CCH__CCHNAM__3329453E] DEFAULT ('Undefined') FOR [CCHNAME]
+GO
+
+ALTER TABLE [spp].[OLAP_CHN] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_CHN__CHNNAM__3605B1E9] DEFAULT ('Undefined') FOR [CHNNAME]
+GO
+
+ALTER TABLE [spp].[OLAP_DATE] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_DATE__WRKDA__12BC75AC] DEFAULT (1) FOR [WRKDAY],
+	CONSTRAINT [DF__OLAP_DATE__WRKDA__13B099E5] DEFAULT (1.0) FOR [WRKDAY_SUM],
+	CONSTRAINT [DF__OLAP_DATE__WRKDA__14A4BE1E] DEFAULT (0) FOR [WRKDAY_SERNO],
+	CONSTRAINT [DF__OLAP_DATE__MSA_W__1598E257] DEFAULT (1) FOR [MSA_WRKDAY],
+	CONSTRAINT [DF__OLAP_DATE__WEEKE__168D0690] DEFAULT (0) FOR [WEEKEND]
+GO
+
+ALTER TABLE [spp].[OLAP_DATE_CORRUPT] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_DATE___YEAR__18754F02] DEFAULT ('0000') FOR [YEAR],
+	CONSTRAINT [DF__OLAP_DATE__QUART__1969733B] DEFAULT ('00000') FOR [QUARTER],
+	CONSTRAINT [DF__OLAP_DATE__MONTH__1A5D9774] DEFAULT ('000000') FOR [MONTH],
+	CONSTRAINT [DF__OLAP_DATE___WEEK__1B51BBAD] DEFAULT ('000000') FOR [WEEK],
+	CONSTRAINT [DF__OLAP_DATE__SALEN__1C45DFE6] DEFAULT ('00000') FOR [SALENUM],
+	CONSTRAINT [DF__OLAP_DATE__SNAPS__1D3A041F] DEFAULT ('00000000') FOR [SNAPSHOT_DATE],
+	CONSTRAINT [DF__OLAP_DATE__YEAR___1E2E2858] DEFAULT ('00000000') FOR [YEAR_SNAPSHOT_DATE],
+	CONSTRAINT [DF__OLAP_DATE__WRKDA__1F224C91] DEFAULT (0) FOR [WRKDAY],
+	CONSTRAINT [DF__OLAP_DATE__MSA_W__201670CA] DEFAULT (0) FOR [MSA_WRKDAY],
+	CONSTRAINT [DF__OLAP_DATE__WEEKE__210A9503] DEFAULT (0) FOR [WEEKEND]
+GO
+
+ALTER TABLE [spp].[OLAP_FIXTURE] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_FIXT__FXTRN__64C0A0D2] DEFAULT ('Undefined') FOR [FXTRNAME],
+	CONSTRAINT [DF__OLAP_FIXT__PAREN__65B4C50B] DEFAULT ('Undefined') FOR [PARENT_FXTRNAME]
+GO
+
+ALTER TABLE [spp].[OLAP_LCOMPGR] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_LCOM__DUMMY__5F07C77C] DEFAULT (0) FOR [DUMMY_LINK_HIERARCHY]
+GO
+
+ALTER TABLE [spp].[OLAP_LOG] WITH NOCHECK ADD 
+	CONSTRAINT [DF_OLAP_LOG_timestamp] DEFAULT (getdate()) FOR [timestamp]
+GO
+
+ALTER TABLE [spp].[OLAP_LPROPROD] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_LPRO__PRODS__6C61C29A] DEFAULT (1) FOR [PRODSIZE],
+	CONSTRAINT [DF__OLAP_LPRO__PRODC__6D55E6D3] DEFAULT (1) FOR [PRODCPS],
+	CONSTRAINT [DF__OLAP_LPRO__PRODT__6E4A0B0C] DEFAULT (0) FOR [PRODTAX],
+	CONSTRAINT [DF__OLAP_LPRO__PRODP__6F3E2F45] DEFAULT (1) FOR [PRODPALLET],
+	CONSTRAINT [DF__OLAP_LPRO__PRODP__7032537E] DEFAULT (0) FOR [PRODPRICE],
+	CONSTRAINT [DF__OLAP_LPRO__PRODE__712677B7] DEFAULT (0) FOR [PRODEXPAND_INTERSECT]
+GO
+
+ALTER TABLE [spp].[OLAP_PRODUCT] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_PROD__PRODN__25CF4A20] DEFAULT ('Undefined') FOR [PRODNAME],
+	CONSTRAINT [DF__OLAP_PROD__PRODS__26C36E59] DEFAULT ('Undefined') FOR [PRODSNAME],
+	CONSTRAINT [DF__OLAP_PROD__PRODS__27B79292] DEFAULT (1) FOR [PRODSIZE],
+	CONSTRAINT [DF__OLAP_PROD__PRODC__28ABB6CB] DEFAULT (1) FOR [PRODCPS],
+	CONSTRAINT [DF__OLAP_PROD__PRODT__299FDB04] DEFAULT (0) FOR [PRODTAX],
+	CONSTRAINT [DF__OLAP_PROD__PRODP__2A93FF3D] DEFAULT (1) FOR [PRODPALLET],
+	CONSTRAINT [DF__OLAP_PROD__PRODP__2B882376] DEFAULT (0) FOR [PRODPRICE]
+GO
+
+ALTER TABLE [spp].[OLAP_SALESFORCE] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_SALE__SALMN__548A3909] DEFAULT ('Undefined') FOR [SALMNAME],
+	CONSTRAINT [DF__OLAP_SALE__PGRSE__557E5D42] DEFAULT ('0') FOR [PGRSERN],
+	CONSTRAINT [DF__OLAP_SALE__DUMMY__5672817B] DEFAULT (0) FOR [DUMMY_LINK_HIERARCHY]
+GO
+
+ALTER TABLE [spp].[OLAP_SALESFORCE_CORRUPT] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_SALE__SALMN__585AC9ED] DEFAULT ('Undefined') FOR [SALMNAME],
+	CONSTRAINT [DF__OLAP_SALE__PGRSE__594EEE26] DEFAULT ('0') FOR [PGRSERN],
+	CONSTRAINT [DF__OLAP_SALE__DUMMY__5A43125F] DEFAULT (0) FOR [DUMMY_LINK_HIERARCHY]
+GO
+
+ALTER TABLE [spp].[OLAP_STORE] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_STOR__COMNA__38E21E94] DEFAULT ('Undefined') FOR [COMNAME],
+	CONSTRAINT [DF__OLAP_STOR__COMPC__39D642CD] DEFAULT ('Undefined') FOR [COMPCODE],
+	CONSTRAINT [DF__OLAP_STOR__COMPC__3ACA6706] DEFAULT ('Undefined') FOR [COMPCITY],
+	CONSTRAINT [DF__OLAP_STOR__COMPA__3BBE8B3F] DEFAULT ('Undefined') FOR [COMPADDR],
+	CONSTRAINT [DF__OLAP_STOR__COMTY__3CB2AF78] DEFAULT ('Undefined') FOR [COMTYNAME],
+	CONSTRAINT [DF__OLAP_STOR__COMCL__3DA6D3B1] DEFAULT ('Undef') FOR [COMCLASS],
+	CONSTRAINT [DF__OLAP_STOR__COMTU__3E9AF7EA] DEFAULT ('Undf') FOR [COMTURNCLS],
+	CONSTRAINT [DF__OLAP_STOR__TGRNA__3F8F1C23] DEFAULT ('Default Trade Group') FOR [TGRNAME],
+	CONSTRAINT [DF__OLAP_STOR__CCHNA__4083405C] DEFAULT ('Undefined') FOR [CCHNAME],
+	CONSTRAINT [DF__OLAP_STOR__CHNNA__41776495] DEFAULT ('Undefined') FOR [CHNNAME],
+	CONSTRAINT [DF__OLAP_STOR__COMCA__426B88CE] DEFAULT ('No') FOR [COMCALL],
+	CONSTRAINT [DF__OLAP_STOR__COMIN__435FAD07] DEFAULT ('99999999') FOR [COMINACT]
+GO
+
+ALTER TABLE [spp].[OLAP_STORE_CORRUPT] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_STOR__COMNA__47303DEB] DEFAULT ('Undefined') FOR [COMNAME],
+	CONSTRAINT [DF__OLAP_STOR__COMPC__48246224] DEFAULT ('Undefined') FOR [COMPCODE],
+	CONSTRAINT [DF__OLAP_STOR__COMPC__4918865D] DEFAULT ('Undefined') FOR [COMPCITY],
+	CONSTRAINT [DF__OLAP_STOR__COMPA__4A0CAA96] DEFAULT ('Undefined') FOR [COMPADDR],
+	CONSTRAINT [DF__OLAP_STOR__COMTY__4B00CECF] DEFAULT ('Undefined') FOR [COMTYNAME],
+	CONSTRAINT [DF__OLAP_STOR__COMCL__4BF4F308] DEFAULT ('Undef') FOR [COMCLASS],
+	CONSTRAINT [DF__OLAP_STOR__COMTU__4CE91741] DEFAULT ('Undf') FOR [COMTURNCLS],
+	CONSTRAINT [DF__OLAP_STOR__TGRNA__4DDD3B7A] DEFAULT ('Default Trade Group') FOR [TGRNAME],
+	CONSTRAINT [DF__OLAP_STOR__CCHNA__4ED15FB3] DEFAULT ('Undefined') FOR [CCHNAME],
+	CONSTRAINT [DF__OLAP_STOR__CHNNA__4FC583EC] DEFAULT ('Undefined') FOR [CHNNAME],
+	CONSTRAINT [DF__OLAP_STOR__COMCA__50B9A825] DEFAULT ('No') FOR [COMCALL],
+	CONSTRAINT [DF__OLAP_STOR__COMIN__51ADCC5E] DEFAULT ('99999999') FOR [COMINACT]
+GO
+
+ALTER TABLE [spp].[OLAP_WHOLESALER] WITH NOCHECK ADD 
+	CONSTRAINT [DF__OLAP_WHOL__COMNA__61E43427] DEFAULT ('Unknown') FOR [COMNAME]
+GO
+
+ CREATE  INDEX [IX_OLAP_AUDIT_KEYTYPE] ON [spp].[OLAP_AUDIT]([KEYTYPE]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_BASE_SELECTION_SELDATE] ON [spp].[OLAP_BASE_SELECTION]([SELDATE]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [ix_olap_date_WRKDAY_SERNO] ON [spp].[OLAP_DATE]([WRKDAY_SERNO]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_DATE_YEAR] ON [spp].[OLAP_DATE]([YEAR]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_DATE_MONTH] ON [spp].[OLAP_DATE]([MONTH]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_DATE_WEEK] ON [spp].[OLAP_DATE]([WEEK]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_DATE_SALENUM] ON [spp].[OLAP_DATE]([SALENUM]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [ix_tmp_olap_lcomsel_comserno] ON [spp].[OLAP_LCOMSEL]([COMSERNO]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_SALESFORCE_PGRSERN] ON [spp].[OLAP_SALESFORCE]([PGRSERN]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_SALESFORCE_HIERARCHY_SALMSERN] ON [spp].[OLAP_SALESFORCE_HIERARCHY]([SALMSERN]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_SELECTION_SELDATE] ON [spp].[OLAP_SELECTION]([SELDATE]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_SELRANGE] ON [spp].[OLAP_SELRANGE]([SELE_VALID_START], [SELE_VALID_END]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [IX_OLAP_STORE_COMINACT] ON [spp].[OLAP_STORE]([COMINACT]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [ix_tmp_tselentr_selestart] ON [spp].[OLAP_TSELENTR]([SELESTART]) ON [PRIMARY]
+GO
+
+ CREATE  INDEX [ix_tmp_tselentr_seleend] ON [spp].[OLAP_TSELENTR]([SELEEND]) ON [PRIMARY]
+GO
+

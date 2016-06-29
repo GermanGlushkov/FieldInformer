@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenSmtp</name>
+    </assembly>
+    <members>
+        <member name="T:OpenSmtp.Mail.Attachment">
+            <summary>
+            This Type stores a file attachment. There can be many attachments in each MailMessage
+            <seealso cref="T:OpenSmtp.Mail.MailMessage"/>
+            </summary>
+            <example>
+            <code>
+            MailMessage msg = new MailMessage();
+            Attachment a = new Attachment("C:\\file.jpg");
+            msg.AddAttachment(a);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Attachment.#ctor(System.String)">
+            <summary>Constructor using a file path</summary>
+            <example>
+            <code>Attachment a = new Attachment("C:\\file.jpg");</code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Attachment.#ctor(System.IO.Stream,System.String)">
+            <summary>Constructor using a provided Stream</summary>
+            <example>
+            <code>Attachment a = new Attachment(new FileStrema(@"C:\file.jpg", FileMode.Open, FileAccess.Read), "file.jpg");</code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Attachment.getMimeType(System.String)">
+            <summary>Returns the MIME content-type for the supplied file extension</summary>
+            <returns>String MIME type (Example: \"text/plain\")</returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.Attachment.getFileName(System.String)">
+            <summary>returns the file name from a parsed file path</summary>
+            <param name="filePath">UNC file path to file (IE: "C:\file.txt")</param>
+            <returns>string file name (Example: \"test.zip\")</returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.Attachment.ToMime">
+            <summary>
+            Encode the file for inclusion as a mime attachment.
+            The boundaries are not provided.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OpenSmtp.Mail.Attachment.Name">
+            <value> Stores the Attachment Name</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Attachment.MimeType">
+            <value> Stores the MIME content-type of the attachment</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Attachment.Encoding">
+            <value> Returns the MIME content-encoding type of the attachment</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Attachment.FilePath">
+            <value> Returns the path of an attached file</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Attachment.Size">
+            <value> Returns the attachment size in bytes</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Attachment.EncodedFilePath">
+            <value>When the file is encoded it is stored in temp directory until sendMail() method is called.
+            This property retrieves the path to that temp file.</value>
+        </member>
+        <member name="T:OpenSmtp.Mail.AddressType">
+            <summary>This enumeration stores the Address type</summary>
+            <example>
+            <code>
+            msg.AddRecipient(ccAddress, AddressType.Cc);
+            msg.AddRecipient(bccAddress, AddressType.Bcc);
+            </code>
+            </example>
+        </member>
+        <member name="T:OpenSmtp.Mail.EmailAddress">
+            <summary>This Type stores a rfc822 email address and a name for that
+            particular address (Example: "John Smith, jsmith@nowhere.com")
+            </summary>
+            <example>
+            <code>
+            EmailAddress from = new EmailAddress("user@url.com", "John Smith");
+            EmailAddress to = new EmailAddress("support@OpenSmtp.com");
+            MailMessage msg = new MailMessage(from, to);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.EmailAddress.#ctor(System.String)">
+            <summary>Constructor using RFC 822 formatted email mesage</summary>
+            <example>
+            <code>EmailAddress a = new EmailAddress("support@OpenSmtp.com");</code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.EmailAddress.#ctor(System.String,System.String)">
+            <summary>Constructor using RFC 822 formatted email mesage and a friendly 
+            name associated with that email address</summary>
+            <example>
+            <code>EmailAddress a = new EmailAddress("support@OpenSmtp.com", "John Smith");</code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.EmailAddress.InitializeRegex">
+            <summary>
+            Initialize the regex and compiles it so that it runs a little faster.
+            </summary>
+        </member>
+        <member name="P:OpenSmtp.Mail.EmailAddress.Address">
+            <value>Stores a RFC 822 formatted message</value>
+            <seealso cref="F:OpenSmtp.Mail.SmtpConfig.VerifyAddresses"/>
+            <example>"support@OpenSmtp.com"</example>
+        </member>
+        <member name="P:OpenSmtp.Mail.EmailAddress.Name">
+            <value>Stores a name associated with the Address</value>
+            <example>"John Smith"</example>
+        </member>
+        <member name="T:OpenSmtp.Mail.Log">
+            <summary>
+            This is a Log class. You can log text messages to a 
+            text file and/or the event log
+            </summary>
+        </member>
+        <member name="M:OpenSmtp.Mail.Log.logToTextFile(System.String,System.String,System.String)">
+            Logs string message to TextFile
+        </member>
+        <member name="T:OpenSmtp.Mail.MailEncoder">
+            <summary>
+            This Type is used to encode and decode files and strings using 
+            MIME compatible encoding methods such as Base64 and quoted-printable
+            </summary>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailEncoder.ConvertToBase64(System.String)">
+            <summary>Encodes a String using Base64 (see RFC 1521)</summary>
+            <param name="s">string to be encoded</param>
+            <example>
+            <code>
+            string base64EncodedText = MailEncoder.ConvertQP("ËÇÅÃ");
+            </code>
+            </example>
+            <returns>Base64 encoded string</returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailEncoder.ConvertToBase64(System.String,System.String)">
+            <summary> Encodes a FileStream using Base64 (see RFC 1521)</summary>
+            <param name="inputFilePath">UNC path to file that needs to be encoded</param>
+            <param name="outputFilePath">UNC path to file will store Base64 encoded ASCII text</param>
+            <example>
+            <code>
+            MailEncoder.ConvertBase64("file.jpg", "file.txt");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailEncoder.ConvertToBase64(System.IO.Stream,System.String)">
+            <summary> Encodes a FileStream using Base64 (see RFC 1521)</summary>
+            <param name="inputStream">The stream that needs to be encoded</param>
+            <param name="outputFilePath">UNC path to file will store Base64 encoded ASCII text</param>
+            <example>
+            <code>
+            MailEncoder.ConvertBase64(Stream, "file.txt");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailEncoder.ConvertToQP(System.String,System.String)">
+            <summary> Encodes a string using Quoted-Printable encoding (see RFC 1521)</summary>
+            <param name="s">string that needs to be encoded</param>
+            <param name="charset">charset of string that needs to be encoded</param>
+            <example>
+            <code>
+            string qpEncodedText = MailEncoder.ConvertQP("ËÇÅÃ");
+            </code>
+            </example>
+            <returns>Quoted-Printable encoded string</returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailEncoder.ConvertHeaderToQP(System.String,System.String,System.Boolean)">
+            <summary>
+            Convert to Quoted Printable if necessary
+            </summary>
+            <param name="s"></param>
+            <param name="charset"></param>
+            <param name="forceconversion">force a conversion</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailEncoder.ConvertHeaderToQP(System.String,System.String)">
+            <summary>
+            Convert to Quoted printable if necessary.
+            </summary>
+            <param name="s"></param>
+            <param name="charset"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpenSmtp.Mail.MailHeader">
+            <summary>
+            This Type is used to store Mail Headers
+            <seealso cref="T:OpenSmtp.Mail.MailMessage"/>
+            </summary>
+        </member>
+        <member name="T:OpenSmtp.Mail.MailMessage">
+            <summary>
+            This Type stores the addresses, attachments, body, subject,
+            and properties of the email message. There can be many
+            attachments and email addresses in each MailMessage.
+            <seealso cref="T:OpenSmtp.Mail.EmailAddress"/>
+            <seealso cref="T:OpenSmtp.Mail.Attachment"/>
+            </summary>
+            <remarks>
+            This Type stores the addresses, attachments, body, subject,
+            and properties of the email message. There can be many
+            attachments and email addresses in each MailMessage.
+            <seealso cref="T:OpenSmtp.Mail.EmailAddress"/>
+            <seealso cref="T:OpenSmtp.Mail.Attachment"/>
+            </remarks>
+            <example>
+            <code>
+            	from 			= new EmailAddress("support@OpenSmtp.com", "Support");
+            	to				= new EmailAddress("recipient@OpenSmtp.com", "Joe Smith");
+            	cc				= new EmailAddress("cc@OpenSmtp.com", "CC Name");
+            
+            	msg 			= new MailMessage(from, to);
+            	msg.AddRecipient(cc, AddressType.Cc);
+            	msg.AddRecipient("bcc@OpenSmtp.com", AddressType.Bcc);
+            
+            	msg.Subject 	= "Testing OpenSmtp .Net SMTP component";
+            	msg.Body 		= "Hello Joe Smith.";
+            	msg.HtmlBody 	= "<html><body>Hello Joe Smith.</body></html>";
+            
+            	// mail message properties
+            	msg.Charset		= "ISO-8859-1";
+            	msg.Priority 	= MailPriority.High;
+            	msg.Notification = true;
+            
+            	// add custom headers
+            	msg.AddCustomHeader("X-CustomHeader", "Value");
+            	msg.AddCustomHeader("X-CompanyName", "Value");
+            
+            	// add attachments
+            	msg.AddAttachment(@"..\attachments\test.jpg");
+            	msg.AddAttachment(@"..\attachments\test.htm");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.#ctor(OpenSmtp.Mail.EmailAddress,OpenSmtp.Mail.EmailAddress)">
+            <summary>Constructor using EmailAddress type</summary>
+            <example>
+            <code>
+            	EmailAddress from 	= new EmailAddress("support@OpenSmtp.com", "Support");
+            	EmailAddress to 	= new EmailAddress("recipient@OpenSmtp.com", "Joe Smith");
+            	MailMessage msg 	= new MailMessage(from, to);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.#ctor(System.String,System.String)">
+            <summary>Constructor using string email addresses</summary>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.AddRecipient(OpenSmtp.Mail.EmailAddress,OpenSmtp.Mail.AddressType)">
+            <summary>Adds a recipient EmailAddress to the MailMessage</summary>
+            <param name="address">EmailAddress that you want to add to the MailMessage</param>
+            <param name="type">AddressType of the address</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	EmailAddress cc = new EmailAddress("cc@OpenSmtp.com");
+            	msg.AddRecipient(cc, AddressType.Cc);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.AddRecipient(System.String,OpenSmtp.Mail.AddressType)">
+            <summary>Adds a recipient RFC 822 formatted email address to the MailMessage</summary>
+            <param name="address">RFC 822 formatted email address that you want to add to the MailMessage</param>
+            <param name="type">AddressType of the email address</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.AddRecipient("cc@OpenSmtp.com", AddressType.Cc);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.AddAttachment(System.String)">
+            <summary>Adds an Attachment to the MailMessage using a file path</summary>
+            <param name="filepath">File path to the file you want to attach to the MailMessage</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.AddAttachment(@"C:\file.jpg");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.AddImage(System.String)">
+            <summary>Adds an included image to the MailMessage using a file path</summary>
+            <param name="filepath">File path to the file you want to attach to the MailMessage</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.AddImage(@"C:\file.jpg");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.NewCid">
+            <summary>
+            Generate a content id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.AddAttachment(OpenSmtp.Mail.Attachment)">
+            <summary>Adds an Attachment to the MailMessage using an Attachment instance</summary>
+            <param name="attachment">Attachment you want to attach to the MailMessage</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	Attachment att = new Attachment(@"C:\file.jpg");
+            	msg.AddAttachment(att);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.AddAttachment(System.IO.Stream)">
+            <summary>Adds an Attachment to the MailMessage using a provided Stream</summary>
+            <param name="stream">stream you want to attach to the MailMessage</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	Attachment att = new Attachment(new FileStream(@"C:\File.jpg", FileMode.Open, FileAccess.Read), "Test Name");
+            	msg.AddAttachment(att);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.AddCustomHeader(System.String,System.String)">
+             <summary>
+             Adds an custom header to the MailMessage.
+            	NOTE: some SMTP servers will reject improper custom headers
+            </summary>
+             <param name="name">Name of the custom header</param>
+             <param name="body">Value of the custom header</param>
+             <example>
+             <code>
+             	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            		msg.AddCustomHeader("X-Something", "HeaderValue");
+             </code>
+             </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.AddCustomHeader(OpenSmtp.Mail.MailHeader)">
+             <summary>
+             Adds an custom header to the MailMessage.
+            	NOTE: some SMTP servers will reject improper custom headers
+            </summary>
+             <param name="mailheader">MailHeader instance</param>
+             <example>
+             <code>
+             	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            		MailHeader header = new MailHeader("X-Something", "HeaderValue");		
+            		msg.AddCustomHeader(header);
+             </code>
+             </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.GetBodyFromFile(System.String)">
+            <summary>Populates the Body property of the MailMessage from a text file</summary>
+            <param name="filePath">Path to the file containing the MailMessage body</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.GetBodyFromFile(@"C:\body.txt");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.GetHtmlBodyFromFile(System.String)">
+            <summary>Populates the HtmlBody property of the MailMessage from a HTML file</summary>
+            <param name="filePath">Path to the file containing the MailMessage html body</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.GetHtmlBodyFromFile(@"C:\htmlbody.html");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.Reset">
+            <summary>Resets all of the MailMessage properties</summary>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.Reset();
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.Save(System.String)">
+            <summary>Saves the MailMessage as a RFC 822 formatted message</summary>
+            <param name="filePath">Specifies the file path to save the message</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", recipient@OpenSmtp.com");
+            	msg.Body = "body";
+            	msg.Subject = "subject";
+            	msg.Save(@"C:\email.txt");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.ToString">
+            <summary>Returns the MailMessage as a RFC 822 formatted message</summary>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.Body = "body";
+            	msg.Subject = "subject";
+            	string message = msg.ToString();
+            </code>
+            </example>
+            <returns>Mailmessage as RFC 822 formatted string</returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.Copy">
+            <summary>Returns a clone of this message</summary>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.Body = "body";
+            	msg.Subject = "subject";
+            
+            	msg2 = msg.Copy();
+            </code>
+            </example>
+            <returns>Mailmessage</returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.GetFileAsString(System.String)">
+            Internal/Private methods below
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.GetMessageBody">
+            <summary>
+            Determines the format of the message and adds the
+            appropriate mime containers.
+            
+            This will return the html and/or text and/or 
+            embedded images and/or attachments.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpenSmtp.Mail.MailMessage.GetInnerMessageBody">
+            <summary>
+            Get the html and/or text and/or images.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.ReplyTo">
+            <value>Stores the EmailAddress to Reply-To.
+            If no EmailAddress is specified the From address is used.</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.From">
+            <value>Stores the EmailAddress of the sender</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.To">
+            <value>Stores the EmailAddress of the recipient</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.Subject">
+            <value>Stores the subject of the MailMessage</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.Body">
+            <value>Stores the text body of the MailMessage</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.HtmlBody">
+            <value>Stores the HTML body of the MailMessage</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.Priority">
+            <value>Stores Mail Priority value</value>
+            <seealso>MailPriority</seealso>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.Notification">
+            <value>Stores the Read Confirmation Reciept</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.CC">
+            <value>Stores an ArrayList of CC EmailAddresses</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.BCC">
+            <value>Stores an ArrayList of BCC EmailAddresses</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.Charset">
+            <value>Stores the character set of the MailMessage</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.Attachments">
+            <value>Stores a list of Attachments</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.CustomHeaders">
+            <value>Stores a NameValueCollection of custom headers</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.AltBoundary">
+            <value>Stores the string boundary used between MIME parts</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.MailMessage.MixedBoundary">
+            <value>Stores the string boundary used between MIME parts</value>
+        </member>
+        <member name="T:OpenSmtp.Mail.MailPriority">
+            <summary>
+            This Type stores different priority values used for a MailMessage
+            <seealso cref="T:OpenSmtp.Mail.MailMessage"/>
+            </summary>
+            <example>
+            <code>
+            	from = new EmailAddress("support@OpenSmtp.com", "Support");
+            	to = new EmailAddress("recipient@OpenSmtp.com", "Joe Smith");
+            	msg = new MailMessage(from, to);
+            	msg.Priority = MailPriority.High;
+            </code>
+            </example>
+        </member>
+        <member name="T:OpenSmtp.Mail.MalformedAddressException">
+            <summary>
+            This is an System.Exception class for handling
+            an invalid RFC 822 EmailAddress.</summary>
+        </member>
+        <member name="T:OpenSmtp.Mail.ParseException">
+            <summary>
+            This is a System.Exception class for handling exceptions in 
+            MIME Parsing operations.
+            </summary>
+        </member>
+        <member name="T:OpenSmtp.Mail.ReplyConstants">
+            <summary>
+            This Type is used to store known SMTP responses specified by RFC 821 and 2821
+            </summary>
+        </member>
+        <member name="T:OpenSmtp.Mail.Smtp">
+            <summary>
+            This Type sends a MailMessage using SMTP
+            <seealso cref="T:OpenSmtp.Mail.EmailAddress"/>
+            <seealso cref="T:OpenSmtp.Mail.MailMessage"/>
+            <seealso cref="T:OpenSmtp.Mail.SmtpConfig"/>
+            </summary>
+            <example>
+            <code>
+            	from = new EmailAddress("support@OpenSmtp.com", "Support");
+            	to = new EmailAddress("recipient@OpenSmtp.com", "Joe Smith");
+            
+            	msg = new MailMessage(from, to);
+            	msg.Subject = "Testing OpenSmtp .Net SMTP component";
+            	msg.Body = "Hello Joe Smith.";
+            
+            	Smtp smtp = new Smtp("localhost", 25);
+            	smtp.SendMail(msg);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.#ctor">
+            <summary>Default constructor</summary>
+            <example>
+            <code>
+            	Smtp smtp = new Smtp();
+            	smtp.Host = "mail.OpenSmtp.com";
+            	smtp.Port = 25;
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.#ctor(System.String,System.Int32)">
+            <summary>Constructor specifying a host and port</summary>
+            <example>
+            <code>
+            	Smtp smtp = new Smtp("mail.OpenSmtp.com", 25);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.#ctor(System.String,System.String,System.String)">
+            <summary>Constructor specifying a host, username and password</summary>
+            <example>
+            <code>
+            	Smtp smtp = new Smtp("mail.OpenSmtp.com", "login", "pwd");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.#ctor(System.String,System.String,System.String,System.Int32)">
+            <summary>Constructor specifying a host, username, password and port</summary>
+            <example>
+            <code>
+            	Smtp smtp = new Smtp("mail.OpenSmtp.com", "login", "pwd", 25);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.SendMail(System.String,System.String,System.String,System.String)">
+            <summary>Sends a mail message using supplied MailMessage properties as string params</summary>
+            <param name="from">RFC 822 formatted email sender address</param>
+            <param name="to">RFC 822 formatted email recipient address</param>
+            <param name="subject">Subject of the email message</param>
+            <param name="body">Text body of the email message</param>
+            <example>
+            <code>
+            	Smtp smtp = new Smtp("mail.OpenSmtp.com", 25);
+            	smtp.SendMail("support@OpenSmtp.com", "recipient@OpenSmtp.com", "Hi", "Hello Joe Smith");
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.SendMail(OpenSmtp.Mail.MailMessage,System.String,System.Int32)">
+            <summary>Sends a mail message using supplied MailMessage and Smtp properties</summary>
+            <param name="msg">MailMessage instance</param>
+            <param name="host">SMTP host address</param>
+            <param name="port">Port used to connect to host</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.Subject = "Hi";
+            	msg.Body = "Hello Joe Smith."
+            	Smtp smtp = new Smtp();
+            	smtp.SendMail(msg, "mail.OpenSmtp.com", 25);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.SendMail(OpenSmtp.Mail.MailMessage)">
+            <summary>Sends a mail message using supplied MailMessage</summary>
+            <param name="msg">MailMessage instance</param>
+            <example>
+            <code>
+            	MailMessage msg = new MailMessage("support@OpenSmtp.com", "recipient@OpenSmtp.com");
+            	msg.Subject = "Hi";
+            	msg.Body = "Hello Joe Smith."
+            	Smtp smtp = new Smtp("mail.OpenSmtp.com", 25);
+            	smtp.SendMail(msg);
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.Reset">
+            <summary>Resets the Smtp instance to it's defaut values; set in the SmtpConfig class</summary>
+            <example>
+            <code>
+            	Smtp smtp = new Smtp("mail.OpenSmtp.com", 25);
+            	smtp.Reset();
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.WriteToStream(System.Net.Sockets.NetworkStream@,System.String)">
+            NetworkStream Helper methods
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.CheckForError(System.String,System.String)">
+            
+             Checks stream returned from SMTP server for success code
+             If the success code is not present it will throw an error.		
+            
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.IsUnknownCommand(System.String)">
+            Check to see if the command sent returns a Unknown Command Error
+        </member>
+        <member name="M:OpenSmtp.Mail.Smtp.AuthImplemented(System.String)">
+            Check to see if AUTH command returns valid challenge. 
+            A valid AUTH string must be passed into this method.
+        </member>
+        <member name="P:OpenSmtp.Mail.Smtp.Host">
+            <value>Stores the Host address SMTP server. The default value is "localhost"</value>
+            <example>"mail.OpenSmtp.com"</example>
+        </member>
+        <member name="P:OpenSmtp.Mail.Smtp.Port">
+            <value>Stores the Port of the host SMTP server. The default value is port 25</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Smtp.SendTimeout">
+            <value>Stores send timeout for the connection to the SMTP server in milliseconds.
+            The default value is 10000 milliseconds.</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Smtp.RecieveTimeout">
+            <value>Stores send timeout for the connection to the SMTP server in milliseconds.
+            The default value is 10000 milliseconds.</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Smtp.Username">
+            <value>Stores the username used to authenticate on the SMTP server.
+            If no authentication is needed leave this value blank.</value>
+        </member>
+        <member name="P:OpenSmtp.Mail.Smtp.Password">
+            <value>Stores the password used to authenticate on the SMTP server.
+            If no authentication is needed leave this value blank.</value>
+        </member>
+        <member name="E:OpenSmtp.Mail.Smtp.Connected">
+            <value>Event that fires when connected with target SMTP server.</value>
+        </member>
+        <member name="E:OpenSmtp.Mail.Smtp.Disconnected">
+            <value>Event that fires when dicconnected with target SMTP server.</value>
+        </member>
+        <member name="E:OpenSmtp.Mail.Smtp.Authenticated">
+            <value>Event that fires when authentication is successful.</value>
+        </member>
+        <member name="E:OpenSmtp.Mail.Smtp.StartedMessageTransfer">
+            <value>Event that fires when message transfer has begun.</value>
+        </member>
+        <member name="E:OpenSmtp.Mail.Smtp.EndedMessageTransfer">
+            <value>Event that fires when message transfer has ended.</value>
+        </member>
+        <member name="T:OpenSmtp.Mail.SmtpConfig">
+            <summary>
+            This type stores configuration information for the smtp component.
+            WARNING: If you turn on logging the caller must have proper permissions
+            and the log file will grow very quickly if a lot of email messages are 
+            being sent. PLEASE USE THE LOGGING FEATURE FOR DEBUGGING ONLY.
+            </summary>
+        </member>
+        <member name="F:OpenSmtp.Mail.SmtpConfig.SmtpHost">
+            <value>Stores the default SMTP host</value>
+        </member>
+        <member name="F:OpenSmtp.Mail.SmtpConfig.SmtpPort">
+            <value>Stores the default SMTP port</value>
+        </member>
+        <member name="F:OpenSmtp.Mail.SmtpConfig.LogToText">
+            <value>Flag used for turning on and off logging to a text file.
+             The caller must have proper permissions for this to work</value>
+        </member>
+        <member name="F:OpenSmtp.Mail.SmtpConfig.LogPath">
+            <value>Path to use when logging to a text file. 
+             The caller must have proper permissions for this to work</value>
+        </member>
+        <member name="F:OpenSmtp.Mail.SmtpConfig.TempPath">
+            <value>Path used to store temp files used when sending email messages.
+             The default value is the temp directory specified in the Environment variables.</value>
+        </member>
+        <member name="F:OpenSmtp.Mail.SmtpConfig.VerifyAddresses">
+            <value>Flag used to turn on and off address format verification.
+             If it is turned on all addresses must meet RFC 822 format.
+             The default value is false.
+             WARNING: Turning this on will decrease performance.</value>
+        </member>
+        <member name="F:OpenSmtp.Mail.SmtpConfig.Version">
+            <value>Version of this OpenSmtp SMTP .Net component</value>
+        </member>
+        <member name="F:OpenSmtp.Mail.SmtpConfig.X_MAILER_HEADER">
+            <value>Mailer header added to each message sent</value>
+        </member>
+        <member name="T:OpenSmtp.Mail.SmtpException">
+            <summary>
+            This is a System.Exception class for handling exceptions in 
+            SMTP operations.
+            </summary>
+        </member>
+    </members>
+</doc>

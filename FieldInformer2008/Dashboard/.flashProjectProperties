@@ -1,0 +1,22 @@
+<projectDescription>
+  <id>1273504245789</id>
+  <name>Dashboard</name>
+  <asVersion>0</asVersion>
+  <boundTemplate>file:///C|/Users/German.Glushkov/AppData/Local/Adobe/Flash CS4/en/Configuration/Project/templates/boundClass_as3.as</boundTemplate>
+  <classTemplate>file:///C|/Users/German.Glushkov/AppData/Local/Adobe/Flash CS4/en/Configuration/Project/templates/standardClass_as3.as</classTemplate>
+  <classPath>.</classPath>
+  <defaultApp>file:///C|/inetpub/wwwroot/FieldInformer2008/Dashboard/Dashboard.fla</defaultApp>
+  <rootURI>file:///C|/inetpub/wwwroot/FieldInformer2008/Dashboard/</rootURI>
+  <flexSDK/>
+  <sources editable="false"/>
+  <libraries editable="false"/>
+  <externalLibraries editable="false"/>
+  <compileList editable="false"/>
+  <recentFiles editable="false">
+    <uri label="ChartPropertyPanel.as">file:///C|/inetpub/wwwroot/FieldInformer2008/Dashboard/ChartPropertyPanel.as</uri>
+    <uri label="Dashboard.fla">file:///C|/inetpub/wwwroot/FieldInformer2008/Dashboard/Dashboard.fla</uri>
+    <uri label="Dashboard.as">file:///C|/inetpub/wwwroot/FieldInformer2008/Dashboard/Dashboard.as</uri>
+    <uri label="CellsetMultiselectControl.as">file:///C|/inetpub/wwwroot/FieldInformer2008/Dashboard/CellsetMultiselectControl.as</uri>
+  </recentFiles>
+  <locations editable="false"/>
+</projectDescription>

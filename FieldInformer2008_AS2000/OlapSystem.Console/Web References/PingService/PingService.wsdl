@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PingOlapSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mdx" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MailTo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PingOlapSystemResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="PingOlapSystemSoapIn">
+    <part name="parameters" element="s0:PingOlapSystem" />
+  </message>
+  <message name="PingOlapSystemSoapOut">
+    <part name="parameters" element="s0:PingOlapSystemResponse" />
+  </message>
+  <message name="PingOlapSystemHttpGetIn">
+    <part name="Mdx" type="s:string" />
+    <part name="MailTo" type="s:string" />
+  </message>
+  <message name="PingOlapSystemHttpGetOut" />
+  <message name="PingOlapSystemHttpPostIn">
+    <part name="Mdx" type="s:string" />
+    <part name="MailTo" type="s:string" />
+  </message>
+  <message name="PingOlapSystemHttpPostOut" />
+  <portType name="PingServiceSoap">
+    <operation name="PingOlapSystem">
+      <input message="s0:PingOlapSystemSoapIn" />
+      <output message="s0:PingOlapSystemSoapOut" />
+    </operation>
+  </portType>
+  <portType name="PingServiceHttpGet">
+    <operation name="PingOlapSystem">
+      <input message="s0:PingOlapSystemHttpGetIn" />
+      <output message="s0:PingOlapSystemHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="PingServiceHttpPost">
+    <operation name="PingOlapSystem">
+      <input message="s0:PingOlapSystemHttpPostIn" />
+      <output message="s0:PingOlapSystemHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="PingServiceSoap" type="s0:PingServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="PingOlapSystem">
+      <soap:operation soapAction="http://tempuri.org/PingOlapSystem" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="PingServiceHttpGet" type="s0:PingServiceHttpGet">
+    <http:binding verb="GET" />
+    <operation name="PingOlapSystem">
+      <http:operation location="/PingOlapSystem" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output />
+    </operation>
+  </binding>
+  <binding name="PingServiceHttpPost" type="s0:PingServiceHttpPost">
+    <http:binding verb="POST" />
+    <operation name="PingOlapSystem">
+      <http:operation location="/PingOlapSystem" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output />
+    </operation>
+  </binding>
+  <service name="PingService">
+    <port name="PingServiceSoap" binding="s0:PingServiceSoap">
+      <soap:address location="http://localhost/FieldInformer.NET/WebServices/PingService.asmx" />
+    </port>
+    <port name="PingServiceHttpGet" binding="s0:PingServiceHttpGet">
+      <http:address location="http://localhost/FieldInformer.NET/WebServices/PingService.asmx" />
+    </port>
+    <port name="PingServiceHttpPost" binding="s0:PingServiceHttpPost">
+      <http:address location="http://localhost/FieldInformer.NET/WebServices/PingService.asmx" />
+    </port>
+  </service>
+</definitions>

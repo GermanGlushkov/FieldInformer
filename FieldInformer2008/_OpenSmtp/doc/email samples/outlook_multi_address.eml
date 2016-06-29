@@ -1,0 +1,53 @@
+x-sender: Administrator@localhost
+x-receiver: Administrator@localhost
+x-receiver: additional@localhost
+x-receiver: cc@localhost
+x-receiver: bcc@localhost
+Received: from box2 ([127.0.0.1]) by localhost with Microsoft SMTPSVC(5.0.2195.3779);
+	 Fri, 25 Jan 2002 07:00:53 -0500
+Message-ID: <000801c1a597$f04bd1b0$01000001@box2>
+Reply-To: "Ian Stallings" <Administrator@localhost>
+From: "Ian Stallings" <Administrator@localhost>
+To: "Administrator" <Administrator@localhost>,
+	<additional@localhost>
+Cc: <cc@localhost>
+Subject: testing multiple addresses
+Date: Fri, 25 Jan 2002 07:00:53 -0500
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0005_01C1A56E.074C96D0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2600.0000
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2600.0000
+Return-Path: Administrator@localhost
+X-OriginalArrivalTime: 25 Jan 2002 12:00:53.0343 (UTC) FILETIME=[F04EDEF0:01C1A597]
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0005_01C1A56E.074C96D0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+testing multiple addresses
+
+
+------=_NextPart_000_0005_01C1A56E.074C96D0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.2600.0" name=3DGENERATOR>
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT face=3DArial size=3D2><FONT size=3D1>
+<P>testing multiple addresses</P></FONT></FONT></DIV></BODY></HTML>
+
+------=_NextPart_000_0005_01C1A56E.074C96D0--
+

@@ -1,0 +1,1112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="UILoader,fl.containers.UILoader,autoLoad,bytesLoaded,bytesTotal,content,maintainAspectRatio,percentLoaded,scaleContent,source,close,getStyleDefinition,load,loadBytes,setSize,unload" name="keywords">
+<title>fl.containers.UILoader</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'UILoader - Yahoo! Astra Library';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Astra Library Documentation</td><td rowspan="2" align="right" class="titleTableLogo"><img alt="Yahoo! Logo" title="Yahoo! Logo" class="logoImage" src="../../images/yfp-stacked.gif"></td>
+</tr>
+<tr>
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;UILoader</td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subNav" class="titleTableSubNav">
+<ul>
+<li>
+<a href="#propertySummary">Properties</a>&nbsp;| </li>
+<li>
+<a href="#methodSummary">Methods</a>&nbsp;| </li>
+<li>
+<a href="#eventSummary">Events</a>&nbsp;| </li>
+<li>
+<a href="#styleSummary">Styles</a>
+</li>
+</ul>
+</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/containers/UILoader.html&amp;fl/containers/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class UILoader"); titleBar_setSubNav(false,true,true,false,true,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.containers</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class UILoader</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">UILoader <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> <a href="../core/UIComponent.html">UIComponent</a> <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+</table>
+<p></p>
+  The UILoader class makes it possible to set content to load and to then 
+  monitor the loading operation at run time. This class also handles the resizing 
+  of the loaded content. If loading content from a different domain (sandbox), 
+  security implications may mean content properties are inaccessible. Please
+  see the Loader class for more information.
+    <p>Using ActionScript to set a property of the UILoader class 
+  overrides the parameter of the same name that is set in the Property 
+  inspector or Component inspector.</p>
+    <p>This component wraps flash.display.Loader. The Loader class handles all the actual
+  loading; the UILoader just provides a visual display for the Loader object.</p>
+    <p><strong>Note:</strong> When content is being loaded from a different 
+  domain or <em>sandbox</em>, the properties of the content may be inaccessible 
+  for security reasons. For more information about how domain security 
+  affects the load process, see the Loader class.</p>
+    <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">Loader</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<div class="showHideLinks">
+<div class="hideInheritedProperty" id="hideInheritedProperty">
+<a onclick="javascript:setInheritedVisible(false,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Properties</a>
+</div>
+<div class="showInheritedProperty" id="showInheritedProperty">
+<a onclick="javascript:setInheritedVisible(true,'Property');" href="#propertySummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Properties</a>
+</div>
+</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#autoLoad">autoLoad</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the UILoader instance automatically 
+   loads the specified content.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bytesLoaded">bytesLoaded</a> : uint<div class="summaryTableDescription">[read-only]
+         </div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#bytesTotal">bytesTotal</a> : uint<div class="summaryTableDescription">[read-only]
+         </div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#content">content</a> : DisplayObject<div class="summaryTableDescription">[read-only]
+         Contains the root display object of the SWF file or image file (a JPEG, PNG, or GIF format file) 
+         that was loaded by using the <code>load()</code> method or setting the <code>source</code> property.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#enabled">enabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the component can accept user interaction.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#focusEnabled">focusEnabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a Boolean value that indicates whether the component can receive focus 
+         after the user clicks it.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#focusManager">focusManager</a> : <a href="../managers/IFocusManager.html">IFocusManager</a>
+<div class="summaryTableDescription">
+         Gets or sets the FocusManager that controls focus for this component and its
+         peers.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#height">height</a> : Number<div class="summaryTableDescription">
+         Gets or sets the height of the component, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#maintainAspectRatio">maintainAspectRatio</a> : Boolean<div class="summaryTableDescription">
+   Gets or sets a value that indicates whether to maintain
+   the aspect ratio that was used in the original image or to resize
+   the image at the curent width and height of the UILoader component.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#mouseFocusEnabled">mouseFocusEnabled</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the component can receive focus after 
+         the user clicks it.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#percentLoaded">percentLoaded</a> : Number<div class="summaryTableDescription">[read-only]
+         </div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#scaleContent">scaleContent</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether to automatically scale the image to 
+   the size of the UILoader instance.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#scaleX">scaleX</a> : Number<div class="summaryTableDescription">
+         Multiplies the current width of the component by a scale factor.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#scaleY">scaleY</a> : Number<div class="summaryTableDescription">
+         Multiplies the current height of the component by a scale factor.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#source">source</a> : Object<div class="summaryTableDescription">
+         </div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#version">version</a> : String = "3.0.0.15"<div class="summaryTableDescription">
+         The version number of the components.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#visible">visible</a> : Boolean<div class="summaryTableDescription">
+         Gets or sets a value that indicates whether the current component instance is visible.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#width">width</a> : Number<div class="summaryTableDescription">
+         Gets or sets the width of the component, in pixels.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#x">x</a> : Number<div class="summaryTableDescription">
+         Gets or sets the x coordinate that represents the position of the component along
+         the x axis within its parent container.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedProperty">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol"><a class="signatureLink" href="../core/UIComponent.html#y">y</a> : Number<div class="summaryTableDescription">
+         Gets or sets the y coordinate that represents the position of the component along 
+         the y axis within its parent container.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<div class="showHideLinks">
+<div class="hideInheritedMethod" id="hideInheritedMethod">
+<a onclick="javascript:setInheritedVisible(false,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Public Methods</a>
+</div>
+<div class="showInheritedMethod" id="showInheritedMethod">
+<a onclick="javascript:setInheritedVisible(true,'Method');" href="#methodSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Public Methods</a>
+</div>
+</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#UILoader()">UILoader</a>()</div>
+<div class="summaryTableDescription">
+         Creates a new UILoader component instance.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#clearStyle()">clearStyle</a>(style:String):void</div>
+<div class="summaryTableDescription">
+         Deletes a style property from this component instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#close()">close</a>():void</div>
+<div class="summaryTableDescription">
+         Cancels a <code>load()</code> method operation that is currently in progress for the 
+         Loader instance.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#drawFocus()">drawFocus</a>(focused:Boolean):void</div>
+<div class="summaryTableDescription">
+         Shows or hides the focus indicator on this component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#drawNow()">drawNow</a>():void</div>
+<div class="summaryTableDescription">
+         Initiates an immediate draw operation, without invalidating everything as <code>invalidateNow</code> does.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#getFocus()">getFocus</a>():InteractiveObject</div>
+<div class="summaryTableDescription">
+         Retrieves the object that currently has focus.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#getStyle()">getStyle</a>(style:String):Object</div>
+<div class="summaryTableDescription">
+         Retrieves a style property that is set in the style lookup 
+         chain of the component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getStyleDefinition()">getStyleDefinition</a>():Object</div>
+<div class="summaryTableDescription">[static]
+         Retrieves the default style map for the current component.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#invalidate()">invalidate</a>(property:String, callLater:Boolean = true):void</div>
+<div class="summaryTableDescription">
+         Marks a property as invalid and redraws the component on the
+         next frame unless otherwise specified.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#load()">load</a>(request:URLRequest = null, context:LoaderContext = null):void</div>
+<div class="summaryTableDescription">
+   Loads the specified content or, if no content is specified, loads the 
+   content from the location identified by the <code>source</code> property.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadBytes()">loadBytes</a>(bytes:ByteArray, context:LoaderContext = null):void</div>
+<div class="summaryTableDescription">
+         Loads binary data that is stored in a ByteArray object.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#mergeStyles()">mergeStyles</a>(... list):Object</div>
+<div class="summaryTableDescription">[static]
+         Merges the styles from multiple classes into one object.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#move()">move</a>(x:Number, y:Number):void</div>
+<div class="summaryTableDescription">
+         Moves the component to the specified position within its parent.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#setFocus()">setFocus</a>():void</div>
+<div class="summaryTableDescription">
+         Sets the focus to this component.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setSize()">setSize</a>(w:Number, h:Number):void</div>
+<div class="summaryTableDescription">
+   Resizes the component to the requested size.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#setStyle()">setStyle</a>(style:String, value:Object):void</div>
+<div class="summaryTableDescription">
+         Sets a style property on this component instance.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#unload()">unload</a>():void</div>
+<div class="summaryTableDescription">
+   Removes a child of this UILoader object that was loaded by using 
+   either the <code>load()</code> method or the <code>source</code> 
+   property.</div>
+</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedMethod">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#validateNow()">validateNow</a>():void</div>
+<div class="summaryTableDescription">
+         Validates and updates the properties and layout of this object, redrawing it
+         if necessary.</div>
+</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="eventSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Events</div>
+<div class="showHideLinks">
+<div class="hideInheritedEvent" id="hideInheritedEvent">
+<a onclick="javascript:setInheritedVisible(false,'Event');" href="#eventSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Events</a>
+</div>
+<div class="showInheritedEvent" id="showInheritedEvent">
+<a onclick="javascript:setInheritedVisible(true,'Event');" href="#eventSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Events</a>
+</div>
+</div>
+<table id="summaryTableEvent" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Event</th><th>Summary</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:complete">complete</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched when content loading is complete.</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#event:hide">hide</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component visibility changes from visible to invisible.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:init">init</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched when the properties and methods of a loaded SWF file are accessible.</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:ioError">ioError</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after an input or output error occurs.</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#event:move">move</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component is moved.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:open">open</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after a network operation starts.</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:progress">progress</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched when content is loading.</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:resize">resize</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component is resized.</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#event:resize">resize</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component is resized.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#event:securityError">securityError</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after a security error occurs while content is loading.</td><td class="summaryTableOwnerCol">UILoader</td>
+</tr>
+<tr class="hideInheritedEvent">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#event:show">show</a>
+</div>
+</td><td class="summaryTableDescription summaryTableCol">
+     Dispatched after the component visibility changes from invisible to visible.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<a name="styleSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Styles</div>
+<div class="showHideLinks">
+<div class="hideInheritedStyle" id="hideInheritedStyle">
+<a onclick="javascript:setInheritedVisible(false,'Style');" href="#styleSummary" class="showHideLink"><img src="../../images/expanded.gif" class="showHideLinkImage"> Hide Inherited Styles</a>
+</div>
+<div class="showInheritedStyle" id="showInheritedStyle">
+<a onclick="javascript:setInheritedVisible(true,'Style');" href="#styleSummary" class="showHideLink"><img src="../../images/collapsed.gif" class="showHideLinkImage"> Show Inherited Styles</a>
+</div>
+</div>
+<table id="summaryTableStyle" class="summaryTable hideInheritedStyle" cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Style</th><th>Description</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#style:disabledTextFormat">disabledTextFormat</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>flash.text.TextFormat<br>
+      The TextFormat object to use to render the component label when the button is disabled.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#style:focusRectPadding">focusRectPadding</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Number &nbsp; <span class="label">Format: </span>Length<br>
+     The padding that separates the outside boundaries of the component from the
+     outside edges of the focus indicator, in pixels.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#style:focusRectSkin">focusRectSkin</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>Class<br>
+     The skin to be used to display focus indicators.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+<tr class="hideInheritedStyle">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol"><img class="inheritedSummaryImage" title="Inherited" alt="Inherited" src="../../images/inheritedSummary.gif"></td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="../core/UIComponent.html#style:textFormat">textFormat</a>
+</div>
+</td><td class="summaryTableDescription"><span class="label">Type: </span>flash.text.TextFormat<br>
+      The TextFormat object to use to render the component label.</td><td class="summaryTableOwnerCol"><a href="../core/UIComponent.html">UIComponent</a></td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="autoLoad"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">autoLoad</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>autoLoad:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+         Gets or sets a value that indicates whether the UILoader instance automatically 
+   loads the specified content. A value of <code>true</code> indicates that the UILoader
+   automatically loads the content; a value of <code>false</code> indicates that content
+   is not loaded until the <code>load()</code> method is called.
+                  </p><p>The default value is <code>true</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get autoLoad():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set autoLoad(value:Boolean):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#load()" target="">load()</a>
+<br>
+<a href="../containers/UILoader.html#source" target="">source</a>
+</div>
+</div>
+<a name="bytesLoaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bytesLoaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bytesLoaded:uint</code>&nbsp;&nbsp;[read-only]<p>
+         </p><p>The default value is <code>0</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bytesLoaded():uint</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#bytesTotal" target="">bytesTotal</a>
+<br>
+<a href="../containers/UILoader.html#percentLoaded" target="">percentLoaded</a>
+</div>
+</div>
+<a name="bytesTotal"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">bytesTotal</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>bytesTotal:uint</code>&nbsp;&nbsp;[read-only]<p>
+         </p><p>The default value is <code>0</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get bytesTotal():uint</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#bytesLoaded" target="">bytesLoaded</a>
+<br>
+<a href="../containers/UILoader.html#percentLoaded" target="">percentLoaded</a>
+</div>
+</div>
+<a name="content"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">content</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>content:DisplayObject</code>&nbsp;&nbsp;[read-only]<p>
+         Contains the root display object of the SWF file or image file (a JPEG, PNG, or GIF format file) 
+         that was loaded by using the <code>load()</code> method or setting the <code>source</code> property.
+         The value is <code>undefined</code> until the load begins. Set the properties for the content 
+   within an event handler function for the <code>complete</code> event.
+                  </p><p>The default value is <code>null</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get content():DisplayObject</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#event:complete" target="">complete</a>
+<br>
+<a href="../containers/UILoader.html#load()" target="">load()</a>
+<br>
+<a href="../containers/UILoader.html#source" target="">source</a>
+</div>
+</div>
+<a name="maintainAspectRatio"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">maintainAspectRatio</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>maintainAspectRatio:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+   Gets or sets a value that indicates whether to maintain
+   the aspect ratio that was used in the original image or to resize
+   the image at the curent width and height of the UILoader component.
+   A value of <code>true</code> indicates that the original aspect ratio
+   is to be maintained; a value of <code>false</code> indicates that the 
+   loaded content should be resized to the current dimensions of the UILoader.
+      </p><p>To use this property, you must set the <code>scaleContent</code> property to 
+   <code>false</code>; otherwise, this property is ignored.</p> 
+   
+         <p>The default value is <code>true</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get maintainAspectRatio():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set maintainAspectRatio(value:Boolean):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#scaleContent" target="">scaleContent</a>
+</div>
+</div>
+<a name="percentLoaded"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">percentLoaded</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>percentLoaded:Number</code>&nbsp;&nbsp;[read-only]<p>
+         </p><p>The default value is <code>0</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get percentLoaded():Number</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#bytesLoaded" target="">bytesLoaded</a>
+<br>
+<a href="../containers/UILoader.html#bytesTotal" target="">bytesTotal</a>
+</div>
+</div>
+<a name="scaleContent"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">scaleContent</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>scaleContent:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+         Gets or sets a value that indicates whether to automatically scale the image to 
+   the size of the UILoader instance. A value of <code>true</code> indicates that the
+   image is automatically scaled to the size of the UILoader instance; a value of 
+   <code>false</code> indicates that the loaded content is automatically scaled
+   to its default size.
+                  </p><p>The default value is <code>true</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get scaleContent():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set scaleContent(value:Boolean):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#maintainAspectRatio" target="">maintainAspectRatio</a>
+</div>
+</div>
+<a name="source"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">source</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>source:Object</code>&nbsp;&nbsp;[read-write]<p>
+         </p><p>The default value is <code>null</code>.</p>
+<span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get source():Object</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set source(value:Object):void</code>
+<br>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#autoLoad" target="">autoLoad</a>
+<br>
+<a href="../containers/UILoader.html#load()" target="">load()</a>
+</div>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="UILoader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">UILoader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function UILoader()</code><p>
+         Creates a new UILoader component instance.
+                  </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="close()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">close</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function close():void</code><p>
+         Cancels a <code>load()</code> method operation that is currently in progress for the 
+         Loader instance. The <code>load()</code> method can also be called from the <code>source</code> parameter.
+            </p><br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; The URLStream object does not have an open stream.
+                  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#load()" target="">load()</a>
+<br>
+<a href="../containers/UILoader.html#source" target="">source</a>
+</div>
+</div>
+<a name="getStyleDefinition()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getStyleDefinition</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function getStyleDefinition():Object</code><p>
+         Retrieves the default style map for the current component. The style map contains
+         the type that is appropriate for the component, depending on the style that
+         the component uses. For example, the <code>disabledTextFormat</code> style 
+         contains a value of <code>null</code> or a TextFormat object. 
+         You can use these styles and call <code>setStyle()</code> on the current 
+         component. The following code overrides the default <code>disabledTextFormat</code> 
+         style on the specified component: 
+         <div class='listing'><pre>componentInstance.setStyle("disabledTextFormat", new TextFormat());</pre></div>
+         
+         </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Object</code> &mdash; Default styles object.
+                  </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../core/UIComponent.html#getStyle()" target="">UIComponent.getStyle()</a>
+<br>
+<a href="../core/UIComponent.html#setStyle()" target="">UIComponent.setStyle()</a>
+<br>
+<a href="../managers/StyleManager.html" target="">StyleManager</a>
+</div>
+</div>
+<a name="load()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">load</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function load(request:URLRequest = null, context:LoaderContext = null):void</code><p>
+   Loads the specified content or, if no content is specified, loads the 
+   content from the location identified by the <code>source</code> property. 
+      By default, the LoaderContext object uses the current domain as the 
+   application domain. To specify a different application domain, to check 
+   a policy file, or to change the security domain, initialize a new LoaderContext 
+   object and pass it to this method.
+      </p><p>By default, the context property uses the current domain. 
+   To specify a different ApplicationDomain, check a policy file, or 
+   change the SecurityDomain, pass a new LoaderContext object.</p>
+      <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">request</span>:URLRequest</code> (default = <code>null</code>)<code></code> &mdash; The URLRequest object that identifies the location from 
+                  which to load the content. If this value is not specified, 
+                  the current value of the <code>source</code> property is 
+                  used as the content location.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">context</span>:LoaderContext</code> (default = <code>null</code>)<code></code> &mdash; The LoaderContext object that sets the context of the load operation.
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#autoLoad" target="">autoLoad</a>
+<br>
+<a href="../containers/UILoader.html#close()" target="">close()</a>
+<br>
+<a href="../containers/UILoader.html#source" target="">source</a>
+<br>
+<a href="../containers/UILoader.html#unload()" target="">unload()</a>
+<br>flash.system.ApplicationDomain<br>flash.system.LoaderContext</div>
+</div>
+<a name="loadBytes()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadBytes</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function loadBytes(bytes:ByteArray, context:LoaderContext = null):void</code><p>
+         Loads binary data that is stored in a ByteArray object.
+                  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">bytes</span>:ByteArray</code> &mdash; A ByteArray object that contains a file in one of the formats supported 
+                by the Loader class: SWF, GIF, JPEG, or PNG.
+                  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">context</span>:LoaderContext</code> (default = <code>null</code>)<code></code> &mdash; Only the <code>applicationDomain</code> property of the LoaderContext 
+                  object applies; the <code>checkPolicyFile</code> and <code>securityDomain</code> 
+                  properties of the LoaderContext object do not apply.
+                  </td>
+</tr>
+</table>
+<br>
+<span class="label">Throws</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; The <code>length</code> property of the ByteArray object is 0.
+                  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20"></td><td><code></code> &mdash; The <code>checkPolicyFile</code> or <code>securityDomain</code> 
+                 property of the <code>context</code> parameter is non-null.
+                  </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20"></td><td><code></code> &mdash; The <code>applicationDomain</code> property of the 
+                 <code>context</code> property that was provided is from a domain that is not allowed.
+            </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#source" target="">source</a>
+<br>Loader.loadBytes()<br>LoaderContext</div>
+</div>
+<a name="setSize()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setSize</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public override function setSize(w:Number, h:Number):void</code><p>
+   Resizes the component to the requested size. If the <code>scaleContent</code>
+   property is set to <code>true</code>, the UILoader is not resized.
+                  </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">w</span>:Number</code> &mdash; The width of the component, in pixels.
+         </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">h</span>:Number</code> &mdash; The height of the component, in pixels.
+            </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#scaleContent" target="">scaleContent</a>
+</div>
+</div>
+<a name="unload()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">unload</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function unload():void</code><p>
+   Removes a child of this UILoader object that was loaded by using 
+   either the <code>load()</code> method or the <code>source</code> 
+   property.
+                  </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#load()" target="">load()</a>
+<br>
+<a href="../containers/UILoader.html#source" target="">source</a>
+</div>
+</div>
+<div class="detailSectionHeader">Event detail</div>
+<a name="event:complete"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">complete</td><td class="detailHeaderType">event&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.Event</code></a>
+<br>
+<p></p><p>
+     Dispatched when content loading is complete. This event is dispatched 
+     regardless of whether the load operation was triggered by an auto-load process or an explicit 
+     call to the <code>load()</code> method.
+       </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#event:progress" target="">progress</a>
+</div>
+</div>
+<a name="event:init"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">init</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.Event</code></a>
+<br>
+<p></p><p>
+     Dispatched when the properties and methods of a loaded SWF file are accessible. 
+     The following conditions must exist for this event to be dispatched: 
+     <ul>
+         <li>All the properties and methods that are associated with the loaded object,
+          as well as those that are associated with the component, must be accessible.</li>
+         <li>The constructors for all child objects must have completed.</li>
+     </ul>
+          </p></div>
+<a name="event:ioError"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">ioError</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.IOErrorEvent</code></a>
+<br>
+<p></p><p>
+     Dispatched after an input or output error occurs.
+          </p></div>
+<a name="event:open"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">open</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.Event</code></a>
+<br>
+<p></p><p>
+     Dispatched after a network operation starts.
+          </p></div>
+<a name="event:progress"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">progress</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.ProgressEvent</code></a>
+<br>
+<p></p><p>
+     Dispatched when content is loading. This event is dispatched regardless of
+     whether the load operation was triggered by an auto-load process or an explicit call to the 
+     <code>load()</code> method.
+          </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../containers/UILoader.html#event:complete" target="">complete</a>
+</div>
+</div>
+<a name="event:resize"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">resize</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href="../events/ComponentEvent.html"><code>fl.events.ComponentEvent</code></a>
+<br>
+<span class="label">ComponentEvent.type property = </span><a href="../events/ComponentEvent.html#RESIZE"><code>fl.events.ComponentEvent.RESIZE</code></a>
+<br><p>
+     Dispatched after the component is resized.
+          </p><p>
+         Defines the value of the <code>type</code> property of a <code>resize</code> 
+         event object. 
+         
+         </p><p>This event has the following properties:</p>
+          <table class="innertable" width="100%">
+             <tr><th>Property</th><th>Value</th></tr>
+            <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+             <tr><td><code>cancelable</code></td><td><code>false</code>; there is no default
+            behavior to cancel.</td></tr>
+             <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+            the event object with an event listener. </td></tr>
+             <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+                   not always the object listening for the event. Use the <code>currentTarget</code>
+            property to access the object that is listening for the event.</td></tr>
+          </table>
+                  </div>
+<a name="event:securityError"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">securityError</td><td class="detailHeaderType">event&nbsp;</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<span class="label">Event object type: </span><a href=""><code>flash.events.SecurityErrorEvent</code></a>
+<br>
+<p></p><p>
+     Dispatched after a security error occurs while content is loading.
+          </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<div class="feedbackLink">
+<center>
+<a target="_top" href="http://tech.groups.yahoo.com/group/ydn-flash/">Visit ydn-flash for Yahoo! ASTRA feedback and support</a>
+</center>
+</div>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

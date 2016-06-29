@@ -1,0 +1,23 @@
+Eric Jacobsen
+From:	Eric Jacobsen
+Sent:	Friday, April 09, 1999 7:14 PM
+To:	Plato and OLAP Technical Discussion
+Subject:	IIS - OLAP Services Connection Pooling Sample Code
+Here is sample code to implement connection pooling in ASP pages.
+
+Many users have noted performance issues for ASP pages working with OLAP Services.  The attached code includes a VB component that does the pooling, and sample code for global.asa and an asp script.  The Session OnStart, OnEnd methods implement reference counting for a "ConnPool" object maintained by the Application object.  When the last Application object times out (by default 20 minutes), all pooled connections are destroyed.  Inside your ASP page, instead of always creating a new connection, you would write:
+
+	set m_ConnPool = Application.StaticObjects( "m_ConnPool" )
+	set con = m_ConnPool.GetConnectionFromPool( szConnectionString )
+	... work with the established ADO connection
+	m_ConnPool.ReturnConnectionToPool con
+
+The long-term solution is OLE DB connection pooling.  Version 7.0 does not fully support connection pooling, so it is disabled.  PSS engineers have a KnowledgeBase (KB) article that explains how to experiment with the OLE DB connection pooling flags in the registry.
+
+The code is generic and should work for other providers as well, but it was tested only with Plato (provider=msolap).
+If you discover problems please let me know so we can improve this sample.
+
+Thanks,
+-- Eric
+
+       

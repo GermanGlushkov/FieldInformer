@@ -1,0 +1,45 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ff77a50a-2b8e-47c6-b471-2162afcaef4b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dpm</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>V OLAP DPM</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="f846ba6f-8b9a-4394-93b7-17a675bfd198">
+          <ID>V OLAP DPM</ID>
+          <Name>V OLAP DPM</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6ebfe58b-4ede-4664-8e9d-b8b3b41d106b">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_DPM</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP DPM PRICE</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="9848984c-2ccb-4fe9-9e5d-0f1fd29538f4">
+          <ID>V OLAP DPM PRICE</ID>
+          <Name>V OLAP DPM PRICE</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6445a826-3f34-41a7-b017-225c01721194">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_DPM_PRICE</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

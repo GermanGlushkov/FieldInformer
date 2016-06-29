@@ -1,0 +1,125 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="87130f6e-51ab-4c96-a514-bd88e6020ad9" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Calendar</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>V OLAP DATE</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="dfbd9fb3-4a2e-47f4-b363-e10d095df7ec">
+          <ID>V OLAP DATE</ID>
+          <Name>V OLAP DATE</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e682e49f-3dae-4262-bd57-b4dc01df7865">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_OLAP_DATE</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP SALMCAL</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="24694c29-a8e0-4983-b819-79488d91f2ab">
+          <ID>V OLAP SALMCAL</ID>
+          <Name>V OLAP SALMCAL</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="1fb98eb5-41ff-4569-97e0-3bd82d700c46">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_SALMCAL</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>SalesCall</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="37341633-c648-452d-b782-89c5638dd741">
+          <ID>V OLAP SALESCALL FACT</ID>
+          <Name>V OLAP SALESCALL FACT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="648bc787-eeee-40e3-8375-b8a579b3fb5f">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_SALESCALL_FACT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP SALESCALL SUM FACT</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="03c260cf-1664-4734-829a-2f29b388c90d">
+          <ID>V OLAP SALESCALL SUM FACT</ID>
+          <Name>V OLAP SALESCALL SUM FACT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="821aef8e-0275-432b-9bc2-4d60af420e0a">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_SALESCALL_SUM_FACT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP SALESCALL ATTR VALUES HIERARCHY</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="37f4e1b0-0e2a-46d1-85f5-89894fa99172">
+          <ID>V OLAP SALESCALL ATTR VALUES HIERARCHY</ID>
+          <Name>V OLAP SALESCALL ATTR VALUES HIERARCHY</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a206d60b-20e2-406a-b959-3fa255b0bf89">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES_HIERARCHY</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP SALESCALL FACT DISTINCT</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="047267d3-7fae-4b8c-a02e-ab0c07781db7">
+          <ID>V OLAP SALESCALL FACT DISTINCT</ID>
+          <Name>V OLAP SALESCALL FACT DISTINCT</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a21d051a-ee17-4175-8500-f3d529e702d1">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_V_OLAP_SALESCALL_FACT_DISTINCT</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

@@ -1,0 +1,46 @@
+x-sender: Administrator@localhost
+x-receiver: administrator@localhost
+Received: from box2 ([127.0.0.1]) by localhost with Microsoft SMTPSVC(5.0.2195.2966);
+	 Sun, 1 Jul 2001 18:27:51 -0400
+Message-ID: <003801c1027d$10c50740$0201a8c0@box2>
+Reply-To: "Ian Stallings" <Administrator@localhost>
+From: "Ian Stallings" <Administrator@localhost>
+To: <administrator@localhost>
+Subject: test
+Date: Sun, 1 Jul 2001 18:27:51 -0400
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0035_01C1025B.89AA1870"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.50.4522.1200
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4522.1200
+Return-Path: Administrator@localhost
+X-OriginalArrivalTime: 01 Jul 2001 22:27:51.0880 (UTC) FILETIME=[10C81480:01C1027D]
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0035_01C1025B.89AA1870
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+test
+
+------=_NextPart_000_0035_01C1025B.89AA1870
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 5.50.4134.600" name=3DGENERATOR>
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT face=3DArial size=3D2>test</FONT></DIV></BODY></HTML>
+
+------=_NextPart_000_0035_01C1025B.89AA1870--
+

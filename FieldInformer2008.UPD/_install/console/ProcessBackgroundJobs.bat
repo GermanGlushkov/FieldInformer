@@ -1,0 +1,1 @@
+OlapSystem.console.exe Log ProcessBackgroundJobs N:COMPANY_NAME_SHORT

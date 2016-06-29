@@ -1,0 +1,1 @@
+Use this directory for SMTP server logging output.

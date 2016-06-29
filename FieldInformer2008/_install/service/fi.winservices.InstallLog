@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\Inetpub\wwwroot\FieldInformer2008\_install\service\fi.winservices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Inetpub\wwwroot\FieldInformer2008\_install\service\fi.winservices.exe
+   logfile = C:\Inetpub\wwwroot\FieldInformer2008\_install\service\fi.winservices.InstallLog
+Installing service FieldInformer.NET Service...
+Service FieldInformer.NET Service has been successfully installed.
+Creating EventLog source FieldInformer.NET Service in log Application...
+Committing assembly 'C:\Inetpub\wwwroot\FieldInformer2008\_install\service\fi.winservices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Inetpub\wwwroot\FieldInformer2008\_install\service\fi.winservices.exe
+   logfile = C:\Inetpub\wwwroot\FieldInformer2008\_install\service\fi.winservices.InstallLog

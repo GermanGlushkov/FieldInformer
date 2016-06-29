@@ -1,0 +1,60 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8447.0 (173525a8).
+//
+// c:\program files\microsoft visual studio\vc98\project\ch3\xmlcellsetwrapper\testxml\debug\msxaprv.tli
+//
+// Wrapper implementations for Win32 type library C:\Program Files\Microsoft XML For Analysis SDK\msxaprv.dll
+// compiler-generated file created 07/12/02 at 22:11:09 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IXmlAnalysis wrapper method implementations
+//
+
+inline _bstr_t IXmlAnalysis::Execute ( _bstr_t in_bstrCommand, _bstr_t in_bstrProperties ) {
+    BSTR _result;
+    HRESULT _hr = raw_Execute(in_bstrCommand, in_bstrProperties, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXmlAnalysis::Discover ( _bstr_t in_bstrRequestType, _bstr_t in_bstrRestrictions, _bstr_t in_bstrProperties ) {
+    BSTR _result;
+    HRESULT _hr = raw_Discover(in_bstrRequestType, in_bstrRestrictions, in_bstrProperties, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXmlAnalysis::ExecuteSoap ( IUnknown * Soap, IUnknown * Command, IUnknown * Properties ) {
+    BSTR _result;
+    HRESULT _hr = raw_ExecuteSoap(Soap, Command, Properties, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXmlAnalysis::DiscoverSoap ( IUnknown * Soap, _bstr_t RequestType, IUnknown * Restrictions, IUnknown * Properties ) {
+    BSTR _result;
+    HRESULT _hr = raw_DiscoverSoap(Soap, RequestType, Restrictions, Properties, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXmlAnalysis::ExecuteState ( _bstr_t in_bstrSessionCmd, BSTR * io_pbstrSessionId, _bstr_t in_bstrCommand, _bstr_t in_bstrProperties ) {
+    BSTR _result;
+    HRESULT _hr = raw_ExecuteState(in_bstrSessionCmd, io_pbstrSessionId, in_bstrCommand, in_bstrProperties, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXmlAnalysis::DiscoverState ( _bstr_t in_bstrSessionCmd, BSTR * io_pbstrSessionId, _bstr_t in_bstrRequestType, _bstr_t in_bstrRestrictions, _bstr_t in_bstrProperties ) {
+    BSTR _result;
+    HRESULT _hr = raw_DiscoverState(in_bstrSessionCmd, io_pbstrSessionId, in_bstrRequestType, in_bstrRestrictions, in_bstrProperties, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IXmlAnalysis::SetPoolTimeout ( int in_dwTime ) {
+    HRESULT _hr = raw_SetPoolTimeout(in_dwTime);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}

@@ -1,0 +1,1912 @@
+USE DBSALESPP
+GO
+
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[proc_fill_OLAP_PRODUCT]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [spp].[proc_fill_OLAP_PRODUCT]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[proc_fill_OLAP_STORE]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [spp].[proc_fill_OLAP_STORE]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[proc_fill_OLAP_SELECTION]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [spp].[proc_fill_OLAP_SELECTION]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[proc_fill_OLAP_SURVEY]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [spp].[proc_fill_OLAP_SURVEY]
+GO
+
+
+
+
+
+
+CREATE PROCEDURE [spp].[proc_fill_OLAP_PRODUCT] AS
+DECLARE @command_string varchar(8000)
+DECLARE @PRODSERN varchar(15)
+DECLARE @PGRPNAME varchar(15)
+DECLARE @PGRPVAL varchar(30)
+DECLARE @PRODUCT_GROUP_NAME varchar(50)
+DECLARE @NEW_PRODUCT_GROUP_NAME varchar(50)
+DECLARE @TEMP_PRODUCT_GROUP_NAME varchar(50)
+DECLARE @TEMP_COUNTER int
+DECLARE @position int
+DECLARE @BLN_SUPPLIER_DIM_2 bit
+SET @BLN_SUPPLIER_DIM_2=0
+DECLARE @CURRENT_ASCII_CODE tinyint
+SET @CURRENT_ASCII_CODE=0
+
+DECLARE @COUNTER int
+SET @COUNTER=0
+
+SET NOCOUNT ON
+
+
+--BEGIN TRAN
+
+
+
+if object_id('tempdb..#stack') is not null
+	drop table #stack
+
+
+if object_id('tempdb..#OLD_PRODUCT_GROUPS') is not null
+	drop table #OLD_PRODUCT_GROUPS
+
+if object_id('tempdb..#NEW_PRODUCT_GROUPS') is not null
+	drop table #NEW_PRODUCT_GROUPS
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--							PRODUCT GROUPS TRANSLATION TABLE
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_PGROUPS]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_PGROUPS]
+/***********************************/
+
+
+/***********************************/
+CREATE TABLE [spp].[OLAP_PGROUPS] (
+	[PGRSERN] [varchar] (15)   NOT NULL PRIMARY KEY ,
+	[PGRPNAME] [varchar] (50)  NULL ,
+	[PGRPVAL] [varchar] (30)  NULL 
+) ON [PRIMARY]
+/***********************************/
+
+
+INSERT INTO OLAP_PGROUPS(PGRSERN , PGRPNAME , PGRPVAL)
+SELECT PGRSERN , PGRPNAME , PGRPVAL
+FROM TPGROUPS
+WHERE PGRSERN IN (SELECT PGRSERN FROM LPROPGR)
+INSERT INTO OLAP_PGROUPS(PGRSERN , PGRPNAME , PGRPVAL)
+SELECT DISTINCT CAST(PGRPNAME as varchar(15))  AS PGRSERN, PGRPNAME , 'Undefined' AS PGRPVAL
+FROM OLAP_PGROUPS
+WHERE PGRPVAL<>'Undefined'
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+CREATE TABLE  #OLD_PRODUCT_GROUPS (PRODUCT_GROUP_NAME varchar(255) )	
+INSERT INTO #OLD_PRODUCT_GROUPS SELECT PRODUCT_GROUP_NAME FROM v_select_PRODUCT_GROUPS
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_PRODUCT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_PRODUCT]
+/***********************************/
+
+
+/***********************  CREATE TABLE **************************/
+SET @command_string='CREATE TABLE [spp].[OLAP_PRODUCT] ('
+SET @command_string=@command_string +'[PRODSERN] [varchar] (15) NOT NULL  PRIMARY KEY '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODNAME] [varchar] (65)   NULL  DEFAULT ''Undefined'' '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODSNAME] [varchar] (15)    NULL  DEFAULT ''Undefined''  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODSIZE] [float]  NULL  DEFAULT 1 '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODCPS] [float]  NULL DEFAULT 1  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODTAX] [float]  NULL DEFAULT 0  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODPALLET] [float]  NULL  DEFAULT 1  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODPRICE] [float]  NULL  DEFAULT 0  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODCPWNET] [float]  NULL  DEFAULT 0  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODCPWGR] [float]  NULL  DEFAULT 0  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[PRODCASEWGR] [float]  NULL  DEFAULT 0  '
+
+
+DECLARE temp_cursor CURSOR FOR 
+SELECT DISTINCT PGRPNAME FROM TPGROUPS WHERE LTRIM(ISNULL(PGRPNAME,''))!=''
+
+OPEN temp_cursor
+
+FETCH NEXT FROM temp_cursor INTO @PGRPNAME
+
+WHILE @@FETCH_STATUS=0
+	BEGIN
+		IF CHARINDEX(@command_string , '[GRP@#@' + REPLACE(@PGRPNAME , ']' , ']]')  + ']' )=0
+			BEGIN
+				SET @command_string=@command_string + ' , '
+				SET @command_string=@command_string +'[GRP@#@' + REPLACE(@PGRPNAME , ']' , ']]')  + '] [varchar] (30)   NULL  DEFAULT ' + CHAR(39) + 'Undefined' + CHAR(39)
+				FETCH NEXT FROM temp_cursor INTO @PGRPNAME
+			END
+	END
+
+CLOSE temp_cursor 
+DEALLOCATE temp_cursor
+
+SET @command_string=@command_string + ' , '
+IF CHARINDEX(@command_string , '[GRP@#@Supplier]' )=0
+	BEGIN
+		SET @command_string=@command_string +'[GRP@#@Supplier] [varchar] (40)   NULL  DEFAULT ' + CHAR(39) + 'Undefined' + CHAR(39)
+		SET @BLN_SUPPLIER_DIM_2=0
+	END
+ELSE
+	BEGIN
+		SET @command_string=@command_string +'[GRP@#@Supplier Builtin] [varchar] (40)   NULL  DEFAULT ' + CHAR(39) + 'Undefined' + CHAR(39)
+		SET @BLN_SUPPLIER_DIM_2=1
+	END
+SET @command_string=@command_string + ') ON [PRIMARY]'
+EXECUTE(@command_string)
+/********************************************************************/
+
+
+
+INSERT INTO OLAP_PRODUCT(PRODSERN , PRODNAME , PRODSNAME  , PRODSIZE , PRODCPS , PRODTAX ,  PRODPALLET, PRODPRICE, PRODCPWNET, PRODCPWGR , PRODCASEWGR )
+	SELECT PRODSERN , ISNULL(PRODNAME,'') + (CASE WHEN PRODCODE IS NULL THEN '' ELSE ' ' + PRODCODE END) , PRODSNAME ,
+	CASE ISNULL(PRODSIZE,0)
+		WHEN 0 THEN 1
+		ELSE 	PRODSIZE
+	END AS PRODSIZE ,
+	CASE ISNULL(PRODCPS,0)
+		WHEN 0 THEN 1
+		ELSE 	PRODCPS
+	END AS PRODCPS ,
+	ISNULL(PRODTAX,0) AS PRODTAX ,
+	CASE ISNULL(PRODPALLET,0)
+		WHEN 0 THEN 1
+		ELSE 	PRODPALLET
+	END AS PRODPALLET ,
+	ISNULL(PRODPRICE,0) AS PRODPRICE ,
+	ISNULL(PRODCPWNET,0) AS PRODCPWNET ,
+	ISNULL(PRODCPWE,0) AS PRODCPWGR ,
+	ISNULL(PRODWE,0) AS PRODCASEWGR 
+	FROM TPRODUCT
+
+
+
+INSERT INTO OLAP_PRODUCT(PRODSERN , PRODNAME , PRODSNAME , PRODSIZE , PRODCPS , PRODPALLET )
+	VALUES ( '0' , 'Undefined' , 'Undefined' , 1 , 1 , 1 )
+DECLARE temp_cursor CURSOR FOR
+SELECT LPROPGR.PRODSERN , TPGROUPS.PGRPNAME , TPGROUPS.PGRPVAL FROM
+LPROPGR INNER JOIN TPGROUPS ON LPROPGR.PGRSERN=TPGROUPS.PGRSERN  WHERE LTRIM(ISNULL(TPGROUPS.PGRPNAME,''))!=''
+ORDER BY LPROPGR.DATESTAMP
+OPEN temp_cursor
+FETCH NEXT FROM temp_cursor INTO @PRODSERN , @PGRPNAME , @PGRPVAL
+WHILE @@FETCH_STATUS=0
+	BEGIN
+		/***********************  INSERT VALUE **************************/
+		
+		SET @command_string='UPDATE [OLAP_PRODUCT]  SET [GRP@#@' +  REPLACE(@PGRPNAME , ']' , ']]')  + ']=' + CHAR(39) +REPLACE(@PGRPVAL , CHAR(39) , CHAR(39)+'+CHAR(39)+' +CHAR(39) ) + CHAR(39) + '  WHERE PRODSERN=' + CHAR(39) + @PRODSERN + CHAR(39)
+		EXECUTE(@command_string)
+		/********************************************************************/
+		FETCH NEXT FROM temp_cursor INTO @PRODSERN , @PGRPNAME , @PGRPVAL
+	END
+--********************** SUPPLIER  **************************
+IF @BLN_SUPPLIER_DIM_2=0 
+	BEGIN
+		EXECUTE('UPDATE OLAP_PRODUCT 
+			SET OLAP_PRODUCT.[GRP@#@Supplier]=temp_table.COMNAME
+			FROM OLAP_PRODUCT , (SELECT TPRODUCT.PRODSERN , ISNULL(COMNAME, ''Undefined'') AS COMNAME FROM TPRODUCT LEFT OUTER JOIN TCOMPANY ON TPRODUCT.COMSERNO=TCOMPANY.COMSERNO) temp_table
+			WHERE OLAP_PRODUCT.PRODSERN=temp_table.PRODSERN')
+	END
+--********************** SUPPLIER BUILTIN **************************
+ELSE 
+	BEGIN
+		EXECUTE('UPDATE OLAP_PRODUCT 
+			SET OLAP_PRODUCT.[GRP@#@Supplier Builtin]=temp_table.COMNAME
+			FROM OLAP_PRODUCT , (SELECT TPRODUCT.PRODSERN , ISNULL(COMNAME, ''Undefined'') AS COMNAME FROM TPRODUCT LEFT OUTER JOIN TCOMPANY ON TPRODUCT.COMSERNO=TCOMPANY.COMSERNO) temp_table
+			WHERE OLAP_PRODUCT.PRODSERN=temp_table.PRODSERN')
+	END
+CLOSE temp_cursor 
+DEALLOCATE temp_cursor
+--*************************************  RENAMING COLUMNS TO MATCH DSO NAMING CONVENTIONS ***********************************************************
+DECLARE temp_cursor CURSOR 
+FOR
+select SUBSTRING(COLUMN_NAME , 7 , LEN(COLUMN_NAME)-6) AS PRODUCT_GROUP_NAME from INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_CATALOG=(SELECT DB_NAME())  AND TABLE_SCHEMA='spp' AND TABLE_NAME='OLAP_PRODUCT'
+AND LEFT(COLUMN_NAME ,6)='GRP@#@'
+OPEN temp_cursor
+FETCH NEXT FROM temp_cursor INTO @PRODUCT_GROUP_NAME
+WHILE @@FETCH_STATUS=0
+	BEGIN
+		SET @NEW_PRODUCT_GROUP_NAME=RTRIM(LTRIM(Replace(@PRODUCT_GROUP_NAME , '  ' ,' ')))
+		SET @NEW_PRODUCT_GROUP_NAME=Replace(@NEW_PRODUCT_GROUP_NAME , '   ' ,' ')
+		SET @NEW_PRODUCT_GROUP_NAME=Replace(@NEW_PRODUCT_GROUP_NAME , '    ' ,' ')
+		SET @NEW_PRODUCT_GROUP_NAME=Replace(@NEW_PRODUCT_GROUP_NAME , '     ' ,' ')
+		SET @position=1
+		SET @TEMP_PRODUCT_GROUP_NAME=''
+		
+		WHILE @position <= DATALENGTH(@NEW_PRODUCT_GROUP_NAME)
+		   BEGIN
+		
+			SET  @CURRENT_ASCII_CODE=ASCII(SUBSTRING(@NEW_PRODUCT_GROUP_NAME, @position, 1))
+		
+			IF (@CURRENT_ASCII_CODE<32) 
+			OR (@CURRENT_ASCII_CODE>32 AND @CURRENT_ASCII_CODE<48)
+			OR (@CURRENT_ASCII_CODE>57 AND @CURRENT_ASCII_CODE<65)
+			OR (@CURRENT_ASCII_CODE>90 AND @CURRENT_ASCII_CODE<97)
+			OR (@CURRENT_ASCII_CODE>122 AND @CURRENT_ASCII_CODE<192)
+				BEGIN
+					IF RIGHT(@TEMP_PRODUCT_GROUP_NAME , 1)<> ' '
+						SET @TEMP_PRODUCT_GROUP_NAME=@TEMP_PRODUCT_GROUP_NAME + ' '
+				END
+			ELSE
+				BEGIN
+					SET @TEMP_PRODUCT_GROUP_NAME=@TEMP_PRODUCT_GROUP_NAME + SUBSTRING(@NEW_PRODUCT_GROUP_NAME, @position, 1)
+				END
+		
+		   	SET @position = @position + 1
+		
+		   END
+
+			--- check if first symbol is letter ,  it's not allowed
+			SET @CURRENT_ASCII_CODE=ASCII(LEFT(@TEMP_PRODUCT_GROUP_NAME, 1))
+			IF (@CURRENT_ASCII_CODE<65)
+			OR (@CURRENT_ASCII_CODE>90 AND @CURRENT_ASCII_CODE<97)
+			OR (@CURRENT_ASCII_CODE>122 AND @CURRENT_ASCII_CODE<129)
+			OR (@CURRENT_ASCII_CODE>165)
+				BEGIN
+					SET @TEMP_PRODUCT_GROUP_NAME='Group ' + @TEMP_PRODUCT_GROUP_NAME
+				END
+
+
+			SET @NEW_PRODUCT_GROUP_NAME=@TEMP_PRODUCT_GROUP_NAME
+			IF @NEW_PRODUCT_GROUP_NAME<>@PRODUCT_GROUP_NAME
+					BEGIN
+						SET @TEMP_PRODUCT_GROUP_NAME=@NEW_PRODUCT_GROUP_NAME
+						SET @TEMP_COUNTER=0
+						WHILE EXISTS(SELECT *  FROM v_select_product_groups WHERE PRODUCT_GROUP_NAME=@TEMP_PRODUCT_GROUP_NAME)
+							BEGIN
+								SET @TEMP_COUNTER=@TEMP_COUNTER+1
+								SET @TEMP_PRODUCT_GROUP_NAME=@NEW_PRODUCT_GROUP_NAME + CAST(@TEMP_COUNTER AS varchar(5))
+							END
+						SET @NEW_PRODUCT_GROUP_NAME='GRP@#@' + @TEMP_PRODUCT_GROUP_NAME
+						SET @PRODUCT_GROUP_NAME='OLAP_PRODUCT.[GRP@#@' + REPLACE(@PRODUCT_GROUP_NAME , ']' , ']]') + ']'
+						-------------------------------------------------- rename OLAP_PRODUCT columns ---------------------------------------------------
+						EXEC  sp_rename @PRODUCT_GROUP_NAME , @NEW_PRODUCT_GROUP_NAME, 'COLUMN'
+						---------------------------------------------------------------------------------------------------------------------------------------------------------------
+						--------------------------------------------- rename OLAP_PGROUPS_TRANS records -------------------------------------------
+						UPDATE OLAP_PGROUPS SET PGRPNAME=@NEW_PRODUCT_GROUP_NAME WHERE PGRPNAME=@PRODUCT_GROUP_NAME
+						---------------------------------------------------------------------------------------------------------------------------------------------------------------
+						exec proc_insert_LOG @PRODUCT_GROUP_NAME
+						exec proc_insert_LOG @NEW_PRODUCT_GROUP_NAME
+					END
+		FETCH NEXT FROM temp_cursor INTO @PRODUCT_GROUP_NAME
+	END
+CLOSE temp_cursor 
+DEALLOCATE temp_cursor
+--************************************************************************************************************************************************************************************
+CREATE TABLE #NEW_PRODUCT_GROUPS (PRODUCT_GROUP_NAME varchar(255) )	
+INSERT INTO #NEW_PRODUCT_GROUPS SELECT PRODUCT_GROUP_NAME FROM v_select_PRODUCT_GROUPS
+INSERT INTO OLAP_UPD_DIM ( DIM_NAME , DIM_TYPE , UPD_FLAG )
+SELECT PRODUCT_GROUP_NAME , 'Product' AS DIM_TYPE ,  'D' AS UPD_FLAG  FROM #OLD_PRODUCT_GROUPS TEMP_PRODUCT_GROUPS
+WHERE  PRODUCT_GROUP_NAME NOT IN 
+	( SELECT PRODUCT_GROUP_NAME FROM #NEW_PRODUCT_GROUPS ) 
+AND NOT EXISTS(SELECT * FROM OLAP_UPD_DIM WHERE DIM_NAME=TEMP_PRODUCT_GROUPS.PRODUCT_GROUP_NAME AND UPD_FLAG='I')
+DELETE OLAP_UPD_DIM 
+WHERE DIM_UPD_ID IN 
+(SELECT DIM_UPD_ID
+FROM  ( SELECT * FROM OLAP_UPD_DIM WHERE OLAP_UPD_DIM.UPD_FLAG='I' AND  DIM_TYPE='Product' ) OLAP_UPD_DIM INNER JOIN (SELECT PRODUCT_GROUP_NAME  FROM #OLD_PRODUCT_GROUPS
+				WHERE  PRODUCT_GROUP_NAME NOT IN 
+					( SELECT PRODUCT_GROUP_NAME FROM #NEW_PRODUCT_GROUPS ) ) TEMP_PRODUCT_GROUPS
+
+ON OLAP_UPD_DIM.DIM_NAME=TEMP_PRODUCT_GROUPS.PRODUCT_GROUP_NAME
+)
+INSERT INTO OLAP_UPD_DIM ( DIM_NAME , DIM_TYPE ,  UPD_FLAG )
+SELECT PRODUCT_GROUP_NAME , 'Product' AS DIM_TYPE , 'I' AS UPD_FLAG   FROM #NEW_PRODUCT_GROUPS TEMP_PRODUCT_GROUPS
+WHERE  PRODUCT_GROUP_NAME NOT IN 
+	( SELECT PRODUCT_GROUP_NAME FROM #OLD_PRODUCT_GROUPS ) 
+AND NOT EXISTS(SELECT * FROM OLAP_UPD_DIM WHERE DIM_NAME=TEMP_PRODUCT_GROUPS.PRODUCT_GROUP_NAME AND UPD_FLAG='D')
+DELETE OLAP_UPD_DIM 
+WHERE DIM_UPD_ID IN 
+(SELECT DIM_UPD_ID
+FROM   ( SELECT * FROM OLAP_UPD_DIM WHERE OLAP_UPD_DIM.UPD_FLAG='D' AND  DIM_TYPE='Product' ) OLAP_UPD_DIM  INNER JOIN  (SELECT PRODUCT_GROUP_NAME  FROM #NEW_PRODUCT_GROUPS
+				WHERE  PRODUCT_GROUP_NAME NOT IN 
+					( SELECT PRODUCT_GROUP_NAME FROM #OLD_PRODUCT_GROUPS ) ) TEMP_PRODUCT_GROUPS
+ON OLAP_UPD_DIM.DIM_NAME=TEMP_PRODUCT_GROUPS.PRODUCT_GROUP_NAME
+)
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+DROP TABLE #OLD_PRODUCT_GROUPS
+
+DROP TABLE #NEW_PRODUCT_GROUPS
+
+
+
+
+--COMMIT TRAN
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [spp].[proc_fill_OLAP_STORE] AS
+
+
+DECLARE @TODAY VARCHAR(8)
+SET @TODAY=CONVERT(VARCHAR(8), GetDate(), 112)
+
+
+DECLARE @COMSERNO varchar(15)
+DECLARE @SALMNAME varchar(30)
+DECLARE @COMNAME varchar(30)
+
+DECLARE @command_string varchar(8000)
+DECLARE @command_string_salesforce  varchar(8000)
+
+DECLARE @UGRPSERN varchar(15)
+DECLARE @UGRPNAME varchar(15)
+
+
+DECLARE @PGRSERN varchar(15)
+DECLARE @SALMSERN varchar(15)
+
+
+DECLARE @USERNAME varchar(30)
+
+DECLARE @STORE_GROUP_NAME varchar(50)
+DECLARE @NEW_STORE_GROUP_NAME varchar(50)
+DECLARE @TEMP_STORE_GROUP_NAME varchar(50)
+
+DECLARE @CURRENT_ASCII_CODE tinyint
+
+DECLARE @SQL_SRVR_VERSION tinyint
+
+DECLARE @TEMP_COUNTER int
+
+DECLARE @position int
+
+DECLARE @COLUMN_NAME varchar(100)
+
+SET NOCOUNT ON 
+
+
+
+--BEGIN TRAN
+
+
+if object_id('tempdb..#comserno_table') is not null
+	drop table #comserno_table
+
+if object_id('tempdb..#salmsern_table') is not null
+	drop table #salmsern_table
+
+if object_id('tempdb..#OLD_STORE_GROUPS') is not null
+	drop table #OLD_STORE_GROUPS
+
+if object_id('tempdb..#NEW_STORE_GROUPS') is not null
+	drop table #NEW_STORE_GROUPS
+
+CREATE TABLE #OLD_STORE_GROUPS(STORE_GROUP_NAME varchar(255)  , DIM_TYPE varchar(30))
+/*
+INSERT INTO #OLD_STORE_GROUPS SELECT STORE_GROUP_NAME , 'Store Salesforce' AS DIM_TYPE FROM v_select_salesman_groups
+INSERT INTO #OLD_STORE_GROUPS SELECT STORE_GROUP_NAME , 'Salesforce' AS DIM_TYPE FROM v_select_salesman_groups
+*/
+INSERT INTO #OLD_STORE_GROUPS SELECT STORE_GROUP_NAME , 'Store' AS DIM_TYPE FROM v_select_store_groups
+
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_CCH]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_CCH]
+/***********************************/
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_CHN]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_CHN]
+/***********************************/
+
+
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STORE]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STORE]
+/***********************************/
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STORE_CORRUPT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STORE_CORRUPT]
+/***********************************/
+
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SALESFORCE]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SALESFORCE]
+/***********************************/
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SALESFORCE_CORRUPT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SALESFORCE_CORRUPT]
+/***********************************/
+
+
+
+/********************************************************************************************* UNION ****************************************************************************************************/
+
+CREATE TABLE #COMSERNO_TABLE(COMSERNO varchar(15)  PRIMARY KEY)
+
+CREATE TABLE #COMSERNO_ALL_TABLE(COMSERNO varchar(15) )
+
+
+INSERT INTO #COMSERNO_ALL_TABLE
+SELECT  COMSERNO AS COMSERNO
+FROM (
+select  comserno  from TDELIVER  
+union  
+select  comserno from TDPMHDR 
+union 
+select  comserno from TORDER 
+union 
+select  comserno from  TPLNHDR 
+union 
+select  comserno from  TSAMERCH
+union 
+select  comserno from  TCALENTR
+union 
+select  comserno from  TTARENTR
+union 
+select  comserno from  TMSASLIP
+union 
+select  comserno from  TTARENTR
+union 
+select  comserno from  LCOMSEL
+union 
+select  comserno from  LSALCOM
+) STORES
+
+
+
+INSERT INTO #COMSERNO_TABLE
+SELECT TCOMPANY.COMSERNO FROM #COMSERNO_ALL_TABLE
+INNER JOIN TCOMPANY ON #COMSERNO_ALL_TABLE.COMSERNO=TCOMPANY.COMSERNO
+
+
+
+
+
+
+
+
+CREATE TABLE #SALMSERN_TABLE(SALMSERN varchar(15)  PRIMARY KEY)
+
+CREATE TABLE #SALMSERN_ALL_TABLE(SALMSERN varchar(15))
+
+INSERT INTO #SALMSERN_ALL_TABLE
+SELECT DISTINCT  SALMSERN  AS SALMSERN
+FROM (
+select  salmsern  from TDELENTR  
+union  
+select   salmsern from TDPMHDR 
+union 
+select   salmsern from TORDER 
+union 
+--select  salmsern from  TPLNHDR 
+--union 
+select  salmsern from  TSAMERCH
+union 
+select  salmsern  from  TCALENTR
+union
+select  salmsern from  TTARENTR
+union 
+select  salmsern  from  TMSASLIP
+union
+select salmsern  from  TTARENTR
+union 
+select  salmsern  from  LCOMSEL
+union 
+select  salmsern  from  LSALCOM
+) SALESMEN
+
+
+
+INSERT INTO #SALMSERN_TABLE
+SELECT TSALMAN.SALMSERN FROM #SALMSERN_ALL_TABLE
+INNER JOIN TSALMAN ON #SALMSERN_ALL_TABLE.SALMSERN=TSALMAN.SALMSERN
+
+
+
+
+/***********************************************************************************************************************************************************************************************************/
+
+
+/***********************************/
+CREATE TABLE [spp].[OLAP_CCH] (
+	[COMSERNCCH] [varchar] (15)  NOT NULL PRIMARY KEY ,
+	[TGRNAME] [varchar] (50)   NULL DEFAULT 'Default Trade Group' ,
+	[CCHNAME] [varchar] (50)   NULL DEFAULT 'Undefined' 
+) ON [PRIMARY]
+/***********************************/
+
+
+/***********************************/
+CREATE TABLE [spp].[OLAP_CHN] (
+	[COMSERNCHN] [varchar] (15)  NOT NULL PRIMARY KEY ,
+	[CHNNAME] [varchar] (50)   NULL DEFAULT 'Undefined' 
+) ON [PRIMARY]
+/***********************************/
+
+
+
+/***********************  CREATE TABLE OLAP_STORE + OLAP_SALESFORCE **************************/
+
+SET @command_string='CREATE TABLE [spp].[OLAP_STORE] ('
+SET @command_string=@command_string +'[COMSERNO] [varchar] (15)  NOT NULL  PRIMARY KEY '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[NR] int  NOT NULL  IDENTITY(1,1)'
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMNAME] [varchar] (50)   NULL  DEFAULT ''Undefined''  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMPCODE] [varchar] (10)  NULL DEFAULT ''Undefined''   '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMPCITY] [varchar] (30)  NULL DEFAULT ''Undefined''   '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMPADDR] [varchar] (40)  NULL DEFAULT ''Undefined''   '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMTYNAME] [varchar] (15)  NULL DEFAULT ''Undefined''   '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMCLASS] [varchar] (8)    NULL DEFAULT ''Undef''   '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMTURNCLS] [varchar] (4)    NULL DEFAULT ''Undf''   '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[TGRNAME] [varchar] (50)   NULL  DEFAULT ''Default Trade Group''   '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[CCHNAME] [varchar] (50)   NULL  DEFAULT ''Undefined''   '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[CHNNAME] [varchar] (50)   NULL  DEFAULT ''Undefined''  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMCALL] [varchar] (3)   NULL  DEFAULT ''No''  '
+SET @command_string=@command_string + ' , '
+SET @command_string=@command_string +'[COMINACT] [varchar] (8)   NULL  DEFAULT ''99999999''  '
+
+
+
+
+
+SET @command_string_salesforce='CREATE TABLE [spp].[OLAP_SALESFORCE] ('
+SET @command_string_salesforce=@command_string_salesforce +'[SALMSERN] [varchar] (15) '
+SET @command_string_salesforce=@command_string_salesforce + ' , '
+SET @command_string_salesforce=@command_string_salesforce +'[SALMNAME] [varchar] (30)   NULL DEFAULT ''Undefined''   '
+SET @command_string_salesforce=@command_string_salesforce + ' , '
+SET @command_string_salesforce=@command_string_salesforce +'[PGRSERN] [varchar] (15)   NULL DEFAULT ''0''  '
+SET @command_string_salesforce=@command_string_salesforce + ' , '
+SET @command_string_salesforce=@command_string_salesforce +'[DUMMY_LINK_HIERARCHY] [int] NULL  DEFAULT 0  '
+
+
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT1 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT1)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		SET @command_string=@command_string + ' , '
+		SET @command_string=@command_string +'[STOREGRP@#@COMTEXT1] [varchar] (30)   NULL  DEFAULT ' + CHAR(39) + 'Undefined' + CHAR(39)
+	END
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT2 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT2)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		SET @command_string=@command_string + ' , '
+		SET @command_string=@command_string +'[STOREGRP@#@COMTEXT2] [varchar] (30)   NULL  DEFAULT ' + CHAR(39) + 'Undefined' + CHAR(39)
+	END
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT3 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT3)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		SET @command_string=@command_string + ' , '
+		SET @command_string=@command_string +'[STOREGRP@#@COMTEXT3] [varchar] (30)   NULL  DEFAULT ' + CHAR(39) + 'Undefined' + CHAR(39)
+	END
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT4 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT4)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		SET @command_string=@command_string + ' , '
+		SET @command_string=@command_string +'[STOREGRP@#@COMTEXT4] [varchar] (30)   NULL  DEFAULT ' + CHAR(39) + 'Undefined' + CHAR(39)
+	END
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT5 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT5)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		SET @command_string=@command_string + ' , '
+		SET @command_string=@command_string +'[STOREGRP@#@COMTEXT5] [varchar] (30)   NULL  DEFAULT ' + CHAR(39) + 'Undefined' + CHAR(39)
+	END
+
+
+
+
+
+SET @command_string=@command_string + ') ON [PRIMARY]'
+
+SET @command_string_salesforce=@command_string_salesforce + ') ON [PRIMARY]'
+
+
+
+
+EXECUTE(@command_string)
+
+SET @command_string=REPLACE(@command_string , '[spp].[OLAP_STORE]' , '[spp].[OLAP_STORE_CORRUPT]')
+EXECUTE(@command_string )
+
+EXECUTE(@command_string_salesforce)
+
+SET @command_string_salesforce=REPLACE(@command_string_salesforce , '[spp].[OLAP_SALESFORCE]' , '[spp].[OLAP_SALESFORCE_CORRUPT]')
+EXECUTE(@command_string_salesforce )
+
+
+/***********************************/
+CREATE NONCLUSTERED INDEX IX_OLAP_STORE_COMINACT
+ON spp.OLAP_STORE(COMINACT)
+/***********************************/
+
+
+/***********************************/
+CREATE UNIQUE CLUSTERED INDEX IX_OLAP_SALESFORCE_SALMSERN
+ON spp.OLAP_SALESFORCE(SALMSERN)
+
+CREATE NONCLUSTERED INDEX IX_OLAP_SALESFORCE_PGRSERN
+ON spp.OLAP_SALESFORCE(PGRSERN)
+/***********************************/
+/***********************************/
+CREATE UNIQUE CLUSTERED INDEX IX_OLAP_SALESFORCE_CORRUPT_SALMSERN
+ON spp.OLAP_SALESFORCE_CORRUPT(SALMSERN)
+/***********************************/
+
+
+
+
+/********************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO OLAP_STORE(COMSERNO , COMNAME, COMPCODE, COMPCITY , COMPADDR,  COMCLASS , COMTURNCLS, COMCALL , COMINACT)
+SELECT  TCOMPANY.COMSERNO , CAST(TCOMPANY.COMNAME + '-' + TCOMPANY.COMCODE as varchar(50)) AS COMNAME , 
+
+CASE LEN(LTRIM(TCOMPANY.COMPCODE))
+WHEN 0 THEN 'Undefined'
+ELSE TCOMPANY.COMPCODE
+END AS COMPCODE,
+
+CASE 
+	WHEN LEN(LTRIM(TCOMPANY.COMPCITY))>0 THEN TCOMPANY.COMPCITY
+	WHEN LEN(LTRIM(TCOMPANY.COMCITY))>0 THEN TCOMPANY.COMCITY
+	ELSE 'Undefined'
+END AS COMPCITY,
+
+CASE 
+	WHEN LEN(LTRIM(TCOMPANY.COMPADDR))>0 THEN TCOMPANY.COMPADDR
+	WHEN LEN(LTRIM(TCOMPANY.COMADDR))>0 THEN TCOMPANY.COMADDR
+	ELSE 'Undefined'
+END AS COMPADDR,
+
+CASE LEN(LTRIM(TCOMPANY.COMCLASS))
+WHEN 0 THEN 'Undef'
+ELSE TCOMPANY.COMCLASS
+END AS COMCLASS ,
+
+CASE LEN(LTRIM(TCOMPANY.COMTURNCLS))
+WHEN 0 THEN 'Undf'
+ELSE TCOMPANY.COMTURNCLS
+END AS COMTURNCLS ,
+
+CASE TCOMPANY.COMCALL
+WHEN 1 THEN 'Yes'
+ELSE 'No'
+END AS COMCALL,
+
+CASE 
+WHEN TCOMPANY.COMINACT IS NOT NULL AND ISDATE(TCOMPANY.COMINACT)=1 THEN TCOMPANY.COMINACT
+ELSE '99999999'
+END AS COMINACT
+
+
+FROM (SELECT COMSERNO FROM #COMSERNO_TABLE) STORES
+INNER JOIN TCOMPANY ON STORES.COMSERNO=TCOMPANY.COMSERNO
+
+
+
+
+IF NOT EXISTS(SELECT * FROM OLAP_STORE WHERE COMSERNO='')
+	INSERT INTO OLAP_STORE(COMSERNO , COMNAME)
+		SELECT '' AS COMSERNO  , 'Undefined'  AS COMNAME
+
+IF NOT EXISTS(SELECT * FROM OLAP_STORE WHERE COMSERNO='0')
+	INSERT INTO OLAP_STORE(COMSERNO , COMNAME)
+		SELECT '0' AS COMSERNO  , 'Undefined'  AS COMNAME
+
+
+
+INSERT INTO OLAP_STORE_CORRUPT(COMSERNO , COMNAME)
+	SELECT COMSERNO , 'Undefined' AS COMNAME FROM #COMSERNO_ALL_TABLE WHERE COMSERNO IS NOT NULL AND COMSERNO NOT IN (SELECT COMSERNO FROM #COMSERNO_TABLE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO OLAP_SALESFORCE(SALMSERN , SALMNAME , PGRSERN )
+	SELECT SALMSERN , SALMNAME , PGRSERN FROM TSALMAN
+	WHERE SALMSERN IN (SELECT SALMSERN FROM #SALMSERN_TABLE)
+-- !!
+INSERT INTO OLAP_SALESFORCE(SALMSERN , SALMNAME , PGRSERN )
+	SELECT SALMSERN , 'Undefined' AS SALMNAME , '0' AS PGRSERN FROM #SALMSERN_ALL_TABLE WHERE  NOT EXISTS (SELECT *  FROM #SALMSERN_TABLE WHERE #SALMSERN_TABLE.SALMSERN=#SALMSERN_ALL_TABLE.SALMSERN)
+
+
+IF NOT EXISTS(SELECT * FROM OLAP_SALESFORCE WHERE SALMSERN='')
+	INSERT INTO OLAP_SALESFORCE(SALMSERN , SALMNAME , PGRSERN  )
+		VALUES( ''  , 'Undefined' , '')
+
+
+IF NOT EXISTS(SELECT * FROM OLAP_SALESFORCE WHERE SALMSERN='0')
+	INSERT INTO OLAP_SALESFORCE(SALMSERN , SALMNAME , PGRSERN  )
+		VALUES( '0'  , 'Undefined' , '0')
+
+
+IF NOT EXISTS(SELECT * FROM OLAP_SALESFORCE WHERE SALMSERN='-1')
+	INSERT INTO OLAP_SALESFORCE(SALMSERN , SALMNAME , PGRSERN  )
+		VALUES( '-1'  , 'Intersection' , '-1')
+
+
+
+
+INSERT INTO OLAP_SALESFORCE_CORRUPT(SALMSERN , SALMNAME , PGRSERN )
+	SELECT SALMSERN , 'Undefined' AS SALMNAME , '0' AS PGRSERN FROM #SALMSERN_ALL_TABLE WHERE  NOT EXISTS (SELECT *  FROM #SALMSERN_TABLE WHERE #SALMSERN_TABLE.SALMSERN=#SALMSERN_ALL_TABLE.SALMSERN)
+
+
+
+
+
+
+
+
+
+
+
+
+--------- DIRECT Central Chain -----
+
+
+INSERT INTO OLAP_CCH(COMSERNCCH)
+SELECT DISTINCT ISNULL(COMSERNCCH,'')  AS COMSERNCCH  FROM
+	(
+	SELECT  TDELIVER.COMSERNCCH FROM TDELIVER
+	UNION
+	SELECT  TORDER.COMSERNCCH FROM TORDER
+	UNION
+	SELECT  TMSASLIP.COMSERNCCH FROM TMSASLIP
+	) CCH
+
+
+UPDATE OLAP_CCH
+	SET CCHNAME=ISNULL((SELECT TOP 1 COMNAME FROM TCOMPANY WHERE TCOMPANY.COMSERNO=OLAP_CCH.COMSERNCCH ),CCHNAME)
+
+
+UPDATE OLAP_CCH
+SET TGRNAME=ISNULL(
+(SELECT TOP 1 TCOMPANY.COMNAME 
+	FROM LCOMCOM INNER JOIN TCOMPANY ON LCOMCOM.COMSERN1=TCOMPANY.COMSERNO 
+	WHERE UPPER(LCOMCOM.LCOMATR2)='CENTRAL CHAIN' AND LCOMCOM.COMSERN2=OLAP_CCH.COMSERNCCH
+	AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+	AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	ORDER BY LCOMCOM.LCOMSTART DESC)
+, TGRNAME)
+
+
+
+
+--------- DIRECT Chain -----
+
+INSERT INTO OLAP_CHN(COMSERNCHN)
+SELECT DISTINCT ISNULL(COMSERNCHN,'')  AS COMSERNCHN  FROM
+	(
+	SELECT  TDELIVER.COMSERNCHN FROM TDELIVER
+	UNION
+	SELECT  TORDER.COMSERNCHN FROM TORDER
+	UNION
+	SELECT  TMSASLIP.COMSERNCHN FROM TMSASLIP
+	) CHN
+
+
+UPDATE OLAP_CHN
+	SET CHNNAME=ISNULL((SELECT TOP 1 COMNAME FROM TCOMPANY WHERE TCOMPANY.COMSERNO=OLAP_CHN.COMSERNCHN),CHNNAME)
+
+
+
+
+
+
+
+
+/********************** CENTRAL CHAIN **********************/
+
+--central chain through cch->ret
+UPDATE OLAP_STORE
+SET CCHNAME=ISNULL(
+(SELECT TOP 1 TCOMPANY.COMNAME 
+	FROM LCOMCOM INNER JOIN TCOMPANY ON LCOMCOM.COMSERN1=TCOMPANY.COMSERNO 
+	WHERE UPPER(LCOMCOM.LCOMATR1)='CENTRAL CHAIN' AND LCOMCOM.COMSERN2=OLAP_STORE.COMSERNO
+	AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+	AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	ORDER BY LCOMCOM.LCOMSTART DESC)
+, CCHNAME)
+
+
+--central chain through cch->chn->ret
+UPDATE OLAP_STORE
+SET CCHNAME=ISNULL(
+(SELECT TOP 1 CCH.COMNAME 
+	FROM
+	(SELECT COMSERN1 AS CHNSERN , COMSERN2 AS COMSERNO , LCOMSTART  FROM LCOMCOM 
+		WHERE UPPER(LCOMCOM.LCOMATR1)='CHAIN' 
+		AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+		AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	) CHN_TBL
+	INNER JOIN 
+	(SELECT COMSERN1 AS CCHSERN , COMSERN2 AS CHNSERN , LCOMSTART FROM LCOMCOM 
+		WHERE UPPER(LCOMCOM.LCOMATR1)='CENTRAL CHAIN'  AND UPPER(LCOMCOM.LCOMATR2)='CHAIN'  
+		AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+		AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	) CCH_TBL
+	ON CHN_TBL.CHNSERN=CCH_TBL.CHNSERN
+	INNER JOIN TCOMPANY CCH ON CCH_TBL.CCHSERN=CCH.COMSERNO
+	WHERE CHN_TBL.COMSERNO=OLAP_STORE.COMSERNO
+	ORDER BY CCH_TBL.LCOMSTART DESC , CHN_TBL.LCOMSTART DESC)
+, CCHNAME)
+
+
+
+-- trading group through tgr->cch->ret
+UPDATE OLAP_STORE
+SET TGRNAME=ISNULL(
+(SELECT TOP 1 TGR.COMNAME 
+	FROM
+	(SELECT COMSERN1 AS CCHSERN , COMSERN2 AS COMSERNO , LCOMSTART FROM LCOMCOM 
+		WHERE UPPER(LCOMCOM.LCOMATR1)='CENTRAL CHAIN'  
+		AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+		AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	) CCH_TBL
+	INNER JOIN 
+	(SELECT COMSERN1 AS TGRSERN , COMSERN2 AS CCHSERN , LCOMSTART FROM LCOMCOM 
+		WHERE  UPPER(LCOMCOM.LCOMATR2)='CENTRAL CHAIN'  
+		AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+		AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	) TGR_TBL
+	ON TGR_TBL.CCHSERN=CCH_TBL.CCHSERN
+	INNER JOIN TCOMPANY TGR ON TGR_TBL.TGRSERN=TGR.COMSERNO
+	WHERE CCH_TBL.COMSERNO=OLAP_STORE.COMSERNO
+	ORDER BY TGR_TBL.LCOMSTART DESC,  CCH_TBL.LCOMSTART DESC )
+, TGRNAME)
+
+
+-- trading group through tgr->cch->chn->ret
+UPDATE OLAP_STORE
+SET TGRNAME=ISNULL(
+(SELECT TOP 1 TGR.COMNAME 
+	FROM
+	(SELECT COMSERN1 AS CHNSERN , COMSERN2 AS COMSERNO , LCOMSTART  FROM LCOMCOM 
+		WHERE UPPER(LCOMCOM.LCOMATR1)='CHAIN' 
+		AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+		AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	) CHN_TBL
+	INNER JOIN 
+	(SELECT COMSERN1 AS CCHSERN , COMSERN2 AS CHNSERN , LCOMSTART FROM LCOMCOM 
+		WHERE UPPER(LCOMCOM.LCOMATR1)='CENTRAL CHAIN'  AND UPPER(LCOMCOM.LCOMATR2)='CHAIN'  
+		AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+		AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	) CCH_TBL
+	ON CHN_TBL.CHNSERN=CCH_TBL.CHNSERN
+	INNER JOIN 
+	(SELECT COMSERN1 AS TGRSERN , COMSERN2 AS CCHSERN , LCOMSTART FROM LCOMCOM 
+		WHERE  UPPER(LCOMCOM.LCOMATR2)='CENTRAL CHAIN'  
+		AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+		AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	) TGR_TBL
+	ON TGR_TBL.CCHSERN=CCH_TBL.CCHSERN
+	INNER JOIN TCOMPANY TGR ON TGR_TBL.TGRSERN=TGR.COMSERNO
+	WHERE CHN_TBL.COMSERNO=OLAP_STORE.COMSERNO
+	ORDER BY TGR_TBL.LCOMSTART DESC,  CCH_TBL.LCOMSTART DESC , CHN_TBL.LCOMSTART DESC)
+, TGRNAME)
+
+/*******************************************************************/
+
+
+
+
+
+/**************************** CHAIN ******************************/
+
+UPDATE OLAP_STORE
+SET CHNNAME=ISNULL(
+(SELECT TOP 1 TCOMPANY.COMNAME 
+	FROM LCOMCOM INNER JOIN TCOMPANY ON LCOMCOM.COMSERN1=TCOMPANY.COMSERNO 
+	WHERE UPPER(LCOMCOM.LCOMATR1)='CHAIN' 
+	AND LCOMCOM.COMSERN2=OLAP_STORE.COMSERNO
+	AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+	AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	ORDER BY LCOMCOM.LCOMSTART DESC)
+, CHNNAME)
+
+
+-- chains that appear as stores will have their names as chain names ---
+UPDATE OLAP_STORE
+SET OLAP_STORE.CHNNAME=CHAINS.COMNAME
+FROM
+( SELECT DISTINCT COMSERNO , COMNAME FROM TCOMPANY WHERE COMSERNO IN 
+	(SELECT COMSERN1 FROM LCOMCOM 
+		WHERE UPPER(LCOMATR1)='CHAIN' 
+		AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=@TODAY
+		AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=@TODAY
+	)
+) CHAINS
+WHERE OLAP_STORE.COMSERNO=CHAINS.COMSERNO
+/*******************************************************************/
+
+
+/**************************** COMTYNAME ******************************/
+
+UPDATE OLAP_STORE
+SET OLAP_STORE.COMTYNAME=ISNULL(
+(SELECT TOP 1 COMTYNAME FROM TCOMTYPE WHERE TCOMTYPE.COMSERNO=OLAP_STORE.COMSERNO ORDER BY DATESTAMP DESC)
+,COMTYNAME)
+
+/*******************************************************************/
+
+
+
+
+
+/**************************** COMTEXT1-5 ******************************/
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT1 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT1)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		EXECUTE ('UPDATE OLAP_STORE
+			SET OLAP_STORE.STOREGRP@#@COMTEXT1=TCOMPANY.COMTEXT1 FROM TCOMPANY 
+			WHERE OLAP_STORE.COMSERNO=TCOMPANY.COMSERNO AND TCOMPANY.COMTEXT1 IS NOT NULL AND LEN(RTRIM(LTRIM(TCOMPANY.COMTEXT1)))>0')
+	END
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT2 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT2)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		EXECUTE ('UPDATE OLAP_STORE 
+			SET OLAP_STORE.STOREGRP@#@COMTEXT2=TCOMPANY.COMTEXT2 FROM TCOMPANY 
+			WHERE OLAP_STORE.COMSERNO=TCOMPANY.COMSERNO AND TCOMPANY.COMTEXT2 IS NOT NULL AND LEN(RTRIM(LTRIM(TCOMPANY.COMTEXT2)))>0')
+	END
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT3 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT3)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		EXECUTE ('UPDATE OLAP_STORE 
+			SET OLAP_STORE.STOREGRP@#@COMTEXT3=TCOMPANY.COMTEXT3 FROM TCOMPANY 
+			WHERE OLAP_STORE.COMSERNO=TCOMPANY.COMSERNO AND TCOMPANY.COMTEXT3 IS NOT NULL AND LEN(RTRIM(LTRIM(TCOMPANY.COMTEXT3)))>0')
+	END
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT4 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT4)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		EXECUTE ('UPDATE OLAP_STORE 
+			SET OLAP_STORE.STOREGRP@#@COMTEXT4=TCOMPANY.COMTEXT4 FROM TCOMPANY 
+			WHERE OLAP_STORE.COMSERNO=TCOMPANY.COMSERNO AND TCOMPANY.COMTEXT4 IS NOT NULL AND LEN(RTRIM(LTRIM(TCOMPANY.COMTEXT4)))>0')
+	END
+
+IF EXISTS(SELECT * FROM TCOMPANY WHERE COMTEXT5 IS NOT NULL AND LEN(RTRIM(LTRIM(COMTEXT5)))>0 AND COMSERNO IN (SELECT COMSERNO FROM #COMSERNO_TABLE))
+	BEGIN
+		EXECUTE ('UPDATE OLAP_STORE 
+
+			SET OLAP_STORE.STOREGRP@#@COMTEXT5=TCOMPANY.COMTEXT5 FROM TCOMPANY 
+
+			WHERE OLAP_STORE.COMSERNO=TCOMPANY.COMSERNO AND TCOMPANY.COMTEXT5 IS NOT NULL AND LEN(RTRIM(LTRIM(TCOMPANY.COMTEXT5)))>0')
+	END
+
+/****************************************************************************/
+
+
+
+
+
+DROP TABLE #COMSERNO_TABLE
+
+DROP TABLE #SALMSERN_TABLE
+
+
+DROP TABLE #COMSERNO_ALL_TABLE
+
+DROP TABLE #SALMSERN_ALL_TABLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE #NEW_STORE_GROUPS (STORE_GROUP_NAME varchar(255)  , DIM_TYPE varchar(30))
+/*
+INSERT INTO #NEW_STORE_GROUPS SELECT STORE_GROUP_NAME , 'Store Salesforce' as DIM_TYPE  FROM v_select_salesman_groups
+INSERT INTO #NEW_STORE_GROUPS SELECT STORE_GROUP_NAME , 'Salesforce' as DIM_TYPE  FROM v_select_salesman_groups
+*/
+INSERT INTO #NEW_STORE_GROUPS SELECT STORE_GROUP_NAME , 'Store' as DIM_TYPE  FROM v_select_store_groups
+
+
+
+
+INSERT INTO OLAP_UPD_DIM ( DIM_NAME , DIM_TYPE , UPD_FLAG )
+SELECT STORE_GROUP_NAME , DIM_TYPE ,  'D' AS UPD_FLAG  FROM #OLD_STORE_GROUPS TEMP_STORE_GROUPS
+WHERE  STORE_GROUP_NAME NOT IN 
+	( SELECT STORE_GROUP_NAME FROM #NEW_STORE_GROUPS ) 
+AND NOT EXISTS(SELECT * FROM OLAP_UPD_DIM WHERE DIM_NAME=TEMP_STORE_GROUPS.STORE_GROUP_NAME AND UPD_FLAG='I')
+
+
+/*
+DELETE OLAP_UPD_DIM 
+WHERE DIM_UPD_ID IN 
+(SELECT DIM_UPD_ID
+FROM  ( SELECT * FROM OLAP_UPD_DIM WHERE OLAP_UPD_DIM.UPD_FLAG='I' AND DIM_TYPE='Store Salesforce' ) OLAP_UPD_DIM INNER JOIN (SELECT STORE_GROUP_NAME  FROM #OLD_STORE_GROUPS
+				WHERE  STORE_GROUP_NAME NOT IN 
+					( SELECT STORE_GROUP_NAME FROM #NEW_STORE_GROUPS ) ) TEMP_STORE_GROUPS
+ON OLAP_UPD_DIM.DIM_NAME=TEMP_STORE_GROUPS.STORE_GROUP_NAME
+)
+
+DELETE OLAP_UPD_DIM 
+WHERE DIM_UPD_ID IN 
+(SELECT DIM_UPD_ID
+FROM  ( SELECT * FROM OLAP_UPD_DIM WHERE OLAP_UPD_DIM.UPD_FLAG='I' AND DIM_TYPE='Salesforce' ) OLAP_UPD_DIM INNER JOIN (SELECT STORE_GROUP_NAME  FROM #OLD_STORE_GROUPS
+				WHERE  STORE_GROUP_NAME NOT IN 
+					( SELECT STORE_GROUP_NAME FROM #NEW_STORE_GROUPS ) ) TEMP_STORE_GROUPS
+ON OLAP_UPD_DIM.DIM_NAME=TEMP_STORE_GROUPS.STORE_GROUP_NAME
+)
+*/
+
+DELETE OLAP_UPD_DIM 
+WHERE DIM_UPD_ID IN 
+(SELECT DIM_UPD_ID
+FROM  ( SELECT * FROM OLAP_UPD_DIM WHERE OLAP_UPD_DIM.UPD_FLAG='I' AND DIM_TYPE='Store' ) OLAP_UPD_DIM INNER JOIN (SELECT STORE_GROUP_NAME  FROM #OLD_STORE_GROUPS
+				WHERE  STORE_GROUP_NAME NOT IN 
+					( SELECT STORE_GROUP_NAME FROM #NEW_STORE_GROUPS ) ) TEMP_STORE_GROUPS
+ON OLAP_UPD_DIM.DIM_NAME=TEMP_STORE_GROUPS.STORE_GROUP_NAME
+)
+
+
+
+
+
+INSERT INTO OLAP_UPD_DIM ( DIM_NAME , DIM_TYPE , UPD_FLAG )
+SELECT STORE_GROUP_NAME , DIM_TYPE ,  'I' AS UPD_FLAG   FROM #NEW_STORE_GROUPS TEMP_STORE_GROUPS
+WHERE  STORE_GROUP_NAME NOT IN 
+	( SELECT STORE_GROUP_NAME FROM #OLD_STORE_GROUPS ) 
+AND NOT EXISTS(SELECT * FROM OLAP_UPD_DIM WHERE DIM_NAME=TEMP_STORE_GROUPS.STORE_GROUP_NAME AND UPD_FLAG='D')
+
+
+
+
+
+
+DELETE OLAP_UPD_DIM 
+WHERE DIM_UPD_ID IN 
+(SELECT DIM_UPD_ID
+FROM   ( SELECT * FROM OLAP_UPD_DIM WHERE OLAP_UPD_DIM.UPD_FLAG='D'  AND DIM_TYPE='Store') OLAP_UPD_DIM  INNER JOIN  (SELECT STORE_GROUP_NAME  FROM #NEW_STORE_GROUPS
+				WHERE  STORE_GROUP_NAME NOT IN 
+					( SELECT STORE_GROUP_NAME FROM #OLD_STORE_GROUPS ) ) TEMP_STORE_GROUPS
+ON OLAP_UPD_DIM.DIM_NAME=TEMP_STORE_GROUPS.STORE_GROUP_NAME
+)
+
+
+
+--COMMIT TRAN
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------- OLAP_STOREACT ------------------------------------------------------------------
+
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STOREACT]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STOREACT]
+/***********************************/
+
+
+/***********************************/
+CREATE TABLE [spp].[OLAP_STOREACT] (
+	[COMSERNO] [varchar] (15)  NOT NULL 
+) ON [PRIMARY]
+/***********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------- SALESFORCE_HIERARCHY------------------------------------------------------------------
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SALESFORCE_HIERARCHY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SALESFORCE_HIERARCHY]
+/***********************************/
+
+/***********************************/
+CREATE TABLE [spp].[OLAP_SALESFORCE_HIERARCHY] (
+	[SALMSERN] [varchar] (15)  NOT NULL ,
+	[SALMNAME] [varchar] (30)  NOT NULL ,
+	[SALMGRP] [varchar] (30)  NOT NULL ,
+	[DUMMY_LINK_HIERARCHY]  int  NOT NULL  IDENTITY(1,1)
+) ON [PRIMARY]
+/***********************************/
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_STORE_SALESFORCE_HIERARCHY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_STORE_SALESFORCE_HIERARCHY]
+/***********************************/
+
+/***********************************/
+CREATE TABLE [spp].[OLAP_STORE_SALESFORCE_HIERARCHY] (
+	[SALMSERN] [varchar] (15)  NOT NULL ,
+	[SALMNAME] [varchar] (30)  NOT NULL ,
+	[SALMGRP] [varchar] (30)  NOT NULL ,
+	[COMSERNO] [varchar] (15) NOT NULL,
+	[COMNAME] [varchar] (50) NULL,
+	[DUMMY_LINK_HIERARCHY]  int  NOT NULL  IDENTITY(1,1)
+) ON [PRIMARY]
+/***********************************/
+
+--- STORE SALESFORCE
+INSERT INTO OLAP_STORE_SALESFORCE_HIERARCHY(SALMSERN , SALMNAME , COMSERNO, COMNAME,  SALMGRP )
+SELECT DISTINCT TSALMAN.SALMSERN , TSALMAN.SALMNAME , 
+	ISNULL(TSALMAN.COMSERNO,'Undefined'), ISNULL(TSALMAN.COMNAME,'Undefined'), 
+	ISNULL(LGRPUSER.UGRPNAME, 'Undefined')  FROM LGRPUSER
+	RIGHT OUTER JOIN 
+	(
+	SELECT DISTINCT OLAP_STORE.COMSERNO , OLAP_STORE.COMNAME, TSALMAN.SALMSERN , TSALMAN.SALMNAME 
+		FROM LSALCOM INNER JOIN TSALMAN ON LSALCOM.SALMSERN=TSALMAN.SALMSERN
+		INNER JOIN OLAP_STORE ON LSALCOM.COMSERNO=OLAP_STORE.COMSERNO
+		-- WHERE (CASE ISNULL(LSCEND,'') WHEN '' THEN '99999999' ELSE LSCEND END)>=CONVERT(varchar(8) , GetDate() , 112)  -- commented out because of verion incompatibility
+	) TSALMAN
+	ON LGRPUSER.USERSERN=TSALMAN.SALMSERN
+	WHERE TSALMAN.SALMSERN IN (SELECT SALMSERN FROM OLAP_SALESFORCE)
+
+
+SET IDENTITY_INSERT OLAP_STORE_SALESFORCE_HIERARCHY  ON
+
+-- undefined comserno must exists in olap_store
+INSERT INTO OLAP_STORE_SALESFORCE_HIERARCHY(SALMSERN , SALMNAME , COMSERNO, COMNAME, SALMGRP ,  DUMMY_LINK_HIERARCHY )
+	VALUES('0' , 'Undefined', '0', 'Undefined' , 'Undefined' , 0  )
+
+SET IDENTITY_INSERT OLAP_STORE_SALESFORCE_HIERARCHY  OFF
+
+-- undefined comserno must exists in olap_store
+INSERT INTO OLAP_STORE_SALESFORCE_HIERARCHY(SALMSERN , SALMNAME , COMSERNO, COMNAME, SALMGRP  )
+VALUES('-1' , 'Intersection', '0', 'Undefined' , 'Undefined'  )
+
+
+
+---SALESFORCE
+
+SET IDENTITY_INSERT OLAP_SALESFORCE_HIERARCHY  ON
+
+INSERT INTO OLAP_SALESFORCE_HIERARCHY(SALMSERN , SALMNAME , SALMGRP ,  DUMMY_LINK_HIERARCHY )
+	SELECT SALMSERN, SALMNAME, SALMGRP , MIN(DUMMY_LINK_HIERARCHY)
+		FROM OLAP_STORE_SALESFORCE_HIERARCHY
+		GROUP BY SALMSERN, SALMNAME, SALMGRP
+
+SET IDENTITY_INSERT OLAP_SALESFORCE_HIERARCHY  OFF
+
+
+
+
+
+-- INDEXES
+
+CREATE CLUSTERED INDEX IX_OLAP_SALESFORCE_HIERARCHY_DUMMY_LINK
+ON spp.OLAP_SALESFORCE_HIERARCHY(DUMMY_LINK_HIERARCHY)
+
+
+CREATE NONCLUSTERED INDEX IX_OLAP_SALESFORCE_HIERARCHY_SALMSERN
+ON spp.OLAP_SALESFORCE_HIERARCHY(SALMSERN)
+
+
+CREATE CLUSTERED INDEX IX_OLAP_STORE_SALESFORCE_HIERARCHY_DUMMY_LINK
+ON spp.OLAP_STORE_SALESFORCE_HIERARCHY(DUMMY_LINK_HIERARCHY)
+
+
+CREATE NONCLUSTERED INDEX IX_OLAP_STORE_SALESFORCE_HIERARCHY_SALMSERN
+ON spp.OLAP_STORE_SALESFORCE_HIERARCHY(SALMSERN, COMSERNO)
+
+------------------------------------------------------------------------------------------------------------------------------
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE procedure spp.proc_fill_OLAP_SELECTION  AS
+
+
+
+set nocount on
+
+
+declare @min_seldate varchar(8)
+
+select @min_seldate=min(date) from olap_date
+
+
+
+
+
+
+------------------------------ fill SELECTION DIMS ---------------------------------
+
+EXEC proc_fill_OLAP_SELECTION_DIMS
+
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SELECTION]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SELECTION]
+/***********************************/
+
+
+---------------------- INSERT INTO SELECTION -----------------------------
+
+
+select distinct COMSERNO, PRODSERN , SELDATE , CAST(1 as smallint) as INSEL 
+into OLAP_SELECTION
+from
+(select top 100 percent * from OLAP_SELDATE order by seldate) tmp_seldate,
+OLAP_LCOMSEL, OLAP_TSELENTR
+where 
+OLAP_LCOMSEL.selsern=OLAP_TSELENTR.selsern
+and OLAP_TSELENTR.selestart=seldate
+and not exists(
+select * from
+OLAP_LCOMSEL OLAP_LCOMSEL2, OLAP_TSELENTR tselentr2
+where 
+OLAP_LCOMSEL2.selsern=tselentr2.selsern
+and tselentr2.selestart<seldate and tselentr2.seleend>=seldate
+and OLAP_LCOMSEL.comserno=OLAP_LCOMSEL2.comserno and OLAP_TSELENTR.prodsern=tselentr2.prodsern
+)
+
+
+union all
+
+
+select distinct COMSERNO, PRODSERN , SELDATE , CAST(-1 as smallint) as INSEL 
+from
+(select top 100 percent * from OLAP_SELDATE order by seldate) tmp_seldate,
+OLAP_LCOMSEL, OLAP_TSELENTR
+where 
+OLAP_LCOMSEL.selsern=OLAP_TSELENTR.selsern
+and OLAP_TSELENTR.seleend=seldate
+and not exists(
+select * from
+OLAP_LCOMSEL OLAP_LCOMSEL2, OLAP_TSELENTR tselentr2
+where 
+OLAP_LCOMSEL2.selsern=tselentr2.selsern
+and tselentr2.selestart<=seldate and tselentr2.seleend>seldate
+and OLAP_LCOMSEL.comserno=OLAP_LCOMSEL2.comserno and OLAP_TSELENTR.prodsern=tselentr2.prodsern
+)
+
+
+
+-----------------------------------------------------------------------------
+
+
+
+exec proc_insert_LOG 'creating indexes on OLAP_SELECTION'
+
+
+
+CREATE CLUSTERED INDEX IX_OLAP_SELECTION
+ON spp.OLAP_SELECTION( COMSERNO , PRODSERN , SELDATE              )
+
+CREATE NONCLUSTERED INDEX  IX_OLAP_SELECTION_SELDATE ON spp.OLAP_SELECTION( SELDATE )
+
+exec proc_insert_LOG 'done'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+declare @PRODSERN varchar(15)
+DECLARE @COMSERNO varchar(15)
+DECLARE @COMSELCLS varchar(15)
+DECLARE @COMSELCLSH bit
+
+DECLARE @SELSERN varchar(15)
+DECLARE @SELESERN varchar(15)
+
+DECLARE @prev_position int
+DECLARE @position int
+DECLARE @ordinal smallint
+
+
+
+
+/***********************************/
+if object_id('tempdb..#chain') is not null
+	drop table #chain
+/***********************************/
+CREATE TABLE #chain(CCHSERN varchar(15), ORDINAL smallint , HIER_MEMBER varchar(15) , IS_HIER bit)
+/***********************************/
+
+
+
+/***********************************/
+if object_id('tempdb..#storecls') is not null
+	drop table #storecls
+/***********************************/
+CREATE TABLE #storecls(COMSERNO varchar(15), SELSERN  varchar(15), HIER_MEMBER varchar(15) , CHILD varchar(15) , IS_HIER bit)
+/***********************************/
+
+
+
+/***********************************/
+if object_id('tempdb..#tselectcls') is not null
+	drop table #tselectcls
+/***********************************/
+CREATE TABLE #tselectcls(SELSERN varchar(15), SELESERN  varchar(15),  PRODSERN varchar(15), HIER_MEMBER varchar(15))
+/***********************************/
+
+
+
+/***********************************/
+if object_id('tempdb..#lcompgr') is not null
+	drop table #lcompgr
+/***********************************/
+--CREATE TABLE #lcompgr(COMSERNO varchar(15), PGRSERN varchar(15) , COMSELCLS varchar(15) )
+/***********************************/
+
+
+/***********************************/
+if object_id('tempdb..#base_selection') is not null
+	drop table #base_selection
+/***********************************/
+--CREATE TABLE #base_selection(COMSERNO varchar(15), PRODSERN varchar(15), SELESTART varchar(8), SELEEND varchar(8))
+/***********************************/
+
+
+
+
+
+SELECT COMSERNO , PGRSERN , COMSELCLS
+INTO #lcompgr
+FROM LCOMPGR
+
+
+
+
+
+/***********************************/
+CREATE CLUSTERED INDEX ix_tmp_storecls
+ON #storecls(SELSERN , COMSERNO , CHILD )
+--ON #storecls(SELSERN , COMSERNO , HIER_MEMBER )
+/***********************************/
+
+
+/***********************************/
+CREATE CLUSTERED INDEX ix_tmp_tselectcls_keys
+ON #tselectcls(SELSERN , PRODSERN )
+/***********************************/
+
+
+
+/***********************************/
+CREATE CLUSTERED INDEX ix_tmp_lcompgr_keys
+ON #lcompgr(COMSERNO , PGRSERN , COMSELCLS )
+/***********************************/
+
+
+
+
+
+DECLARE temp_cursor CURSOR FOR
+SELECT COMSERNO ,REPLACE(COMSELCLS , ' ' , '') AS  COMSELCLS, 
+CASE COMSELCLSH 
+	WHEN '1' THEN 1
+	ELSE 0
+END AS COMSELCLSH
+FROM TCOMPANY WHERE LEN(REPLACE(COMSELCLS , ' ' , ''))>0
+
+OPEN temp_cursor
+
+FETCH NEXT FROM temp_cursor INTO @COMSERNO , @COMSELCLS , @COMSELCLSH
+
+WHILE @@FETCH_STATUS=0
+	BEGIN
+		SET @ordinal=1
+
+		SET @prev_position=1
+		SET @position=CHARINDEX(',' , @COMSELCLS ,  @prev_position)
+		
+		------------------------------
+		IF @position=0
+			INSERT INTO #chain(CCHSERN , ORDINAL , HIER_MEMBER , IS_HIER)
+				VALUES(@COMSERNO , @ordinal , @COMSELCLS , @COMSELCLSH )
+
+		------------------------------
+		WHILE @position>0
+			BEGIN
+				INSERT INTO #chain(CCHSERN , ORDINAL , HIER_MEMBER , IS_HIER)
+					VALUES(@COMSERNO , @ordinal , SUBSTRING(@COMSELCLS , @prev_position, @position-@prev_position) , @COMSELCLSH )
+
+
+				SET @prev_position=@position+1
+				SET @position=CHARINDEX(',' , @COMSELCLS ,  @prev_position)
+				
+				SET @ordinal=@ordinal+1
+			END
+
+		------------------------------
+
+		IF @prev_position>1 AND @position=0
+			INSERT INTO #chain(CCHSERN , ORDINAL , HIER_MEMBER , IS_HIER)
+				VALUES(@COMSERNO , @ordinal , SUBSTRING(@COMSELCLS , @prev_position, LEN(@COMSELCLS)-@prev_position+1) , @COMSELCLSH )
+
+
+
+		
+
+		FETCH NEXT FROM temp_cursor INTO @COMSERNO , @COMSELCLS , @COMSELCLSH
+
+
+	END
+
+CLOSE temp_cursor
+DEALLOCATE temp_cursor
+
+
+INSERT INTO #storecls (COMSERNO , SELSERN , HIER_MEMBER, CHILD , IS_HIER)
+select distinct COMSERN2 AS COMSERNO , OLAP_LCOMSEL.SELSERN , chain.HIER_MEMBER, chain.CHILD , chain.IS_HIER 
+from 
+(
+select parent.cchsern , parent.ordinal , parent.hier_member , children.hier_member as child , parent.is_hier from  #chain parent ,  #chain children 
+where parent.cchsern=children.cchsern and ( ( parent.is_hier=1 and parent.ordinal<=children.ordinal) or (  parent.is_hier=0 and parent.ordinal=children.ordinal )  )
+) chain
+inner join LCOMCOM on LCOMCOM.comsern1=chain.cchsern and UPPER(LCOMCOM.lcomatr1)='CHAIN'
+inner join OLAP_LCOMSEL on OLAP_LCOMSEL.comserno=lcomcom.comsern2
+inner join TSELECT on TSELECT.SELSERN=OLAP_LCOMSEL.SELSERN
+	 AND (CASE WHEN LEN(LCOMCOM.LCOMSTART)=8 THEN LCOMCOM.LCOMSTART ELSE '00000000' END)<=(CASE WHEN LEN(TSELECT.SELEND)=8 THEN TSELECT.SELEND ELSE '99999999' END)
+	 AND (CASE WHEN LEN(LCOMCOM.LCOMEND)=8 THEN LCOMCOM.LCOMEND ELSE '99999999' END)>=(CASE WHEN LEN(TSELECT.SELSTART)=8 THEN TSELECT.SELSTART ELSE '00000000' END)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DECLARE temp_cursor CURSOR FOR
+SELECT SELSERN, SELESERN , PRODSERN , REPLACE(SELCLS , ' ' , '') AS  COMSELCLS
+FROM TSELENTR WHERE LEN(REPLACE(SELCLS , ' ' , ''))>0
+
+OPEN temp_cursor
+
+FETCH NEXT FROM temp_cursor INTO @SELSERN, @SELESERN , @PRODSERN , @COMSELCLS 
+
+WHILE @@FETCH_STATUS=0
+	BEGIN
+		SET @ordinal=1
+
+		SET @prev_position=1
+		SET @position=CHARINDEX(',' , @COMSELCLS ,  @prev_position)
+		
+		------------------------------
+		IF @position=0
+			INSERT INTO #tselectcls(SELSERN, SELESERN, PRODSERN  , HIER_MEMBER )
+				VALUES(@SELSERN, @SELESERN, @PRODSERN , @COMSELCLS )
+
+		------------------------------
+		WHILE @position>0
+			BEGIN
+				INSERT INTO #tselectcls(SELSERN, SELESERN, PRODSERN , HIER_MEMBER )
+					VALUES(@SELSERN, @SELESERN, @PRODSERN  , SUBSTRING(@COMSELCLS , @prev_position, @position-@prev_position)  )
+
+
+				SET @prev_position=@position+1
+				SET @position=CHARINDEX(',' , @COMSELCLS ,  @prev_position)
+				
+				SET @ordinal=@ordinal+1
+			END
+
+		------------------------------
+
+		IF @prev_position>1 AND @position=0
+			INSERT INTO #tselectcls(SELSERN , SELESERN, PRODSERN  , HIER_MEMBER )
+				VALUES(@SELSERN, @SELESERN, @PRODSERN  , SUBSTRING(@COMSELCLS , @prev_position, LEN(@COMSELCLS)-@prev_position+1) )
+
+
+
+		
+
+		FETCH NEXT FROM temp_cursor INTO @SELSERN, @SELESERN, @PRODSERN , @COMSELCLS 
+
+
+	END
+
+CLOSE temp_cursor
+DEALLOCATE temp_cursor
+
+
+delete from #tselectcls where selesern not in (select selesern from OLAP_TSELENTR)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_BASE_SELECTION]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_BASE_SELECTION]
+/***********************************/
+
+
+
+--------------------------  INSERT INTO BASE SELECTION -----------------------------
+
+select distinct COMSERNO, PRODSERN , SELDATE , CAST(1 as smallint) as INSEL 
+into OLAP_BASE_SELECTION
+from
+(select top 100 percent * from OLAP_SELDATE order by seldate) tmp_seldate,
+OLAP_LCOMSEL, OLAP_TSELENTR
+where 
+OLAP_LCOMSEL.selsern=OLAP_TSELENTR.selsern
+and OLAP_TSELENTR.selestart=seldate
+and exists(select * from #tselectcls where #tselectcls.selsern=OLAP_LCOMSEL.selsern and #tselectcls.prodsern=OLAP_TSELENTR.prodsern  
+	and exists( select * from #storecls where #storecls.selsern=OLAP_LCOMSEL.selsern and #storecls.comserno=OLAP_LCOMSEL.comserno and #tselectcls.hier_member=#storecls.child
+		and exists(select * from lpropgr where lpropgr.prodsern=OLAP_TSELENTR.prodsern 
+		and exists(select * from #lcompgr where #lcompgr.pgrsern=lpropgr.pgrsern and #lcompgr.comserno=OLAP_LCOMSEL.comserno and #lcompgr.comselcls=#storecls.hier_member) )  ) )
+
+and not exists(
+select * from
+OLAP_LCOMSEL OLAP_LCOMSEL2, OLAP_TSELENTR tselentr2
+where 
+OLAP_LCOMSEL2.selsern=tselentr2.selsern
+and tselentr2.selestart<seldate and tselentr2.seleend>=seldate
+and OLAP_LCOMSEL.comserno=OLAP_LCOMSEL2.comserno and OLAP_TSELENTR.prodsern=tselentr2.prodsern
+and exists(select * from #tselectcls where #tselectcls.selsern=OLAP_LCOMSEL2.selsern and #tselectcls.prodsern=tselentr2.prodsern  
+	and exists( select * from #storecls where #storecls.selsern=OLAP_LCOMSEL2.selsern and #storecls.comserno=OLAP_LCOMSEL2.comserno and #tselectcls.hier_member=#storecls.child
+		and exists(select * from lpropgr where lpropgr.prodsern=tselentr2.prodsern 
+			and exists(select * from #lcompgr where #lcompgr.pgrsern=lpropgr.pgrsern and #lcompgr.comserno=OLAP_LCOMSEL2.comserno and #lcompgr.comselcls=#storecls.hier_member) )  ) )
+
+)
+
+
+union all
+
+
+select distinct COMSERNO, PRODSERN , SELDATE , CAST(-1 as smallint) as INSEL
+from
+(select top 100 percent * from OLAP_SELDATE order by seldate) tmp_seldate,
+OLAP_LCOMSEL, OLAP_TSELENTR
+where 
+OLAP_LCOMSEL.selsern=OLAP_TSELENTR.selsern
+and OLAP_TSELENTR.seleend=seldate
+and exists(select * from #tselectcls where #tselectcls.selsern=OLAP_LCOMSEL.selsern and #tselectcls.prodsern=OLAP_TSELENTR.prodsern  
+	and exists( select * from #storecls where #storecls.selsern=OLAP_LCOMSEL.selsern and #storecls.comserno=OLAP_LCOMSEL.comserno and #tselectcls.hier_member=#storecls.child
+		and exists(select * from lpropgr where lpropgr.prodsern=OLAP_TSELENTR.prodsern 
+			and exists(select * from #lcompgr where #lcompgr.pgrsern=lpropgr.pgrsern and #lcompgr.comserno=OLAP_LCOMSEL.comserno and #lcompgr.comselcls=#storecls.hier_member) )  ) )
+
+and not exists(
+select * from
+OLAP_LCOMSEL OLAP_LCOMSEL2, OLAP_TSELENTR tselentr2
+where 
+OLAP_LCOMSEL2.selsern=tselentr2.selsern
+and tselentr2.selestart<=seldate and tselentr2.seleend>seldate
+and OLAP_LCOMSEL.comserno=OLAP_LCOMSEL2.comserno and OLAP_TSELENTR.prodsern=tselentr2.prodsern
+and exists(select * from #tselectcls where #tselectcls.selsern=OLAP_LCOMSEL2.selsern and #tselectcls.prodsern=tselentr2.prodsern  
+	and exists( select * from #storecls where #storecls.selsern=OLAP_LCOMSEL2.selsern and #storecls.comserno=OLAP_LCOMSEL2.comserno and #tselectcls.hier_member=#storecls.child
+		and exists(select * from lpropgr where lpropgr.prodsern=tselentr2.prodsern 
+			and exists(select * from #lcompgr where #lcompgr.pgrsern=lpropgr.pgrsern and #lcompgr.comserno=OLAP_LCOMSEL2.comserno and #lcompgr.comselcls=#storecls.hier_member) )  ) )
+
+
+)
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+exec proc_insert_LOG 'creating indexes on OLAP_BASE_SELECTION'
+
+
+
+CREATE CLUSTERED INDEX IX_OLAP_BASE_SELECTION
+ON spp.OLAP_BASE_SELECTION( COMSERNO , PRODSERN , SELDATE              )
+
+CREATE NONCLUSTERED INDEX  IX_OLAP_BASE_SELECTION_SELDATE ON spp.OLAP_BASE_SELECTION( SELDATE )
+
+exec proc_insert_LOG 'done'
+
+
+
+DROP TABLE #storecls
+DROP TABLE #tselectcls
+DROP TABLE #chain
+DROP TABLE #lcompgr
+
+
+
+
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE spp.proc_fill_OLAP_SURVEY
+AS
+
+SET NOCOUNT ON
+
+/***********************************/
+if exists (select * from dbo.sysobjects where id = object_id(N'[spp].[OLAP_SURVEY]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [spp].[OLAP_SURVEY]
+/***********************************/
+
+
+/* SELECT INTO */
+select 
+IDENTITY(int,1,1) AS SURVEY_KEY ,
+SALMSERN,
+COMSERNO,
+SAMCHDATE,
+ANSWER,
+QUESTION,
+ANSWER_MEASURE
+INTO spp.OLAP_SURVEY
+from 
+(
+select  tsamerch.samchsern + tquest.questsern as SURVEY_KEY , tsamerch.salmsern , tsamerch.comserno , tsamerch.samchdate , 
+CAST(1 as real) AS ANSWER_MEASURE ,
+question , answer
+from spp.tsamerch tsamerch
+inner join spp.tqanswer tqanswer on tsamerch.samchsern=tqanswer.samchsern
+inner join spp.tquest tquest on tqanswer.questsern=tquest.questsern
+where tquest.ANSWFORM!='2'
+UNION
+select  tsamerch.samchsern + tquest.questsern as SURVEY_KEY ,  tsamerch.salmsern , tsamerch.comserno , tsamerch.samchdate , 
+CASE 
+	WHEN LTRIM(RTRIM(tqanswer.answer))='-' THEN 0 -- STUPID SQL SERVER BUG!!!
+	WHEN  ISNUMERIC(tqanswer.answer)=1 THEN CAST(REPLACE(tqanswer.answer , ',' , '.') as real)
+	ELSE 0
+END AS ANSWER_MEASURE ,
+question , 'Numeric' as answer
+from spp.tsamerch tsamerch
+inner join spp.tqanswer tqanswer on tsamerch.samchsern=tqanswer.samchsern
+inner join spp.tquest tquest on tqanswer.questsern=tquest.questsern
+where tquest.ANSWFORM='2' 
+) tbl
+
+
+
+-- INVALID CHARACTER WORKAROUND
+SET NOCOUNT ON
+DECLARE @c CHAR 
+DECLARE @i INT
+SET @i=0
+
+WHILE @i<32
+BEGIN
+	SET @c=CAST(@i AS CHAR)
+
+	EXEC( 
+	'UPDATE spp.OLAP_SURVEY
+	SET 
+	QUESTION=REPLACE(QUESTION, CHAR(' + @c + '), ''''),
+	ANSWER=REPLACE(ANSWER, CHAR(' + @c + '), '''')
+	'
+	)
+
+	SET @i=@i+1
+END
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

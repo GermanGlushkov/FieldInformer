@@ -1,0 +1,2 @@
+	<add key="EventLogName" value="FieldInformer.NET"/>
+	<add key="EventLogSource" value="COMPONENTNAME"/>

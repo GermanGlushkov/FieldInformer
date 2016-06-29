@@ -1,0 +1,26 @@
+HKCR
+{
+	XMLCellsetWrapper.XMLCellset.1 = s 'XMLCellset Class'
+	{
+		CLSID = s '{D2456D0D-43CF-4CC1-BBF5-F8347F758990}'
+	}
+	XMLCellsetWrapper.XMLCellset = s 'XMLCellset Class'
+	{
+		CLSID = s '{D2456D0D-43CF-4CC1-BBF5-F8347F758990}'
+		CurVer = s 'XMLCellsetWrapper.XMLCellset.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {D2456D0D-43CF-4CC1-BBF5-F8347F758990} = s 'XMLCellset Class'
+		{
+			ProgID = s 'XMLCellsetWrapper.XMLCellset.1'
+			VersionIndependentProgID = s 'XMLCellsetWrapper.XMLCellset'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			'TypeLib' = s '{74D91E29-9464-4E05-96A8-88629252B446}'
+		}
+	}
+}

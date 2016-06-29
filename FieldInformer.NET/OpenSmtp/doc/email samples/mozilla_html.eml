@@ -1,0 +1,19 @@
+x-sender: test@box
+x-receiver: administrator@localhost
+Received: from box ([192.168.1.5]) by localhost with Microsoft SMTPSVC(5.0.2195.2966);
+	 Sat, 7 Jul 2001 13:06:09 -0400
+Message-ID: <3B469899.9090704@box>
+Date: Sat, 07 Jul 2001 01:05:29 -0400
+From: ian <test@box>
+User-Agent: Mozilla/5.0 (X11; U; Linux 2.4.2-2 i686; en-US; 0.7) Gecko/20010316
+X-Accept-Language: en
+MIME-Version: 1.0
+To: administrator@localhost
+Subject: testing html
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Return-Path: test@box
+X-OriginalArrivalTime: 07 Jul 2001 17:06:09.0260 (UTC) FILETIME=[1E0082C0:01C10707]
+
+<html><head></head><body><b><big>Word up</big></b></body></html>
+

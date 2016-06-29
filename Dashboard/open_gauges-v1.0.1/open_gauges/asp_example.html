@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GPL Flash Gauge ASP Example</title>
+<!--
+GPL Flash Gauge ASP Example using SWFObject embed by Geoff Stearns.
+http://blog.deconcept.com/swfobject/
+-->
+<script type="text/javascript" src="swfobject1-5/swfobject.js"></script>
+
+<style type="text/css">
+	
+	body {
+		background-color: #5F5F5F;
+	}
+</style>
+
+</head>
+<body>
+	<!-- These are the display divs. Each is populated by SWFObject. The first is an example
+	using Flash SWFObject detection -->
+	<div id="pgauge">
+		<strong>You need to upgrade your Flash Player</strong>
+		This is replaced by the Flash content. 
+		Place your alternate content here and users without the Flash plugin or with 
+		Javascript turned off will see this. Content here allows you to leave out <code>noscript</code> 
+		tags. Include a link to <a href="index.html?detectflash=false">bypass the detection</a> if you wish.
+	</div>
+	
+	<!-- Here's the code to make the gauges work. -->
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/pgauge.swf", "pgauge", "200", "200", "9", "#000000");
+		
+		so.addVariable("funcName", "pgauge_data"); //Required!
+		so.addVariable("refresh", "2000"); //Required! 1000 = 1 sec
+		so.addVariable("bgimage", "images/gauge.jpg");
+ 		
+		so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, or whatever you choose.
+
+		so.addVariable("title", "Percent Gauge"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent")
+		
+		// This will detect the Flash version using SWFObject.
+		so.useExpressInstall('swfobject1-5/expressinstall.swf');
+		
+		so.write("pgauge");
+		// ]]>
+	</script>
+</body>
+</html>

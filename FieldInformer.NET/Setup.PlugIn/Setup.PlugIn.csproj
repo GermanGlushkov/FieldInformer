@@ -1,0 +1,332 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{033C73E4-08A2-4F39-84BF-4BE557DCD124}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Setup.PlugIn"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "WinExe"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "Setup.PlugIn"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "Common"
+                    Project = "{ABD39750-227A-44D2-9469-00B1308A31B9}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "System.Management"
+                    AssemblyName = "System.Management"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Management.dll"
+                />
+                <Reference
+                    Name = "System.Configuration.Install"
+                    AssemblyName = "System.Configuration.Install"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Configuration.Install.dll"
+                />
+                <Reference
+                    Name = "BusinessObjects"
+                    Project = "{6B10C452-21BE-463C-83EE-2367ED0A5113}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "DataAccess"
+                    Project = "{BB222519-E24D-46CB-9946-E3573E4BCEAE}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "DataAccess.Serviced"
+                    Project = "{7A8CAD89-C5AF-4310-A9F5-583734066363}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "App.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Installer.cs"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "InstallSql.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Main.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ServicelSettingsForm.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ServicelSettingsForm.resx"
+                    DependentUpon = "ServicelSettingsForm.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SqlSettingsForm.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SqlSettingsForm.resx"
+                    DependentUpon = "SqlSettingsForm.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "WebSettingsForm.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebSettingsForm.resx"
+                    DependentUpon = "WebSettingsForm.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Version_1_0.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Version_1_2.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "VersionBase.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DBConverter\DBConverter.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DBConverter\DBConverterForm.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DBConverter\DBConverterForm.resx"
+                    DependentUpon = "DBConverterForm.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Version_1_0\service\DBSALESPP.CAB"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\service\EditOlapDataSource.vbs"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\service\msmdarch.exe"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\service\reg_svc.bat"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Version_1_0\service\RestoreOlapCab.exe"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\service\start_svc.bat"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Version_1_0\service\stop_svc.bat"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Version_1_0\service\unreg_svc.bat"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\FI_nightly_job.vbs"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\SC.EXE"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\DBFINF_settings.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\DBFINF_sprocs.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\DBFINF_tables.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\DBFINF_views.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\DBSALESPP_settings.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\DBSALESPP_sprocs.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\DBSALESPP_tables.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\DBSALESPP_views.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_0\sql\sql_scripts\JOB.txt"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "Version_1_0\web\" />
+                <File
+                    RelPath = "Version_1_2\sql\FI_nightly_job.vbs"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\DBFINF_settings.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\DBFINF_sprocs.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\DBFINF_tables.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\DBFINF_views.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\DBSALESPP_settings.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\DBSALESPP_sprocs.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\DBSALESPP_tables.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\DBSALESPP_views.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Version_1_2\sql\sql_scripts\JOB.txt"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "Version_1_2\web\" />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

@@ -1,0 +1,1 @@
+C:\WINNT\Microsoft.NET\Framework\v1.1.4322\installutil -u "C:\Program Files\FieldForce Solutions Oy Ab\FieldInformer.Net Service COmponents\fi.winservices.exe"

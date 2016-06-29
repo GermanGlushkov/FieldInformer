@@ -1,0 +1,45 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ab7492a7-004a-4dd1-8431-4f092e412913" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Pricelist</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>OLAP TSELENTR</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="76a51ab0-9cf6-4e13-8276-608cbbe1ef50">
+          <ID>OLAP TSELENTR</ID>
+          <Name>OLAP TSELENTR</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="5eaba39d-1f8f-4c95-a553-d804aef26737">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_OLAP_TSELENTR</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>V OLAP LCOMSEL</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d152a769-93a4-4d6f-8dcf-e649bbd28823">
+          <ID>V OLAP LCOMSEL</ID>
+          <Name>V OLAP LCOMSEL</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="70f94606-ec83-49a0-a22a-28d0b8ec8527">
+            <DataSourceViewID>DBSALESPP</DataSourceViewID>
+            <TableID>spp_OLAP_LCOMSEL</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

@@ -1,0 +1,161 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8DD1DEA-01B8-4C20-B899-FB8BBB38825D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OlapSystem.Migration</RootNamespace>
+    <AssemblyName>OlapSystem.Migration</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ReportValidator.cs" />
+    <Compile Include="UnmatchedObjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnmatchedObjectsForm.Designer.cs">
+      <DependentUpon>UnmatchedObjectsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsValidation.cs">
+      <DependentUpon>ReportsValidation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsValidation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportsValidation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportValidationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportValidationForm.Designer.cs">
+      <DependentUpon>ReportValidationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DestSchema.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DestSchema.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UnmatchedObjectsForm.resx">
+      <DependentUpon>UnmatchedObjectsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportValidationForm.resx">
+      <DependentUpon>ReportValidationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchemaMapForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SchemaMapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="DestSchema.xsc">
+      <DependentUpon>DestSchema.xsd</DependentUpon>
+    </None>
+    <None Include="DestSchema.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DestSchema.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DestSchema.xss">
+      <DependentUpon>DestSchema.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportsValidation.xsc">
+      <DependentUpon>ReportsValidation.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsValidation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportsValidation.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportsValidation.xss">
+      <DependentUpon>ReportsValidation.xsd</DependentUpon>
+    </None>
+    <None Include="SourceSchemaMap.xsc">
+      <DependentUpon>SourceSchemaMap.xsd</DependentUpon>
+    </None>
+    <None Include="SourceSchemaMap.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SourceSchemaMap.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SourceSchemaMap.xss">
+      <DependentUpon>SourceSchemaMap.xsd</DependentUpon>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SchemaMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchemaMapForm.Designer.cs">
+      <DependentUpon>SchemaMapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SourceSchemaMap.cs">
+      <DependentUpon>SourceSchemaMap.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SourceSchemaMap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SourceSchemaMap.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1318 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8447.0 (2ac39600).
+//
+// c:\program files\microsoft visual studio\vc98\project\ch3\xmlcellsetwrapper\testxml\debug\msxaserv.tlh
+//
+// C++ source equivalent of Win32 type library C:\Program Files\Microsoft XML For Analysis SDK\msxaserv.dll
+// compiler-generated file created 07/12/02 at 21:58:56 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace MSXmlAnalysisSCLib {
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ XASC;
+struct __declspec(uuid("f416071a-8758-4228-9441-efff5a0c8163"))
+/* interface */ IXASC;
+struct tagDBPROPSET;
+struct tagDBPROP;
+struct tagDBID;
+union __MIDL_DBStructureDefinitions_0001;
+union __MIDL_DBStructureDefinitions_0002;
+struct __declspec(uuid("a4e7b9b0-26d4-437e-a487-bb338b7c70c2"))
+/* interface */ IXDPropertyMgr;
+typedef enum __MIDL___MIDL_itf_xdservice_0000_0004 eXDPropObjects;
+struct tagXDPropertyInfo;
+struct tagXmlForAnalysisProperties;
+typedef enum __MIDL___MIDL_itf_xdservice_0000_0001 eXmlForAnalysisPropID;
+typedef enum __MIDL___MIDL_itf_xdservice_0000_0002 eXmlForAnalysisEnums;
+struct __declspec(uuid("8e69c0ea-e777-44e7-bbfc-3f7a1d211958"))
+/* interface */ IXDRestrictionMgr;
+struct __declspec(uuid("0c733a8a-2a1c-11ce-ade5-00aa0044773d"))
+/* interface */ IDBProperties;
+struct tagDBPROPIDSET;
+struct tagDBPROPINFOSET;
+struct tagDBPROPINFO;
+struct __declspec(uuid("3eeee106-8ff8-46db-b4bb-719772d3a010"))
+/* interface */ IXDXMLRowset;
+struct __declspec(uuid("3bf79fc3-e0a7-4eb8-bb96-36d6b884b1f2"))
+/* interface */ IXDXMLRow;
+struct __declspec(uuid("0c733a8b-2a1c-11ce-ade5-00aa0044773d"))
+/* interface */ IDBInitialize;
+struct __declspec(uuid("0c733a5d-2a1c-11ce-ade5-00aa0044773d"))
+/* interface */ IDBCreateSession;
+struct __declspec(uuid("0c733a1d-2a1c-11ce-ade5-00aa0044773d"))
+/* interface */ IDBCreateCommand;
+struct __declspec(uuid("28775617-22fd-49b8-b807-af32ae802e48"))
+/* interface */ IXDEnumMgr;
+struct tag_inner_PROPVARIANT;
+union __MIDL___MIDL_itf_xdservice_0248_0001;
+struct tagBSTRBLOB;
+struct tagVersionedStream;
+struct _wireBRECORD;
+struct __declspec(uuid("0000002f-0000-0000-c000-000000000046"))
+/* interface */ IRecordInfo;
+struct _wireSAFEARR_BRECORD;
+struct _wireSAFEARR_HAVEIID;
+struct tagCAC;
+struct tagCABSTRBLOB;
+struct __declspec(uuid("fce8b885-99ad-4be2-919b-f170a9ab9510"))
+/* interface */ IXDStructure;
+struct /* coclass */ OLEDBConPool;
+struct __declspec(uuid("575688ff-d39f-43f9-88a7-9233f6c77482"))
+/* interface */ IOLEDBConPool;
+struct /* coclass */ ADOConPool;
+struct __declspec(uuid("42df17c6-73e8-4882-89d9-a736aff0fc2c"))
+/* dual interface */ IADOConPool;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IXASC, __uuidof(IXASC));
+_COM_SMARTPTR_TYPEDEF(IXDPropertyMgr, __uuidof(IXDPropertyMgr));
+_COM_SMARTPTR_TYPEDEF(IXDRestrictionMgr, __uuidof(IXDRestrictionMgr));
+_COM_SMARTPTR_TYPEDEF(IDBProperties, __uuidof(IDBProperties));
+_COM_SMARTPTR_TYPEDEF(IXDXMLRowset, __uuidof(IXDXMLRowset));
+_COM_SMARTPTR_TYPEDEF(IXDXMLRow, __uuidof(IXDXMLRow));
+_COM_SMARTPTR_TYPEDEF(IDBInitialize, __uuidof(IDBInitialize));
+_COM_SMARTPTR_TYPEDEF(IDBCreateSession, __uuidof(IDBCreateSession));
+_COM_SMARTPTR_TYPEDEF(IDBCreateCommand, __uuidof(IDBCreateCommand));
+_COM_SMARTPTR_TYPEDEF(IXDEnumMgr, __uuidof(IXDEnumMgr));
+_COM_SMARTPTR_TYPEDEF(IRecordInfo, __uuidof(IRecordInfo));
+_COM_SMARTPTR_TYPEDEF(IXDStructure, __uuidof(IXDStructure));
+_COM_SMARTPTR_TYPEDEF(IOLEDBConPool, __uuidof(IOLEDBConPool));
+_COM_SMARTPTR_TYPEDEF(IADOConPool, __uuidof(IADOConPool));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("0817bf44-b828-4416-a634-851a1a9debe3"))
+XASC;
+    // [ default ] interface IXASC
+
+struct __declspec(uuid("f416071a-8758-4228-9441-efff5a0c8163"))
+IXASC : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT ConvertProperties (
+        const _variant_t & in_varProperties,
+        unsigned long * out_pcPropSets,
+        struct tagDBPROPSET * * out_ppPropSets );
+    HRESULT InitializeDataSource (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IDBInitialize * * io_ppIDBInitialize );
+    HRESULT InitializeSession (
+        struct IDBInitialize * in_pIDBInitialize,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IDBCreateSession * * io_ppIDBSession );
+    HRESULT InitializeCommand (
+        struct IDBInitialize * in_pIDBInitialize,
+        struct IDBCreateSession * in_pIDBSession,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IDBCreateCommand * * io_ppIDBCommand );
+    HRESULT Execute (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IDBCreateCommand * in_pIDBCommand,
+        _bstr_t in_strQuery,
+        eXmlForAnalysisEnums in_eResultType,
+        long * out_pcRowsAffected,
+        IUnknown * * out_ppIUnknown );
+    HRESULT GetSchemaRowset (
+        struct IDBCreateCommand * in_pIDBCommand,
+        GUID * in_rguidSchema,
+        unsigned long in_cRestrictions,
+        VARIANT * in_rgRestrictions,
+        GUID * in_rIID,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        IUnknown * * out_ppRowset );
+    HRESULT ResultToXML (
+        IUnknown * in_pIUnkData,
+        eXmlForAnalysisEnums in_eAxisFormat,
+        long in_iStart,
+        long in_iEnd,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrRows );
+    HRESULT ResultToXMLStream (
+        IUnknown * in_pIUnkStream,
+        IUnknown * in_pIUnkData,
+        eXmlForAnalysisEnums in_eSchemaData,
+        eXmlForAnalysisEnums in_eAxisFormat,
+        long in_iStart,
+        long in_iEnd );
+    HRESULT GetPropertiesRowset (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData );
+    HRESULT GetSchemasRowset (
+        struct IDBCreateCommand * in_pIDBCommand,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        struct IXDEnumMgr * in_pIEnumMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData );
+    HRESULT GetDatasrcRowset (
+        struct IXDEnumMgr * in_pIEnumMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        VARIANT * in_pvarRestrictions,
+        IUnknown * in_pIDatasources,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData );
+    HRESULT GetKeywordsRowset (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        struct IXDEnumMgr * in_pIEnumMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData );
+    HRESULT GetLiteralsRowset (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        struct IXDEnumMgr * in_pIEnumMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData );
+    HRESULT GetEnumRowset (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData );
+    HRESULT InitStruct (
+        _bstr_t in_bstrStructName,
+        struct IXDStructure * * out_ppXDStruct );
+    HRESULT XMLArrayToSafeArray (
+        _bstr_t in_bstrXML,
+        VARIANT * out_pvarSafeArray );
+    HRESULT XMLDOMArrayToSafeArray (
+        IUnknown * in_pIXMLArrayNode,
+        VARIANT * out_pvarSafeArray );
+    HRESULT CreatePropertyManager (
+        IUnknown * in_pIXMLDocConfig1,
+        IUnknown * in_pIXMLDocConfig2,
+        IUnknown * in_pIXMLNodeProperties,
+        struct IXDPropertyMgr * * out_ppIXDPropertyMgr );
+    HRESULT CreatePropertyManagerEx (
+        struct IXDPropertyMgr * in_pIXDPropMgrSrc,
+        IUnknown * in_pIXMLDocConfig1,
+        IUnknown * in_pIXMLDocConfig2,
+        IUnknown * in_pIXMLNodeProperties,
+        struct IXDPropertyMgr * * out_ppIXDPropertyMgr );
+    HRESULT CreateEnumManager (
+        IUnknown * in_pIXMLDocConfig1,
+        IUnknown * in_pIXMLDocConfig2,
+        struct IXDEnumMgr * * out_ppIXDEnumMgr );
+    HRESULT CreateRestManager (
+        IUnknown * in_pIXMLDocConfig1,
+        IUnknown * in_pIXMLDocConfig2,
+        struct IXDRestrictionMgr * * out_ppIXDRestMgr );
+    IUnknownPtr CreatePool ( );
+    _variant_t GetPropertyValue (
+        IUnknown * in_pObject,
+        GUID in_PropSetGuid,
+        unsigned long in_PropId );
+    HRESULT DeletePropertySets (
+        struct tagDBPROPSET * * in_ppPropSet,
+        unsigned long in_cPropSets );
+    _bstr_t GetDatabaseRoles (
+        struct IDBCreateCommand * in_pIDBCommand,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        _bstr_t in_bstrDatabaseName );
+    _bstr_t GetMdxFromMdXml (
+        _bstr_t in_bstrXML,
+        _bstr_t in_bstrXSL );
+    _bstr_t GetConfigLocation ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_ConvertProperties (
+        VARIANT in_varProperties,
+        unsigned long * out_pcPropSets,
+        struct tagDBPROPSET * * out_ppPropSets ) = 0;
+    virtual HRESULT __stdcall raw_InitializeDataSource (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IDBInitialize * * io_ppIDBInitialize ) = 0;
+    virtual HRESULT __stdcall raw_InitializeSession (
+        struct IDBInitialize * in_pIDBInitialize,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IDBCreateSession * * io_ppIDBSession ) = 0;
+    virtual HRESULT __stdcall raw_InitializeCommand (
+        struct IDBInitialize * in_pIDBInitialize,
+        struct IDBCreateSession * in_pIDBSession,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IDBCreateCommand * * io_ppIDBCommand ) = 0;
+    virtual HRESULT __stdcall raw_Execute (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IDBCreateCommand * in_pIDBCommand,
+        BSTR in_strQuery,
+        eXmlForAnalysisEnums in_eResultType,
+        long * out_pcRowsAffected,
+        IUnknown * * out_ppIUnknown ) = 0;
+    virtual HRESULT __stdcall raw_GetSchemaRowset (
+        struct IDBCreateCommand * in_pIDBCommand,
+        GUID * in_rguidSchema,
+        unsigned long in_cRestrictions,
+        VARIANT * in_rgRestrictions,
+        GUID * in_rIID,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        IUnknown * * out_ppRowset ) = 0;
+    virtual HRESULT __stdcall raw_ResultToXML (
+        IUnknown * in_pIUnkData,
+        eXmlForAnalysisEnums in_eAxisFormat,
+        long in_iStart,
+        long in_iEnd,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrRows ) = 0;
+    virtual HRESULT __stdcall raw_ResultToXMLStream (
+        IUnknown * in_pIUnkStream,
+        IUnknown * in_pIUnkData,
+        eXmlForAnalysisEnums in_eSchemaData,
+        eXmlForAnalysisEnums in_eAxisFormat,
+        long in_iStart,
+        long in_iEnd ) = 0;
+    virtual HRESULT __stdcall raw_GetPropertiesRowset (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData ) = 0;
+    virtual HRESULT __stdcall raw_GetSchemasRowset (
+        struct IDBCreateCommand * in_pIDBCommand,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        struct IXDEnumMgr * in_pIEnumMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData ) = 0;
+    virtual HRESULT __stdcall raw_GetDatasrcRowset (
+        struct IXDEnumMgr * in_pIEnumMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        VARIANT * in_pvarRestrictions,
+        IUnknown * in_pIDatasources,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData ) = 0;
+    virtual HRESULT __stdcall raw_GetKeywordsRowset (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        struct IXDEnumMgr * in_pIEnumMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData ) = 0;
+    virtual HRESULT __stdcall raw_GetLiteralsRowset (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        struct IXDEnumMgr * in_pIEnumMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData ) = 0;
+    virtual HRESULT __stdcall raw_GetEnumRowset (
+        struct IXDPropertyMgr * in_pIPropMgr,
+        struct IXDRestrictionMgr * in_pIRestMgr,
+        VARIANT * in_pvarRestrictions,
+        BSTR * out_pbstrSchema,
+        BSTR * out_pbstrData ) = 0;
+    virtual HRESULT __stdcall raw_InitStruct (
+        BSTR in_bstrStructName,
+        struct IXDStructure * * out_ppXDStruct ) = 0;
+    virtual HRESULT __stdcall raw_XMLArrayToSafeArray (
+        BSTR in_bstrXML,
+        VARIANT * out_pvarSafeArray ) = 0;
+    virtual HRESULT __stdcall raw_XMLDOMArrayToSafeArray (
+        IUnknown * in_pIXMLArrayNode,
+        VARIANT * out_pvarSafeArray ) = 0;
+    virtual HRESULT __stdcall raw_CreatePropertyManager (
+        IUnknown * in_pIXMLDocConfig1,
+        IUnknown * in_pIXMLDocConfig2,
+        IUnknown * in_pIXMLNodeProperties,
+        struct IXDPropertyMgr * * out_ppIXDPropertyMgr ) = 0;
+    virtual HRESULT __stdcall raw_CreatePropertyManagerEx (
+        struct IXDPropertyMgr * in_pIXDPropMgrSrc,
+        IUnknown * in_pIXMLDocConfig1,
+        IUnknown * in_pIXMLDocConfig2,
+        IUnknown * in_pIXMLNodeProperties,
+        struct IXDPropertyMgr * * out_ppIXDPropertyMgr ) = 0;
+    virtual HRESULT __stdcall raw_CreateEnumManager (
+        IUnknown * in_pIXMLDocConfig1,
+        IUnknown * in_pIXMLDocConfig2,
+        struct IXDEnumMgr * * out_ppIXDEnumMgr ) = 0;
+    virtual HRESULT __stdcall raw_CreateRestManager (
+        IUnknown * in_pIXMLDocConfig1,
+        IUnknown * in_pIXMLDocConfig2,
+        struct IXDRestrictionMgr * * out_ppIXDRestMgr ) = 0;
+    virtual HRESULT __stdcall raw_CreatePool (
+        IUnknown * * out_ppIXDPool ) = 0;
+    virtual HRESULT __stdcall raw_GetPropertyValue (
+        IUnknown * in_pObject,
+        GUID in_PropSetGuid,
+        unsigned long in_PropId,
+        VARIANT * out_varPropValue ) = 0;
+    virtual HRESULT __stdcall raw_DeletePropertySets (
+        struct tagDBPROPSET * * in_ppPropSet,
+        unsigned long in_cPropSets ) = 0;
+    virtual HRESULT __stdcall raw_GetDatabaseRoles (
+        struct IDBCreateCommand * in_pIDBCommand,
+        struct IXDPropertyMgr * in_pIPropMgr,
+        BSTR in_bstrDatabaseName,
+        BSTR * out_bstrRoles ) = 0;
+    virtual HRESULT __stdcall raw_GetMdxFromMdXml (
+        BSTR in_bstrXML,
+        BSTR in_bstrXSL,
+        BSTR * out_pbstrMDX ) = 0;
+    virtual HRESULT __stdcall raw_GetConfigLocation (
+        BSTR * out_pbstrConfigLocation ) = 0;
+};
+
+struct tagDBPROPSET
+{
+    struct tagDBPROP * rgProperties;
+    unsigned long cProperties;
+    GUID guidPropertySet;
+};
+
+union __MIDL_DBStructureDefinitions_0001
+{
+    GUID guid;
+    GUID * pguid;
+};
+
+union __MIDL_DBStructureDefinitions_0002
+{
+    LPWSTR pwszName;
+    unsigned long ulPropid;
+};
+
+struct tagDBID
+{
+    union __MIDL_DBStructureDefinitions_0001 uGuid;
+    unsigned long eKind;
+    union __MIDL_DBStructureDefinitions_0002 uName;
+};
+
+struct tagDBPROP
+{
+    unsigned long dwPropertyID;
+    unsigned long dwOptions;
+    unsigned long dwStatus;
+    struct tagDBID colid;
+    VARIANT vValue;
+};
+
+struct __declspec(uuid("a4e7b9b0-26d4-437e-a487-bb338b7c70c2"))
+IXDPropertyMgr : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT GetPropertiesForObject (
+        eXDPropObjects in_ePropertyObject,
+        unsigned long * out_pcPropSets,
+        struct tagDBPROPSET * * out_ppPropSets );
+    HRESULT GetPropertyInfo (
+        _bstr_t in_strPropertyName,
+        struct tagXDPropertyInfo * out_pPropInfo );
+    HRESULT GetProperties (
+        IUnknown * * out_ppIXMLNodeList1,
+        IUnknown * * out_ppIXMLNodeList2 );
+    _bstr_t FindPropertySetByGUID (
+        _bstr_t in_bstrGUID );
+    _bstr_t FindPropertyNameByPropSet (
+        _bstr_t in_bstrPropSet,
+        _bstr_t in_bstrPropId );
+    HRESULT FindPropertyId (
+        _bstr_t in_bstrPropSet,
+        _bstr_t in_bstrPropId,
+        unsigned long * out_pPropId );
+    HRESULT GetXmlForAnalysisProperties (
+        struct tagXmlForAnalysisProperties * * out_ppXmlProps );
+    HRESULT GetXmlForAnalysisProperty (
+        eXmlForAnalysisPropID in_PropId,
+        struct tagXmlForAnalysisProperties * * out_ppXmlProp );
+    HRESULT GetXmlForAnalysisPropertyValue (
+        eXmlForAnalysisPropID in_PropId,
+        VARIANT * out_pvarPropValue,
+        eXmlForAnalysisEnums * out_pEnumValue );
+    _bstr_t ConnectionStringFromPropSets (
+        struct tagDBPROPSET * in_rgPropSets,
+        unsigned long in_cPropSets );
+    HRESULT SelectMatchingProperties (
+        struct IXDRestrictionMgr * in_pRestMgr,
+        VARIANT * in_pvarRestrictions,
+        unsigned char * * out_phMatches,
+        unsigned long * out_cMatches );
+    HRESULT AddPropertiesToRowsetForObject (
+        unsigned char * in_hMatches,
+        unsigned long in_cMatches,
+        eXDPropObjects in_ePropObject,
+        struct IDBProperties * in_pIDBProperties,
+        struct IXDXMLRowset * in_pIXDRowset );
+    HRESULT ReleaseMatchingProperties (
+        unsigned char * in_hMatches,
+        unsigned long in_cMatches );
+    HRESULT ClonePropertyInfo (
+        unsigned long * out_pcPropInfo,
+        struct tagXDPropertyInfo * * out_ppXDPropInfo );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetPropertiesForObject (
+        eXDPropObjects in_ePropertyObject,
+        unsigned long * out_pcPropSets,
+        struct tagDBPROPSET * * out_ppPropSets ) = 0;
+    virtual HRESULT __stdcall raw_GetPropertyInfo (
+        BSTR in_strPropertyName,
+        struct tagXDPropertyInfo * out_pPropInfo ) = 0;
+    virtual HRESULT __stdcall raw_GetProperties (
+        IUnknown * * out_ppIXMLNodeList1,
+        IUnknown * * out_ppIXMLNodeList2 ) = 0;
+    virtual HRESULT __stdcall raw_FindPropertySetByGUID (
+        BSTR in_bstrGUID,
+        BSTR * out_bstrPropSet ) = 0;
+    virtual HRESULT __stdcall raw_FindPropertyNameByPropSet (
+        BSTR in_bstrPropSet,
+        BSTR in_bstrPropId,
+        BSTR * out_bstrPropName ) = 0;
+    virtual HRESULT __stdcall raw_FindPropertyId (
+        BSTR in_bstrPropSet,
+        BSTR in_bstrPropId,
+        unsigned long * out_pPropId ) = 0;
+    virtual HRESULT __stdcall raw_GetXmlForAnalysisProperties (
+        struct tagXmlForAnalysisProperties * * out_ppXmlProps ) = 0;
+    virtual HRESULT __stdcall raw_GetXmlForAnalysisProperty (
+        eXmlForAnalysisPropID in_PropId,
+        struct tagXmlForAnalysisProperties * * out_ppXmlProp ) = 0;
+    virtual HRESULT __stdcall raw_GetXmlForAnalysisPropertyValue (
+        eXmlForAnalysisPropID in_PropId,
+        VARIANT * out_pvarPropValue,
+        eXmlForAnalysisEnums * out_pEnumValue ) = 0;
+    virtual HRESULT __stdcall raw_ConnectionStringFromPropSets (
+        struct tagDBPROPSET * in_rgPropSets,
+        unsigned long in_cPropSets,
+        BSTR * out_pbstrConnection ) = 0;
+    virtual HRESULT __stdcall raw_SelectMatchingProperties (
+        struct IXDRestrictionMgr * in_pRestMgr,
+        VARIANT * in_pvarRestrictions,
+        unsigned char * * out_phMatches,
+        unsigned long * out_cMatches ) = 0;
+    virtual HRESULT __stdcall raw_AddPropertiesToRowsetForObject (
+        unsigned char * in_hMatches,
+        unsigned long in_cMatches,
+        eXDPropObjects in_ePropObject,
+        struct IDBProperties * in_pIDBProperties,
+        struct IXDXMLRowset * in_pIXDRowset ) = 0;
+    virtual HRESULT __stdcall raw_ReleaseMatchingProperties (
+        unsigned char * in_hMatches,
+        unsigned long in_cMatches ) = 0;
+    virtual HRESULT __stdcall raw_ClonePropertyInfo (
+        unsigned long * out_pcPropInfo,
+        struct tagXDPropertyInfo * * out_ppXDPropInfo ) = 0;
+};
+
+enum __MIDL___MIDL_itf_xdservice_0000_0004
+{
+    XD_PROP_OBJECT_NONE = 0,
+    XD_PROP_OBJECT_DATASOURCE = 1,
+    XD_PROP_OBJECT_DATASOURCE_INIT = 2,
+    XD_PROP_OBJECT_DATASOURCE_INFO = 3,
+    XD_PROP_OBJECT_SESSION = 4,
+    XD_PROP_OBJECT_COMMAND = 5,
+    XD_PROP_OBJECT_NUM = 5
+};
+
+enum __MIDL___MIDL_itf_xdservice_0000_0003
+{
+    XD_ACCESS_NONE = 0,
+    XD_ACCESS_READ = 1,
+    XD_ACCESS_WRITE = 2,
+    XD_ACCESS_READ_WRITE = 3,
+    XD_ACCESS_NUM = 3
+};
+
+struct tagXDPropertyInfo
+{
+    BSTR m_strPropName;
+    BSTR m_strXmlType;
+    enum __MIDL___MIDL_itf_xdservice_0000_0003 m_eAccess;
+    VARIANT m_varDefaultValue;
+    enum __MIDL___MIDL_itf_xdservice_0000_0004 m_ePropObject;
+    GUID m_guidPropSet;
+    unsigned long m_PropId;
+};
+
+enum __MIDL___MIDL_itf_xdservice_0000_0001
+{
+    XD_PROPID_INVALID = -1,
+    XD_PROPID_DATASOURCE_INFO = 0,
+    XD_PROPID_TIMEOUT = 1,
+    XD_PROPID_USERNAME = 2,
+    XD_PROPID_PASSWORD = 3,
+    XD_PROPID_LCID = 4,
+    XD_PROPID_CATALOG = 5,
+    XD_PROPID_PROVIDERNAME = 6,
+    XD_PROPID_PROVIDERVERSION = 7,
+    XD_PROPID_STATE_SUPPORT = 8,
+    XD_PROPID_RESULTSET_CONTENT = 9,
+    XD_PROPID_RESULTSET_FORMAT = 10,
+    XD_PROPID_RESULTSET_AXIS_FORMAT = 11,
+    XD_PROPID_BEGIN_RANGE = 12,
+    XD_PROPID_END_RANGE = 13,
+    XD_PROPID_MDXSUPPORT = 14,
+    XD_PROPID_NUM = 14
+};
+
+struct tagXmlForAnalysisProperties
+{
+    enum __MIDL___MIDL_itf_xdservice_0000_0001 m_PropId;
+    BSTR m_strPropName;
+    unsigned int m_DescriptionResourceID;
+    BSTR m_strEnumName;
+};
+
+enum __MIDL___MIDL_itf_xdservice_0000_0002
+{
+    XD_ENUM_UNDEFINED = -1,
+    XD_ENUM_PROVIDER_TYPE = 0,
+    XD_ENUM_PROVIDER_TYPE_TDP = 1,
+    XD_ENUM_PROVIDER_TYPE_MDP = 2,
+    XD_ENUM_PROVIDER_TYPE_DMP = 3,
+    XD_ENUM_PROVIDER_TYPE_DOCSOURCE = 4,
+    XD_ENUM_AUTHMODE = 10,
+    XD_ENUM_AUTHMODE_UNAUTHENTICATED = 11,
+    XD_ENUM_AUTHMODE_AUTHENTICATED = 12,
+    XD_ENUM_AUTHMODE_INTEGRATED = 13,
+    XD_ENUM_PROPERTY_ACCESS_TYPE = 20,
+    XD_ENUM_PROPERTY_ACCESS_TYPE_READ = 21,
+    XD_ENUM_PROPERTY_ACCESS_TYPE_WRITE = 22,
+    XD_ENUM_PROPERTY_ACCESS_TYPE_READ_WRITE = 23,
+    XD_ENUM_STATE_SUPPORT = 30,
+    XD_ENUM_STATE_SUPPORT_NONE = 31,
+    XD_ENUM_STATE_SUPPORT_SESSIONS = 32,
+    XD_ENUM_STATE_ACTION_VERB = 40,
+    XD_ENUM_STATE_ACTION_VERB_BEGINSESS = 41,
+    XD_ENUM_STATE_ACTION_VERB_ENDSESS = 42,
+    XD_ENUM_STATE_ACTION_VERB_SESSION = 43,
+    XD_ENUM_RESULTSET_FORMAT = 50,
+    XD_ENUM_RESULTSET_FORMAT_TABULAR = 51,
+    XD_ENUM_RESULTSET_FORMAT_MULTIDIM = 52,
+    XD_ENUM_RESULTSET_CONTENTS = 60,
+    XD_ENUM_RESULTSET_CONTENTS_NONE = 61,
+    XD_ENUM_RESULTSET_CONTENTS_SCHEMA = 62,
+    XD_ENUM_RESULTSET_CONTENTS_DATA = 63,
+    XD_ENUM_RESULTSET_CONTENTS_SCHEMADATA = 64,
+    XD_ENUM_AXIS_TUPLES = 70,
+    XD_ENUM_AXIS_CLUSTERS = 71,
+    XD_ENUM_AXIS_CUSTOM = 72,
+    XD_ENUM_MDXSUPPORT_CORE = 80,
+    XD_ENUM_NUM = 80
+};
+
+struct __declspec(uuid("8e69c0ea-e777-44e7-bbfc-3f7a1d211958"))
+IXDRestrictionMgr : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT MapRestrictionsToVariant (
+        _bstr_t in_bstrSchema,
+        const _variant_t & in_varRestArray,
+        unsigned long * out_pcRestrictions,
+        VARIANT * * out_ppRestrictions );
+    VARIANT_BOOL IsExcludedByRestriction (
+        const _variant_t & in_varRestArray,
+        _bstr_t in_bstrRestName,
+        const _variant_t & in_varValue );
+    HRESULT FindRestriction (
+        const _variant_t & in_varRestArray,
+        _bstr_t in_bstrRestName,
+        VARIANT * out_pRestValue );
+    _bstr_t GetRestrictionsOfSchema (
+        _bstr_t in_bstrSchema,
+        const _variant_t & in_varRestArray );
+    HRESULT ConstructDBLiteralsFromRestrictions (
+        IUnknown * in_pIEnumMgr,
+        VARIANT * in_pvarRestrictions,
+        unsigned long * * out_ppLiterals,
+        unsigned long * out_pcLiterals );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_MapRestrictionsToVariant (
+        BSTR in_bstrSchema,
+        VARIANT in_varRestArray,
+        unsigned long * out_pcRestrictions,
+        VARIANT * * out_ppRestrictions ) = 0;
+    virtual HRESULT __stdcall raw_IsExcludedByRestriction (
+        VARIANT in_varRestArray,
+        BSTR in_bstrRestName,
+        VARIANT in_varValue,
+        VARIANT_BOOL * out_pfExcluded ) = 0;
+    virtual HRESULT __stdcall raw_FindRestriction (
+        VARIANT in_varRestArray,
+        BSTR in_bstrRestName,
+        VARIANT * out_pRestValue ) = 0;
+    virtual HRESULT __stdcall raw_GetRestrictionsOfSchema (
+        BSTR in_bstrSchema,
+        VARIANT in_varRestArray,
+        BSTR * out_pstrRestrictions ) = 0;
+    virtual HRESULT __stdcall raw_ConstructDBLiteralsFromRestrictions (
+        IUnknown * in_pIEnumMgr,
+        VARIANT * in_pvarRestrictions,
+        unsigned long * * out_ppLiterals,
+        unsigned long * out_pcLiterals ) = 0;
+};
+
+struct __declspec(uuid("0c733a8a-2a1c-11ce-ade5-00aa0044773d"))
+IDBProperties : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT RemoteGetProperties (
+        unsigned long cPropertyIDSets,
+        struct tagDBPROPIDSET * rgPropertyIDSets,
+        unsigned long * pcPropertySets,
+        struct tagDBPROPSET * * prgPropertySets,
+        struct IErrorInfo * * ppErrorInfoRem );
+    HRESULT RemoteGetPropertyInfo (
+        unsigned long cPropertyIDSets,
+        struct tagDBPROPIDSET * rgPropertyIDSets,
+        unsigned long * pcPropertyInfoSets,
+        struct tagDBPROPINFOSET * * prgPropertyInfoSets,
+        unsigned long * pcOffsets,
+        unsigned long * * prgDescOffsets,
+        unsigned long * pcbDescBuffer,
+        short * * ppDescBuffer,
+        struct IErrorInfo * * ppErrorInfoRem );
+    HRESULT RemoteSetProperties (
+        unsigned long cPropertySets,
+        struct tagDBPROPSET * rgPropertySets,
+        unsigned long cTotalProps,
+        unsigned long * rgPropStatus,
+        struct IErrorInfo * * ppErrorInfoRem );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_RemoteGetProperties (
+        unsigned long cPropertyIDSets,
+        struct tagDBPROPIDSET * rgPropertyIDSets,
+        unsigned long * pcPropertySets,
+        struct tagDBPROPSET * * prgPropertySets,
+        struct IErrorInfo * * ppErrorInfoRem ) = 0;
+    virtual HRESULT __stdcall raw_RemoteGetPropertyInfo (
+        unsigned long cPropertyIDSets,
+        struct tagDBPROPIDSET * rgPropertyIDSets,
+        unsigned long * pcPropertyInfoSets,
+        struct tagDBPROPINFOSET * * prgPropertyInfoSets,
+        unsigned long * pcOffsets,
+        unsigned long * * prgDescOffsets,
+        unsigned long * pcbDescBuffer,
+        short * * ppDescBuffer,
+        struct IErrorInfo * * ppErrorInfoRem ) = 0;
+    virtual HRESULT __stdcall raw_RemoteSetProperties (
+        unsigned long cPropertySets,
+        struct tagDBPROPSET * rgPropertySets,
+        unsigned long cTotalProps,
+        unsigned long * rgPropStatus,
+        struct IErrorInfo * * ppErrorInfoRem ) = 0;
+};
+
+struct tagDBPROPIDSET
+{
+    unsigned long * rgPropertyIDs;
+    unsigned long cPropertyIDs;
+    GUID guidPropertySet;
+};
+
+struct tagDBPROPINFOSET
+{
+    struct tagDBPROPINFO * rgPropertyInfos;
+    unsigned long cPropertyInfos;
+    GUID guidPropertySet;
+};
+
+struct tagDBPROPINFO
+{
+    LPWSTR pwszDescription;
+    unsigned long dwPropertyID;
+    unsigned long dwFlags;
+    unsigned short vtType;
+    VARIANT vValues;
+};
+
+struct __declspec(uuid("3eeee106-8ff8-46db-b4bb-719772d3a010"))
+IXDXMLRowset : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT AddRow (
+        struct IXDXMLRow * in_pXMLRow );
+    _bstr_t GetColumnValueString (
+        unsigned long in_iCol,
+        unsigned long in_iRow );
+    _variant_t GetColumnValue (
+        unsigned long in_iCol,
+        unsigned long in_iRow );
+    unsigned long GetRowCount ( );
+    long IsXmlColumn (
+        unsigned long in_iCol );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_AddRow (
+        struct IXDXMLRow * in_pXMLRow ) = 0;
+    virtual HRESULT __stdcall raw_GetColumnValueString (
+        unsigned long in_iCol,
+        unsigned long in_iRow,
+        BSTR * out_pbstrValue ) = 0;
+    virtual HRESULT __stdcall raw_GetColumnValue (
+        unsigned long in_iCol,
+        unsigned long in_iRow,
+        VARIANT * out_pvarValue ) = 0;
+    virtual HRESULT __stdcall raw_GetRowCount (
+        unsigned long * out_pcRows ) = 0;
+    virtual HRESULT __stdcall raw_IsXmlColumn (
+        unsigned long in_iCol,
+        long * out_pfIsXmlColumn ) = 0;
+};
+
+struct __declspec(uuid("3bf79fc3-e0a7-4eb8-bb96-36d6b884b1f2"))
+IXDXMLRow : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetColumnValue (
+        unsigned long in_iCol );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetColumnValue (
+        unsigned long in_iCol,
+        VARIANT * out_pvarValue ) = 0;
+};
+
+struct __declspec(uuid("0c733a8b-2a1c-11ce-ade5-00aa0044773d"))
+IDBInitialize : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT RemoteInitialize (
+        struct IErrorInfo * * ppErrorInfoRem );
+    HRESULT RemoteUninitialize (
+        struct IErrorInfo * * ppErrorInfoRem );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_RemoteInitialize (
+        struct IErrorInfo * * ppErrorInfoRem ) = 0;
+    virtual HRESULT __stdcall raw_RemoteUninitialize (
+        struct IErrorInfo * * ppErrorInfoRem ) = 0;
+};
+
+struct __declspec(uuid("0c733a5d-2a1c-11ce-ade5-00aa0044773d"))
+IDBCreateSession : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT RemoteCreateSession (
+        IUnknown * pUnkOuter,
+        GUID * riid,
+        IUnknown * * ppDBSession,
+        struct IErrorInfo * * ppErrorInfoRem );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_RemoteCreateSession (
+        IUnknown * pUnkOuter,
+        GUID * riid,
+        IUnknown * * ppDBSession,
+        struct IErrorInfo * * ppErrorInfoRem ) = 0;
+};
+
+struct __declspec(uuid("0c733a1d-2a1c-11ce-ade5-00aa0044773d"))
+IDBCreateCommand : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT RemoteCreateCommand (
+        IUnknown * pUnkOuter,
+        GUID * riid,
+        IUnknown * * ppCommand,
+        struct IErrorInfo * * ppErrorInfoRem );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_RemoteCreateCommand (
+        IUnknown * pUnkOuter,
+        GUID * riid,
+        IUnknown * * ppCommand,
+        struct IErrorInfo * * ppErrorInfoRem ) = 0;
+};
+
+struct __declspec(uuid("28775617-22fd-49b8-b807-af32ae802e48"))
+IXDEnumMgr : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT MapEnumToValue (
+        _bstr_t in_strPath,
+        _bstr_t in_strEnum,
+        struct tag_inner_PROPVARIANT * out_pValue );
+    HRESULT MapValueToEnum (
+        _bstr_t in_strPath,
+        _bstr_t in_strValue,
+        BSTR * out_pstrEnum );
+    _bstr_t GetFieldValue (
+        IUnknown * in_pIDOMNode,
+        _bstr_t in_strFieldName );
+    _bstr_t GetFieldValueXml (
+        IUnknown * in_pIDOMNode,
+        _bstr_t in_strFieldName );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_MapEnumToValue (
+        BSTR in_strPath,
+        BSTR in_strEnum,
+        struct tag_inner_PROPVARIANT * out_pValue ) = 0;
+    virtual HRESULT __stdcall raw_MapValueToEnum (
+        BSTR in_strPath,
+        BSTR in_strValue,
+        BSTR * out_pstrEnum ) = 0;
+    virtual HRESULT __stdcall raw_GetFieldValue (
+        IUnknown * in_pIDOMNode,
+        BSTR in_strFieldName,
+        BSTR * out_pbstrName ) = 0;
+    virtual HRESULT __stdcall raw_GetFieldValueXml (
+        IUnknown * in_pIDOMNode,
+        BSTR in_strFieldName,
+        BSTR * out_pbstrXml ) = 0;
+};
+
+struct tagBSTRBLOB
+{
+    unsigned long cbSize;
+    unsigned char * pData;
+};
+
+struct tagVersionedStream
+{
+    GUID guidVersion;
+    struct IStream * pStream;
+};
+
+struct _wireBRECORD
+{
+    unsigned long fFlags;
+    unsigned long clSize;
+    struct IRecordInfo * pRecInfo;
+    unsigned char * pRecord;
+};
+
+struct __declspec(uuid("0000002f-0000-0000-c000-000000000046"))
+IRecordInfo : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT RecordInit (
+        void * pvNew );
+    HRESULT RecordClear (
+        void * pvExisting );
+    HRESULT RecordCopy (
+        void * pvExisting,
+        void * pvNew );
+    HRESULT GetGUID (
+        GUID * pguid );
+    HRESULT GetName (
+        BSTR * pbstrName );
+    HRESULT GetSize (
+        unsigned long * pcbSize );
+    HRESULT GetTypeInfo (
+        struct ITypeInfo * * ppTypeInfo );
+    HRESULT GetField (
+        void * pvData,
+        LPWSTR szFieldName,
+        VARIANT * pvarField );
+    HRESULT GetFieldNoCopy (
+        void * pvData,
+        LPWSTR szFieldName,
+        VARIANT * pvarField,
+        void * * ppvDataCArray );
+    HRESULT PutField (
+        unsigned long wFlags,
+        void * pvData,
+        LPWSTR szFieldName,
+        VARIANT * pvarField );
+    HRESULT PutFieldNoCopy (
+        unsigned long wFlags,
+        void * pvData,
+        LPWSTR szFieldName,
+        VARIANT * pvarField );
+    HRESULT GetFieldNames (
+        unsigned long * pcNames,
+        BSTR * rgBstrNames );
+    HRESULT RecordCreateCopy (
+        void * pvSource,
+        void * * ppvDest );
+    HRESULT RecordDestroy (
+        void * pvRecord );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_RecordInit (
+        void * pvNew ) = 0;
+    virtual HRESULT __stdcall raw_RecordClear (
+        void * pvExisting ) = 0;
+    virtual HRESULT __stdcall raw_RecordCopy (
+        void * pvExisting,
+        void * pvNew ) = 0;
+    virtual HRESULT __stdcall raw_GetGUID (
+        GUID * pguid ) = 0;
+    virtual HRESULT __stdcall raw_GetName (
+        BSTR * pbstrName ) = 0;
+    virtual HRESULT __stdcall raw_GetSize (
+        unsigned long * pcbSize ) = 0;
+    virtual HRESULT __stdcall raw_GetTypeInfo (
+        struct ITypeInfo * * ppTypeInfo ) = 0;
+    virtual HRESULT __stdcall raw_GetField (
+        void * pvData,
+        LPWSTR szFieldName,
+        VARIANT * pvarField ) = 0;
+    virtual HRESULT __stdcall raw_GetFieldNoCopy (
+        void * pvData,
+        LPWSTR szFieldName,
+        VARIANT * pvarField,
+        void * * ppvDataCArray ) = 0;
+    virtual HRESULT __stdcall raw_PutField (
+        unsigned long wFlags,
+        void * pvData,
+        LPWSTR szFieldName,
+        VARIANT * pvarField ) = 0;
+    virtual HRESULT __stdcall raw_PutFieldNoCopy (
+        unsigned long wFlags,
+        void * pvData,
+        LPWSTR szFieldName,
+        VARIANT * pvarField ) = 0;
+    virtual HRESULT __stdcall raw_GetFieldNames (
+        unsigned long * pcNames,
+        BSTR * rgBstrNames ) = 0;
+    virtual long __stdcall IsMatchingType (
+        struct IRecordInfo * pRecordInfo ) = 0;
+    virtual void * __stdcall RecordCreate ( ) = 0;
+    virtual HRESULT __stdcall raw_RecordCreateCopy (
+        void * pvSource,
+        void * * ppvDest ) = 0;
+    virtual HRESULT __stdcall raw_RecordDestroy (
+        void * pvRecord ) = 0;
+};
+
+struct _wireSAFEARR_BRECORD
+{
+    unsigned long Size;
+    struct _wireBRECORD * * aRecord;
+};
+
+struct _wireSAFEARR_HAVEIID
+{
+    unsigned long Size;
+    IUnknown * * apUnknown;
+    GUID iid;
+};
+
+struct tagCAC
+{
+    unsigned long cElems;
+    unsigned char * pElems;
+};
+
+struct tagCABSTRBLOB
+{
+    unsigned long cElems;
+    struct tagBSTRBLOB * pElems;
+};
+
+union __MIDL___MIDL_itf_xdservice_0248_0001
+{
+    unsigned char cVal;
+    unsigned char bVal;
+    short iVal;
+    unsigned short uiVal;
+    long lVal;
+    unsigned long ulVal;
+    int intVal;
+    unsigned int uintVal;
+    struct _LARGE_INTEGER hVal;
+    struct _ULARGE_INTEGER uhVal;
+    float fltVal;
+    double dblVal;
+    VARIANT_BOOL boolVal;
+    VARIANT_BOOL bool;
+    SCODE scode;
+    CURRENCY cyVal;
+    DATE date;
+    struct _FILETIME filetime;
+    GUID * puuid;
+    struct tagCLIPDATA * pClipData;
+    BSTR bstrVal;
+    struct tagBSTRBLOB bstrblobVal;
+    struct tagBLOB blob;
+    LPSTR pszVal;
+    LPWSTR pwszVal;
+    IUnknown * punkVal;
+    IDispatch * pdispVal;
+    struct IStream * pStream;
+    struct IStorage * pStorage;
+    struct tagVersionedStream * pVersionedStream;
+    wirePSAFEARRAY parray;
+    struct tagCAC cac;
+    struct tagCAUB caub;
+    struct tagCAI cai;
+    struct tagCAUI caui;
+    struct tagCAL cal;
+    struct tagCAUL caul;
+    struct tagCAH cah;
+    struct tagCAUH cauh;
+    struct tagCAFLT caflt;
+    struct tagCADBL cadbl;
+    struct tagCABOOL cabool;
+    struct tagCASCODE cascode;
+    struct tagCACY cacy;
+    struct tagCADATE cadate;
+    struct tagCAFILETIME cafiletime;
+    struct tagCACLSID cauuid;
+    struct tagCACLIPDATA caclipdata;
+    struct tagCABSTR cabstr;
+    struct tagCABSTRBLOB cabstrblob;
+    struct tagCALPSTR calpstr;
+    struct tagCALPWSTR calpwstr;
+    struct tagCAPROPVARIANT capropvar;
+    unsigned char * pcVal;
+    unsigned char * pbVal;
+    short * piVal;
+    unsigned short * puiVal;
+    long * plVal;
+    unsigned long * pulVal;
+    int * pintVal;
+    unsigned int * puintVal;
+    float * pfltVal;
+    double * pdblVal;
+    VARIANT_BOOL * pboolVal;
+    DECIMAL * pdecVal;
+    SCODE * pscode;
+    CURRENCY * pcyVal;
+    DATE * pdate;
+    BSTR * pbstrVal;
+    IUnknown * * ppunkVal;
+    IDispatch * * ppdispVal;
+    wirePSAFEARRAY * pparray;
+    struct tag_inner_PROPVARIANT * pvarVal;
+};
+
+struct tag_inner_PROPVARIANT
+{
+    unsigned short vt;
+    unsigned char wReserved1;
+    unsigned char wReserved2;
+    unsigned long wReserved3;
+    union __MIDL___MIDL_itf_xdservice_0248_0001 __MIDL_0012;
+};
+
+struct __declspec(uuid("fce8b885-99ad-4be2-919b-f170a9ab9510"))
+IXDStructure : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT SetStructFieldByIndex (
+        unsigned long in_iField,
+        const _variant_t & in_varValue );
+    _variant_t GetStructFieldByIndex (
+        unsigned long in_iField );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_SetStructFieldByIndex (
+        unsigned long in_iField,
+        VARIANT in_varValue ) = 0;
+    virtual HRESULT __stdcall raw_GetStructFieldByIndex (
+        unsigned long in_iField,
+        VARIANT * out_pvarValue ) = 0;
+};
+
+struct __declspec(uuid("33792911-c7a9-4862-8e17-af098ea80a5b"))
+OLEDBConPool;
+    // [ default ] interface IOLEDBConPool
+
+struct __declspec(uuid("575688ff-d39f-43f9-88a7-9233f6c77482"))
+IOLEDBConPool : IUnknown
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetMaxSessions,put=PutMaxSessions))
+    int MaxSessions;
+    __declspec(property(get=GetTimeout,put=PutTimeout))
+    int Timeout;
+    __declspec(property(get=GetSessions))
+    int Sessions;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IDBCreateCommandPtr GetSession (
+        int in_cPropSets,
+        struct tagDBPROPSET * in_pPropSets );
+    HRESULT ReturnSession (
+        struct IDBCreateCommand * * io_ppSession );
+    HRESULT Shrink ( );
+    void PutMaxSessions (
+        int out_pcSessions );
+    int GetMaxSessions ( );
+    int GetTimeout ( );
+    void PutTimeout (
+        int out_pTimeout );
+    int GetSessions ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetSession (
+        int in_cPropSets,
+        struct tagDBPROPSET * in_pPropSets,
+        struct IDBCreateCommand * * io_ppSession ) = 0;
+    virtual HRESULT __stdcall raw_ReturnSession (
+        struct IDBCreateCommand * * io_ppSession ) = 0;
+    virtual HRESULT __stdcall raw_Shrink ( ) = 0;
+    virtual HRESULT __stdcall put_MaxSessions (
+        int out_pcSessions ) = 0;
+    virtual HRESULT __stdcall get_MaxSessions (
+        int * out_pcSessions ) = 0;
+    virtual HRESULT __stdcall get_Timeout (
+        int * out_pTimeout ) = 0;
+    virtual HRESULT __stdcall put_Timeout (
+        int out_pTimeout ) = 0;
+    virtual HRESULT __stdcall get_Sessions (
+        int * out_pcSessions ) = 0;
+};
+
+struct __declspec(uuid("83048aa2-3793-472c-9a25-79ff6726129c"))
+ADOConPool;
+    // [ default ] interface IADOConPool
+
+struct __declspec(uuid("42df17c6-73e8-4882-89d9-a736aff0fc2c"))
+IADOConPool : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetMaxSessions,put=PutMaxSessions))
+    int MaxSessions;
+    __declspec(property(get=GetTimeout,put=PutTimeout))
+    int Timeout;
+    __declspec(property(get=GetSessions))
+    int Sessions;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IDispatchPtr GetConnection (
+        _bstr_t in_bstrCn );
+    HRESULT ReturnConnection (
+        IDispatch * * io_ppADOConnection );
+    HRESULT Shrink ( );
+    void PutMaxSessions (
+        int out_pcSessions );
+    int GetMaxSessions ( );
+    int GetTimeout ( );
+    void PutTimeout (
+        int out_pTimeout );
+    int GetSessions ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetConnection (
+        BSTR in_bstrCn,
+        IDispatch * * io_ppADOConnection ) = 0;
+    virtual HRESULT __stdcall raw_ReturnConnection (
+        IDispatch * * io_ppADOConnection ) = 0;
+    virtual HRESULT __stdcall raw_Shrink ( ) = 0;
+    virtual HRESULT __stdcall put_MaxSessions (
+        int out_pcSessions ) = 0;
+    virtual HRESULT __stdcall get_MaxSessions (
+        int * out_pcSessions ) = 0;
+    virtual HRESULT __stdcall get_Timeout (
+        int * out_pTimeout ) = 0;
+    virtual HRESULT __stdcall put_Timeout (
+        int out_pTimeout ) = 0;
+    virtual HRESULT __stdcall get_Sessions (
+        int * out_pcSessions ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\program files\microsoft visual studio\vc98\project\ch3\xmlcellsetwrapper\testxml\debug\msxaserv.tli"
+
+} // namespace MSXmlAnalysisSCLib
+
+#pragma pack(pop)

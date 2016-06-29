@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ProcessBackgroundJobs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyNameShort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessBackgroundJobsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProcessDistributionJobs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyNameShort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessDistributionJobsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendQueuedDistributions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyNameShort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendQueuedDistributionsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EnqueueScheduledDistributions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyNameShort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnqueueScheduledDistributionsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EnqueueScheduledDistributionsWDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyNameShort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnqueueScheduledDistributionsWDateResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProcessBackgroundJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessBackgroundJobs" />
+  </wsdl:message>
+  <wsdl:message name="ProcessBackgroundJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessBackgroundJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessDistributionJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessDistributionJobs" />
+  </wsdl:message>
+  <wsdl:message name="ProcessDistributionJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessDistributionJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendQueuedDistributionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendQueuedDistributions" />
+  </wsdl:message>
+  <wsdl:message name="SendQueuedDistributionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendQueuedDistributionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnqueueScheduledDistributionsSoapIn">
+    <wsdl:part name="parameters" element="tns:EnqueueScheduledDistributions" />
+  </wsdl:message>
+  <wsdl:message name="EnqueueScheduledDistributionsSoapOut">
+    <wsdl:part name="parameters" element="tns:EnqueueScheduledDistributionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnqueueScheduledDistributionsWDateSoapIn">
+    <wsdl:part name="parameters" element="tns:EnqueueScheduledDistributionsWDate" />
+  </wsdl:message>
+  <wsdl:message name="EnqueueScheduledDistributionsWDateSoapOut">
+    <wsdl:part name="parameters" element="tns:EnqueueScheduledDistributionsWDateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DistributionServiceSoap">
+    <wsdl:operation name="ProcessBackgroundJobs">
+      <wsdl:input message="tns:ProcessBackgroundJobsSoapIn" />
+      <wsdl:output message="tns:ProcessBackgroundJobsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDistributionJobs">
+      <wsdl:input message="tns:ProcessDistributionJobsSoapIn" />
+      <wsdl:output message="tns:ProcessDistributionJobsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendQueuedDistributions">
+      <wsdl:input message="tns:SendQueuedDistributionsSoapIn" />
+      <wsdl:output message="tns:SendQueuedDistributionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnqueueScheduledDistributions">
+      <wsdl:input message="tns:EnqueueScheduledDistributionsSoapIn" />
+      <wsdl:output message="tns:EnqueueScheduledDistributionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnqueueScheduledDistributionsWDate">
+      <wsdl:input message="tns:EnqueueScheduledDistributionsWDateSoapIn" />
+      <wsdl:output message="tns:EnqueueScheduledDistributionsWDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DistributionServiceSoap" type="tns:DistributionServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessBackgroundJobs">
+      <soap:operation soapAction="http://tempuri.org/ProcessBackgroundJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDistributionJobs">
+      <soap:operation soapAction="http://tempuri.org/ProcessDistributionJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendQueuedDistributions">
+      <soap:operation soapAction="http://tempuri.org/SendQueuedDistributions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnqueueScheduledDistributions">
+      <soap:operation soapAction="http://tempuri.org/EnqueueScheduledDistributions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnqueueScheduledDistributionsWDate">
+      <soap:operation soapAction="http://tempuri.org/EnqueueScheduledDistributionsWDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DistributionServiceSoap12" type="tns:DistributionServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessBackgroundJobs">
+      <soap12:operation soapAction="http://tempuri.org/ProcessBackgroundJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDistributionJobs">
+      <soap12:operation soapAction="http://tempuri.org/ProcessDistributionJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendQueuedDistributions">
+      <soap12:operation soapAction="http://tempuri.org/SendQueuedDistributions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnqueueScheduledDistributions">
+      <soap12:operation soapAction="http://tempuri.org/EnqueueScheduledDistributions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnqueueScheduledDistributionsWDate">
+      <soap12:operation soapAction="http://tempuri.org/EnqueueScheduledDistributionsWDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DistributionService">
+    <wsdl:port name="DistributionServiceSoap" binding="tns:DistributionServiceSoap">
+      <soap:address location="http://localhost:59295/UI.Web/WebServices/DistributionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DistributionServiceSoap12" binding="tns:DistributionServiceSoap12">
+      <soap12:address location="http://localhost:59295/UI.Web/WebServices/DistributionService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

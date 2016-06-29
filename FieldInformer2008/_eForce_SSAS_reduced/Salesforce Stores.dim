@@ -1,0 +1,163 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="64bf70d3-c0b5-4e7a-aeef-0c1edd23389e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>OLAP STORE SALESFORCE HIERARCHY</ID>
+  <Name>Salesforce Stores</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3652" scrolltop="-8718" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9790" y="15319" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="OLAP_STORE_SALESFORCE_HIERARCHY (spp.OLAP_STORE_SALESFORCE_HIERARCHY)" left="-377" top="-2566" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_OLAP_STORE_SALESFORCE_HIERARCHY" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3652</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-8718</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-377</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-2566</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c39a390a-0622-4d65-9525-336264801afd">
+    <DataSourceViewID>DBSALESPP</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="bd5b299c-78ec-47f5-8af4-eb1ba396443e">
+    <KeyErrorLimitAction>StopLogging</KeyErrorLimitAction>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyConvertedToUnknown>ReportAndContinue</NullKeyConvertedToUnknown>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <UnknownMemberName>Undefined</UnknownMemberName>
+  <Attributes>
+    <Attribute dwd:design-time-name="61f3aefb-4c49-4359-befb-57a943489a86">
+      <ID>OLAP STORE SALESFORCE HIERARCHY</ID>
+      <Name>Store Attr</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cbb2b6da-d85a-42a2-98f1-f96e2b310920">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bcb03606-382d-4db8-9026-3a8c3a7591b1">
+            <TableID>spp_OLAP_STORE_SALESFORCE_HIERARCHY</TableID>
+            <ColumnID>SALMSERN</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="180a571f-377c-4694-b507-836955354035">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9057b764-833a-4595-b586-641eb5c8c759">
+            <TableID>spp_OLAP_STORE_SALESFORCE_HIERARCHY</TableID>
+            <ColumnID>COMSERNO</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8b14129e-25ba-4151-8df8-efd216178fee">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b616507a-2603-4b90-8de8-0e40972d92a0">
+          <TableID>spp_OLAP_STORE_SALESFORCE_HIERARCHY</TableID>
+          <ColumnID>COMNAME</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="9f26ab5d-b368-43af-a8a7-b96137c85a68">
+          <AttributeID>SALMNAME</AttributeID>
+          <Name>Salesforce</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+    <Attribute dwd:design-time-name="2b60047e-22c8-4de1-a330-7973a63640c2">
+      <ID>SALMNAME</ID>
+      <Name>Salesforce Attr</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="88b3e91b-c067-49a7-9960-1b381aa94a8e">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ac4ff86d-1660-41f0-bd8a-32e097b8d7ab">
+            <TableID>spp_OLAP_STORE_SALESFORCE_HIERARCHY</TableID>
+            <ColumnID>SALMSERN</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ad76cc7f-3eea-455e-8233-5b394fa9e892">
+        <DataType>WChar</DataType>
+        <DataSize>30</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ff3d1ab6-fb9d-44bd-8d6c-4d4998824b5a">
+          <TableID>spp_OLAP_STORE_SALESFORCE_HIERARCHY</TableID>
+          <ColumnID>SALMNAME</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="32e42b52-86d4-485a-94e9-46bf2db34e14">
+      <ID>Hierarchy</ID>
+      <Name>Salesforce Stores</Name>
+      <Levels>
+        <Level dwd:design-time-name="7f94a690-7926-41fa-95f8-b4f9e6d75371">
+          <ID>Salesforce</ID>
+          <Name>Salesforce</Name>
+          <SourceAttributeID>SALMNAME</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="76bfef2a-0fa6-45c9-967a-2f6f1d2c2b57">
+          <ID>StoreBySalesforce</ID>
+          <Name>Store</Name>
+          <SourceAttributeID>OLAP STORE SALESFORCE HIERARCHY</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

@@ -1,0 +1,81 @@
+
+exec sp_dboption N'DBFINF', N'autoclose', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'bulkcopy', N'true'
+GO
+
+exec sp_dboption N'DBFINF', N'trunc. log', N'true'
+GO
+
+exec sp_dboption N'DBFINF', N'torn page detection', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'read only', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'dbo use', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'single', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'autoshrink', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'ANSI null default', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'recursive triggers', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'ANSI nulls', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'concat null yields null', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'cursor close on commit', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'default to local cursor', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'quoted identifier', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'ANSI warnings', N'false'
+GO
+
+exec sp_dboption N'DBFINF', N'auto create statistics', N'true'
+GO
+
+exec sp_dboption N'DBFINF', N'auto update statistics', N'true'
+GO
+
+
+
+use [DBFINF]
+GO
+
+if not exists (select * from dbo.sysusers where name = N'spp' and uid < 16382)
+	EXEC sp_grantdbaccess N'spp', N'spp'
+GO
+
+exec sp_addrolemember N'db_owner', N'spp'
+GO
+
+
+SET NOCOUNT ON
+
+
+IF NOT EXISTS(SELECT * FROM dbo.tcompany) and NOT EXISTS(SELECT * FROM dbo.tusers)
+	BEGIN
+		INSERT INTO [dbo].[tcompany]([name], [short_name], [olap_server], [olap_provider], [olap_db], [olap_cube], [src_db], [src_user] , [ping] )
+		VALUES('SALESPP','SALESPP','###OLAP_SERVER###','MSOLAP','DBSALESPP','VIRTUAL', 'DBSALESPP', 'spp', 0 ) 
+
+		INSERT INTO [dbo].[tusers]([company_id], [logon], [pwd], [pwd_timestamp], [name], [email], [is_admin], [is_logged_in])
+		VALUES(@@IDENTITY , 'spp' , 'spp' , GetDate(), 'Default User', 'none' , 1 , 0 )
+	END
+
+GO

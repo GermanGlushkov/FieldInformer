@@ -1,0 +1,379 @@
+ÿþ<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT>									
+   function myScroll()						
+   {											
+    if (document.layers) {//for netscape		
+   	 x  = window.pageXOffset;				
+      y  = window.pageYOffset;				
+    }      									
+    else if (document.all) {//for IE			
+		 x = document.body.scrollLeft;			
+      y = document.body.scrollTop;			
+    }     									
+    parent.left.scrollTo(x,y);				
+   }     									
+   </SCRIPT>
+
+<SCRIPT language=JavaScript><!--		
+   if (document.layers) {					
+   document.captureEvents(Event.MOUSEMOVE);	
+   document.onmousemove = myScroll;			
+   }      									
+   //--></SCRIPT>
+
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY onscroll=myScroll()>
+<FORM name=rightform><PRE>										
+C:\cvs\openSmtp\src\MailEncoder.cs
+namespace OpenSmtp.Mail
+{
+
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)/******************************************************************************
+(*)	Copyright 2001-2003 Shaisoft LLC
+(*)	OpenSmtp.Net is free software; you can redistribute it and/or modify
+(*)	it under the terms of the Lesser GNU General Public License as published by
+(*)	the Free Software Foundation; either version 2 of the License, or
+(*)	(at your option) any later version.
+</FONT>
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)	OpenSmtp.Net is distributed in the hope that it will be useful,
+(*)	but WITHOUT ANY WARRANTY; without even the implied warranty of
+(*)	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+(*)	Lesser GNU General Public License for more details.
+</FONT>
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)	You should have received a copy of the Lesser GNU General Public License
+(*)	along with this program; if not, write to the Free Software
+(*)	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+(*)/*******************************************************************************/
+</FONT>
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)using System;
+(*)using System.Security.Cryptography;
+(*)using System.Globalization;
+(*)using System.IO;
+(*)using System.Text;
+</FONT>
+	/// &lt;summary&gt;
+	/// This Type is used to encode and decode files and strings using 
+	/// MIME compatible encoding methods such as Base64 and quoted-printable
+	/// &lt;/summary&gt;
+	internal class MailEncoder
+	{
+
+		private MailEncoder()
+		{}
+		/// &lt;summary&gt;Encodes a String using Base64 (see RFC 1521)&lt;/summary&gt;
+		/// &lt;param name="s"&gt;string to be encoded&lt;/param&gt;
+		/// &lt;example&gt;
+		/// &lt;code&gt;
+		/// string base64EncodedText = MailEncoder.ConvertQP("ËÇÅÃ");
+		/// &lt;/code&gt;
+		/// &lt;/example&gt;
+		/// &lt;returns&gt;Base64 encoded string&lt;/returns&gt;
+		internal static string ConvertToBase64(String s)
+		{
+			byte[] from = Encoding.ASCII.GetBytes(s.ToCharArray());
+			string returnMsg = Convert.ToBase64String(from);
+
+			return returnMsg;
+		}
+		
+
+		/// &lt;summary&gt; Encodes a FileStream using Base64 (see RFC 1521)&lt;/summary&gt;
+		/// &lt;param name="inputFilePath"&gt;UNC path to file that needs to be encoded&lt;/param&gt;
+		/// &lt;param name="outputFilePath"&gt;UNC path to file will store Base64 encoded ASCII text&lt;/param&gt;
+		/// &lt;example&gt;
+		/// &lt;code&gt;
+		/// MailEncoder.ConvertBase64("file.jpg", "file.txt");
+		/// &lt;/code&gt;
+		/// &lt;/example&gt;
+		internal static void ConvertToBase64(string inputFilePath, string outputFilePath)
+		{
+			//Create the file streams to handle the input and output files.
+			FileStream fin = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read);
+<FONT style="BACKGROUND: #c0c0c0" color=#008080>(+)			ConvertToBase64(fin, outputFilePath);
+(+)			fin.Close();
+(+)		}
+(+)
+(+)		/// &lt;summary&gt; Encodes a FileStream using Base64 (see RFC 1521)&lt;/summary&gt;
+(+)		/// &lt;param name="inputStream"&gt;The stream that needs to be encoded&lt;/param&gt;
+(+)		/// &lt;param name="outputFilePath"&gt;UNC path to file will store Base64 encoded ASCII text&lt;/param&gt;
+(+)		/// &lt;example&gt;
+(+)		/// &lt;code&gt;
+(+)		/// MailEncoder.ConvertBase64(Stream, "file.txt");
+(+)		/// &lt;/code&gt;
+(+)		/// &lt;/example&gt;
+(+)		internal static void ConvertToBase64(Stream inputStream, string outputFilePath)
+(+)		{
+(+)			//Create the file streams to handle the input and output files.
+</FONT>			FileStream fout = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write);
+			fout.SetLength(0);
+
+			ToBase64Transform transformer = new ToBase64Transform();
+
+			//Create variables to help with read and write below.
+			//This is intermediate storage for the encryption:
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)			byte[] bin = new byte[inputStream.Length / transformer.InputBlockSize * transformer.OutputBlockSize]; 
+</FONT>			long rdlen = 0;              //This is the total number of bytes written.
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)			long totlen = inputStream.Length;    //This is the total length of the input file.
+</FONT>			int len;                     //This is the number of bytes to be written at a time.
+
+			CryptoStream encStream = new CryptoStream(fout, transformer, CryptoStreamMode.Write);
+
+			//Read from the input file, then encrypt and write to the output file.
+			while(rdlen &lt; totlen)
+			{
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)				len = inputStream.Read(bin, 0, (int)inputStream.Length);
+</FONT>				encStream.Write(bin, 0, len);
+				//inputBlock size(3)
+				rdlen = (rdlen + ((len / transformer.InputBlockSize) * transformer.OutputBlockSize));
+			}
+
+			encStream.Close();
+			fout.Close();
+<FONT style="BACKGROUND: #c0c0c0" color=#ff0000>(-)
+</FONT>		}
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)		
+</FONT>		internal static string ConvertFromBase64(string s)
+		{
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)		    byte[] ret = Convert.FromBase64String(s);
+(*)		    return Encoding.ASCII.GetString(ret, 0, ret.Length);
+</FONT>		}
+		
+		internal static void ConvertFromBase64(string inputFilePath, string outputFilePath)
+		{
+			//Create the file streams to handle the input and output files.
+			FileStream fin = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read);
+			FileStream fout = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write);
+			fout.SetLength(0);
+
+			FromBase64Transform transformer = new FromBase64Transform();
+
+			//Create variables to help with read and write below.
+			//This is intermediate storage for the decryption:
+			byte[] bin = new byte[fin.Length / transformer.InputBlockSize * transformer.OutputBlockSize]; 
+			long rdlen = 0;              //This is the total number of bytes written.
+			long totlen = fin.Length;    //This is the total length of the input file.
+			int len;                     //This is the number of bytes to be written at a time.
+
+			CryptoStream encStream = new CryptoStream(fout, transformer, CryptoStreamMode.Write);
+
+			//Read from the input file, then decrypt and write to the output file.
+			while(rdlen &lt; totlen)
+			{
+				len = fin.Read(bin, 0, (int)fin.Length);
+				encStream.Write(bin, 0, len);
+				rdlen = (rdlen + ((len / transformer.InputBlockSize) * transformer.OutputBlockSize));
+			}
+
+			encStream.Close();
+			fout.Close();
+			fin.Close();
+		}
+			
+		/// &lt;summary&gt; Encodes a string using Quoted-Printable encoding (see RFC 1521)&lt;/summary&gt;
+		/// &lt;param name="s"&gt;string that needs to be encoded&lt;/param&gt;
+<FONT style="BACKGROUND: #c0c0c0" color=#ff0000>(-)
+</FONT>		/// &lt;example&gt;
+		/// &lt;code&gt;
+		/// string qpEncodedText = MailEncoder.ConvertQP("ËÇÅÃ");
+		/// &lt;/code&gt;
+		/// &lt;/example&gt;
+		/// &lt;returns&gt;Quoted-Printable encoded string&lt;/returns&gt;
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)		internal static string ConvertToQP(string s)
+</FONT>		{
+			if (s == null) {return null;}
+
+			char[] map = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+			
+			// environment newline char
+			char[] nl = Environment.NewLine.ToCharArray();			
+
+			// source char array
+			char[] source = s.ToCharArray();
+
+			// result char array
+			char[] result = new char[(int)(s.Length*2)];
+
+			
+			// check for newline char
+			char ch;
+			int didx = 1,
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)			cnt	 = 0;
+</FONT>			
+			StringBuilder sb = new StringBuilder();
+<FONT style="BACKGROUND: #c0c0c0" color=#ff0000>(-)
+</FONT>		
+			for(int sidx=0; sidx &lt; s.Length; sidx++)
+			{
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)				ch = source[sidx];
+</FONT>						
+				// RULE # 4
+				if (ch == nl[0])
+				{
+					// if char is preceded by space char add =20
+					// RULE #3
+					if (result[didx-1] == ' ')
+					{
+						sb.Append("=20");
+					}
+					
+					// if char is preceded by tab char add =20
+					// RULE #3
+					if (result[didx-1] == '\t')
+					{
+						sb.Append("=90");
+					}
+					
+					sb.Append("\r\n");
+					sidx += nl.Length - 1;
+					cnt = didx;
+
+				}
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)				// RULE #1 and #2
+(*)				else if(ch &gt; 126 || (ch &lt; 32 &amp;&amp; ch != '\t') || ch == '=')
+</FONT>				{
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)					sb.Append("=" + Convert.ToString((byte)ch, 16));
+(-)
+(-)
+(-)
+(-)
+(-)
+(-)
+(-)
+(-)
+</FONT>				}
+				else
+				{
+					sb.Append(ch);
+					
+					// RULE #5
+					if (didx &gt; cnt+70)
+					{
+						sb.Append("=\r\n");
+						cnt = didx;
+					}
+				}
+			}
+			
+			return sb.ToString();
+		}
+
+		internal static string ConvertHeaderToQP(string s, string charset)
+		{
+			
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)			return "=?" + charset + "?Q?" + ConvertToQP(s) + "?=";
+</FONT>		}
+
+		internal static string ConvertFromQP(string s)
+		{
+			if (s == null) return null;
+		
+			// source char array:
+			char[] source = s.ToCharArray();
+			// result char array:
+			char[] result = new char[(int)(s.Length*1.1)];
+			// environment newline char:
+			char[] nl = Environment.NewLine.ToCharArray();		
+			
+			int last = 0,
+				didx = 0,
+				slen = (int)s.Length;
+			
+			for ( int sidx = 0; sidx&lt;slen; )
+			{
+				char ch = source[sidx++];
+				
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)				if (ch == '=') {	
+(-)
+</FONT>
+					// Premature EOF
+					if ( sidx &gt;= slen-1 )
+					{ throw new ParseException("Premature EOF"); }
+				
+					// RULE # 5
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)					if ( source[sidx] == '\n' || source[sidx] == '\r' ) {
+(-)
+</FONT>						sidx++;
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)						if ( source[sidx-1] == '\r' &amp;&amp; source[sidx] == '\n' ) {
+(-)
+</FONT>							sidx++;
+						}
+					}
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)					// RULE # 1
+(*)					else {
+(-)
+</FONT>						char repl;
+						int hi = Int32.Parse(Convert.ToString(source[sidx]), NumberStyles.HexNumber);
+						int lo = Int32.Parse(Convert.ToString(source[sidx+1]), NumberStyles.HexNumber);
+						
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)						if ( (hi | lo) &lt; 0 ) {
+(-)
+</FONT>							throw new ParseException(new String(source, sidx-1, 3) + " is an invalid code"); }
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)						else {
+(-)
+</FONT>							repl = (char) (hi &lt;&lt; 4 | lo);
+							sidx += 2;
+						}
+						
+						result[didx++] = repl;
+					}
+
+					last = didx;
+					
+					// RULE # 4
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)					if ( ch == '\n' || ch == '\r' ) {
+(*)						if ( ch == '\r' &amp;&amp; sidx &lt; slen &amp;&amp; source[sidx] == '\n' ) {
+(-)
+(-)
+</FONT>							sidx++;
+						
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)							for ( int idx=0; idx &lt; nl.Length; idx++ ) {
+(-)
+</FONT>								result[last++] = nl[idx];
+								didx = last;
+							}
+						}
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)						else {
+(-)
+</FONT>							result[didx++]  =ch;
+							// RULE # 3
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)							if ( ch != ' ' &amp;&amp; ch != '\t' ) {
+(-)
+</FONT>								last = didx;
+							}
+						}
+						
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)						if ( didx &gt; result.Length-nl.Length-2 ) {
+(-)
+</FONT>							char[] newCharArray = new char[(int)(result.Length+500)];
+							Array.Copy(result, newCharArray, result.Length);
+							result = newCharArray;
+						}
+					}
+					
+				}
+			}
+			
+			return new String(result, 0, didx);
+		}
+
+		internal static bool IsAscii(string s)
+		{
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)             // source char array
+(*)             char[] source = s.ToCharArray();
+(*)             for(int sidx=0; sidx &lt; s.Length; sidx++)
+(*)             {
+(*)                 char ch = source[sidx];
+(*)                 if (Convert.ToInt32(ch) &gt; 127)
+(*)                 {
+(*)                     return false;
+(*)                 }
+(*)             }
+</FONT>
+<FONT style="BACKGROUND: #c0c0c0" color=#0000ff>(*)             return true;
+</FONT>		}
+		
+	}
+}
+   </PRE></FORM></BODY></HTML>

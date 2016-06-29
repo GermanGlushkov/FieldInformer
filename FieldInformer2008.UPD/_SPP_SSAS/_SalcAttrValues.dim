@@ -1,0 +1,205 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="315ea47b-c422-4243-b89a-be7c61d74f0c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>V OLAP SALESCALL ATTR VALUES</ID>
+  <Name>_SalcAttrValues</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3631" scrolltop="-8162" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10319" y="21325" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="V_OLAP_SALESCALL_ATTR_VALUES (spp.V_OLAP_SALESCALL_ATTR_VALUES)" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3016" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000c80b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_V_OLAP_SALESCALL_ATTR_VALUES" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3631</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-8162</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="22ae3209-968b-4cf2-8ac5-a15b9f49b339">
+    <DataSourceViewID>DBSALESPP</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="398069e8-160d-4ae5-8dfd-3620dd45260d">
+      <ID>V OLAP SALESCALL ATTR VALUES</ID>
+      <Name>Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="15fb0fac-8d16-480a-a5a7-dad75daebc0e">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="79c40e33-1df3-41a2-9c98-918b1fa03072">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>CALESTAT1</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="ac54726f-a3b5-4152-bc24-d5ba66dfabaa">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2664c11f-55db-4813-bc02-424192b12320">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>CALESTAT2</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="b882718e-94a3-42fc-af1f-20e8623dc858">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="92b05a32-7816-4039-a35f-82f08eacc118">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>CALESTAT4</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="ec8e373f-c32a-484a-bd73-e51fb1b9fd6e">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e2e15275-a053-45f3-bc43-34e41706fbed">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCSTAT1</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="58841f6c-d75a-49df-9cab-bd0a03838703">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5589edcc-e647-47a0-bd6b-7d41b66ae137">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCSTAT2</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="84b18e06-94d2-47c4-9027-a7442ee4d332">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="62f2dbd1-9af9-4de9-8bb2-494f5efe6531">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCSTAT3</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="0542b278-49e1-462d-8bd8-7a67bc367c6a">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="18e4f35d-9e0f-4770-9427-bc5d70f23c1c">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCSTAT4</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="4e0f8e52-2060-4b84-a9d6-50cd89b4342b">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a40f412c-133f-4da6-ae87-261b2c51b271">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCSTAT5</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="3d986a5e-5e57-4f9b-a773-d2b0ba9ac673">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3ad7a384-19f2-41fe-9afe-1a24c5a0251e">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCSTAT6</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="273fd5e7-a91f-49cd-9ac6-e9e8d3e07b2a">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="36dc1da1-3aec-464a-bb8d-fe7f24e4ddf2">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCSTAT7</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="6ba653fb-b8ae-4b31-b208-03221606ca85">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="39db1983-68fb-4d3e-94ea-68816e4f6b82">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCSTAT10</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="7d888f9b-aab8-498c-81e8-e084f1d231bf">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3c6fa38b-cb9a-45c0-9895-346d466fd6bb">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALCTYPE</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="ac08803a-8703-4bc0-bfef-a523b65c1344">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0abafddf-7c60-4796-ae9a-03d61517b838">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALNOTCALL</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="6ad6bd41-0fcd-4dab-b012-fd1f60622f44">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="957eaa64-933d-4277-8c88-426c0c566ad3">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+            <ColumnID>SALUNCALL</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8b0336c7-384f-47c1-a81f-f159f51c05a4">
+        <DataType>WChar</DataType>
+        <DataSize>1</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="0d564215-0283-403f-863c-c38b3545bffe">
+          <TableID>spp_V_OLAP_SALESCALL_ATTR_VALUES</TableID>
+          <ColumnID>CALESTAT1</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+  </Attributes>
+</Dimension>

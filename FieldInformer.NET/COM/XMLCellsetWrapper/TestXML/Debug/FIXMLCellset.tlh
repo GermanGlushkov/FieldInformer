@@ -1,0 +1,69 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8447.0 (26488b3d).
+//
+// c:\program files\microsoft visual studio\vc98\project\ch3\xmlcellsetwrapper\testxml\debug\FIXMLCellset.tlh
+//
+// C++ source equivalent of Win32 type library C:\Documents and Settings\Administrator\My Documents\Visual Studio Projects\FI_CS_new\XMLCellset\FIXMLCellset.dll
+// compiler-generated file created 07/12/02 at 11:40:18 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace FIXMLCellset {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("003719dc-211e-442a-9032-7aee4d7fd92e"))
+/* dual interface */ _XMLCellsetClass;
+struct /* coclass */ XMLCellsetClass;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_XMLCellsetClass, __uuidof(_XMLCellsetClass));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("003719dc-211e-442a-9032-7aee4d7fd92e"))
+_XMLCellsetClass : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT BuildCellset (
+        BSTR * Mdx,
+        BSTR * ConnectionString );
+    HRESULT BuildXML (
+        BSTR * strOutFilePath );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_BuildCellset (
+        BSTR * Mdx,
+        BSTR * ConnectionString ) = 0;
+    virtual HRESULT __stdcall raw_BuildXML (
+        BSTR * strOutFilePath ) = 0;
+};
+
+struct __declspec(uuid("01119afd-82eb-4e6f-b744-2db2be8bebb6"))
+XMLCellsetClass;
+    // [ default ] interface _XMLCellsetClass
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\program files\microsoft visual studio\vc98\project\ch3\xmlcellsetwrapper\testxml\debug\FIXMLCellset.tli"
+
+} // namespace FIXMLCellset
+
+#pragma pack(pop)

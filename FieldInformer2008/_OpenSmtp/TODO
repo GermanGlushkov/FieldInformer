@@ -1,0 +1,8 @@
+FUTURE:
+Move to custom List - RecipientList
+CRAM MD5 Authentication
+S/MIME support
+UUEncode support
+Allow Attachment Encoding to be chosen by user (base64/UUEncode/None)
+Add Progress Delegate
+PGP Support

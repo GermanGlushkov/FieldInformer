@@ -1,0 +1,660 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8447.0 (2ac39600).
+//
+// c:\program files\microsoft visual studio\vc98\project\ch3\xmlcellsetwrapper\testxml\debug\msxaserv.tli
+//
+// Wrapper implementations for Win32 type library C:\Program Files\Microsoft XML For Analysis SDK\msxaserv.dll
+// compiler-generated file created 07/12/02 at 21:58:56 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IXASC wrapper method implementations
+//
+
+inline HRESULT IXASC::ConvertProperties ( const _variant_t & in_varProperties, unsigned long * out_pcPropSets, struct tagDBPROPSET * * out_ppPropSets ) {
+    HRESULT _hr = raw_ConvertProperties(in_varProperties, out_pcPropSets, out_ppPropSets);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::InitializeDataSource ( struct IXDPropertyMgr * in_pIPropMgr, struct IDBInitialize * * io_ppIDBInitialize ) {
+    HRESULT _hr = raw_InitializeDataSource(in_pIPropMgr, io_ppIDBInitialize);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::InitializeSession ( struct IDBInitialize * in_pIDBInitialize, struct IXDPropertyMgr * in_pIPropMgr, struct IDBCreateSession * * io_ppIDBSession ) {
+    HRESULT _hr = raw_InitializeSession(in_pIDBInitialize, in_pIPropMgr, io_ppIDBSession);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::InitializeCommand ( struct IDBInitialize * in_pIDBInitialize, struct IDBCreateSession * in_pIDBSession, struct IXDPropertyMgr * in_pIPropMgr, struct IDBCreateCommand * * io_ppIDBCommand ) {
+    HRESULT _hr = raw_InitializeCommand(in_pIDBInitialize, in_pIDBSession, in_pIPropMgr, io_ppIDBCommand);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::Execute ( struct IXDPropertyMgr * in_pIPropMgr, struct IDBCreateCommand * in_pIDBCommand, _bstr_t in_strQuery, eXmlForAnalysisEnums in_eResultType, long * out_pcRowsAffected, IUnknown * * out_ppIUnknown ) {
+    HRESULT _hr = raw_Execute(in_pIPropMgr, in_pIDBCommand, in_strQuery, in_eResultType, out_pcRowsAffected, out_ppIUnknown);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::GetSchemaRowset ( struct IDBCreateCommand * in_pIDBCommand, GUID * in_rguidSchema, unsigned long in_cRestrictions, VARIANT * in_rgRestrictions, GUID * in_rIID, struct IXDPropertyMgr * in_pIPropMgr, IUnknown * * out_ppRowset ) {
+    HRESULT _hr = raw_GetSchemaRowset(in_pIDBCommand, in_rguidSchema, in_cRestrictions, in_rgRestrictions, in_rIID, in_pIPropMgr, out_ppRowset);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::ResultToXML ( IUnknown * in_pIUnkData, eXmlForAnalysisEnums in_eAxisFormat, long in_iStart, long in_iEnd, BSTR * out_pbstrSchema, BSTR * out_pbstrRows ) {
+    HRESULT _hr = raw_ResultToXML(in_pIUnkData, in_eAxisFormat, in_iStart, in_iEnd, out_pbstrSchema, out_pbstrRows);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::ResultToXMLStream ( IUnknown * in_pIUnkStream, IUnknown * in_pIUnkData, eXmlForAnalysisEnums in_eSchemaData, eXmlForAnalysisEnums in_eAxisFormat, long in_iStart, long in_iEnd ) {
+    HRESULT _hr = raw_ResultToXMLStream(in_pIUnkStream, in_pIUnkData, in_eSchemaData, in_eAxisFormat, in_iStart, in_iEnd);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::GetPropertiesRowset ( struct IXDPropertyMgr * in_pIPropMgr, struct IXDRestrictionMgr * in_pIRestMgr, VARIANT * in_pvarRestrictions, BSTR * out_pbstrSchema, BSTR * out_pbstrData ) {
+    HRESULT _hr = raw_GetPropertiesRowset(in_pIPropMgr, in_pIRestMgr, in_pvarRestrictions, out_pbstrSchema, out_pbstrData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::GetSchemasRowset ( struct IDBCreateCommand * in_pIDBCommand, struct IXDPropertyMgr * in_pIPropMgr, struct IXDRestrictionMgr * in_pIRestMgr, struct IXDEnumMgr * in_pIEnumMgr, VARIANT * in_pvarRestrictions, BSTR * out_pbstrSchema, BSTR * out_pbstrData ) {
+    HRESULT _hr = raw_GetSchemasRowset(in_pIDBCommand, in_pIPropMgr, in_pIRestMgr, in_pIEnumMgr, in_pvarRestrictions, out_pbstrSchema, out_pbstrData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::GetDatasrcRowset ( struct IXDEnumMgr * in_pIEnumMgr, struct IXDRestrictionMgr * in_pIRestMgr, VARIANT * in_pvarRestrictions, IUnknown * in_pIDatasources, BSTR * out_pbstrSchema, BSTR * out_pbstrData ) {
+    HRESULT _hr = raw_GetDatasrcRowset(in_pIEnumMgr, in_pIRestMgr, in_pvarRestrictions, in_pIDatasources, out_pbstrSchema, out_pbstrData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::GetKeywordsRowset ( struct IXDPropertyMgr * in_pIPropMgr, struct IXDRestrictionMgr * in_pIRestMgr, struct IXDEnumMgr * in_pIEnumMgr, VARIANT * in_pvarRestrictions, BSTR * out_pbstrSchema, BSTR * out_pbstrData ) {
+    HRESULT _hr = raw_GetKeywordsRowset(in_pIPropMgr, in_pIRestMgr, in_pIEnumMgr, in_pvarRestrictions, out_pbstrSchema, out_pbstrData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::GetLiteralsRowset ( struct IXDPropertyMgr * in_pIPropMgr, struct IXDRestrictionMgr * in_pIRestMgr, struct IXDEnumMgr * in_pIEnumMgr, VARIANT * in_pvarRestrictions, BSTR * out_pbstrSchema, BSTR * out_pbstrData ) {
+    HRESULT _hr = raw_GetLiteralsRowset(in_pIPropMgr, in_pIRestMgr, in_pIEnumMgr, in_pvarRestrictions, out_pbstrSchema, out_pbstrData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::GetEnumRowset ( struct IXDPropertyMgr * in_pIPropMgr, struct IXDRestrictionMgr * in_pIRestMgr, VARIANT * in_pvarRestrictions, BSTR * out_pbstrSchema, BSTR * out_pbstrData ) {
+    HRESULT _hr = raw_GetEnumRowset(in_pIPropMgr, in_pIRestMgr, in_pvarRestrictions, out_pbstrSchema, out_pbstrData);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::InitStruct ( _bstr_t in_bstrStructName, struct IXDStructure * * out_ppXDStruct ) {
+    HRESULT _hr = raw_InitStruct(in_bstrStructName, out_ppXDStruct);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::XMLArrayToSafeArray ( _bstr_t in_bstrXML, VARIANT * out_pvarSafeArray ) {
+    HRESULT _hr = raw_XMLArrayToSafeArray(in_bstrXML, out_pvarSafeArray);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::XMLDOMArrayToSafeArray ( IUnknown * in_pIXMLArrayNode, VARIANT * out_pvarSafeArray ) {
+    HRESULT _hr = raw_XMLDOMArrayToSafeArray(in_pIXMLArrayNode, out_pvarSafeArray);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::CreatePropertyManager ( IUnknown * in_pIXMLDocConfig1, IUnknown * in_pIXMLDocConfig2, IUnknown * in_pIXMLNodeProperties, struct IXDPropertyMgr * * out_ppIXDPropertyMgr ) {
+    HRESULT _hr = raw_CreatePropertyManager(in_pIXMLDocConfig1, in_pIXMLDocConfig2, in_pIXMLNodeProperties, out_ppIXDPropertyMgr);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::CreatePropertyManagerEx ( struct IXDPropertyMgr * in_pIXDPropMgrSrc, IUnknown * in_pIXMLDocConfig1, IUnknown * in_pIXMLDocConfig2, IUnknown * in_pIXMLNodeProperties, struct IXDPropertyMgr * * out_ppIXDPropertyMgr ) {
+    HRESULT _hr = raw_CreatePropertyManagerEx(in_pIXDPropMgrSrc, in_pIXMLDocConfig1, in_pIXMLDocConfig2, in_pIXMLNodeProperties, out_ppIXDPropertyMgr);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::CreateEnumManager ( IUnknown * in_pIXMLDocConfig1, IUnknown * in_pIXMLDocConfig2, struct IXDEnumMgr * * out_ppIXDEnumMgr ) {
+    HRESULT _hr = raw_CreateEnumManager(in_pIXMLDocConfig1, in_pIXMLDocConfig2, out_ppIXDEnumMgr);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXASC::CreateRestManager ( IUnknown * in_pIXMLDocConfig1, IUnknown * in_pIXMLDocConfig2, struct IXDRestrictionMgr * * out_ppIXDRestMgr ) {
+    HRESULT _hr = raw_CreateRestManager(in_pIXMLDocConfig1, in_pIXMLDocConfig2, out_ppIXDRestMgr);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline IUnknownPtr IXASC::CreatePool ( ) {
+    IUnknown * _result;
+    HRESULT _hr = raw_CreatePool(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline _variant_t IXASC::GetPropertyValue ( IUnknown * in_pObject, GUID in_PropSetGuid, unsigned long in_PropId ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetPropertyValue(in_pObject, in_PropSetGuid, in_PropId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline HRESULT IXASC::DeletePropertySets ( struct tagDBPROPSET * * in_ppPropSet, unsigned long in_cPropSets ) {
+    HRESULT _hr = raw_DeletePropertySets(in_ppPropSet, in_cPropSets);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IXASC::GetDatabaseRoles ( struct IDBCreateCommand * in_pIDBCommand, struct IXDPropertyMgr * in_pIPropMgr, _bstr_t in_bstrDatabaseName ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetDatabaseRoles(in_pIDBCommand, in_pIPropMgr, in_bstrDatabaseName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXASC::GetMdxFromMdXml ( _bstr_t in_bstrXML, _bstr_t in_bstrXSL ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetMdxFromMdXml(in_bstrXML, in_bstrXSL, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXASC::GetConfigLocation ( ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetConfigLocation(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface IXDPropertyMgr wrapper method implementations
+//
+
+inline HRESULT IXDPropertyMgr::GetPropertiesForObject ( eXDPropObjects in_ePropertyObject, unsigned long * out_pcPropSets, struct tagDBPROPSET * * out_ppPropSets ) {
+    HRESULT _hr = raw_GetPropertiesForObject(in_ePropertyObject, out_pcPropSets, out_ppPropSets);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDPropertyMgr::GetPropertyInfo ( _bstr_t in_strPropertyName, struct tagXDPropertyInfo * out_pPropInfo ) {
+    HRESULT _hr = raw_GetPropertyInfo(in_strPropertyName, out_pPropInfo);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDPropertyMgr::GetProperties ( IUnknown * * out_ppIXMLNodeList1, IUnknown * * out_ppIXMLNodeList2 ) {
+    HRESULT _hr = raw_GetProperties(out_ppIXMLNodeList1, out_ppIXMLNodeList2);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IXDPropertyMgr::FindPropertySetByGUID ( _bstr_t in_bstrGUID ) {
+    BSTR _result;
+    HRESULT _hr = raw_FindPropertySetByGUID(in_bstrGUID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXDPropertyMgr::FindPropertyNameByPropSet ( _bstr_t in_bstrPropSet, _bstr_t in_bstrPropId ) {
+    BSTR _result;
+    HRESULT _hr = raw_FindPropertyNameByPropSet(in_bstrPropSet, in_bstrPropId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IXDPropertyMgr::FindPropertyId ( _bstr_t in_bstrPropSet, _bstr_t in_bstrPropId, unsigned long * out_pPropId ) {
+    HRESULT _hr = raw_FindPropertyId(in_bstrPropSet, in_bstrPropId, out_pPropId);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDPropertyMgr::GetXmlForAnalysisProperties ( struct tagXmlForAnalysisProperties * * out_ppXmlProps ) {
+    HRESULT _hr = raw_GetXmlForAnalysisProperties(out_ppXmlProps);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDPropertyMgr::GetXmlForAnalysisProperty ( eXmlForAnalysisPropID in_PropId, struct tagXmlForAnalysisProperties * * out_ppXmlProp ) {
+    HRESULT _hr = raw_GetXmlForAnalysisProperty(in_PropId, out_ppXmlProp);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDPropertyMgr::GetXmlForAnalysisPropertyValue ( eXmlForAnalysisPropID in_PropId, VARIANT * out_pvarPropValue, eXmlForAnalysisEnums * out_pEnumValue ) {
+    HRESULT _hr = raw_GetXmlForAnalysisPropertyValue(in_PropId, out_pvarPropValue, out_pEnumValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IXDPropertyMgr::ConnectionStringFromPropSets ( struct tagDBPROPSET * in_rgPropSets, unsigned long in_cPropSets ) {
+    BSTR _result;
+    HRESULT _hr = raw_ConnectionStringFromPropSets(in_rgPropSets, in_cPropSets, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IXDPropertyMgr::SelectMatchingProperties ( struct IXDRestrictionMgr * in_pRestMgr, VARIANT * in_pvarRestrictions, unsigned char * * out_phMatches, unsigned long * out_cMatches ) {
+    HRESULT _hr = raw_SelectMatchingProperties(in_pRestMgr, in_pvarRestrictions, out_phMatches, out_cMatches);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDPropertyMgr::AddPropertiesToRowsetForObject ( unsigned char * in_hMatches, unsigned long in_cMatches, eXDPropObjects in_ePropObject, struct IDBProperties * in_pIDBProperties, struct IXDXMLRowset * in_pIXDRowset ) {
+    HRESULT _hr = raw_AddPropertiesToRowsetForObject(in_hMatches, in_cMatches, in_ePropObject, in_pIDBProperties, in_pIXDRowset);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDPropertyMgr::ReleaseMatchingProperties ( unsigned char * in_hMatches, unsigned long in_cMatches ) {
+    HRESULT _hr = raw_ReleaseMatchingProperties(in_hMatches, in_cMatches);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDPropertyMgr::ClonePropertyInfo ( unsigned long * out_pcPropInfo, struct tagXDPropertyInfo * * out_ppXDPropInfo ) {
+    HRESULT _hr = raw_ClonePropertyInfo(out_pcPropInfo, out_ppXDPropInfo);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IXDRestrictionMgr wrapper method implementations
+//
+
+inline HRESULT IXDRestrictionMgr::MapRestrictionsToVariant ( _bstr_t in_bstrSchema, const _variant_t & in_varRestArray, unsigned long * out_pcRestrictions, VARIANT * * out_ppRestrictions ) {
+    HRESULT _hr = raw_MapRestrictionsToVariant(in_bstrSchema, in_varRestArray, out_pcRestrictions, out_ppRestrictions);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL IXDRestrictionMgr::IsExcludedByRestriction ( const _variant_t & in_varRestArray, _bstr_t in_bstrRestName, const _variant_t & in_varValue ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_IsExcludedByRestriction(in_varRestArray, in_bstrRestName, in_varValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IXDRestrictionMgr::FindRestriction ( const _variant_t & in_varRestArray, _bstr_t in_bstrRestName, VARIANT * out_pRestValue ) {
+    HRESULT _hr = raw_FindRestriction(in_varRestArray, in_bstrRestName, out_pRestValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IXDRestrictionMgr::GetRestrictionsOfSchema ( _bstr_t in_bstrSchema, const _variant_t & in_varRestArray ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetRestrictionsOfSchema(in_bstrSchema, in_varRestArray, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IXDRestrictionMgr::ConstructDBLiteralsFromRestrictions ( IUnknown * in_pIEnumMgr, VARIANT * in_pvarRestrictions, unsigned long * * out_ppLiterals, unsigned long * out_pcLiterals ) {
+    HRESULT _hr = raw_ConstructDBLiteralsFromRestrictions(in_pIEnumMgr, in_pvarRestrictions, out_ppLiterals, out_pcLiterals);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IDBProperties wrapper method implementations
+//
+
+inline HRESULT IDBProperties::RemoteGetProperties ( unsigned long cPropertyIDSets, struct tagDBPROPIDSET * rgPropertyIDSets, unsigned long * pcPropertySets, struct tagDBPROPSET * * prgPropertySets, struct IErrorInfo * * ppErrorInfoRem ) {
+    HRESULT _hr = raw_RemoteGetProperties(cPropertyIDSets, rgPropertyIDSets, pcPropertySets, prgPropertySets, ppErrorInfoRem);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IDBProperties::RemoteGetPropertyInfo ( unsigned long cPropertyIDSets, struct tagDBPROPIDSET * rgPropertyIDSets, unsigned long * pcPropertyInfoSets, struct tagDBPROPINFOSET * * prgPropertyInfoSets, unsigned long * pcOffsets, unsigned long * * prgDescOffsets, unsigned long * pcbDescBuffer, short * * ppDescBuffer, struct IErrorInfo * * ppErrorInfoRem ) {
+    HRESULT _hr = raw_RemoteGetPropertyInfo(cPropertyIDSets, rgPropertyIDSets, pcPropertyInfoSets, prgPropertyInfoSets, pcOffsets, prgDescOffsets, pcbDescBuffer, ppDescBuffer, ppErrorInfoRem);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IDBProperties::RemoteSetProperties ( unsigned long cPropertySets, struct tagDBPROPSET * rgPropertySets, unsigned long cTotalProps, unsigned long * rgPropStatus, struct IErrorInfo * * ppErrorInfoRem ) {
+    HRESULT _hr = raw_RemoteSetProperties(cPropertySets, rgPropertySets, cTotalProps, rgPropStatus, ppErrorInfoRem);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IXDXMLRowset wrapper method implementations
+//
+
+inline HRESULT IXDXMLRowset::AddRow ( struct IXDXMLRow * in_pXMLRow ) {
+    HRESULT _hr = raw_AddRow(in_pXMLRow);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IXDXMLRowset::GetColumnValueString ( unsigned long in_iCol, unsigned long in_iRow ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetColumnValueString(in_iCol, in_iRow, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _variant_t IXDXMLRowset::GetColumnValue ( unsigned long in_iCol, unsigned long in_iRow ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetColumnValue(in_iCol, in_iRow, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline unsigned long IXDXMLRowset::GetRowCount ( ) {
+    unsigned long _result;
+    HRESULT _hr = raw_GetRowCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IXDXMLRowset::IsXmlColumn ( unsigned long in_iCol ) {
+    long _result;
+    HRESULT _hr = raw_IsXmlColumn(in_iCol, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IXDXMLRow wrapper method implementations
+//
+
+inline _variant_t IXDXMLRow::GetColumnValue ( unsigned long in_iCol ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetColumnValue(in_iCol, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+//
+// interface IDBInitialize wrapper method implementations
+//
+
+inline HRESULT IDBInitialize::RemoteInitialize ( struct IErrorInfo * * ppErrorInfoRem ) {
+    HRESULT _hr = raw_RemoteInitialize(ppErrorInfoRem);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IDBInitialize::RemoteUninitialize ( struct IErrorInfo * * ppErrorInfoRem ) {
+    HRESULT _hr = raw_RemoteUninitialize(ppErrorInfoRem);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IDBCreateSession wrapper method implementations
+//
+
+inline HRESULT IDBCreateSession::RemoteCreateSession ( IUnknown * pUnkOuter, GUID * riid, IUnknown * * ppDBSession, struct IErrorInfo * * ppErrorInfoRem ) {
+    HRESULT _hr = raw_RemoteCreateSession(pUnkOuter, riid, ppDBSession, ppErrorInfoRem);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IDBCreateCommand wrapper method implementations
+//
+
+inline HRESULT IDBCreateCommand::RemoteCreateCommand ( IUnknown * pUnkOuter, GUID * riid, IUnknown * * ppCommand, struct IErrorInfo * * ppErrorInfoRem ) {
+    HRESULT _hr = raw_RemoteCreateCommand(pUnkOuter, riid, ppCommand, ppErrorInfoRem);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IXDEnumMgr wrapper method implementations
+//
+
+inline HRESULT IXDEnumMgr::MapEnumToValue ( _bstr_t in_strPath, _bstr_t in_strEnum, struct tag_inner_PROPVARIANT * out_pValue ) {
+    HRESULT _hr = raw_MapEnumToValue(in_strPath, in_strEnum, out_pValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXDEnumMgr::MapValueToEnum ( _bstr_t in_strPath, _bstr_t in_strValue, BSTR * out_pstrEnum ) {
+    HRESULT _hr = raw_MapValueToEnum(in_strPath, in_strValue, out_pstrEnum);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IXDEnumMgr::GetFieldValue ( IUnknown * in_pIDOMNode, _bstr_t in_strFieldName ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetFieldValue(in_pIDOMNode, in_strFieldName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IXDEnumMgr::GetFieldValueXml ( IUnknown * in_pIDOMNode, _bstr_t in_strFieldName ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetFieldValueXml(in_pIDOMNode, in_strFieldName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface IRecordInfo wrapper method implementations
+//
+
+inline HRESULT IRecordInfo::RecordInit ( void * pvNew ) {
+    HRESULT _hr = raw_RecordInit(pvNew);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::RecordClear ( void * pvExisting ) {
+    HRESULT _hr = raw_RecordClear(pvExisting);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::RecordCopy ( void * pvExisting, void * pvNew ) {
+    HRESULT _hr = raw_RecordCopy(pvExisting, pvNew);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::GetGUID ( GUID * pguid ) {
+    HRESULT _hr = raw_GetGUID(pguid);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::GetName ( BSTR * pbstrName ) {
+    HRESULT _hr = raw_GetName(pbstrName);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::GetSize ( unsigned long * pcbSize ) {
+    HRESULT _hr = raw_GetSize(pcbSize);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::GetTypeInfo ( struct ITypeInfo * * ppTypeInfo ) {
+    HRESULT _hr = raw_GetTypeInfo(ppTypeInfo);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::GetField ( void * pvData, LPWSTR szFieldName, VARIANT * pvarField ) {
+    HRESULT _hr = raw_GetField(pvData, szFieldName, pvarField);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::GetFieldNoCopy ( void * pvData, LPWSTR szFieldName, VARIANT * pvarField, void * * ppvDataCArray ) {
+    HRESULT _hr = raw_GetFieldNoCopy(pvData, szFieldName, pvarField, ppvDataCArray);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::PutField ( unsigned long wFlags, void * pvData, LPWSTR szFieldName, VARIANT * pvarField ) {
+    HRESULT _hr = raw_PutField(wFlags, pvData, szFieldName, pvarField);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::PutFieldNoCopy ( unsigned long wFlags, void * pvData, LPWSTR szFieldName, VARIANT * pvarField ) {
+    HRESULT _hr = raw_PutFieldNoCopy(wFlags, pvData, szFieldName, pvarField);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::GetFieldNames ( unsigned long * pcNames, BSTR * rgBstrNames ) {
+    HRESULT _hr = raw_GetFieldNames(pcNames, rgBstrNames);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::RecordCreateCopy ( void * pvSource, void * * ppvDest ) {
+    HRESULT _hr = raw_RecordCreateCopy(pvSource, ppvDest);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecordInfo::RecordDestroy ( void * pvRecord ) {
+    HRESULT _hr = raw_RecordDestroy(pvRecord);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IXDStructure wrapper method implementations
+//
+
+inline HRESULT IXDStructure::SetStructFieldByIndex ( unsigned long in_iField, const _variant_t & in_varValue ) {
+    HRESULT _hr = raw_SetStructFieldByIndex(in_iField, in_varValue);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IXDStructure::GetStructFieldByIndex ( unsigned long in_iField ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetStructFieldByIndex(in_iField, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+//
+// interface IOLEDBConPool wrapper method implementations
+//
+
+inline IDBCreateCommandPtr IOLEDBConPool::GetSession ( int in_cPropSets, struct tagDBPROPSET * in_pPropSets ) {
+    struct IDBCreateCommand * _result;
+    HRESULT _hr = raw_GetSession(in_cPropSets, in_pPropSets, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDBCreateCommandPtr(_result, false);
+}
+
+inline HRESULT IOLEDBConPool::ReturnSession ( struct IDBCreateCommand * * io_ppSession ) {
+    HRESULT _hr = raw_ReturnSession(io_ppSession);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IOLEDBConPool::Shrink ( ) {
+    HRESULT _hr = raw_Shrink();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline void IOLEDBConPool::PutMaxSessions ( int out_pcSessions ) {
+    HRESULT _hr = put_MaxSessions(out_pcSessions);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline int IOLEDBConPool::GetMaxSessions ( ) {
+    int _result;
+    HRESULT _hr = get_MaxSessions(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IOLEDBConPool::GetTimeout ( ) {
+    int _result;
+    HRESULT _hr = get_Timeout(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IOLEDBConPool::PutTimeout ( int out_pTimeout ) {
+    HRESULT _hr = put_Timeout(out_pTimeout);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline int IOLEDBConPool::GetSessions ( ) {
+    int _result;
+    HRESULT _hr = get_Sessions(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IADOConPool wrapper method implementations
+//
+
+inline IDispatchPtr IADOConPool::GetConnection ( _bstr_t in_bstrCn ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_GetConnection(in_bstrCn, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+inline HRESULT IADOConPool::ReturnConnection ( IDispatch * * io_ppADOConnection ) {
+    HRESULT _hr = raw_ReturnConnection(io_ppADOConnection);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IADOConPool::Shrink ( ) {
+    HRESULT _hr = raw_Shrink();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline void IADOConPool::PutMaxSessions ( int out_pcSessions ) {
+    HRESULT _hr = put_MaxSessions(out_pcSessions);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline int IADOConPool::GetMaxSessions ( ) {
+    int _result;
+    HRESULT _hr = get_MaxSessions(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline int IADOConPool::GetTimeout ( ) {
+    int _result;
+    HRESULT _hr = get_Timeout(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IADOConPool::PutTimeout ( int out_pTimeout ) {
+    HRESULT _hr = put_Timeout(out_pTimeout);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline int IADOConPool::GetSessions ( ) {
+    int _result;
+    HRESULT _hr = get_Sessions(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}

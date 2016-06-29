@@ -1,0 +1,8 @@
+html, body, div, h1, h2, h3, p { padding: 0px; margin: 0px; border: 0px; }
+body { background-color: #752A7D; }
+h1 { float: left; padding-top: 18px; padding-left: 15px;
+	color: #ffffff; font-family: palatino, georgia, "Times New Roman", serif; font-size: 22px; font-weight: bold; }
+cite { float: right; width: 293px; height: 39px; margin: 12px 15px 0px 0px;
+	background: url("../images/yfp_horizontal.gif"); text-indent: -1000em; }
+a { color: #ffffff; text-decoration: none; }
+a:hover { text-decoration: underline; }

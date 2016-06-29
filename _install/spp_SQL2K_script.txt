@@ -1,0 +1,17 @@
+exec sp_configure 'allow updates', 1
+go
+reconfigure with override
+go
+delete from DBSALESPP.dbo.sysindexes where name like'_WA_Sys_%'
+go
+exec sp_configure 'allow updates', 0
+go
+reconfigure with override
+go
+USE master 
+go
+EXEC sp_dboption 'DBSALESPP', 'auto create statistics', 'FALSE' 
+EXEC sp_dboption 'DBSALESPP', 'auto update statistics', 'FALSE' 
+EXEC sp_dboption 'DBSALESPP', 'autoclose', 'FALSE' 
+EXEC sp_dboption 'DBSALESPP', 'autoshrink', 'FALSE'
+go

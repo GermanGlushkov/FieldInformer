@@ -1,0 +1,13 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\TestXML.Application = TestXML Application
+HKEY_CLASSES_ROOT\TestXML.Application\CLSID = {7FB7A18F-752D-430C-B30D-85732E10D4B5}
+
+HKEY_CLASSES_ROOT\CLSID\{7FB7A18F-752D-430C-B30D-85732E10D4B5} = TestXML Application
+HKEY_CLASSES_ROOT\CLSID\{7FB7A18F-752D-430C-B30D-85732E10D4B5}\ProgId = TestXML.Application
+HKEY_CLASSES_ROOT\CLSID\{7FB7A18F-752D-430C-B30D-85732E10D4B5}\LocalServer32 = TESTXML.EXE

@@ -1,0 +1,29 @@
+<!doctype HTML public "-//W3O//DTD W3 HTML 3.2//EN">
+<html>
+<head>
+<title>
+    Installation
+</title>
+</head>
+<body bgcolor="#ffffff">
+<h1>Installing openSmtp.net</h1>
+
+<h2>Application</h2>
+
+The application was designed to work with the Microsoft .Net 1.1 runtime, it must have this  installed on the target machine in order to function properly.
+
+<ol>
+<li>Create a new virtual directory, for example 'openSmtp', in your IIS5/dotnet server
+<li>set the permissions to include 'scripts only',
+<li>Copy everything to the new openSmtp directory
+<li>In the IIS admin cosole specify the directory as it's own application.
+<li>Also, in the IIS admin cosole specify the web directory as it's own application so the
+web application may run in its own space.
+</ol>
+
+<h2>Nunit tests</h2>
+
+The test program (nunit.exe) needs the .net runtime installed.
+Run Nunit, select openSmtp.dll and then run the tests.
+</body>
+</html>

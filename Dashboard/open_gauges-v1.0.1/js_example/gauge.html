@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Flash Gauge Using SetVariable()</title>
+
+	<script type="text/javascript" src="swfobject1-5/swfobject.js"></script>
+	<script type="text/javascript">
+		function update() {
+			//some ajax code to get live data....
+			// Your live values/data go here.
+			var sVal = "0";  
+			var sVal = document.myform.userval.value;
+			if (Number(sVal) > 100){
+				alert("Out of range! Please pick a value between 1 and 100.");
+				sVal = "0";
+				document.myform.userval.value = sVal;
+			}
+			
+		  	var livevals = document.getElementById("livevals");
+		    livevals.innerHTML = "Value: "+sVal;
+
+     		window.document.pgauge.SetVariable("gValue", sVal);
+		}
+	</script>
+
+	<style type="text/css">
+		body {
+			background-color: #5F5F5F;
+			color: #cccccc;
+		}
+		td {
+			border: 1px solid #cccccc;
+			padding: 10px;
+		}
+		a:link    {color: #cccccc; }
+		a:visited {color: #c8c8c8; }
+		a:active  {color: #cccccc; }
+		a:hover   {color: #ffffff; }
+	</style>
+
+	</head>
+
+<body>
+	<table cellpadding="5px" width="250">
+			<td>Using SetVariable()</td>
+		<tr>
+			<td align="center">
+				<div id="pgauge"></div>
+			</td>
+		<tr>
+			<td>	
+				<form name="myform" action="" method="post">
+				Enter value (1 to 100):
+				<input type="text" name="userval" size="4px" value="0"><br><br>
+				<input type="button" name="button" onClick="update();" value="Update">
+			    </form>
+			</td>
+		<tr>
+			<td>
+				<div style="border: 1px solid #ffffff; padding: 10px; width: 250px;"><span id="livevals">Value: 0</span></div>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/pgauge.swf", "pgauge", "200", "200", "9", "#000000");
+		
+		so.addVariable("bgimage", "images/gauge.jpg"); 
+		so.addVariable("title", "Percent Gauge"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent")
+		
+		// This will detect the Flash version using SWFObject.
+		so.useExpressInstall('setvar/swfobject1-5/expressinstall.swf');
+		
+		so.write("pgauge");
+		// ]]>
+	</script>
+	
+</body>
+</html>

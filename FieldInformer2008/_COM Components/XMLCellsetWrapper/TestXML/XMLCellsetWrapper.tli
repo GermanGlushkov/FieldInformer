@@ -1,0 +1,42 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8447.0 (e1ef65ea).
+//
+// XMLCellsetWrapper.tli
+//
+// Wrapper implementations for Win32 type library C:\Program Files\Microsoft Visual Studio\VC98\Project\Ch3\XMLCellsetWrapper\Debug\XMLCellsetWrapper.dll
+// compiler-generated file created 07/12/02 at 10:08:44 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IXMLCellset wrapper method implementations
+//
+
+inline HRESULT IXMLCellset::Increment ( int * outval ) {
+    HRESULT _hr = raw_Increment(outval);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXMLCellset::BuildCellset ( _bstr_t Mdx, _bstr_t ConnString ) {
+    HRESULT _hr = raw_BuildCellset(Mdx, ConnString);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXMLCellset::BuildCellset1 ( BSTR * Mdx, BSTR * ConnString ) {
+    HRESULT _hr = raw_BuildCellset1(Mdx, ConnString);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXMLCellset::BuildCellset2 ( ) {
+    HRESULT _hr = raw_BuildCellset2();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IXMLCellset::GetHr ( long * test ) {
+    HRESULT _hr = raw_GetHr(test);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}

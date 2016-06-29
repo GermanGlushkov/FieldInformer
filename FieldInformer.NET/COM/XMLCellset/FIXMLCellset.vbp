@@ -1,0 +1,45 @@
+Type=OleDll
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\WINDOWS\system32\stdole2.tlb#OLE Automation
+Reference=*\G{22813728-8BD3-11D0-B4EF-00A0C9138CA4}#2.7#0#..\..\..\..\..\Program Files\Common Files\System\ado\msadomd.dll#Microsoft ActiveX Data Objects (Multi-dimensional) 2.7 Library
+Reference=*\G{420B2830-E718-11CF-893D-00A0C9054228}#1.0#0#..\..\..\..\..\WINDOWS\system32\scrrun.dll#Microsoft Scripting Runtime
+Reference=*\G{EF53050B-882E-4776-B643-EDA472E8E3F2}#2.7#0#..\..\..\..\..\Program Files\Common Files\system\ado\msado27.tlb#Microsoft ActiveX Data Objects 2.7 Library
+Reference=*\G{F5078F18-C551-11D3-89B9-0000F81FE221}#4.0#0#..\..\..\..\..\WINDOWS\system32\msxml4.dll#Microsoft XML, v4.0
+Reference=*\G{59F95F3D-E9B2-11D2-A71A-00C04FB6C22A}#6.0#0#..\..\..\..\..\Program Files\FieldForce Solutions Oy Ab\FieldInformer.Net Service Components\MSMDConnPool.dll#MSMDConnPool
+Reference=*\G{55F00EDA-F1CD-4C54-A508-6773A2DC48C9}#1.0#0#..\..\..\..\..\Program Files\FieldForce Solutions Oy Ab\FieldInformer.Net Service Components\StrCat.dll#StrCat 1.0 Type Library
+Class=XMLCellsetClass; XMLCellsetClass.cls
+Class=OlapSchema; OlapSchema.cls
+Module=Module; Module.bas
+Startup="(None)"
+HelpFile=""
+Title="FIXMLCellset"
+ExeName32="FIXMLCellset.dll"
+Command32="/outpath c:\stream_save.txt /mdx select [Order].[Date].Members on rows , [Store].[call address].Members on columns from VIRTUAL_MODEL /connstring Data Source=localhost;Initial Catalog=DBSALESPP;Provider=MSOLAP;"
+Name="FIXMLCellset"
+HelpContextID="0"
+CompatibleMode="0"
+CompatibleEXE32="Copy of FIXMLCellset.dll"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="FieldForce Solutions Oy Ab"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=0
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=1
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+DebugStartupOption=0
+
+[MS Transaction Server]
+AutoRefresh=1

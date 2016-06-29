@@ -1,0 +1,29 @@
+<AnalysisServicesUserConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>DBSALESPP</Id>
+            <Name>DBSALESPP</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAsjvN9dQl06CmnuNzksh1QAAAAAUAAAARABCAFMAQQBMAEUAUwBQAFAAAAADZgAAqAAAABAAAAA20Ll4H0e8jcNNSN4cyARGAAAAAASAAACgAAAAEAAAACjviidWCMEUk0SgXuCnfz4IAAAAKNHMkS/J31sUAAAA3u1P+rXtu/geRXF1Imgv+T5mhiM=</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>DBSALESPP</Id>
+            <Name>DBSALESPP</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAsjvN9dQl06CmnuNzksh1QAAAAAUAAAARABCAFMAQQBMAEUAUwBQAFAAAAADZgAAqAAAABAAAAD3t2tATnIvnvIa731H1mXMAAAAAASAAACgAAAAEAAAANlVXWwj/W/ebyRn+Xt/9JIIAAAAppVT29cTyzwUAAAA1aH9dKnzIkZrTzLaHlmeC966/nc=</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>localhost</TargetServer>
+        <TargetDatabase>DBSALESPP</TargetDatabase>
+        <StartObject>
+          <ObjectId></ObjectId>
+          <ObjectType>Current</ObjectType>
+        </StartObject>
+      </Options>
+    </Configuration>
+  </Configurations>
+</AnalysisServicesUserConfiguration>

@@ -1,0 +1,468 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../print.css" type="text/css" media="print">
+<meta content="FocusManager,fl.managers.FocusManager,defaultButton,defaultButtonEnabled,nextTabIndex,showFocusIndicator,activate,deactivate,findFocusManagerComponent,getFocus,getNextFocusManagerComponent,hideFocus,setFocus,showFocus" name="keywords">
+<title>fl.managers.FocusManager</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'FocusManager - Yahoo! Astra Library';
+				var baseRef = '../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Astra Library Documentation</td><td rowspan="2" align="right" class="titleTableLogo"><img alt="Yahoo! Logo" title="Yahoo! Logo" class="logoImage" src="../../images/yfp-stacked.gif"></td>
+</tr>
+<tr>
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;FocusManager</td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subNav" class="titleTableSubNav">
+<ul>
+<li>
+<a href="#propertySummary">Properties</a>&nbsp;| </li>
+<li>
+<a href="#methodSummary">Methods</a>
+</li>
+</ul>
+</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../all-classes.html')" href="../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../all-classes.html')" href="../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../index-list.html')" href="../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../index.html?fl/managers/FocusManager.html&amp;fl/managers/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class FocusManager"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">fl.managers</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class FocusManager</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Implements</td><td><a href="IFocusManager.html">IFocusManager</a></td>
+</tr>
+</table>
+<p></p>
+   The FocusManager class manages focus for a set of components that are navigated by mouse 
+   or keyboard as a <em>tab loop</em>. 
+     <p>A tab loop is typically navigated by using the Tab key; focus moves between the components 
+   in the tab loop in a circular pattern from the first component that has focus, to the last, 
+   and then back again to the first. A tab loop includes all the components and tab-enabled
+   components in a container. An application can contain numerous tab loops.</p>
+   
+   <p>A FocusManager instance is responsible for a single tab loop; an application uses
+   a different FocusManager instance to manage each tab loop that it contains, although
+   a main application is always associated with at least one FocusManager instance. An
+   application may require additional FocusManager instances if it includes a popup window,
+   for example, that separately contains one or more tab loops of components.</p> 
+  
+   <p>All components that can be managed by a FocusManager instance must implement the
+   fl.managers.IFocusManagerComponent interface. Objects for which Flash Player
+   manages focus are not required to implement the IFocusManagerComponent interface.</p>  
+     <p>The FocusManager class also manages how the default button is implemented. A default button 
+   dispatches a <code>click</code> event when the Enter key is pressed on a form, 
+   depending on where focus is at the time.  The default button does not dispatch the
+   <code>click</code> event if a text area has focus or if a value is being edited in
+   a component, for example, in a ComboBox or NumericStepper component.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="IFocusManager.html" target="">IFocusManager</a>
+<br>
+<a href="IFocusManagerComponent.html" target="">IFocusManagerComponent</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#defaultButton">defaultButton</a> : <a href="../controls/Button.html">Button</a>
+<div class="summaryTableDescription">
+   Gets or sets the current default button.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#defaultButtonEnabled">defaultButtonEnabled</a> : Boolean<div class="summaryTableDescription">
+    Gets or sets a value that indicates whether the default button
+    is enabled.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#nextTabIndex">nextTabIndex</a> : int<div class="summaryTableDescription">[read-only]
+          Gets the next unique tab index to use in this tab loop.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#showFocusIndicator">showFocusIndicator</a> : Boolean<div class="summaryTableDescription">
+          Gets or sets a value that indicates whether a component that has focus should be marked with a visual indicator of focus.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#FocusManager()">FocusManager</a>(container:DisplayObjectContainer)</div>
+<div class="summaryTableDescription">
+    Creates a new FocusManager instance.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#activate()">activate</a>():void</div>
+<div class="summaryTableDescription">
+    Activates the FocusManager instance.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#deactivate()">deactivate</a>():void</div>
+<div class="summaryTableDescription">
+    Deactivates the FocusManager.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#findFocusManagerComponent()">findFocusManagerComponent</a>(component:InteractiveObject):InteractiveObject</div>
+<div class="summaryTableDescription">
+    Retrieves the interactive object that contains the given object, if any.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getFocus()">getFocus</a>():InteractiveObject</div>
+<div class="summaryTableDescription">
+    Gets the interactive object that currently has focus.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#getNextFocusManagerComponent()">getNextFocusManagerComponent</a>(backward:Boolean = false):InteractiveObject</div>
+<div class="summaryTableDescription">
+    Retrieves the interactive object that would receive focus
+    if the user pressed the Tab key to navigate to the next object.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#hideFocus()">hideFocus</a>():void</div>
+<div class="summaryTableDescription">
+    Sets the <code>showFocusIndicator</code> value to <code>false</code>
+          and removes the visual focus indicator from the object that has focus, if any.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setFocus()">setFocus</a>(component:InteractiveObject):void</div>
+<div class="summaryTableDescription">
+    Sets focus on an IFocusManagerComponent component.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#showFocus()">showFocus</a>():void</div>
+<div class="summaryTableDescription">
+    Sets the <code>showFocusIndicator</code> value to <code>true</code>
+          and draws the visual focus indicator on the object with focus, if any.</div>
+</td><td class="summaryTableOwnerCol">FocusManager</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="defaultButton"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">defaultButton</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>defaultButton:<a href="../controls/Button.html">Button</a></code>&nbsp;&nbsp;[read-write]<p>
+   Gets or sets the current default button.
+      </p><p>The default button is the button on a form that dispatches a
+   <code>click</code> event when the Enter key is pressed,
+         depending on where focus is at the time.</p>
+                  <span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get defaultButton():<a href="../controls/Button.html">Button</a></code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set defaultButton(value:<a href="../controls/Button.html">Button</a>):void</code>
+<br>
+</div>
+<a name="defaultButtonEnabled"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">defaultButtonEnabled</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>defaultButtonEnabled:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+    Gets or sets a value that indicates whether the default button
+    is enabled. If this value is set to <code>true</code>, the focus manager
+    monitors the Enter key and dispatches a <code>click</code> event on the 
+    default button if the Enter key is pressed when a component that is not a
+    Button component has focus. If this value is set to <code>false</code>, the focus manager 
+    does not monitor the Enter key. Components that use the Enter key set 
+    this property to <code>false</code> to prevent a <code>click</code> event
+    from being dispatched on the default button, if one exists, when a user 
+          presses the Enter key.
+                  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get defaultButtonEnabled():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set defaultButtonEnabled(value:Boolean):void</code>
+<br>
+</div>
+<a name="nextTabIndex"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">nextTabIndex</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>nextTabIndex:int</code>&nbsp;&nbsp;[read-only]<p>
+          Gets the next unique tab index to use in this tab loop.
+                  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get nextTabIndex():int</code>
+<br>
+</div>
+<a name="showFocusIndicator"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showFocusIndicator</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>showFocusIndicator:Boolean</code>&nbsp;&nbsp;[read-write]<p>
+          Gets or sets a value that indicates whether a component that has focus should be marked with a visual indicator of focus.
+                  </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get showFocusIndicator():Boolean</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set showFocusIndicator(value:Boolean):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="FocusManager()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">FocusManager</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function FocusManager(container:DisplayObjectContainer)</code><p>
+    Creates a new FocusManager instance.
+       </p><p>A focus manager manages focus within the children of a 
+    DisplayObjectContainer object.</p>
+       <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">container</span>:DisplayObjectContainer</code> &mdash; A DisplayObjectContainer that hosts the focus manager, 
+          or <code>stage</code>.
+                  </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="activate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">activate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function activate():void</code><p>
+    Activates the FocusManager instance.
+       </p><p>The FocusManager instance adds event handlers that allow it to monitor
+          focus-related keyboard and mouse activity.</p>
+                  </div>
+<a name="deactivate()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">deactivate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function deactivate():void</code><p>
+    Deactivates the FocusManager.
+       </p><p>The FocusManager removes the event handlers that allow it to monitor
+          focus-related keyboard and mouse activity.</p>
+                  </div>
+<a name="findFocusManagerComponent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">findFocusManagerComponent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function findFocusManagerComponent(component:InteractiveObject):InteractiveObject</code><p>
+    Retrieves the interactive object that contains the given object, if any.
+    The player can set focus to a subcomponent of a Flash component;
+    this method determines which interactive object has focus from
+    the component perspective.
+       </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">component</span>:InteractiveObject</code> &mdash; An object that can have player-level focus.
+       </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>InteractiveObject</code> &mdash; The object containing the <code>component</code> or, if one is
+    not found, the <code>component</code> itself.
+   
+   </td>
+</tr>
+</table>
+</div>
+<a name="getFocus()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getFocus</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getFocus():InteractiveObject</code><p>
+    Gets the interactive object that currently has focus.
+    Adobe recommends calling this method instead of using the Stage object 
+    because this method indicates which component has focus.
+    The Stage might return a subcomponent in that component.
+             </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>InteractiveObject</code> &mdash; The interactive object that currently has focus.
+                  </td>
+</tr>
+</table>
+</div>
+<a name="getNextFocusManagerComponent()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">getNextFocusManagerComponent</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function getNextFocusManagerComponent(backward:Boolean = false):InteractiveObject</code><p>
+    Retrieves the interactive object that would receive focus
+    if the user pressed the Tab key to navigate to the next object.
+    This method retrieves the object that currently has focus
+    if there are no other valid objects in the application.
+       </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">backward</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; If this parameter is set to <code>true</code>, 
+    focus moves in a backward direction, causing this method to retrieve
+    the object that would receive focus next if the Shift+Tab key combination
+    were pressed. 
+       </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>InteractiveObject</code> &mdash; The next component to receive focus.
+                  </td>
+</tr>
+</table>
+</div>
+<a name="hideFocus()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">hideFocus</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function hideFocus():void</code><p>
+    Sets the <code>showFocusIndicator</code> value to <code>false</code>
+          and removes the visual focus indicator from the object that has focus, if any.
+                  </p></div>
+<a name="setFocus()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setFocus</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setFocus(component:InteractiveObject):void</code><p>
+    Sets focus on an IFocusManagerComponent component. This method does
+    not check for component visibility, enabled state, or other conditions.
+       </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">component</span>:InteractiveObject</code> &mdash; An object that can receive focus.
+   
+    </td>
+</tr>
+</table>
+</div>
+<a name="showFocus()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">showFocus</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function showFocus():void</code><p>
+    Sets the <code>showFocusIndicator</code> value to <code>true</code>
+          and draws the visual focus indicator on the object with focus, if any.
+                  </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<div class="feedbackLink">
+<center>
+<a target="_top" href="http://tech.groups.yahoo.com/group/ydn-flash/">Visit ydn-flash for Yahoo! ASTRA feedback and support</a>
+</center>
+</div>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

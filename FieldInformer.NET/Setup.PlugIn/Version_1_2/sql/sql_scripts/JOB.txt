@@ -1,0 +1,149 @@
+BEGIN TRAN
+       
+  DECLARE @JobID BINARY(16)  
+  DECLARE @ReturnCode INT    
+  SELECT @ReturnCode = 0     
+IF (SELECT COUNT(*) FROM msdb.dbo.syscategories WHERE name = N'[Uncategorized (Local)]') < 1 
+  EXECUTE msdb.dbo.sp_add_category @name = N'[Uncategorized (Local)]'
+
+  -- Delete the job with the same name (if it exists)
+  SELECT @JobID = job_id     
+  FROM   msdb.dbo.sysjobs    
+  WHERE (name = N'FieldInformer process  job')       
+  IF (@JobID IS NOT NULL)    
+  BEGIN  
+  -- Check if the job is a multi-server job  
+  IF (EXISTS (SELECT  * 
+              FROM    msdb.dbo.sysjobservers 
+              WHERE   (job_id = @JobID) AND (server_id <> 0))) 
+  BEGIN 
+    -- There is, so abort the script 
+    RAISERROR (N'Unable to import job ''FieldInformer process  job'' since there is already a multi-server job with this name.', 16, 1) 
+    GOTO QuitWithRollback  
+  END 
+  ELSE 
+    -- Delete the [local] job 
+    EXECUTE msdb.dbo.sp_delete_job @job_name = N'FieldInformer process  job' 
+    SELECT @JobID = NULL
+  END 
+
+BEGIN 
+
+  DECLARE @internal_job_step_id int
+  SET @internal_job_step_id=1
+  
+  -- Add the job
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_job @job_id = @JobID OUTPUT , @job_name = N'FieldInformer process  job', @owner_login_name = N'sa', @description = N'Execute package: FieldInformer process  job', @category_name = N'[Uncategorized (Local)]', @enabled = 1, @notify_level_email = 0, @notify_level_page = 0, @notify_level_netsend = 0, @notify_level_eventlog = 2, @delete_level= 0
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+
+  -- Add the job steps
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Backup DBFINF', @command = N'BACKUP DATABASE DBFINF TO DISK=''###BCK_PATH###'' WITH INIT', @database_name = N'master', @server = N'', @database_user_name = N'', @subsystem = N'TSQL', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1
+  
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Stop OLAP Service', @command = N'###SYSDIR###\sc.exe ###OLAP_SERVER### STOP MSSQLServerOLAPService', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 1, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1
+  
+   EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Stop FI.NET Service', @command = N'###SYSDIR###\sc.exe ###OLAP_SERVER### STOP "FieldInformer.NET Service"', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 1, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1
+  
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Wait For Stop', @command = N'WAITFOR DELAY ''00:01:00''', @database_name = N'master', @server = N'', @database_user_name = N'', @subsystem = N'TSQL', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1
+  
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Start OLAP Service', @command = N'###SYSDIR###\sc.exe ###OLAP_SERVER### START MSSQLServerOLAPService', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 1, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1
+
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Start FI.NET Service', @command = N'###SYSDIR###\sc.exe ###OLAP_SERVER### START "FieldInformer.NET Service"', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 1, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1
+    
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Wait For Start', @command = N'WAITFOR DELAY ''00:01:00''', @database_name = N'master', @server = N'', @database_user_name = N'', @subsystem = N'TSQL', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1
+  
+  
+  IF '###ROUTING_CONSOLE_PATH###' !=''
+	BEGIN
+		  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Routing Process SQL', @command = N'
+			USE eXforce
+			setuser ''spp''
+			EXEC sproc_ProcessDeliveries
+			', @database_name = N'eXforce', @server = N'', @database_user_name = N'', @subsystem = N'TSQL', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 2
+			IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+			SET @internal_job_step_id=@internal_job_step_id+1
+	END
+  
+    EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'FieldInformer Process SQL', @command = N'
+USE DBSALESPP
+setuser ''spp''
+EXEC proc_process_main
+ ', @database_name = N'DBSALESPP', @server = N'', @database_user_name = N'', @subsystem = N'TSQL', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 2
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1  
+  
+    
+   -- difference in on fail action
+   IF '###RESTORE_DB_ON_ERROR###' !=''
+	BEGIN
+		EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Archive Olap DB', @command = N'###CLIENT_PATH###\UI.ConsoleClient.exe Log ArchiveOlapDb', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', 
+		@on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+		IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+		SET @internal_job_step_id=@internal_job_step_id+1		
+		
+		 DECLARE @success_step_id int
+		 SET @success_step_id=@internal_job_step_id+2
+		EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'FieldInformer process  job', @command = N'DTSRun /S(local) /NFieldInformer process  job /E', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 0, @output_file_name = N'', 
+		@on_success_step_id = @success_step_id, @on_success_action = 4, @on_fail_step_id = 0, @on_fail_action = 3
+			IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+			SET @internal_job_step_id=@internal_job_step_id+1		
+			
+		EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Restore Olap DB', @command = N'###CLIENT_PATH###\UI.ConsoleClient.exe Log RestoreOlapDb', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', 
+		@on_success_step_id = 0, @on_success_action = 2, @on_fail_step_id = 0, @on_fail_action = 2
+		IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+		SET @internal_job_step_id=@internal_job_step_id+1			
+	END
+ELSE
+	BEGIN
+		EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'FieldInformer process  job', @command = N'DTSRun /S(local) /NFieldInformer process  job /E', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 0, @output_file_name = N'', @on_success_step_id = 0, 
+		@on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 2
+			IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+			SET @internal_job_step_id=@internal_job_step_id+1				
+	END    
+    	
+  IF '###ROUTING_CONSOLE_PATH###' !=''
+	BEGIN
+		EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Routing Audit', @command = N'###ROUTING_CONSOLE_PATH### Log SetMonitorValues', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 0, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 3, @on_fail_step_id = 0, @on_fail_action = 3
+		IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+		SET @internal_job_step_id=@internal_job_step_id+1
+	END
+	
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobstep @job_id = @JobID, @step_id = @internal_job_step_id, @step_name = N'Send Reports', @command = N'###CLIENT_PATH###\UI.ConsoleClient.exe Log /NSALESPP SendTodaysDistributions', @database_name = N'', @server = N'', @database_user_name = N'', @subsystem = N'CmdExec', @cmdexec_success_code = 0, @flags = 0, @retry_attempts = 0, @retry_interval = 1, @output_file_name = N'', @on_success_step_id = 0, @on_success_action = 1, @on_fail_step_id = 0, @on_fail_action = 2
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+  SET @internal_job_step_id=@internal_job_step_id+1
+  
+  
+  EXECUTE @ReturnCode = msdb.dbo.sp_update_job @job_id = @JobID, @start_step_id = 1 
+
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+
+  -- Add the job schedules
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobschedule @job_id = @JobID, @name = N'FieldInformer process  job', @enabled = 1, @freq_type = 4, @active_start_date = 20020101, @active_start_time = ###JOB_START###, @freq_interval = 1, @freq_subday_type = 1, @freq_subday_interval = 0, @freq_relative_interval = 1, @freq_recurrence_factor = 0, @active_end_date = 99991231, @active_end_time = 235959
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+
+  -- Add the Target Servers
+  EXECUTE @ReturnCode = msdb.dbo.sp_add_jobserver @job_id = @JobID, @server_name = N'(local)' 
+  IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback 
+
+END
+COMMIT TRANSACTION          
+GOTO   EndSave              
+QuitWithRollback:
+  IF (@@TRANCOUNT > 0) ROLLBACK TRANSACTION 
+EndSave: 
+
+
+GO

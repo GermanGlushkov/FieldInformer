@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GPL Flash Gauge PHP Examples</title>
+<!--
+GPL Flash Gauge PHP Examples using SWFObject embed by Geoff Stearns.
+http://blog.deconcept.com/swfobject/
+-->
+<script type="text/javascript" src="swfobject1-5/swfobject.js"></script>
+
+<style type="text/css">
+	
+	body {
+		background-color: #5F5F5F;
+	}
+</style>
+
+</head>
+<body>
+	<!-- These are the display divs. Each is populated by SWFObject. The first is an example
+	using Flash SWFObject detection -->
+	<div id="pgauge">
+		<strong>You need to upgrade your Flash Player</strong>
+		This is replaced by the Flash content. 
+		Place your alternate content here and users without the Flash plugin or with 
+		Javascript turned off will see this. Content here allows you to leave out <code>noscript</code> 
+		tags. Include a link to <a href="index.html?detectflash=false">bypass the detection</a> if you wish.
+	</div>
+	
+	<div id="dgauge"></div>
+	
+	<div id="dpgauge"></div>
+	
+	<div id="bar"></div>
+
+	<div id="resource_meter"></div>
+
+	<div id="meter"></div>
+	
+	<div id="pmeter"></div>
+	
+	<div id="status"></div>
+
+	<div id="temp"></div>
+	
+	<div id="iogauge"></div>
+	
+	<div id="digital"></div>
+	
+	<!-- Here's the code to make the gauges work. -->
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/pgauge.swf", "pgauge", "200", "200", "9", "#000000");
+		
+		so.addVariable("funcName", "pgauge_data"); //Required!
+		so.addVariable("refresh", "2000"); //Required! 1000 = 1 sec
+		so.addVariable("bgimage", "images/gauge.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Percent Gauge"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent")
+		
+		// This will detect the Flash version using SWFObject.
+		so.useExpressInstall('swfobject1-5/expressinstall.swf');
+		
+		so.write("pgauge");
+		// ]]>
+	</script>
+
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/dgauge.swf", "dgauge", "200", "200", "9", "#000000");
+		
+		so.addVariable("funcName", "dgauge_data"); //Required!
+		so.addVariable("refresh", "2000"); //Required! 2000 = secs
+		
+		so.addVariable("bgimage", "images/gauge.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Secs Gauge"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("dgauge");
+		// ]]>
+	</script>
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/dpgauge.swf", "dpgauge", "200", "200", "9", "#000000");
+		
+		so.addVariable("funcName", "dpgauge_data"); //Required!
+		so.addVariable("refresh", "2000"); //Required! 2000 = secs
+		
+		so.addVariable("bgimage", "images/gauge.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Perf Gauge"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("dpgauge");
+		// ]]>
+	</script>
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/bar.swf", "bar", "190", "100", "9", "#000000");
+		
+		so.addVariable("funcName", "bar_data"); //Required!
+		so.addVariable("refresh", "5500"); //Required! 2000 = secs
+		
+		so.addVariable("bgimage", "images/bar.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Percentage Bar"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("bar");
+		// ]]>
+	</script>
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/resource_meter.swf", "resource_meter", "195", "125", "9", "#000000");
+		
+		so.addVariable("funcName", "res_data"); //Required!
+		
+		so.addVariable("bgimage", "images/rmeter.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Resource Meter"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("resource_meter");
+		// ]]>
+	</script>
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/meter.swf", "meter", "200", "180", "9", "#000000");
+		
+		so.addVariable("funcName", "meter_data"); //Required!
+		so.addVariable("refresh", "5500"); //Required! 2000 = secs
+		
+		so.addVariable("bgimage", "images/meter.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Standard Meter"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("meter");
+		// ]]>
+	</script>
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/pmeter.swf", "pmeter", "200", "180", "9", "#000000");
+		
+		so.addVariable("funcName", "pmeter_data"); //Required!
+		so.addVariable("refresh", "5500"); //Required! 1000 = 1 sec
+		
+		so.addVariable("bgimage", "images/meter.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Pos/Neg Meter"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("pmeter");
+		// ]]>
+	</script>
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/status.swf", "status", "200", "45", "9", "#000000");
+		
+		so.addVariable("funcName", "status_data"); //Required!
+		so.addVariable("refresh", "5000"); //Required! 1000 = 1 sec
+
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Service Status"); 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("status");
+		// ]]>
+	</script>
+
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/temp.swf", "temp", "110", "300", "9", "#000000");
+		
+		so.addVariable("funcName", "temp_data"); //Required!
+		so.addVariable("refresh", "2000"); //Required! 1000 = 1 sec
+		
+		so.addVariable("bgimage", "images/temp.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Hot"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("temp");
+		// ]]>
+	</script>
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/iogauge.swf", "iogauge", "205", "135", "9", "#000000");
+		
+		so.addVariable("funcName", "iogauge_data"); //Required!
+		so.addVariable("refresh", "2000"); //Required! 1000 = 1 sec
+		
+		so.addVariable("bgimage", "images/iogauge.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title", "Dual Gauges"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("iogauge");
+		// ]]>
+	</script>
+	
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/digital.swf", "digital", "190", "150", "9", "#000000");
+		
+		so.addVariable("funcName", "digital_data"); //Required!
+		so.addVariable("refresh", "2000"); //Required! 1000 = 1 sec
+		
+		so.addVariable("bgimage", "images/digital.jpg"); 
+		//so.addVariable("exec_type", "asp"); // Default: php Options: asp, js, whatever you choose.
+		so.addVariable("title_a", "This");
+		so.addVariable("title_b", "That"); 
+		//so.addVariable("title_color", "black"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("digital");
+		// ]]>
+	</script>
+</body>
+</html>

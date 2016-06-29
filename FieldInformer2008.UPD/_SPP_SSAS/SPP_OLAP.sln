@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SPP_OLAP", "SPP_OLAP.dwproj", "{E700B5D4-8DE5-43DF-A6A8-AE6481EC480D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E700B5D4-8DE5-43DF-A6A8-AE6481EC480D}.Development|Default.ActiveCfg = Development
+		{E700B5D4-8DE5-43DF-A6A8-AE6481EC480D}.Development|Default.Build.0 = Development
+		{E700B5D4-8DE5-43DF-A6A8-AE6481EC480D}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

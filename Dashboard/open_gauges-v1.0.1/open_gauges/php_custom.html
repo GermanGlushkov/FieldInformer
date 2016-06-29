@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>GPL Flash Gauge Advanced PHP Example</title>
+<!--
+GPL Flash Gauge PHP Examples using SWFObject embed by Geoff Stearns.
+http://blog.deconcept.com/swfobject/
+-->
+<script type="text/javascript" src="swfobject1-5/swfobject.js"></script>
+<style type="text/css">
+	
+	body {
+		background-color: #5F5F5F;
+	}
+</style>
+
+</head>
+<body>
+	
+	<div id="digital"></div>
+
+	<script type="text/javascript">
+		// <![CDATA[
+		var so = new SWFObject("flash/digital.swf", "digital", "190", "150", "9", "#000000");
+		
+		so.addVariable("refresh", "2000"); //Required! 1000 = 1 sec
+		so.addVariable("bgimage", "images/digital.jpg"); 
+		
+		
+		so.addVariable("custom", "data/custom_data.php?my_custom_data=mine"); // Do your own thing.	
+		
+		
+		so.addVariable("title_a", "Visits");
+		so.addVariable("title_b", "Referrals"); 
+		so.addVariable("title_color", "white"); // Default: silver. Options: black, white, 
+		
+		so.addParam("quality", "high");
+		so.addParam("wmode", "transparent");
+		so.write("digital");
+		// ]]>
+	</script>
+
+</body>
+</html>

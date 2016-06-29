@@ -1,0 +1,903 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="23bc44c6-712b-4553-ba53-ce72a5f4ecec" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Store</ID>
+  <Name>Store</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="34" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-11207" scrolltop="-42" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="34502" y="17833" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ba0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="OLAP_STORE (spp.OLAP_STORE)" left="7348" top="4154" logicalid="17" controlid="1" masterid="0" hint1="0" hint2="0" width="5080" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000d813000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_OLAP_STORE" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="OLAP_SALESFORCE (spp.OLAP_SALESFORCE)" left="5575" top="-5809" logicalid="18" controlid="2" masterid="0" hint1="0" hint2="0" width="4577" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000e1110000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_OLAP_SALESFORCE" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="OLAP_PRODUCT (spp.OLAP_PRODUCT)" left="6633" top="-5929" logicalid="19" controlid="3" masterid="0" hint1="0" hint2="0" width="4815" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000cf12000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_OLAP_PRODUCT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="v_olap_date (spp.v_olap_date)" left="8012" top="-1701" logicalid="20" controlid="4" masterid="0" hint1="0" hint2="0" width="4286" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000be10000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_OLAP_DATE" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="OLAP_SALESFORCE_HIERARCHY (spp.OLAP_SALESFORCE_HIERARCHY)" left="-6230" top="-1896" logicalid="21" controlid="5" masterid="0" hint1="0" hint2="0" width="6775" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000771a0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_OLAP_SALESFORCE_HIERARCHY" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="OLAP_STORE_SALESFORCE_HIERARCHY (spp.OLAP_STORE_SALESFORCE_HIERARCHY)" left="4682" top="12416" logicalid="22" controlid="6" masterid="0" hint1="0" hint2="0" width="8000" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000401f0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_OLAP_STORE_SALESFORCE_HIERARCHY" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7282" top="8655" logicalid="23" controlid="7" masterid="0" hint1="0" hint2="0" width="806" height="4061" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAP_STORE_SALESFORCE_HIERARCHY-OLAP_STORE]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="6" sourceattachpoint="1" destattachpoint="10" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7688" y="9154" />
+              <point x="7688" y="10785" />
+              <point x="7582" y="10785" />
+              <point x="7582" y="12416" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="V_OLAP_PRODEXPAND_HIEARCHY (spp.V_OLAP_PRODEXPAND_HIEARCHY)" left="967" top="5688" logicalid="24" controlid="8" masterid="0" hint1="0" hint2="0" width="4313" height="1455" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000d9100000af050000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_V_OLAP_PRODEXPAND_HIEARCHY" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="V_OLAP_PRICELIST_DIM (spp.V_OLAP_PRICELIST_DIM)" left="3405" top="-5251" logicalid="25" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_V_OLAP_PRICELIST_DIM" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="V_OLAP_PRODEXPAND (spp.V_OLAP_PRODEXPAND)" left="9273" top="9217" logicalid="26" controlid="10" masterid="0" hint1="0" hint2="0" width="3387" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800003b0d0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_V_OLAP_PRODEXPAND" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="V_OLAP_STORE_FACT (spp.V_OLAP_STORE_FACT)" left="-6165" top="13203" logicalid="27" controlid="11" masterid="0" hint1="0" hint2="0" width="4313" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000d91000004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_V_OLAP_STORE_FACT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-2152" top="13927" logicalid="28" controlid="12" masterid="0" hint1="0" hint2="0" width="7134" height="801" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAP_STORE_SALESFORCE_HIERARCHY-V_OLAP_STORE_FACT]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="11" sourceattachpoint="36" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="4682" y="14328" />
+              <point x="1415" y="14328" />
+              <point x="1415" y="14227" />
+              <point x="-1852" y="14227" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-2152" top="8554" logicalid="29" controlid="13" masterid="0" hint1="0" hint2="0" width="9800" height="6073" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[OLAP_STORE-V_OLAP_STORE_FACT]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="11" destid="1" sourceattachpoint="17" destattachpoint="34" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="-1852" y="14227" />
+              <point x="2748" y="14227" />
+              <point x="2748" y="8854" />
+              <point x="7348" y="8854" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="V_OLAP_STORE_ACTIVE_FACT (spp.V_OLAP_STORE_ACTIVE_FACT)" left="-6271" top="7329" logicalid="30" controlid="14" masterid="0" hint1="0" hint2="0" width="3000" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_V_OLAP_STORE_ACTIVE_FACT" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-3571" top="7355" logicalid="31" controlid="15" masterid="0" hint1="0" hint2="0" width="11219" height="875" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[V_OLAP_STORE_ACTIVE_FACT-OLAP_STORE]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="14" sourceattachpoint="30" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7348" y="7754" />
+              <point x="2039" y="7754" />
+              <point x="2039" y="7930" />
+              <point x="-3271" y="7930" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-3571" top="2600" logicalid="32" controlid="16" masterid="0" hint1="0" hint2="0" width="11883" height="6180" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[V_OLAP_STORE_ACTIVE_FACT-v_olap_date]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="14" sourceattachpoint="30" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8012" y="2999" />
+              <point x="2371" y="2999" />
+              <point x="2371" y="8480" />
+              <point x="-3271" y="8480" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-11207</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-42</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-6271</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-5929</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="c51928c8-b91d-41e6-9919-c8fb27c26c1a">
+      <ID>Store</ID>
+      <Name>Store</Name>
+      <DimensionID>Store</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d18cf9ba-78ff-4c09-902a-b686ee07d815">
+          <AttributeID>OLAP STORE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c410b7ca-da25-4688-80f8-c05842b23e4b">
+          <AttributeID>COMPCODE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9541a8a6-9612-4cc3-97fe-747d65d0bb08">
+          <AttributeID>COMPCITY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2852f02a-c2dc-41b9-8f1d-523ede531d1e">
+          <AttributeID>COMTYNAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="719b1494-1340-49f0-89c5-1d609a320ee7">
+          <AttributeID>COMCLASS</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a0fe9f79-4d73-401b-b85f-7ec94fb4c3b6">
+          <AttributeID>COMTURNCLS</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f205a8df-8579-401f-b1db-736ba8ff2bb5">
+          <AttributeID>TGRNAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d14630e5-f234-40db-a64c-59b3e53e5e29">
+          <AttributeID>CCHNAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="703a03f8-7b07-4faa-9750-ca9ea536eaa4">
+          <AttributeID>CHNNAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b1c05026-653c-4d72-81c7-102f5fecae28">
+          <AttributeID>COMCALL</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3f051ed6-faa6-4fa0-bd01-c58f1397e8d7">
+          <AttributeID>Chain Attr 1</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="b96d8fc8-19d3-47c3-9275-a98a48e69dd0">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="8a92c48c-a008-478d-92c0-9c1caec99365">
+          <HierarchyID>Hierarchy 2</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="57414535-4edb-49f2-9f52-0ed1cb1878ce">
+          <HierarchyID>Hierarchy 3</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="332b456e-0efd-43fc-a19d-5394f2a79c59">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="fa813692-833f-494d-9be4-6642e9558020">
+          <HierarchyID>Hierarchy 4</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="f0d2aed5-b82e-4bb4-b90a-78a9cb0ce825">
+          <HierarchyID>Hierarchy 5</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="fb54212e-a1b5-41ae-849b-865e0b021455">
+          <HierarchyID>Hierarchy 6</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="63e7805b-61b5-4d91-955d-c68c1c137c1d">
+      <ID>Salesforce</ID>
+      <Name>Salesforce</Name>
+      <DimensionID>OLAP SALESFORCE</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="771a1e28-03f5-44b8-bdda-4bcc30e5b0b4">
+          <AttributeID>OLAP SALESFORCE</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="b8871dcc-6aa8-482f-8f29-6886a52b3999">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="bd7e57cd-1af7-4fd5-912d-3803418f8e3b">
+      <ID>Product</ID>
+      <Name>Product</Name>
+      <DimensionID>OLAP PRODUCT</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8246276b-ac58-4254-b1af-26d6d65c431b">
+          <AttributeID>OLAP PRODUCT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="79376e3f-1518-4fdf-8afc-bb2677a9a637">
+          <AttributeID>PRODSUPPLIER</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="2c5071bb-2773-41d2-9d52-3e168df9b3e5">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="21b57f79-1544-4e73-ae3c-d87671bb0ece">
+      <ID>Time</ID>
+      <Name>Time</Name>
+      <DimensionID>OLAP DATE</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="57c1d0e7-fd80-4b4a-9686-d06511996cdb">
+          <AttributeID>YEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d6d3593f-42af-4371-bd63-2c6cfe6351c3">
+          <AttributeID>QUARTER</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7f13c7a7-e51a-474f-a255-6ad603e9c758">
+          <AttributeID>MONTH</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="57527e61-a666-4e0d-b7c1-0cbac3bc74bf">
+          <AttributeID>DATE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d6d58b5e-7e67-486e-8142-7364808aee5d">
+          <AttributeID>SALENUM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="edf74c5c-41b2-427c-bbe9-582ce5782aac">
+          <AttributeID>WEEK</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ffcab169-940f-4819-8e7f-7b1e5aac092c">
+          <AttributeID>WEEKYEAR</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="24633529-3cb0-47e2-99b5-9524bb6436bb">
+          <AttributeID>YTD</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bbe82594-e5c1-4ce1-866b-55c639bae91c">
+          <AttributeID>YTM</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="54870bb9-a94d-4de0-9f4b-bcf57520501b">
+          <AttributeID>YTW</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="23a1aaca-4e84-4fe6-98ce-616e810d57bc">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="206adc33-211c-4bbf-8c9f-75e546667d3d">
+          <HierarchyID>Hierarchy 1</HierarchyID>
+        </Hierarchy>
+        <Hierarchy dwd:design-time-name="e4de5a1a-c1d5-493a-9a78-b497c830e0ae">
+          <HierarchyID>Hierarchy 2</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="265d2b81-7ccc-4c1f-9c3a-cd32f91be648">
+      <ID>Salesforce Groups</ID>
+      <Name>Salesforce Groups</Name>
+      <DimensionID>OLAP SALESFORCE HIERARCHY</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9983c0fb-4b10-405d-a275-26eaa964f605">
+          <AttributeID>OLAP SALESFORCE HIERARCHY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3bd8e77b-4878-490a-8d08-55e34d7e7eb1">
+          <AttributeID>SALMGRP</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="64402664-4bea-4534-b1e6-ab5fe03144e2">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="23adf00f-83f4-473d-ba7d-05d2847fe6ca">
+      <ID>Salesforce Stores</ID>
+      <Name>Salesforce Stores</Name>
+      <DimensionID>OLAP STORE SALESFORCE HIERARCHY</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a6ad0614-3627-4ee7-bc25-1d66ec6869fc">
+          <AttributeID>OLAP STORE SALESFORCE HIERARCHY</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a5f83946-7c82-4672-89cc-32dde2fa2f43">
+          <AttributeID>SALMNAME</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="fec9e580-4851-4474-a2cc-92b74aa56f67">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="ba90c904-ed9e-4513-9888-d72c80675883">
+      <ID>Expand Compound Products</ID>
+      <Name>Expand Compound Products</Name>
+      <DimensionID>V OLAP PRODEXPAND HIEARCHY</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="6bbedd04-adf3-44b9-8bfe-19aa8f9e6ae0">
+          <AttributeID>V OLAP PRODEXPAND HIEARCHY</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="5f567562-8203-48e3-945e-053ce9f9a61c">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="7ba3805c-cb21-4cad-8b03-60aae866f4ed">
+      <ID>Pricelist</ID>
+      <Name>Pricelist</Name>
+      <DimensionID>V OLAP PRICELIST DIM</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="dacc6274-58d8-419d-b991-8ee0bca6c794">
+          <AttributeID>V OLAP PRICELIST DIM</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="42addb4f-f889-477a-88cb-58eab29ed311">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="73f800c7-d877-41a9-8273-045828a2590f">
+      <ID>_ProdExpand</ID>
+      <Name>_ProdExpand</Name>
+      <DimensionID>V OLAP PRODEXPAND</DimensionID>
+      <Visible>false</Visible>
+      <Attributes>
+        <Attribute dwd:design-time-name="e9a66e94-ab86-4147-916a-82b80a39a0e6">
+          <AttributeID>V OLAP PRODEXPAND</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="83a0f3e1-c979-4d24-8070-7b10951bc805">
+          <AttributeID>ISEXPANDED</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="86a64a74-d202-46f4-ab9b-63ea065f0238">
+          <AttributeID>ISNOTEXPANDED</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <CubePermissions>
+    <CubePermission dwd:design-time-name="0eee830f-f2d3-4798-85a6-cca1c3b8ce5e">
+      <ID>CubePermission</ID>
+      <Name>CubePermission</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Role</RoleID>
+      <Read>Allowed</Read>
+      <ReadSourceData>None</ReadSourceData>
+    </CubePermission>
+  </CubePermissions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="70c86f7f-4b66-452b-9a35-b21448b3b1f7">
+      <ID>Store</ID>
+      <Name>Store</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="9b791023-b899-4aca-855e-00c6f0f42485">
+          <ID>STORE TURNOVR</ID>
+          <Name>Store Turnover</Name>
+          <Source dwd:design-time-name="9791e601-7c4d-4d58-9e17-aa6265602e45">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b58a50e4-b8ee-4b05-bc5f-1420a4ef6f14">
+              <TableID>spp_V_OLAP_STORE_FACT</TableID>
+              <ColumnID>STORE_TURNOVR</ColumnID>
+            </Source>
+          </Source>
+          <DisplayFolder>Store Hierarchy</DisplayFolder>
+          <FormatString>#,0.00</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="be80d9bd-448d-4a57-90ed-319a165fe204">
+          <ID>NR 1</ID>
+          <Name>Store Distinct Count</Name>
+          <AggregateFunction>DistinctCount</AggregateFunction>
+          <Source dwd:design-time-name="64e2e4de-f390-47e8-bfb3-3f16db74491a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="afabbecd-fe09-4bba-bcee-1e06e0fbf23a">
+              <TableID>spp_V_OLAP_STORE_FACT</TableID>
+              <ColumnID>NR</ColumnID>
+            </Source>
+          </Source>
+          <DisplayFolder>Store Hierarchy</DisplayFolder>
+          <FormatString>#,0</FormatString>
+        </Measure>
+        <Measure dwd:design-time-name="09850bc3-29e2-4efc-9cc3-e128c300f00d">
+          <ID>STORE SALESAREA</ID>
+          <Name>Store Sales Area</Name>
+          <Source dwd:design-time-name="824498a7-2b74-4759-8345-a66ddbf7e531">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ad65777e-6456-4b68-87a1-4c0749e8e6ad">
+              <TableID>spp_V_OLAP_STORE_FACT</TableID>
+              <ColumnID>STORE_SALESAREA</ColumnID>
+            </Source>
+          </Source>
+          <DisplayFolder>Store Hierarchy</DisplayFolder>
+          <FormatString>#,0.00</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ErrorConfiguration dwd:design-time-name="24900657-6716-45b6-9ae7-09c36ee95aa9">
+        <KeyErrorLimitAction>StopLogging</KeyErrorLimitAction>
+        <KeyNotFound>IgnoreError</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>IgnoreError</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="afb904c0-3751-4be7-8b48-cfb8a103ec8e">
+          <CubeDimensionID>Store</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="513a1bbd-d183-4ee6-b003-5dee5c92db35">
+              <AttributeID>OLAP STORE</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e1ab74c8-3b1a-47bf-b7f2-0ca169767f9a">
+                  <DataType>WChar</DataType>
+                  <DataSize>15</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="725c54ab-deca-4b39-9758-93cb98c8aac1">
+                    <TableID>spp_V_OLAP_STORE_FACT</TableID>
+                    <ColumnID>COMSERNO</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="813c0ed2-9c9c-464b-8cc6-1974b4bbefd8">
+          <CubeDimensionID>Salesforce</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0d99d2da-5642-4d3f-9bfe-f0868303f11e">
+              <AttributeID>OLAP SALESFORCE</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="933817f4-88ac-49ad-b0ba-f15da3bb0454">
+                  <DataType>WChar</DataType>
+                  <DataSize>15</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d04c3d1e-2ed4-4ec3-8712-4263af57c0ee">
+                    <TableID>spp_V_OLAP_STORE_FACT</TableID>
+                    <ColumnID>SALMSERN</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="21f97499-2d21-40c9-96ff-8b7ba94dcf7f">
+          <CubeDimensionID>Salesforce Stores</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bdcc473a-1d0c-4897-9fc2-f830e5fc3efb">
+              <AttributeID>OLAP STORE SALESFORCE HIERARCHY</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a5804894-b532-4bf2-a4db-b3ea820f4d48">
+                  <DataType>WChar</DataType>
+                  <DataSize>15</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f10d6137-9061-4e71-9cda-1e8a40e9bcf9">
+                    <TableID>spp_V_OLAP_STORE_FACT</TableID>
+                    <ColumnID>SALMSERN</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="ac7190c6-af4c-43a2-80a4-cb9977533b0a">
+                  <DataType>WChar</DataType>
+                  <DataSize>15</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="47bc9142-efa9-40c4-a332-5c647e50f13a">
+                    <TableID>spp_V_OLAP_STORE_FACT</TableID>
+                    <ColumnID>COMSERNO</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="20753699-1b50-4260-911f-6c08c279ebc2">
+      <ID>V OLAP STORE ACTIVE FACT</ID>
+      <Name>StoreDirect</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="4f9af0da-ca62-4f40-9231-7eeb7ccb68b0">
+          <ID>ISACT</ID>
+          <Name>Active Store Delta</Name>
+          <Source dwd:design-time-name="84484ca9-3ed5-4c32-86db-7278f65f10d8">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ab42dded-811c-498a-a406-bedabf271b8c">
+              <TableID>spp_V_OLAP_STORE_ACTIVE_FACT</TableID>
+              <ColumnID>ISACT</ColumnID>
+            </Source>
+          </Source>
+          <DisplayFolder>Store Hierarchy</DisplayFolder>
+          <FormatString>#,0</FormatString>
+          <MeasureExpression></MeasureExpression>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6cc83956-3a64-42fe-bd88-1a0c6e237256">
+          <CubeDimensionID>Store</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c659d516-0792-4f43-bc76-80aca9bad94b">
+              <AttributeID>OLAP STORE</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a80578e8-8232-4730-a78e-8e7de83ed488">
+                  <DataType>WChar</DataType>
+                  <DataSize>15</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3720f0ef-e085-4775-a622-220ce3ad19b1">
+                    <TableID>spp_V_OLAP_STORE_ACTIVE_FACT</TableID>
+                    <ColumnID>COMSERNO</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="921fae27-0bd5-43f0-834e-1e92ef9f656e">
+          <CubeDimensionID>Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d156c86a-4243-4b4b-b3ba-8f15ca8ec8c9">
+              <AttributeID>DATE</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1f0a1065-2ff5-48fb-8807-9c247ab20f12">
+                  <DataType>WChar</DataType>
+                  <DataSize>8</DataSize>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="141bfc0e-b51e-45e5-a89c-7aae5c031842">
+                    <TableID>spp_V_OLAP_STORE_ACTIVE_FACT</TableID>
+                    <ColumnID>DATE</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="7ab032ff-f5dc-48a0-ab86-9490e05ea58a">
+    <DataSourceViewID>DBSALESPP</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="a8bc3010-ae05-44f9-8508-4521d12fd69e">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>CALCULATE;
+
+
+
+
+
+
+
+-------------- Active Store Count
+
+CREATE MEMBER CurrentCube.Measures.[Active Store Count] as 
+'[Measures].[Active Store Delta]', FORMAT_STRING='#,0', SCOPE_ISOLATION=CUBE; 
+SCOPE ([Measures].[Active Store Count], Descendants([Time].[Monthly].[All], [Time].[Monthly].[(All)], AFTER )); 
+    this=SUM(
+                Generate(
+                    Ascendants([Time].[Monthly].CurrentMember),
+                    IIF([Time].[Monthly].CurrentMember IS [Time].[Monthly].FirstSibling,
+                        {}, 
+                        [Time].[Monthly].FirstSibling:[Time].[Monthly].PrevMember
+                       )
+                ) + [Time].[Monthly].CurrentMember,
+                [Measures].[Active Store Delta]
+            ); 
+END SCOPE; 
+SCOPE ([Measures].[Active Store Count], Descendants([Time].[Weekly].[All], [Time].[Weekly].[(All)], AFTER )); 
+    this=SUM(
+                Generate(
+                    Ascendants([Time].[Weekly].CurrentMember),
+                    IIF([Time].[Weekly].CurrentMember IS [Time].[Weekly].FirstSibling,
+                        {}, 
+                        [Time].[Weekly].FirstSibling:[Time].[Weekly].PrevMember
+                       )
+                ) + [Time].[Weekly].CurrentMember,
+                [Measures].[Active Store Delta]
+            ); 
+END SCOPE; 
+SCOPE ([Measures].[Active Store Count], Descendants([Time].[Salesperiod].[All], [Time].[Salesperiod].[(All)], AFTER )); 
+    this=SUM(
+                Generate(
+                    Ascendants([Time].[Salesperiod].CurrentMember),
+                    IIF([Time].[Salesperiod].CurrentMember IS [Time].[Salesperiod].FirstSibling,
+                        {}, 
+                        [Time].[Salesperiod].FirstSibling:[Time].[Salesperiod].PrevMember
+                       )
+                ) + [Time].[Salesperiod].CurrentMember,
+                [Measures].[Active Store Delta]
+            ); 
+END SCOPE; 
+SCOPE ([Measures].[Active Store Count], Descendants([Time].[YTD Attr].[All], [Time].[YTD Attr].[(All)], AFTER )); 
+    this=SUM(
+                Generate(
+                    Ascendants([Time].[YTD Attr].CurrentMember),
+                    IIF([Time].[YTD Attr].CurrentMember IS [Time].[YTD Attr].FirstSibling,
+                        {}, 
+                        [Time].[YTD Attr].FirstSibling:[Time].[YTD Attr].PrevMember
+                       )
+                ) + [Time].[YTD Attr].CurrentMember,
+                [Measures].[Active Store Delta]
+            ); 
+END SCOPE; 
+SCOPE ([Measures].[Active Store Count], Descendants([Time].[YTM Attr].[All], [Time].[YTM Attr].[(All)], AFTER )); 
+    this=SUM(
+                Generate(
+                    Ascendants([Time].[YTM Attr].CurrentMember),
+                    IIF([Time].[YTM Attr].CurrentMember IS [Time].[YTM Attr].FirstSibling,
+                        {}, 
+                        [Time].[YTM Attr].FirstSibling:[Time].[YTM Attr].PrevMember
+                       )
+                ) + [Time].[YTM Attr].CurrentMember,
+                [Measures].[Active Store Delta]
+            ); 
+END SCOPE; 
+SCOPE ([Measures].[Active Store Count], Descendants([Time].[YTW Attr].[All], [Time].[YTW Attr].[(All)], AFTER )); 
+    this=SUM(
+                Generate(
+                    Ascendants([Time].[YTW Attr].CurrentMember),
+                    IIF([Time].[YTW Attr].CurrentMember IS [Time].[YTW Attr].FirstSibling,
+                        {}, 
+                        [Time].[YTW Attr].FirstSibling:[Time].[YTW Attr].PrevMember
+                       )
+                ) + [Time].[YTW Attr].CurrentMember,
+                [Measures].[Active Store Delta]
+            ); 
+END SCOPE; 
+</Text>
+        </Command>
+      </Commands>
+      <CalculationProperties>
+        <CalculationProperty dwd:design-time-name="e671de4f-3014-4b62-bb50-cf9af4bf5afe">
+          <CalculationReference>Measures.[POS Price Net Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Prices</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="9a269aff-be90-47a3-8b93-71ae1c27d8c1">
+          <CalculationReference>Measures.[POS Price Gross Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Prices</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="5ea05426-3c56-4f24-b5b0-fb29af01b24d">
+          <CalculationReference>Measures.[Delivery Purchase Price Net Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Prices</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="944822fc-ce46-4b43-91c3-63334beef554">
+          <CalculationReference>Measures.[Delivery Purchase Price Gross Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Prices</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="3e5b7fd6-becd-4dfc-8062-982df56b4591">
+          <CalculationReference>Measures.[Delivery Money Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Deliveries</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="128eb744-7aaa-4564-9894-3070fd240004">
+          <CalculationReference>Measures.[Delivery Money Prod Price Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Deliveries</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="9656f251-daf4-483a-a0a1-36cdbb6213c2">
+          <CalculationReference>Measures.[Delivery Money Pricelist Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Deliveries</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="f6abfe2d-b28b-45ab-bcd1-284cbd436fb3">
+          <CalculationReference>Measures.[Delivery Cons Pkg Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Deliveries</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="e6cc18a9-fb78-4182-bed0-f2f69a89ae3d">
+          <CalculationReference>Measures.[Delivery Case Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Deliveries</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="87fb6d5c-f91d-4dce-a7d9-267411a75734">
+          <CalculationReference>Measures.[Delivery Pallet Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Deliveries</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="727dbd61-1d3a-47bf-8a8d-2a7646098a55">
+          <CalculationReference>Measures.[Delivery Unit Avg]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Deliveries</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="c73f14e6-993f-4403-b2a5-ea2897ccf61d">
+          <CalculationReference>Measures.[Crossjoin Count]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Distribution and Coverage</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="84d55590-bd63-482d-935a-4c92e0ef255b">
+          <CalculationReference>Measures.[Selection Semiadd]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Distribution and Coverage</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="0275637f-148d-42f7-b195-83f2101874cc">
+          <CalculationReference>Measures.[Base Selection Semiadd]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Distribution and Coverage</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="b2b0e490-01c7-4c01-8d1a-521fb454764a">
+          <CalculationReference>Measures.[Listing Selection Semiadd %]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Distribution and Coverage</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="8ef83e05-de37-4eca-a5f6-ed154e34b794">
+          <CalculationReference>Measures.[Listing Base Selection Semiadd %]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Distribution and Coverage</DisplayFolder>
+        </CalculationProperty>
+        <CalculationProperty dwd:design-time-name="5ab537e8-1463-4c6f-9176-dd57ef7bafb1">
+          <CalculationReference>Measures.[Active Store Count]</CalculationReference>
+          <CalculationType>Member</CalculationType>
+          <DisplayFolder>Store Hierarchy</DisplayFolder>
+        </CalculationProperty>
+      </CalculationProperties>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

@@ -1,0 +1,188 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="24649a4d-7886-4ab0-927b-ec9f2374ca04" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>V OLAP SALESCALL ATTR HIERARCHY</ID>
+  <Name>Sales Call Attributes</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3242" scrolltop="-9274" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9525" y="21273" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="V_OLAP_SALESCALL_ATTR_HIERARCHY (spp.V_OLAP_SALESCALL_ATTR_HIERARCHY)" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="spp_V_OLAP_SALESCALL_ATTR_HIERARCHY" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3242</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-9274</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e55df616-1512-47e5-bd9e-0012c3d3a35f">
+    <DataSourceViewID>DBSALESPP</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="8812b48d-6a60-440c-9eee-352888ac5783">
+      <ID>V OLAP SALESCALL ATTR HIERARCHY</ID>
+      <Name>Attribute</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="845dcfe1-ca3f-4c8e-847a-eab8b49b4cf3">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="26320da3-5cb1-4aa3-b10a-9706070dc2db">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_HIERARCHY</TableID>
+            <ColumnID>ATTRCOL</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="21c1f122-1072-422a-8bbe-6631280f7bed">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a5b53f9d-4809-436f-9c59-89bec6c3ed0a">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_HIERARCHY</TableID>
+            <ColumnID>ATTRKEY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="41c43738-55fa-41dc-ab23-6771d439ff5f">
+        <DataType>WChar</DataType>
+        <DataSize>41</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="da71f0c7-c518-4d8f-b1dc-170d6f6268b7">
+          <TableID>spp_V_OLAP_SALESCALL_ATTR_HIERARCHY</TableID>
+          <ColumnID>ATTRVALUE</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="ac6573d7-a090-4459-8f01-98e2ca013f2b">
+          <AttributeID>ATTRNAME</AttributeID>
+          <Name>AttributeName</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="eee27024-58fb-480c-bf0f-fd304b4a286c">
+          <AttributeID>ATTRCOL</AttributeID>
+          <Name>AttributeKeyColumn</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="32bee27c-3726-440b-ba68-df11fa2b53da">
+          <AttributeID>ATTRKEY</AttributeID>
+          <Name>AttributeKeyValue</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+    <Attribute dwd:design-time-name="9410ff36-4d93-4d3a-bf4c-726338ecbb0a">
+      <ID>ATTRNAME</ID>
+      <Name>AttributeName</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4ee2d5a0-20b8-444a-88f8-84268f41f5ca">
+          <DataType>WChar</DataType>
+          <DataSize>19</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="028e74db-dea4-4071-bdf9-01c0370a9e73">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_HIERARCHY</TableID>
+            <ColumnID>ATTRNAME</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+    <Attribute dwd:design-time-name="047ea629-f8c1-4bd0-8c8b-3c60184116e0">
+      <ID>ATTRCOL</ID>
+      <Name>AttributeKeyColumn</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2c1b0e98-1f25-42a2-a39e-ac56def5f328">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5a3b0ec6-02be-4c7c-91a2-e0289891cfbe">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_HIERARCHY</TableID>
+            <ColumnID>ATTRCOL</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+    <Attribute dwd:design-time-name="828eb2de-42bc-4cba-9442-cfa3a3f2b360">
+      <ID>ATTRKEY</ID>
+      <Name>AttributeKeyValue</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fe67e817-af2a-4116-96bf-e43148eb9eb6">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1b39c7e4-3b77-4e2e-839f-763e7cc6740a">
+            <TableID>spp_V_OLAP_SALESCALL_ATTR_HIERARCHY</TableID>
+            <ColumnID>ATTRKEY</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="5d6d198d-1259-47a5-a577-71e8d0f4d639">
+      <ID>Hierarchy</ID>
+      <Name>Sales Call Attributes</Name>
+      <DisplayFolder>Sales Call</DisplayFolder>
+      <Levels>
+        <Level dwd:design-time-name="6c001021-b700-41be-873a-560362cdc936">
+          <ID>AttributeName</ID>
+          <Name>Attribute</Name>
+          <SourceAttributeID>ATTRNAME</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="83bb8785-745c-4d78-9c68-d7d6860e050f">
+          <ID>Attribute 1</ID>
+          <Name>Attribute Value</Name>
+          <SourceAttributeID>V OLAP SALESCALL ATTR HIERARCHY</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

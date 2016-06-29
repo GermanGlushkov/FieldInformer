@@ -1,0 +1,123 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8447.0 (173525a8).
+//
+// c:\program files\microsoft visual studio\vc98\project\ch3\xmlcellsetwrapper\testxml\debug\msxaprv.tlh
+//
+// C++ source equivalent of Win32 type library C:\Program Files\Microsoft XML For Analysis SDK\msxaprv.dll
+// compiler-generated file created 07/12/02 at 22:11:09 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace MSXmlAnalysisLib {
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ XmlAnalysis;
+struct __declspec(uuid("8b44b7d6-5539-4d64-9143-f44e19ebe2ac"))
+/* dual interface */ IXmlAnalysis;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IXmlAnalysis, __uuidof(IXmlAnalysis));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("9ab5b80a-ec0e-4789-9467-780af8f12802"))
+XmlAnalysis;
+    // [ default ] interface IXmlAnalysis
+
+struct __declspec(uuid("8b44b7d6-5539-4d64-9143-f44e19ebe2ac"))
+IXmlAnalysis : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t Execute (
+        _bstr_t in_bstrCommand,
+        _bstr_t in_bstrProperties );
+    _bstr_t Discover (
+        _bstr_t in_bstrRequestType,
+        _bstr_t in_bstrRestrictions,
+        _bstr_t in_bstrProperties );
+    _bstr_t ExecuteSoap (
+        IUnknown * Soap,
+        IUnknown * Command,
+        IUnknown * Properties );
+    _bstr_t DiscoverSoap (
+        IUnknown * Soap,
+        _bstr_t RequestType,
+        IUnknown * Restrictions,
+        IUnknown * Properties );
+    _bstr_t ExecuteState (
+        _bstr_t in_bstrSessionCmd,
+        BSTR * io_pbstrSessionId,
+        _bstr_t in_bstrCommand,
+        _bstr_t in_bstrProperties );
+    _bstr_t DiscoverState (
+        _bstr_t in_bstrSessionCmd,
+        BSTR * io_pbstrSessionId,
+        _bstr_t in_bstrRequestType,
+        _bstr_t in_bstrRestrictions,
+        _bstr_t in_bstrProperties );
+    HRESULT SetPoolTimeout (
+        int in_dwTime );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Execute (
+        BSTR in_bstrCommand,
+        BSTR in_bstrProperties,
+        BSTR * out_pbstrXMLResultSet ) = 0;
+    virtual HRESULT __stdcall raw_Discover (
+        BSTR in_bstrRequestType,
+        BSTR in_bstrRestrictions,
+        BSTR in_bstrProperties,
+        BSTR * out_pbstrXMLResultSet ) = 0;
+    virtual HRESULT __stdcall raw_ExecuteSoap (
+        IUnknown * Soap,
+        IUnknown * Command,
+        IUnknown * Properties,
+        BSTR * ResultSet ) = 0;
+    virtual HRESULT __stdcall raw_DiscoverSoap (
+        IUnknown * Soap,
+        BSTR RequestType,
+        IUnknown * Restrictions,
+        IUnknown * Properties,
+        BSTR * ResultSet ) = 0;
+    virtual HRESULT __stdcall raw_ExecuteState (
+        BSTR in_bstrSessionCmd,
+        BSTR * io_pbstrSessionId,
+        BSTR in_bstrCommand,
+        BSTR in_bstrProperties,
+        BSTR * out_pbstrXMLResultSet ) = 0;
+    virtual HRESULT __stdcall raw_DiscoverState (
+        BSTR in_bstrSessionCmd,
+        BSTR * io_pbstrSessionId,
+        BSTR in_bstrRequestType,
+        BSTR in_bstrRestrictions,
+        BSTR in_bstrProperties,
+        BSTR * out_pbstrXMLResultSet ) = 0;
+    virtual HRESULT __stdcall raw_SetPoolTimeout (
+        int in_dwTime ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\program files\microsoft visual studio\vc98\project\ch3\xmlcellsetwrapper\testxml\debug\msxaprv.tli"
+
+} // namespace MSXmlAnalysisLib
+
+#pragma pack(pop)
